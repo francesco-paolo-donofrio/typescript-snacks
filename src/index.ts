@@ -1,5 +1,5 @@
 let myConst: number = 1;
-myConst = 2;
+myConst = 66;
 
 console.log(myConst);
 
