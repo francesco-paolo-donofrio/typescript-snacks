@@ -62,3 +62,36 @@ let GiorgioSize: SizeNumber = SizeNumber.Large;
 
 console.log(mySize, MikeSize, GiorgioSize);
 
+// Example Functions
+
+function calculateTax(income: number):number {
+    if (income < 50_000) {
+        return income * 1.2;
+    } else {
+         return income * 1.3;
+    }
+}
+
+calculateTax(200_000);
+
+function calculateTaxYear(income: number, taxYear: number): number {
+    if (taxYear < 2022) {
+        return income * 1.2;
+    } else {
+        return income * 1.3;
+    }
+}
+
+calculateTaxYear(100_000, 2021);
+
+function calculateTaxMaybeYear(income: number, taxYear?: number): number {
+    if (taxYear) {
+        return income * 1.2;
+    } else {
+        return income * 1.3;
+    }
+}
+
+calculateTaxMaybeYear(100_000);
+calculateTaxMaybeYear(100_000, 2021);
+

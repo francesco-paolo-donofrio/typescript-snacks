@@ -41,4 +41,32 @@ let mySize = SizeNumber.Small;
 let MikeSize = SizeNumber.Medium;
 let GiorgioSize = SizeNumber.Large;
 console.log(mySize, MikeSize, GiorgioSize);
+function calculateTax(income) {
+    if (income < 50000) {
+        return income * 1.2;
+    }
+    else {
+        return income * 1.3;
+    }
+}
+calculateTax(200000);
+function calculateTaxYear(income, taxYear) {
+    if (taxYear < 2022) {
+        return income * 1.2;
+    }
+    else {
+        return income * 1.3;
+    }
+}
+calculateTaxYear(100000, 2021);
+function calculateTaxMaybeYear(income, taxYear) {
+    if (taxYear) {
+        return income * 1.2;
+    }
+    else {
+        return income * 1.3;
+    }
+}
+calculateTaxMaybeYear(100000);
+calculateTaxMaybeYear(100000, 2021);
 //# sourceMappingURL=index.js.map
