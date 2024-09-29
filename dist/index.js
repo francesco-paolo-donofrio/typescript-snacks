@@ -19,4 +19,8 @@ render(isPublished);
 let numbers = [1, 2, 3];
 let numbers2 = [1, 2, 3];
 numbers.forEach(n => n.toLocaleString("en-US"));
+let user = [1, "jane"];
+user[0].toString();
+user[1].toUpperCase();
+console.log(user[0], user[1]);
 //# sourceMappingURL=index.js.map

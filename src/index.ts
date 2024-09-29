@@ -41,6 +41,11 @@ numbers.forEach(n => n.toLocaleString("en-US"));
 
 // Example Tuples
 
+let user: [number, string] = [1, "jane"];
+user[0].toString();
+user[1].toUpperCase()
 
+console.log(user[0], user[1]);
 
+// Example Enums
 
