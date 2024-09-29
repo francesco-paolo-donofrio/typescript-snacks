@@ -33,3 +33,10 @@ function render(document: any) {
 
 render(isPublished);
 
+// Example Arrays
+
+let numbers = [1, 2, 3];
+let numbers2: number[] = [1, 2, 3];
+numbers.forEach(n => n.toLocaleString());
+
+
