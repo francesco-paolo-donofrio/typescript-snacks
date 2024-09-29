@@ -17,3 +17,15 @@ course = "2";
 
 console.log(course);
 
+// Example Built-In-Types
+
+let sales = 12345;
+let course2 = "TypeScript";
+let isPublished = true;
+
+console.log(sales, course2, isPublished);
+
+// Example Any Type
+
+
+
