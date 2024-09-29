@@ -27,5 +27,9 @@ console.log(sales, course2, isPublished);
 
 // Example Any Type
 
+function render(document: any) {
+    console.log(document);
+}
 
+render(isPublished);
 

@@ -12,4 +12,8 @@ let sales = 12345;
 let course2 = "TypeScript";
 let isPublished = true;
 console.log(sales, course2, isPublished);
+function render(document) {
+    console.log(document);
+}
+render(sales);
 //# sourceMappingURL=index.js.map
