@@ -23,4 +23,22 @@ let user = [1, "jane"];
 user[0].toString();
 user[1].toUpperCase();
 console.log(user[0], user[1]);
+var SizeNumber;
+(function (SizeNumber) {
+    SizeNumber[SizeNumber["Small"] = 1] = "Small";
+    SizeNumber[SizeNumber["Medium"] = 2] = "Medium";
+    SizeNumber[SizeNumber["Large"] = 3] = "Large";
+})(SizeNumber || (SizeNumber = {}));
+;
+var SizeString;
+(function (SizeString) {
+    SizeString["Small"] = "s";
+    SizeString["Medium"] = "m";
+    SizeString["Large"] = "l";
+})(SizeString || (SizeString = {}));
+;
+let mySize = SizeNumber.Small;
+let MikeSize = SizeNumber.Medium;
+let GiorgioSize = SizeNumber.Large;
+console.log(mySize, MikeSize, GiorgioSize);
 //# sourceMappingURL=index.js.map

@@ -49,3 +49,16 @@ console.log(user[0], user[1]);
 
 // Example Enums
 
+// const small = 1;
+// const medium = 2;
+// const large = 3;
+
+enum SizeNumber { Small = 1, Medium, Large };
+enum SizeString { Small = "s", Medium = "m", Large = "l" };
+
+let mySize: SizeNumber = SizeNumber.Small;
+let MikeSize: SizeNumber = SizeNumber.Medium;
+let GiorgioSize: SizeNumber = SizeNumber.Large;
+
+console.log(mySize, MikeSize, GiorgioSize);
+
