@@ -15,5 +15,8 @@ console.log(sales, course2, isPublished);
 function render(document) {
     console.log(document);
 }
-render(sales);
+render(isPublished);
+let numbers = [1, 2, 3];
+let numbers2 = [1, 2, 3];
+numbers.forEach(n => n.toLocaleString("en-US"));
 //# sourceMappingURL=index.js.map

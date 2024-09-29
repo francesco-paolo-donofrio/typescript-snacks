@@ -37,6 +37,10 @@ render(isPublished);
 
 let numbers = [1, 2, 3];
 let numbers2: number[] = [1, 2, 3];
-numbers.forEach(n => n.toLocaleString());
+numbers.forEach(n => n.toLocaleString("en-US"));
+
+// Example Tuples
+
+
 
 
