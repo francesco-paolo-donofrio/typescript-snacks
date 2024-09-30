@@ -95,3 +95,15 @@ function calculateTaxMaybeYear(income: number, taxYear?: number): number {
 calculateTaxMaybeYear(100_000);
 calculateTaxMaybeYear(100_000, 2021);
 
+// Example Objects
+
+let employee: {
+    readonly id: number,
+    name: string,
+    retire: (date: Date) => void;
+} = { 
+    id: 1,
+    name: "Josh",
+    retire: (date: Date) => {
+    console.log(date);
+} };
