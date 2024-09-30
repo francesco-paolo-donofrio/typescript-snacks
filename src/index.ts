@@ -163,3 +163,16 @@ let quantity: Quantity = 100;
 type Metric = "cm" | "inch";
 let metric: Metric = "cm";
 
+// Example Nullable Types
+
+function greet(name: string | null | undefined) {
+    if(name) {
+        console.log(name.toUpperCase);
+    } else {
+        console.log("Ciao");
+    }
+}
+
+greet(undefined);
+greet(null);
+greet("Mirchael");
