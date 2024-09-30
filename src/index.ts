@@ -137,7 +137,7 @@ function kgToLbs(weight: number | string): number {
 kgToLbs(10);
 kgToLbs("10kg");
 
-// Intersection Types
+// Example Intersection Types
 
 type Draggable = {
     // Con il void andiamo a dire alla nostra arrow function che non deve restituire nulla
@@ -154,4 +154,12 @@ let textBox: UIWidget = {
     drag: () => {},
     resize: () => {}
 }
+
+// Example Literal Types
+
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+type Metric = "cm" | "inch";
+let metric: Metric = "cm";
 
