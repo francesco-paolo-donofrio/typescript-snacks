@@ -1,9 +1,7 @@
-Excercise n°1 - Token from Codewar
+TypeScript Learning Journey
 
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+I started with an intensive immersion into the basics of TypeScript. I have written and documented the fundamentals of the language and set up the development environment to ensure everything works smoothly.
 
-Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+After covering the basics, I created several examples to explore the various methods and functionalities available in TypeScript. Next, I will tackle challenges from Codewars as practical exercises to reinforce what I’ve learned.
 
-Additionally, if the number is negative, return 0.
-
-Note: If the number is a multiple of both 3 and 5, only count it once.
+Stay tuned for more updates as I progress through this learning journey!
