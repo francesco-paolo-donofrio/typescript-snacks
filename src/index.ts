@@ -123,3 +123,17 @@ let employee2: Employee = {
     console.log(date);
 } };
 
+// Example Unions Types
+
+function kgToLbs(weight: number | string): number {
+    //Narrowing
+    if (typeof weight === 'number'){
+        return weight * 2.3;
+    } else {
+        return parseInt(weight) * 2.3;
+    }
+}
+
+kgToLbs(10);
+kgToLbs("10kg");
+

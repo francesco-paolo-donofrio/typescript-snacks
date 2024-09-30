@@ -69,4 +69,28 @@ function calculateTaxMaybeYear(income, taxYear) {
 }
 calculateTaxMaybeYear(100000);
 calculateTaxMaybeYear(100000, 2021);
+let employee = {
+    id: 1,
+    name: "Josh",
+    retire: (date) => {
+        console.log(date);
+    }
+};
+let employee2 = {
+    id: 2,
+    name: "Mirchael",
+    retire: (date) => {
+        console.log(date);
+    }
+};
+function kgToLbs(weight) {
+    if (typeof weight === 'number') {
+        return weight * 2.3;
+    }
+    else {
+        return parseInt(weight) * 2.3;
+    }
+}
+kgToLbs(10);
+kgToLbs("10kg");
 //# sourceMappingURL=index.js.map
