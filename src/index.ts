@@ -176,3 +176,34 @@ function greet(name: string | null | undefined) {
 greet(undefined);
 greet(null);
 greet("Mirchael");
+
+// Example Optional Chaining
+
+
+type Customer = {
+    name: string,
+    birthday: Date
+};
+
+function getCustomer(id:number): Customer | null | undefined {
+    return id === 0 ? null : { name: "Mirchael", birthday: new Date() };
+}
+
+let customer = getCustomer(1);
+// We can write it like this
+// if (customer !== null && customer !== undefined) {
+//     console.log(customer.name);
+// }
+
+// We can write it like this with the "Optional Property Chaining Operator
+
+console.log(customer?.name);
+
+// Optional element access operator
+
+// customers?[0];
+
+// Optional call operator
+
+// let log: any = null;
+// log?.("a");
