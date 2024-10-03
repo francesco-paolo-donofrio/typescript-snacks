@@ -1,4 +1,5 @@
-"use strict";
+// Snack 1
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 function isEvenOrOdd(number) {
     if (number % 2 === 0) {
         return "Even";
@@ -10,4 +11,3 @@ function isEvenOrOdd(number) {
 ;
 isEvenOrOdd(2);
 isEvenOrOdd(3);
-//# sourceMappingURL=index.js.map

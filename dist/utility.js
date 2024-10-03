@@ -115,9 +115,8 @@ function getCustomer(id) {
 }
 let customer = getCustomer(1);
 console.log(customer === null || customer === void 0 ? void 0 : customer.name);
-
 function giorgioVaAlMare() {
     console.log("Giorgio va al mare");
 }
-
-giorgioVaAlMare();
+;
+//# sourceMappingURL=utility.js.map
