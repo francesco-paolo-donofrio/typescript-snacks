@@ -33,4 +33,13 @@ function makeMoney(salary, bonus) {
     }
 }
 makeMoney(2000, true);
+makeMoney(5000, false);
+function convertName(name) {
+    const nameParts = name.split(' ');
+    console.log(nameParts);
+    const initials = nameParts[0][0].toUpperCase() + '.' + nameParts[1][0].toUpperCase();
+    console.log(initials);
+    return initials;
+}
+console.log(convertName("john doe"));
 //# sourceMappingURL=index.js.map

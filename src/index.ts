@@ -56,3 +56,20 @@ function makeMoney(salary : number, bonus : boolean) {
 
 makeMoney(2000, true);
 makeMoney(5000, false);
+
+// Snack 4
+
+// Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+// The output should be two capital letters with a dot separating them.
+
+function convertName(name: string): string {
+    const nameParts = name.split(' ');
+    console.log(nameParts);
+    const initials = nameParts[0][0].toUpperCase() + '.' + nameParts[1][0].toUpperCase() + '.';
+    console.log(initials);
+    return initials;
+}
+
+console.log(convertName("john doe")); 
+
