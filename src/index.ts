@@ -37,3 +37,22 @@ function makeNegative(number : number) : number {
 makeNegative(1);
 makeNegative(-5);
 makeNegative(0);
+
+// Snack 3
+
+// It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
+
+// Build a function that takes in two arguments (salary, bonus). Salary will be an integer, and bonus a boolean.
+
+// If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
+
+function makeMoney(salary : number, bonus : boolean) {
+    if (bonus === true){
+        return salary * 10 + "$"
+    } else {
+        return salary + "$";
+    }
+}
+
+makeMoney(2000, true);
+makeMoney(5000, false);

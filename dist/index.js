@@ -24,4 +24,13 @@ function makeNegative(number) {
 makeNegative(1);
 makeNegative(-5);
 makeNegative(0);
+function makeMoney(salary, bonus) {
+    if (bonus === true) {
+        return salary * 10 + "$";
+    }
+    else {
+        return salary + "$";
+    }
+}
+makeMoney(2000, true);
 //# sourceMappingURL=index.js.map
