@@ -37,9 +37,19 @@ makeMoney(5000, false);
 function convertName(name) {
     const nameParts = name.split(' ');
     console.log(nameParts);
-    const initials = nameParts[0][0].toUpperCase() + '.' + nameParts[1][0].toUpperCase();
+    const initials = nameParts[0][0].toUpperCase() + '.' + nameParts[1][0].toUpperCase() + '.';
     console.log(initials);
     return initials;
 }
 console.log(convertName("john doe"));
+function countSheep(num) {
+    let result = "";
+    for (let i = 1; i <= num; i++) {
+        result += `${i} sheep...`;
+    }
+    return result;
+}
+countSheep(3);
+countSheep(1);
+countSheep(7);
 //# sourceMappingURL=index.js.map
