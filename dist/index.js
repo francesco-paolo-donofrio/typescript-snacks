@@ -36,9 +36,7 @@ makeMoney(2000, true);
 makeMoney(5000, false);
 function convertName(name) {
     const nameParts = name.split(' ');
-    console.log(nameParts);
     const initials = nameParts[0][0].toUpperCase() + '.' + nameParts[1][0].toUpperCase() + '.';
-    console.log(initials);
     return initials;
 }
 console.log(convertName("john doe"));
@@ -52,4 +50,25 @@ function countSheep(num) {
 countSheep(3);
 countSheep(1);
 countSheep(7);
+function calcType(a, b, result) {
+    if (a + b === result) {
+        return "addition";
+    }
+    else if (a - b === result) {
+        return "subtraction";
+    }
+    else if (a * b === result) {
+        return "moltiplication";
+    }
+    else if (a / b === result) {
+        return "division";
+    }
+    else {
+        return "unknown operation";
+    }
+}
+calcType(2, 3, 5);
+calcType(6, 1, 5);
+calcType(10, 10, 100);
+calcType(100, 5, 20);
 //# sourceMappingURL=index.js.map

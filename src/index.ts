@@ -65,9 +65,7 @@ makeMoney(5000, false);
 
 function convertName(name: string): string {
     const nameParts = name.split(' ');
-    console.log(nameParts);
     const initials = nameParts[0][0].toUpperCase() + '.' + nameParts[1][0].toUpperCase() + '.';
-    console.log(initials);
     return initials;
 }
 
@@ -89,3 +87,30 @@ function countSheep(num: number): string {
 countSheep(3);
 countSheep(1);
 countSheep(7);
+
+// Snack 6
+
+// You have to create a function calcType, which receives 3 arguments: 2 numbers, and the result of an unknown operation performed on them (also a number).
+
+// Based on those 3 values you have to return a string, that describes which operation was used to get the given result.
+
+// The possible return strings are: "addition", "subtraction", "multiplication", "division".
+
+function calcType(a : number, b : number, result : number): string{
+    if (a + b === result) {
+        return "addition";
+    } else if (a - b === result) {
+        return "subtraction";
+    } else if (a * b === result) {
+        return "moltiplication";
+    } else if (a / b === result) {
+        return "division";
+    } else {
+        return "unknown operation";
+    }
+}
+
+calcType(2, 3, 5);
+calcType(6, 1, 5);
+calcType(10, 10, 100);
+calcType(100, 5, 20);
