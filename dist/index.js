@@ -71,4 +71,11 @@ calcType(2, 3, 5);
 calcType(6, 1, 5);
 calcType(10, 10, 100);
 calcType(100, 5, 20);
+function highestLowest(numberString) {
+    const stringToArray = numberString.split;
+    console.log(stringToArray);
+    const stringToNumber = +stringToArray;
+    console.log(stringToNumber);
+}
+highestLowest("1 2 3 4 5");
 //# sourceMappingURL=index.js.map
