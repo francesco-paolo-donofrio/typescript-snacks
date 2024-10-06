@@ -71,11 +71,17 @@ calcType(2, 3, 5);
 calcType(6, 1, 5);
 calcType(10, 10, 100);
 calcType(100, 5, 20);
-function highestLowest(numberString) {
-    const stringToArray = numberString.split;
-    console.log(stringToArray);
-    const stringToNumber = +stringToArray;
-    console.log(stringToNumber);
+function highAndLow(numbers) {
+    const numArray = numbers.split(" ").map(Number);
+    const max = Math.max(...numArray);
+    const min = Math.min(...numArray);
+    return `${max} ${min}`;
 }
-highestLowest("1 2 3 4 5");
+console.log(highAndLow("1 2 3 4 5"));
+console.log(highAndLow("1 2 -3 4 5"));
+console.log(highAndLow("1 9 3 4 -5"));
+function returnEven(myArray) {
+    return myArray.filter(num => num % 2 === 0);
+}
+returnEven([1, 3, 4, 2, 5, 6]);
 //# sourceMappingURL=index.js.map

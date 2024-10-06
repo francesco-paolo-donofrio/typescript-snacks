@@ -139,3 +139,15 @@ function highAndLow(numbers: string): string {
   console.log(highAndLow("1 2 3 4 5"));  
   console.log(highAndLow("1 2 -3 4 5"));  
   console.log(highAndLow("1 9 3 4 -5"));  
+
+//   Snack 8
+
+// Write a small function that returns the values of an array that are not odd.
+
+// All values in the array will be integers. Return the good values in the order they are given.
+
+function returnEven(myArray: number[]): number[]{
+    return myArray.filter(num => num % 2 === 0);
+}
+
+returnEven([1, 3, 4, 2, 5, 6]);
