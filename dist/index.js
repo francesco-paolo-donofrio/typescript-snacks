@@ -95,4 +95,10 @@ function divisorNumber(num) {
 }
 divisorNumber(12);
 divisorNumber(30);
+function vaporwaveSentence(str) {
+    const chars = str.replace(/\s+/g, '').toUpperCase().split('');
+    return chars.join('  ');
+}
+const phrase = "vamonos a bailar";
+vaporwaveSentence(phrase);
 //# sourceMappingURL=index.js.map
