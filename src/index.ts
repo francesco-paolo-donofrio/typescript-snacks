@@ -151,3 +151,22 @@ function returnEven(myArray: number[]): number[]{
 }
 
 returnEven([1, 3, 4, 2, 5, 6]);
+
+// Snack 9
+
+// Count the number of divisors of a positive integer n.
+
+// Random tests go up to n = 500000, but fixed tests go higher.
+
+function countDivisors(num: number): number {
+    let count = 0;
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+countDivisors(12);
+countDivisors(30);

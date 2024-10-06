@@ -84,4 +84,15 @@ function returnEven(myArray) {
     return myArray.filter(num => num % 2 === 0);
 }
 returnEven([1, 3, 4, 2, 5, 6]);
+function countDivisors(num) {
+    let count = 0;
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            count++;
+        }
+    }
+    return count;
+}
+countDivisors(12);
+countDivisors(30);
 //# sourceMappingURL=index.js.map
