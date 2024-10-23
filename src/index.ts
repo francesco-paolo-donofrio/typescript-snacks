@@ -1,7 +1,7 @@
 // Snack 1
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 
-function isEvenOrOdd (number : number) : string {
+function isEvenOrOdd(number: number): string {
     if (number % 2 === 0) {
         return "Even";
     } else {
@@ -24,10 +24,10 @@ isEvenOrOdd(3);
 // The number can be negative already, in which case no change is required.
 // Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense.
 
-function makeNegative(number : number) : number {
+function makeNegative(number: number): number {
     if (number < 0) {
         return number;
-    } else if (number > 0){
+    } else if (number > 0) {
         return -number
     } else {
         return 0;
@@ -46,8 +46,8 @@ makeNegative(0);
 
 // If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
 
-function makeMoney(salary : number, bonus : boolean) {
-    if (bonus === true){
+function makeMoney(salary: number, bonus: boolean) {
+    if (bonus === true) {
         return salary * 10 + "$"
     } else {
         return salary + "$";
@@ -69,7 +69,7 @@ function convertName(name: string): string {
     return initials;
 }
 
-console.log(convertName("john doe")); 
+console.log(convertName("john doe"));
 
 // Snack 5
 
@@ -96,7 +96,7 @@ countSheep(7);
 
 // The possible return strings are: "addition", "subtraction", "multiplication", "division".
 
-function calcType(a : number, b : number, result : number): string{
+function calcType(a: number, b: number, result: number): string {
     if (a + b === result) {
         return "addition";
     } else if (a - b === result) {
@@ -134,11 +134,11 @@ function highAndLow(numbers: string): string {
     const max = Math.max(...numArray);
     const min = Math.min(...numArray);
     return `${max} ${min}`;
-  }
+}
 
-  console.log(highAndLow("1 2 3 4 5"));  
-  console.log(highAndLow("1 2 -3 4 5"));  
-  console.log(highAndLow("1 9 3 4 -5"));  
+console.log(highAndLow("1 2 3 4 5"));
+console.log(highAndLow("1 2 -3 4 5"));
+console.log(highAndLow("1 9 3 4 -5"));
 
 //   Snack 8
 
@@ -146,7 +146,7 @@ function highAndLow(numbers: string): string {
 
 // All values in the array will be integers. Return the good values in the order they are given.
 
-function returnEven(myArray: number[]): number[]{
+function returnEven(myArray: number[]): number[] {
     return myArray.filter(num => num % 2 === 0);
 }
 
@@ -158,10 +158,10 @@ returnEven([1, 3, 4, 2, 5, 6]);
 
 // Random tests go up to n = 500000, but fixed tests go higher.
 
-function divisorNumber(num : number): number{
+function divisorNumber(num: number): number {
     let count = 0;
-    for (let i = 1; i <= num; i++){
-        if (num % i === 0){
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
             count++;
         }
     }
@@ -183,7 +183,7 @@ divisorNumber(30);
 // "Lets go to the movies"       -->  "L  E  T  S  G  O  T  O  T  H  E  M  O  V  I  E  S"
 // "Why isn't my code working?"  -->  "W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?"
 
-function vaporwaveSentence(str : string): string{
+function vaporwaveSentence(str: string): string {
     const chars = str.replace(/\s+/g, '').toUpperCase().split('');
     return chars.join('  ')
 }
@@ -209,3 +209,44 @@ function getChar(c: number): string {
 getChar(30);
 getChar(94);
 getChar(48);
+
+// Snack 12
+
+// Given a string "abc" and assuming that each letter in the string has a value equal to its position in the alphabet, our string will have a value of 1 + 2 + 3 = 6. This means that: a = 1, b = 2, c = 3 ... z = 26.
+
+// You will be given a list of strings and your task will be to return the values of the strings as explained above multiplied by the position of that string in the list. For our purpose, position begins with 1.
+
+// ["abc", "abc abc"] should return [6, 24] because of [ 6 * 1, 12 * 2 ]. Note how spaces are ignored.
+
+// "abc" has a value of 6, while "abc abc" has a value of 12. Now, the value at position 1 is multiplied by 1 while the value at position 2 is multiplied by 2.
+
+// Input will only contain lowercase characters and spaces.
+
+function valuesOfStrings(list: string[]): number[] {
+    let result: number[] = [];  // Array dove salveremo i risultati
+
+    // Iteriamo su ogni stringa nella lista
+    for (let i = 0; i < list.length; i++) {
+        let str = list[i];  // La stringa corrente
+        let sum = 0;  // Variabile per salvare la somma dei valori delle lettere
+
+        // Iteriamo su ogni carattere della stringa
+        for (let j = 0; j < str.length; j++) {
+            let char = str[j];  // Il carattere corrente
+
+            // Se il carattere è una lettera (ignora gli spazi)
+            if (char !== ' ') {
+                let charValue = char.charCodeAt(0) - 96;  // Valore del carattere (a=1, b=2, ecc.)
+                sum += charValue;  // Aggiungiamo il valore alla somma
+            }
+        }
+
+        // Moltiplichiamo la somma per la posizione della stringa (i + 1)
+        let finalValue = sum * (i + 1);
+        result.push(finalValue);  // Aggiungiamo il risultato nell'array
+    }
+
+    return result;  // Ritorniamo l'array dei risultati
+}
+
+valuesOfStrings(["abc", "abc abc"]);
