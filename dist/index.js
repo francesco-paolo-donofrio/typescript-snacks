@@ -105,6 +105,25 @@ function getChar(c) {
     return String.fromCharCode(c);
 }
 getChar(30);
-getChar(24);
+getChar(94);
 getChar(48);
+function valuesOfStrings(list) {
+    let result = [];
+    for (let i = 0; i < list.length; i++) {
+        let str = list[i];
+        let sum = 0;
+        for (let j = 0; j < str.length; j++) {
+            let char = str[j];
+            if (char !== ' ') {
+                let charValue = char.charCodeAt(0) - 96;
+                sum += charValue;
+            }
+        }
+        let finalValue = sum * (i + 1);
+        result.push(finalValue);
+    }
+    return result;
+}
+valuesOfStrings(["abc", "abc abc"]);
+valuesOfStrings(["abc", "abc abc", "abc abc abc"]);
 //# sourceMappingURL=index.js.map

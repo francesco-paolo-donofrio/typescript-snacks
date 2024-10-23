@@ -250,3 +250,4 @@ function valuesOfStrings(list: string[]): number[] {
 }
 
 valuesOfStrings(["abc", "abc abc"]);
+valuesOfStrings(["abc", "abc abc", "abc abc abc"]);
