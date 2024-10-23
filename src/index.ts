@@ -207,5 +207,5 @@ function getChar(c: number): string {
 }
 
 getChar(30);
-getChar(24);
+getChar(94);
 getChar(48);
