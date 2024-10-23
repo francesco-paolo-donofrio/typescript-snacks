@@ -101,4 +101,10 @@ function vaporwaveSentence(str) {
 }
 const phrase = "vamonos a bailar";
 vaporwaveSentence(phrase);
+function getChar(c) {
+    return String.fromCharCode(c);
+}
+getChar(30);
+getChar(24);
+getChar(48);
 //# sourceMappingURL=index.js.map

@@ -190,3 +190,22 @@ function vaporwaveSentence(str : string): string{
 
 const phrase: string = "vamonos a bailar";
 vaporwaveSentence(phrase);
+
+// Snack 11
+
+// Write a function which takes a number and returns the corresponding ASCII char for that value.
+
+// Example
+
+// 65 ---> "A"
+// 97 ---> "a"
+// 48 ---> "0"
+
+
+function getChar(c: number): string {
+    return String.fromCharCode(c);
+}
+
+getChar(30);
+getChar(24);
+getChar(48);
