@@ -251,3 +251,21 @@ function valuesOfStrings(list: string[]): number[] {
 
 valuesOfStrings(["abc", "abc abc"]);
 valuesOfStrings(["abc", "abc abc", "abc abc abc"]);
+
+// Snack 13
+
+// Build a function that returns an array of integers from n to 1 where n>0.
+
+// Example : n=5 --> [5,4,3,2,1]
+
+function reverseSeq(n: number): number[] {
+    let result: number[] = [];
+    for (let i = n; i > 0; i--) {
+        result.push(i);
+    }
+    return result;
+}
+
+reverseSeq(5);
+reverseSeq(3);
+reverseSeq(1);

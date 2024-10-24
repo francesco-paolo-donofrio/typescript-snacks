@@ -126,4 +126,14 @@ function valuesOfStrings(list) {
 }
 valuesOfStrings(["abc", "abc abc"]);
 valuesOfStrings(["abc", "abc abc", "abc abc abc"]);
+function reverseSeq(n) {
+    let result = [];
+    for (let i = n; i > 0; i--) {
+        result.push(i);
+    }
+    return result;
+}
+reverseSeq(5);
+reverseSeq(3);
+reverseSeq(1);
 //# sourceMappingURL=index.js.map
