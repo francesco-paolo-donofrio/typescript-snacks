@@ -329,3 +329,20 @@ const result4 = playingBanjo(name4);
 if (appElement){
     appElement.innerHTML = `<p>${result1}</p> & <p>${result2}</p> & <p>${result3}</p> & <p>${result4}</p>`;
 }
+
+
+// Snack 16
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+function moltiplicationNumber(number : number) : number{
+    if (number % 2 === 0){
+        return number * 8
+    } else {
+        return number * 9
+    }
+}
+
+if (appElement){
+    appElement.innerHTML = `<p>${moltiplicationNumber(8)} & ${moltiplicationNumber(9)}`;
+}
