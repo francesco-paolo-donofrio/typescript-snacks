@@ -180,4 +180,9 @@ function moltiplicationNumber(number) {
 if (appElement) {
     appElement.innerHTML = `<p>${moltiplicationNumber(8)} & ${moltiplicationNumber(9)}`;
 }
+function fixTheMeerkat(arr) {
+    return arr.reverse();
+}
+console.log(fixTheMeerkat([1, 2, 3]));
+console.log(fixTheMeerkat(["Meerkat", "Meerkat", "Meerkat"]));
 //# sourceMappingURL=index.js.map
