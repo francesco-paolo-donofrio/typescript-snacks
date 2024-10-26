@@ -282,9 +282,50 @@ reverseSeq(1);
 
 // Note: for this kata y isn't considered a vowel.
 
-function removeVowels (input : string) : string {
+function removeVowels(input: string): string {
     return input.replace(/[aeiouAEIOU]/g, '');
 };
 
-const myString : string = "This website is for losers LOL!";
+const myString: string = "This website is for losers LOL!";
 removeVowels("This website is for losers LOL!");
+
+const appElement = document.getElementById("app");
+if (appElement){
+    appElement.innerHTML = `<h1>Typescript-snacks</h1><br><p>The result of removeVowels is: ${removeVowels(myString)}</p>`;
+} else {
+    console.error("Elemento con id 'app' non trovato nel DOM");
+}
+
+console.log(appElement);
+
+// Snack 15
+// Create a function which answers the question "Are you playing banjo?".
+// If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+// The function takes a name as its only argument, and returns one of the following strings:
+
+// name + " plays banjo" 
+// name + " does not play banjo"
+// Names given are always valid strings.
+
+function playingBanjo(name: string): string {
+    if (name.charAt(0).toLowerCase() === "r"){
+        return `${name} plays banjo`;
+    } else {
+        return `${name} does not play banjo`;
+    }
+}
+
+const name1 = "Francesco";
+const name2 = "roberto";
+const name3 = "Matteo";
+const name4 = "Rapunzel";
+const result1 = playingBanjo(name1);
+const result2 = playingBanjo(name2);
+const result3 = playingBanjo(name3);
+const result4 = playingBanjo(name4);
+
+
+if (appElement){
+    appElement.innerHTML = `<p>${result1}</p> & <p>${result2}</p> & <p>${result3}</p> & <p>${result4}</p>`;
+}

@@ -142,8 +142,31 @@ function removeVowels(input) {
 ;
 const myString = "This website is for losers LOL!";
 removeVowels("This website is for losers LOL!");
-
-
-
-document.getElementById("app").innerHTML = `<h1>Typescript-snacks</h1><br><p>The result of removeVowels is: ${removeVowels(myString)}</p>`;
+const appElement = document.getElementById("app");
+if (appElement) {
+    appElement.innerHTML = `<h1>Typescript-snacks</h1><br><p>The result of removeVowels is: ${removeVowels(myString)}</p>`;
+}
+else {
+    console.error("Elemento con id 'app' non trovato nel DOM");
+}
+console.log(appElement);
+function playingBanjo(name) {
+    if (name.charAt(0).toLowerCase() === "r") {
+        return `${name} plays banjo`;
+    }
+    else {
+        return `${name} does not play banjo`;
+    }
+}
+const name1 = "Francesco";
+const name2 = "roberto";
+const name3 = "Matteo";
+const name4 = "Rapunzel";
+const result1 = playingBanjo(name1);
+const result2 = playingBanjo(name2);
+const result3 = playingBanjo(name3);
+const result4 = playingBanjo(name4);
+if (appElement) {
+    appElement.innerHTML = `<p>${result1}</p> & <p>${result2}</p> & <p>${result3}</p> & <p>${result4}</p>`;
+}
 //# sourceMappingURL=index.js.map
