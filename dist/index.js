@@ -142,4 +142,8 @@ function removeVowels(input) {
 ;
 const myString = "This website is for losers LOL!";
 removeVowels("This website is for losers LOL!");
+
+
+
+document.getElementById("app").innerHTML = `<h1>Typescript-snacks</h1><br><p>The result of removeVowels is: ${removeVowels(myString)}</p>`;
 //# sourceMappingURL=index.js.map
