@@ -136,4 +136,10 @@ function reverseSeq(n) {
 reverseSeq(5);
 reverseSeq(3);
 reverseSeq(1);
+function removeVowels(input) {
+    return input.replace(/[aeiouAEIOU]/g, '');
+}
+;
+const myString = "This website is for losers LOL!";
+removeVowels("This website is for losers LOL!");
 //# sourceMappingURL=index.js.map
