@@ -404,3 +404,38 @@ function solve(str: string): string {
   solve(myString1);
   solve(myString2);
   solve(myString3);
+
+//   Snack 19
+
+// Write a function to split a string and convert it into an array of words.
+
+// Examples (Input ==> Output):
+// "Robin Singh" ==> ["Robin", "Singh"]
+
+// "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+
+function splitWord(input : string): string[]{
+     const splittedString = input.split(" ");
+    console.log(splittedString);
+    return splittedString;
+}
+
+splitWord("I love america and cheese burgers");
+
+// Snack 20
+
+// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+
+// Examples (Input -> Output):
+// * "String"      -> "SSttrriinngg"
+// * "Hello World" -> "HHeelllloo  WWoorrlldd"
+// * "1234!_ "     -> "11223344!!__  "
+// Good Luck!
+
+function repeatString(string : string): string{
+    let result = "";
+    for (const char of string) {
+        result += char + char;
+    }
+}
+

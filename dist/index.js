@@ -198,4 +198,9 @@ const myString3 = "ciaoo CIAO";
 solve(myString1);
 solve(myString2);
 solve(myString3);
+function splitWord(input) {
+    const splittedString = input.split(" ");
+    console.log(splittedString);
+}
+splitWord("I love america and cheese burgers");
 //# sourceMappingURL=index.js.map
