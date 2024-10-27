@@ -201,6 +201,16 @@ solve(myString3);
 function splitWord(input) {
     const splittedString = input.split(" ");
     console.log(splittedString);
+    return splittedString;
 }
 splitWord("I love america and cheese burgers");
+function repeatString(string) {
+    let result = "";
+    for (const char of string) {
+        result += char + char;
+    }
+    console.log(result);
+    return result;
+}
+repeatString("Ciao Bello");
 //# sourceMappingURL=index.js.map

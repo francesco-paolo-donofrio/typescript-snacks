@@ -437,5 +437,8 @@ function repeatString(string : string): string{
     for (const char of string) {
         result += char + char;
     }
+    console.log(result);
+    return result;
 }
 
+repeatString("Ciao Bello");
