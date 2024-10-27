@@ -166,9 +166,6 @@ const result1 = playingBanjo(name1);
 const result2 = playingBanjo(name2);
 const result3 = playingBanjo(name3);
 const result4 = playingBanjo(name4);
-if (appElement) {
-    appElement.innerHTML = `<p>${result1}</p> & <p>${result2}</p> & <p>${result3}</p> & <p>${result4}</p>`;
-}
 function moltiplicationNumber(number) {
     if (number % 2 === 0) {
         return number * 8;
@@ -177,12 +174,33 @@ function moltiplicationNumber(number) {
         return number * 9;
     }
 }
-if (appElement) {
-    appElement.innerHTML = `<p>${moltiplicationNumber(8)} & ${moltiplicationNumber(9)}`;
-}
 function fixTheMeerkat(arr) {
     return arr.reverse();
 }
 console.log(fixTheMeerkat([1, 2, 3]));
 console.log(fixTheMeerkat(["Meerkat", "Meerkat", "Meerkat"]));
+function solve(str) {
+    let upperCount = 0;
+    let lowerCount = 0;
+    for (const char of str) {
+        if (char === char.toUpperCase()) {
+            upperCount++;
+        }
+        else {
+            lowerCount++;
+        }
+    }
+    if (upperCount > lowerCount) {
+        return str.toUpperCase();
+    }
+    else {
+        return str.toLowerCase();
+    }
+}
+let myString1 = "CiAO A TUTTI io SONO fRA";
+let myString2 = "ciao a tiuti IO SONO il tuo AMICO";
+let myString3 = "ciao SONO IL re";
+solve(myString1);
+solve(myString2);
+solve(myString3);
 //# sourceMappingURL=index.js.map

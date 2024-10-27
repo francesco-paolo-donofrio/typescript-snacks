@@ -326,9 +326,9 @@ const result3 = playingBanjo(name3);
 const result4 = playingBanjo(name4);
 
 
-if (appElement){
-    appElement.innerHTML = `<p>${result1}</p> & <p>${result2}</p> & <p>${result3}</p> & <p>${result4}</p>`;
-}
+// if (appElement){
+//     appElement.innerHTML = `<p>${result1}</p> & <p>${result2}</p> & <p>${result3}</p> & <p>${result4}</p>`;
+// }
 
 
 // Snack 16
@@ -343,9 +343,9 @@ function moltiplicationNumber(number : number) : number{
     }
 }
 
-if (appElement){
-    appElement.innerHTML = `<p>${moltiplicationNumber(8)} & ${moltiplicationNumber(9)}`;
-}
+// if (appElement){
+//     appElement.innerHTML = `<p>${moltiplicationNumber(8)} & ${moltiplicationNumber(9)}`;
+// }
 
 // Snack 17
 
@@ -363,3 +363,42 @@ function fixTheMeerkat(arr: any[]): number[] {
 
 console.log(fixTheMeerkat([1, 2, 3]));
 console.log(fixTheMeerkat(["Meerkat", "Meerkat", "Meerkat"]));
+
+// Snack 18
+
+// In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
+
+// make as few changes as possible.
+// if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+// For example:
+
+// solve("coDe") = "code". Lowercase characters > uppercase. Change only the "D" to lowercase.
+// solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
+// solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
+// More examples in test cases. Good luck!
+
+function solve(str: string): string {
+    let upperCount = 0;
+    let lowerCount = 0;
+  
+    for (const char of str) {
+      if (char === char.toUpperCase()) {
+        upperCount++;
+      } else {
+        lowerCount++;
+      }
+    }
+
+    if (upperCount > lowerCount) {
+      return str.toUpperCase();
+    } else {
+      return str.toLowerCase();
+    }
+  }
+
+  let myString1 = "CiAO A TUTTI io SONO fRA";
+  let myString2 = "ciao a tiuti IO SONO il tuo AMICO"
+  let myString3 = "ciao SONO IL re"
+  solve(myString1);
+  solve(myString2);
+  solve(myString3);
