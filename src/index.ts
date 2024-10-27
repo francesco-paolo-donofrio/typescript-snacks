@@ -289,14 +289,14 @@ function removeVowels(input: string): string {
 const myString: string = "This website is for losers LOL!";
 removeVowels("This website is for losers LOL!");
 
-const appElement = document.getElementById("app");
-if (appElement){
-    appElement.innerHTML = `<h1>Typescript-snacks</h1><br><p>The result of removeVowels is: ${removeVowels(myString)}</p>`;
-} else {
-    console.error("Elemento con id 'app' non trovato nel DOM");
-}
+// const appElement = document.getElementById("app");
+// if (appElement){
+//     appElement.innerHTML = `<h1>Typescript-snacks</h1><br><p>The result of removeVowels is: ${removeVowels(myString)}</p>`;
+// } else {
+//     console.error("Elemento con id 'app' non trovato nel DOM");
+// }
 
-console.log(appElement);
+// console.log(appElement);
 
 // Snack 15
 // Create a function which answers the question "Are you playing banjo?".
@@ -391,14 +391,16 @@ function solve(str: string): string {
 
     if (upperCount > lowerCount) {
       return str.toUpperCase();
-    } else {
+    } else if (upperCount < lowerCount){
       return str.toLowerCase();
+    } else {
+        return str.toLowerCase();
     }
   }
 
-  let myString1 = "CiAO A TUTTI io SONO fRA";
-  let myString2 = "ciao a tiuti IO SONO il tuo AMICO"
-  let myString3 = "ciao SONO IL re"
+  const myString1 = "CiAO A TUTTI io SONO fRA";
+  const myString2 = "ciao a tiuti IO sono il tuo amico"
+  const myString3 = "ciaoo CIAO"
   solve(myString1);
   solve(myString2);
   solve(myString3);

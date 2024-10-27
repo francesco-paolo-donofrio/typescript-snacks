@@ -142,14 +142,6 @@ function removeVowels(input) {
 ;
 const myString = "This website is for losers LOL!";
 removeVowels("This website is for losers LOL!");
-const appElement = document.getElementById("app");
-if (appElement) {
-    appElement.innerHTML = `<h1>Typescript-snacks</h1><br><p>The result of removeVowels is: ${removeVowels(myString)}</p>`;
-}
-else {
-    console.error("Elemento con id 'app' non trovato nel DOM");
-}
-console.log(appElement);
 function playingBanjo(name) {
     if (name.charAt(0).toLowerCase() === "r") {
         return `${name} plays banjo`;
@@ -193,13 +185,16 @@ function solve(str) {
     if (upperCount > lowerCount) {
         return str.toUpperCase();
     }
+    else if (upperCount < lowerCount) {
+        return str.toLowerCase();
+    }
     else {
         return str.toLowerCase();
     }
 }
-let myString1 = "CiAO A TUTTI io SONO fRA";
-let myString2 = "ciao a tiuti IO SONO il tuo AMICO";
-let myString3 = "ciao SONO IL re";
+const myString1 = "CiAO A TUTTI io SONO fRA";
+const myString2 = "ciao a tiuti IO sono il tuo amico";
+const myString3 = "ciaoo CIAO";
 solve(myString1);
 solve(myString2);
 solve(myString3);
