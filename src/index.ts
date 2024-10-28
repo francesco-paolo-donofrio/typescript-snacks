@@ -442,3 +442,24 @@ function repeatString(string : string): string{
 }
 
 repeatString("Ciao Bello");
+
+// Snack 21
+
+// When provided with a letter, return its position in the alphabet.
+
+// Input :: "a"
+
+// Output :: "Position of alphabet: 1"
+
+// Note: Only lowercased English letters are tested
+
+function position(letter: string): number | string {
+    // Verifichiamo se `letter` è una lettera minuscola compresa tra 'a' e 'z'
+    if (/[a-z]/.test(letter)) {
+        const result = letter.charCodeAt(0) - 96;
+        return result;
+    } else {
+        // Messaggio di errore se non è una lettera minuscola valida
+        return "Please insert a valid lowercase letter";
+    }
+}

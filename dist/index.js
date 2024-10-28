@@ -213,4 +213,13 @@ function repeatString(string) {
     return result;
 }
 repeatString("Ciao Bello");
+function position(letter) {
+    if (/[a-z]/.test(letter)) {
+        const result = letter.charCodeAt(0) - 96;
+        return result;
+    }
+    else {
+        return "Please insert a valid lowercase letter";
+    }
+}
 //# sourceMappingURL=index.js.map
