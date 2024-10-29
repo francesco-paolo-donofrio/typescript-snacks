@@ -242,6 +242,7 @@ ageForDrink(17);
 ageForDrink(18);
 ageForDrink(20);
 ageForDrink(30);
+<<<<<<< HEAD
 function unluckyDays(year) {
     let count = 0;
     for (let month = 0; month < 12; month++) {
@@ -255,4 +256,6 @@ function unluckyDays(year) {
 unluckyDays(2015);
 unluckyDays(1986);
 unluckyDays(2024);
+=======
+>>>>>>> cc0a722 (Snack 21 - Drink about)
 //# sourceMappingURL=index.js.map
