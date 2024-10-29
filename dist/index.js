@@ -222,4 +222,24 @@ function position(letter) {
         return "Please insert a valid lowercase letter";
     }
 }
+function ageForDrink(num) {
+    if (num <= 14) {
+        return `${num} drink toddy`;
+    }
+    else if (num < 18) {
+        return `${num} drink coke`;
+    }
+    else if (num < 21) {
+        return `${num} drink beer`;
+    }
+    else if (num >= 21) {
+        return `${num} drink whisky`;
+    }
+    return undefined;
+}
+ageForDrink(13);
+ageForDrink(17);
+ageForDrink(18);
+ageForDrink(20);
+ageForDrink(30);
 //# sourceMappingURL=index.js.map

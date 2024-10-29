@@ -463,3 +463,45 @@ function position(letter: string): number | string {
         return "Please insert a valid lowercase letter";
     }
 }
+
+// Snack 22
+
+// Kids drink toddy.
+// Teens drink coke.
+// Young adults drink beer.
+// Adults drink whisky.
+// Make a function that receive age, and return what they drink.
+
+// Rules:
+
+// Children under 14 old.
+// Teens under 18 old.
+// Young under 21 old.
+// Adults have 21 or more.
+// Examples: (Input --> Output)
+
+// 13 --> "drink toddy"
+// 17 --> "drink coke"
+// 18 --> "drink beer"
+// 20 --> "drink beer"
+// 30 --> "drink whisky"
+
+function ageForDrink(num : number): string|undefined{
+    if (num <= 14){
+        return `${num} drink toddy`
+    } else if (num < 18){
+        return `${num} drink coke`
+    } else if (num < 21){
+        return `${num} drink beer`
+    } else if(num >= 21){
+         return `${num} drink whisky`
+    }
+    return undefined;
+}
+
+ageForDrink(13);
+ageForDrink(17);
+ageForDrink(18);
+ageForDrink(20);
+ageForDrink(30);
+
