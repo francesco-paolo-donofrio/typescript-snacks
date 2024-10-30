@@ -505,10 +505,9 @@ ageForDrink(18);
 ageForDrink(20);
 ageForDrink(30);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 26bd1ca (Snack 23 - Unlucky Days)
+
+
+
 // Snack 23
 
 // Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
