@@ -242,4 +242,17 @@ ageForDrink(17);
 ageForDrink(18);
 ageForDrink(20);
 ageForDrink(30);
+function unluckyDays(year) {
+    let count = 0;
+    for (let month = 0; month < 12; month++) {
+        const date = new Date(year, month, 13);
+        if (date.getDay() === 5) {
+            count++;
+        }
+    }
+    return count;
+}
+unluckyDays(2015);
+unluckyDays(1986);
+unluckyDays(2024);
 //# sourceMappingURL=index.js.map

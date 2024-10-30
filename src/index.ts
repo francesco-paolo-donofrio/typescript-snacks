@@ -505,3 +505,38 @@ ageForDrink(18);
 ageForDrink(20);
 ageForDrink(30);
 
+// Snack 23
+
+// Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+
+// Find the number of Friday 13th in the given year.
+
+// Input: Year in Gregorian calendar as integer.
+
+// Output: Number of Black Fridays in the year as an integer.
+
+// Examples:
+
+// unluckyDays(2015) == 3
+// unluckyDays(1986) == 1
+
+function unluckyDays(year: number): number {
+    let count = 0;
+
+    // Itera attraverso i 12 mesi (da 0 a 11 perché i mesi in Date vanno da 0 = gennaio a 11 = dicembre)
+    for (let month = 0; month < 12; month++) {
+        // Crea una data per il 13° giorno di ogni mese
+        const date = new Date(year, month, 13);
+
+        // Verifica se il giorno della settimana è venerdì (5 in JavaScript, dove i giorni vanno da 0 = domenica a 6 = sabato)
+        if (date.getDay() === 5) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+unluckyDays(2015);
+unluckyDays(1986);
+unluckyDays(2024);
