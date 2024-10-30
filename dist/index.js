@@ -243,6 +243,9 @@ ageForDrink(18);
 ageForDrink(20);
 ageForDrink(30);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 26bd1ca (Snack 23 - Unlucky Days)
 function unluckyDays(year) {
     let count = 0;
     for (let month = 0; month < 12; month++) {
@@ -256,6 +259,9 @@ function unluckyDays(year) {
 unluckyDays(2015);
 unluckyDays(1986);
 unluckyDays(2024);
+<<<<<<< HEAD
 =======
 >>>>>>> cc0a722 (Snack 21 - Drink about)
+=======
+>>>>>>> 26bd1ca (Snack 23 - Unlucky Days)
 //# sourceMappingURL=index.js.map

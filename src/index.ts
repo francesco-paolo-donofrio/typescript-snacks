@@ -506,6 +506,9 @@ ageForDrink(20);
 ageForDrink(30);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 26bd1ca (Snack 23 - Unlucky Days)
 // Snack 23
 
 // Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
@@ -540,6 +543,8 @@ function unluckyDays(year: number): number {
 
 unluckyDays(2015);
 unluckyDays(1986);
+
 unluckyDays(2024);
-=======
->>>>>>> cc0a722 (Snack 22 - Drink about)
+
+
+
