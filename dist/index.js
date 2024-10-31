@@ -255,4 +255,17 @@ function unluckyDays(year) {
 unluckyDays(2015);
 unluckyDays(1986);
 unluckyDays(2024);
+function multipleOf(number) {
+    let count = 0;
+    for (let i = 0; i < number; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+            count += i;
+        }
+    }
+    return count;
+}
+multipleOf(10);
+23;
+multipleOf(15);
+60;
 //# sourceMappingURL=index.js.map
