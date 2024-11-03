@@ -286,4 +286,10 @@ function createPhoneNumber(numbers) {
     return result;
 }
 createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+function takeBullets(bullets, dragons) {
+    return bullets >= dragons * 2;
+}
+takeBullets(1, 1);
+takeBullets(2, 1);
+takeBullets(4, 2);
 //# sourceMappingURL=index.js.map
