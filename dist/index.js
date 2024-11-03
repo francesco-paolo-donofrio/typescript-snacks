@@ -292,4 +292,9 @@ function takeBullets(bullets, dragons) {
 takeBullets(1, 1);
 takeBullets(2, 1);
 takeBullets(4, 2);
+function repeatitionString(n, s) {
+    return s.repeat(n);
+}
+;
+repeatitionString(5, "Ciao");
 //# sourceMappingURL=index.js.map

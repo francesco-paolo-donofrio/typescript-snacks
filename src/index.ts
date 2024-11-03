@@ -609,3 +609,17 @@ function takeBullets(bullets: number, dragons: number): boolean {
 takeBullets(1,1);
 takeBullets(2,1);
 takeBullets(4,2);
+
+// Snack 27
+
+// Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+// Examples (input -> output)
+// 6, "I"     -> "IIIIII"
+// 5, "Hello" -> "HelloHelloHelloHelloHello"
+
+function repeatitionString(n : number, s : string): string{
+    return s.repeat(n);
+};
+
+repeatitionString(5, "Ciao");
