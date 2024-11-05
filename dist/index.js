@@ -297,4 +297,10 @@ function repeatitionString(n, s) {
 }
 ;
 repeatitionString(5, "Ciao");
+const numbArray = [2, 4, 2, 2];
+let moltiplication = numbArray.reduce(moltiplicationInt);
+function moltiplicationInt(total, value) {
+    return total * value;
+}
+console.log(moltiplication);
 //# sourceMappingURL=index.js.map
