@@ -640,9 +640,36 @@ function moltiplicationInt(total : number, value : number): number{
 console.log(moltiplication);
 
 
+// Snack 29
 
+// When provided with a number between 0-9, return it in words. Note that the input is guaranteed to be within the range of 0-9.
 
+// Input: 1
 
+// Output: "One".
+
+function numberToText(num : number){
+    switch (num) {
+        case 0: console.log("zero"); break;
+        case 1: console.log("one"); break;
+        case 2: console.log("two"); break;
+        case 3: console.log("three"); break;
+        case 4: console.log("four"); break;
+        case 5: console.log("five"); break;
+        case 6: console.log("six"); break;
+        case 7: console.log("seven"); break;
+        case 8: console.log("eight"); break;
+        case 9: console.log("nine"); break;
+    }
+    if (num > 9 || num < 0){
+        return console.log("Please, insert a number between 0 and 9")
+    }
+}
+
+numberToText(7);
+numberToText(10);
+numberToText(-12);
+numberToText(3);
 
 
 
