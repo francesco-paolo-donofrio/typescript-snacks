@@ -350,4 +350,16 @@ function ArrayDoubled(arr) {
 ArrayDoubled([1, 2, 3]);
 ArrayDoubled([2, 4, 6]);
 ArrayDoubled([10, 20, 30]);
+function divisibleOrNot(num, x, y) {
+    if (num % x === 0 && num % y === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+divisibleOrNot(12, 2, 6);
+divisibleOrNot(3, 1, 3);
+divisibleOrNot(100, 5, 3);
+divisibleOrNot(12, 7, 5);
 //# sourceMappingURL=index.js.map
