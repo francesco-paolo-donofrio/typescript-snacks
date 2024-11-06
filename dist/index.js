@@ -344,4 +344,10 @@ numberToText(7);
 numberToText(10);
 numberToText(-12);
 numberToText(3);
+function ArrayDoubled(arr) {
+    return arr.map(element => element * 2);
+}
+ArrayDoubled([1, 2, 3]);
+ArrayDoubled([2, 4, 6]);
+ArrayDoubled([10, 20, 30]);
 //# sourceMappingURL=index.js.map

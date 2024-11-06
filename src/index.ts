@@ -671,9 +671,28 @@ numberToText(10);
 numberToText(-12);
 numberToText(3);
 
+// Snack 30
+
+// Given an array of integers, return a new array with each value doubled.
+
+// For example:
+
+// [1, 2, 3] --> [2, 4, 6]
+
+function ArrayDoubled(arr : number[]): number[]{
+    return arr.map(element => element * 2)
+}
+
+ArrayDoubled([1, 2, 3]);
+ArrayDoubled([2, 4, 6]);
+ArrayDoubled([10, 20, 30]);
 
 
-// Snack 29
+
+
+
+
+// Exercise to do 
 
 // Learning TypeScript. Basic Types
 
