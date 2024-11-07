@@ -720,26 +720,30 @@ divisibleOrNot(12, 7, 5);
 
 class Human {
     name: string;
+    age: number;
 
-    constructor(name: string) {
+    constructor(name: string, age: number) {
         this.name = name;
+        this.age = age;
     }
 }
 
 class Man extends Human {
-    constructor(name: string) {
-        super(name);
+    constructor(name: string, age: number) {
+        super(name, age);
+        this.age = 33;
     }
 }
 
 class Woman extends Human {
-    constructor(name: string) {
-        super(name);
+    constructor(name: string, age: number) {
+        super(name, age);
+        this.age = 30;
     }
 }
 
 function create(): [Man, Woman] {
-    const adam = new Man("Adam");
-    const eve = new Woman("Eve");
+    const adam = new Man("Adam", 33);
+    const eve = new Woman("Eve", 30);
     return [adam, eve];
 }
