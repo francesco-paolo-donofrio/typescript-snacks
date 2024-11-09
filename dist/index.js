@@ -362,4 +362,33 @@ divisibleOrNot(12, 2, 6);
 divisibleOrNot(3, 1, 3);
 divisibleOrNot(100, 5, 3);
 divisibleOrNot(12, 7, 5);
+class Human {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+class Man extends Human {
+    constructor(name, age) {
+        super(name, age);
+        this.age = 33;
+    }
+}
+class Woman extends Human {
+    constructor(name, age) {
+        super(name, age);
+        this.age = 30;
+    }
+}
+function create() {
+    const adam = new Man("Adam", 33);
+    const eve = new Woman("Eve", 30);
+    return [adam, eve];
+}
+function pinControl(code) {
+    return (code.length === 4 || code.length === 6) && /^\d+$/.test(code);
+}
+pinControl("2312");
+pinControl("93939");
+pinControl("a92903");
 //# sourceMappingURL=index.js.map

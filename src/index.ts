@@ -747,3 +747,22 @@ function create(): [Man, Woman] {
     const eve = new Woman("Eve", 30);
     return [adam, eve];
 }
+
+// Snack 33
+
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+// If the function is passed a valid PIN string, return true, else return false.
+
+// Examples (Input --> Output)
+// "1234"   -->  true
+// "12345"  -->  false
+// "a234"   -->  false
+
+function pinControl(code: string): boolean {
+    return (code.length === 4 || code.length === 6) && /^\d+$/.test(code);
+}
+
+pinControl("2312");
+pinControl("93939");
+pinControl("a92903");
