@@ -791,4 +791,13 @@ pinControl("a92903");
 // }
 
 // descendingNumbers([38, 1, 9, 444, 100], "9021823");
-// With Help
+// Correct version
+
+function descendingNumbers(num: number): number{
+    return Number(
+        num.toString().split("").map(Number).sort((a, b) => b - a).join("")
+    );
+}
+
+descendingNumbers(123456);
+descendingNumbers(283940);

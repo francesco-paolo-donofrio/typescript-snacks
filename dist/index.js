@@ -391,17 +391,9 @@ function pinControl(code) {
 pinControl("2312");
 pinControl("93939");
 pinControl("a92903");
-function descendingNumbers(num, numString) {
-    if (num) {
-        num.sort(function (a, b) { return b - a; });
-    }
-    else if (numString) {
-        let stringToArray = numString.split("");
-        stringToArray.map(Number).sort(function (a, b) { return b - a; });
-    }
-    else {
-        console.log("Insert a valid sequence of numbers");
-    }
+function descendingNumbers(num) {
+    return Number(num.toString().split("").map(Number).sort((a, b) => b - a).join(""));
 }
-descendingNumbers([38, 1, 9, 444, 100], "9021823");
+descendingNumbers(123456);
+descendingNumbers(283940);
 //# sourceMappingURL=index.js.map
