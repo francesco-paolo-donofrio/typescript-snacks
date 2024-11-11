@@ -766,3 +766,27 @@ function pinControl(code: string): boolean {
 pinControl("2312");
 pinControl("93939");
 pinControl("a92903");
+
+// Snack 34
+
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 42145 Output: 54421
+
+// Input: 145263 Output: 654321
+
+// Input: 123456789 Output: 987654321
+
+function descendingNumbers(num : number[], numString : string): any{
+    if(num){
+        num.sort(function(a, b){return b - a});
+    } else if (numString){
+        let stringToArray = numString.split("");
+        stringToArray.map(Number).sort(function(a, b){return b - a});  
+    } else {
+        console.log("Insert a valid sequence of numbers");
+    }
+}
+
+descendingNumbers([38, 1, 9, 444, 100], "9021823");
