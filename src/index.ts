@@ -778,15 +778,17 @@ pinControl("a92903");
 
 // Input: 123456789 Output: 987654321
 
-function descendingNumbers(num : number[], numString : string): any{
-    if(num){
-        num.sort(function(a, b){return b - a});
-    } else if (numString){
-        let stringToArray = numString.split("");
-        stringToArray.map(Number).sort(function(a, b){return b - a});  
-    } else {
-        console.log("Insert a valid sequence of numbers");
-    }
-}
+// My way
+// function descendingNumbers(num : number[], numString : string): void{
+//     if(num){
+//         num.sort(function(a, b){return b - a});
+//     } else if (numString){
+//         let stringToArray = numString.split("");
+//         stringToArray.map(Number).sort(function(a, b){return b - a});  
+//     } else {
+//         console.log("Insert a valid sequence of numbers");
+//     }
+// }
 
-descendingNumbers([38, 1, 9, 444, 100], "9021823");
+// descendingNumbers([38, 1, 9, 444, 100], "9021823");
+// With Help
