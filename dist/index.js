@@ -396,4 +396,9 @@ function descendingNumbers(num) {
 }
 descendingNumbers(123456);
 descendingNumbers(283940);
+function filteredList(array) {
+    return array.filter((item) => typeof item === 'number');
+}
+let arrayBello = [2, "io", "5", 100, 20];
+filteredList(arrayBello);
 //# sourceMappingURL=index.js.map
