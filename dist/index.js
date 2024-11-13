@@ -414,4 +414,9 @@ function lowestInt(arrayInt) {
 }
 lowestInt([100, 90, 80, 1]);
 lowestInt([-100, 90, 80, 1]);
+function findNeedle(arrString) {
+    let position = arrString.indexOf("Needle".toLowerCase());
+    return "found the needle at position" + " " + position;
+}
+findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]);
 //# sourceMappingURL=index.js.map
