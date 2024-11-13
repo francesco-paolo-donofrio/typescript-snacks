@@ -817,3 +817,27 @@ function filteredList(array: (number | string)[]): number []{
 
 let arrayBello = [2, "io", "5", 100, 20];
 filteredList(arrayBello);
+
+// Snack 36
+
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+// For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+// [10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+function lowestInt(arrayInt : number[]): number{
+    // Con questo sort vado ad ordinare gli elementi dell'array in ordine crescente
+    // Poi controlliamo se l'array ha numeri con la virgola o negativi, se così parte il messaggio di errore
+    if (arrayInt.some(num => num < 0 || !Number.isInteger(num))) {
+        console.log("L'array deve contenere solo numeri positivi.");
+        return -1;
+    } else {
+        arrayInt.sort((a, b) => a - b);
+        arrayInt.slice(0, 2);
+    }
+    return arrayInt[0] + arrayInt[1];
+}
+
+lowestInt([100, 90, 80, 1]);
+lowestInt([-100, 90, 80, 1]);

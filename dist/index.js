@@ -401,4 +401,17 @@ function filteredList(array) {
 }
 let arrayBello = [2, "io", "5", 100, 20];
 filteredList(arrayBello);
+function lowestInt(arrayInt) {
+    if (arrayInt.some(num => num < 0 || !Number.isInteger(num))) {
+        console.log("L'array deve contenere solo numeri positivi.");
+        return -1;
+    }
+    else {
+        arrayInt.sort((a, b) => a - b);
+        arrayInt.slice(0, 2);
+    }
+    return arrayInt[0] + arrayInt[1];
+}
+lowestInt([100, 90, 80, 1]);
+lowestInt([-100, 90, 80, 1]);
 //# sourceMappingURL=index.js.map
