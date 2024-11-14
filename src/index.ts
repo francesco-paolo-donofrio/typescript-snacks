@@ -863,3 +863,16 @@ function findNeedle(arrString : string[]): string{
 }
 
 findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"])
+
+// Snack 38
+
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+function reverseString(str : string): string{
+    return str.split(" ").map(word => word.split("")).reverse().join(" ")
+}
+
+console.log(reverseString("Quello che dice è vero"));
+
+
+

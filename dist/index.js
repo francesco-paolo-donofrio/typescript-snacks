@@ -419,4 +419,8 @@ function findNeedle(arrString) {
     return "found the needle at position" + " " + position;
 }
 findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]);
+function reverseString(str) {
+    return str.split(" ").map(word => word.split("")).reverse().join(" ");
+}
+console.log(reverseString("Quello che dice è vero"));
 //# sourceMappingURL=index.js.map
