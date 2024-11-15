@@ -919,3 +919,22 @@ function calculateParameters(height : number, width : number, length : number): 
 }
 
 console.log(calculateParameters(2, 2, 2));
+
+// // Snack 41
+
+// Write function parseFloat which takes an input and returns a number or Nothing if conversion is not possible.
+
+function parseFloat(input: unknown): number | null {
+    const number = Number(input);
+    return isNaN(number) ? null : number;
+  }
+  
+  // Examples
+  console.log(parseFloat("42"));        // 42
+  console.log(parseFloat("42.42"));     // 42.42
+  console.log(parseFloat("abc"));       // null
+  console.log(parseFloat("3.14abc"));   // null
+  console.log(parseFloat(""));          // null
+  console.log(parseFloat(null));        // null
+  console.log(parseFloat(undefined));   // null
+  console.log(parseFloat("  123  "));   // 123

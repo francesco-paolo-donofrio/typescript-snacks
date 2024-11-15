@@ -446,4 +446,16 @@ function calculateParameters(height, width, length) {
     return height * width * length;
 }
 console.log(calculateParameters(2, 2, 2));
+function parseFloat(input) {
+    const number = Number(input);
+    return isNaN(number) ? null : number;
+}
+console.log(parseFloat("42"));
+console.log(parseFloat("42.42"));
+console.log(parseFloat("abc"));
+console.log(parseFloat("3.14abc"));
+console.log(parseFloat(""));
+console.log(parseFloat(null));
+console.log(parseFloat(undefined));
+console.log(parseFloat("  123  "));
 //# sourceMappingURL=index.js.map
