@@ -423,4 +423,23 @@ function reverseString(str) {
     return str.split(" ").map(word => word.split("")).reverse().join(" ");
 }
 console.log(reverseString("Quello che dice è vero"));
+function gematria(str) {
+    const values = {
+        a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9,
+        k: 10, l: 20, m: 30, n: 40, o: 50, p: 60, q: 70, r: 80,
+        s: 90, t: 100, u: 200, x: 300, y: 400, z: 500, j: 600,
+        v: 700, w: 900
+    };
+    const normalizedStr = str.toLowerCase().replace(/\s+/g, "");
+    let total = 0;
+    for (const char of normalizedStr) {
+        if (values[char]) {
+            total += values[char];
+        }
+        else {
+            console.warn(`Character "${char}" has no gematria value.`);
+        }
+    }
+    return total;
+}
 //# sourceMappingURL=index.js.map

@@ -309,7 +309,7 @@ removeVowels("This website is for losers LOL!");
 // Names given are always valid strings.
 
 function playingBanjo(name: string): string {
-    if (name.charAt(0).toLowerCase() === "r"){
+    if (name.charAt(0).toLowerCase() === "r") {
         return `${name} plays banjo`;
     } else {
         return `${name} does not play banjo`;
@@ -335,8 +335,8 @@ const result4 = playingBanjo(name4);
 
 // This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
 
-function moltiplicationNumber(number : number) : number{
-    if (number % 2 === 0){
+function moltiplicationNumber(number: number): number {
+    if (number % 2 === 0) {
         return number * 8
     } else {
         return number * 9
@@ -380,30 +380,30 @@ console.log(fixTheMeerkat(["Meerkat", "Meerkat", "Meerkat"]));
 function solve(str: string): string {
     let upperCount = 0;
     let lowerCount = 0;
-  
+
     for (const char of str) {
-      if (char === char.toUpperCase()) {
-        upperCount++;
-      } else {
-        lowerCount++;
-      }
+        if (char === char.toUpperCase()) {
+            upperCount++;
+        } else {
+            lowerCount++;
+        }
     }
 
     if (upperCount > lowerCount) {
-      return str.toUpperCase();
-    } else if (upperCount < lowerCount){
-      return str.toLowerCase();
+        return str.toUpperCase();
+    } else if (upperCount < lowerCount) {
+        return str.toLowerCase();
     } else {
         return str.toLowerCase();
     }
-  }
+}
 
-  const myString1 = "CiAO A TUTTI io SONO fRA";
-  const myString2 = "ciao a tiuti IO sono il tuo amico"
-  const myString3 = "ciaoo CIAO"
-  solve(myString1);
-  solve(myString2);
-  solve(myString3);
+const myString1 = "CiAO A TUTTI io SONO fRA";
+const myString2 = "ciao a tiuti IO sono il tuo amico"
+const myString3 = "ciaoo CIAO"
+solve(myString1);
+solve(myString2);
+solve(myString3);
 
 //   Snack 19
 
@@ -414,8 +414,8 @@ function solve(str: string): string {
 
 // "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
 
-function splitWord(input : string): string[]{
-     const splittedString = input.split(" ");
+function splitWord(input: string): string[] {
+    const splittedString = input.split(" ");
     console.log(splittedString);
     return splittedString;
 }
@@ -432,7 +432,7 @@ splitWord("I love america and cheese burgers");
 // * "1234!_ "     -> "11223344!!__  "
 // Good Luck!
 
-function repeatString(string : string): string{
+function repeatString(string: string): string {
     let result = "";
     for (const char of string) {
         result += char + char;
@@ -486,15 +486,15 @@ function position(letter: string): number | string {
 // 20 --> "drink beer"
 // 30 --> "drink whisky"
 
-function ageForDrink(num : number): string|undefined{
-    if (num <= 14){
+function ageForDrink(num: number): string | undefined {
+    if (num <= 14) {
         return `${num} drink toddy`
-    } else if (num < 18){
+    } else if (num < 18) {
         return `${num} drink coke`
-    } else if (num < 21){
+    } else if (num < 21) {
         return `${num} drink beer`
-    } else if(num >= 21){
-         return `${num} drink whisky`
+    } else if (num >= 21) {
+        return `${num} drink whisky`
     }
     return undefined;
 }
@@ -554,17 +554,17 @@ unluckyDays(2024);
 
 // Additiona
 
-function multipleOf(number : number): number{
+function multipleOf(number: number): number {
     let count = 0;
-    for (let i = 0; i < number; i++){
-        if (i % 3 === 0 || i % 5 === 0){
+    for (let i = 0; i < number; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
             count += i;
         }
     }
     return count;
 }
 
-multipleOf(10); 23 
+multipleOf(10); 23
 multipleOf(15); 45
 multipleOf(20); 78
 
@@ -606,9 +606,9 @@ function takeBullets(bullets: number, dragons: number): boolean {
     return bullets >= dragons * 2;
 }
 
-takeBullets(1,1);
-takeBullets(2,1);
-takeBullets(4,2);
+takeBullets(1, 1);
+takeBullets(2, 1);
+takeBullets(4, 2);
 
 // Snack 27
 
@@ -618,7 +618,7 @@ takeBullets(4,2);
 // 6, "I"     -> "IIIIII"
 // 5, "Hello" -> "HelloHelloHelloHelloHello"
 
-function repeatitionString(n : number, s : string): string{
+function repeatitionString(n: number, s: string): string {
     return s.repeat(n);
 };
 
@@ -631,9 +631,9 @@ repeatitionString(5, "Ciao");
 // [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
 
 
-const numbArray : number[] = [2, 4, 2, 2];
+const numbArray: number[] = [2, 4, 2, 2];
 let moltiplication = numbArray.reduce(moltiplicationInt);
-function moltiplicationInt(total : number, value : number): number{
+function moltiplicationInt(total: number, value: number): number {
     return total * value;
 }
 
@@ -648,7 +648,7 @@ console.log(moltiplication);
 
 // Output: "One".
 
-function numberToText(num : number){
+function numberToText(num: number) {
     switch (num) {
         case 0: console.log("zero"); break;
         case 1: console.log("one"); break;
@@ -661,7 +661,7 @@ function numberToText(num : number){
         case 8: console.log("eight"); break;
         case 9: console.log("nine"); break;
     }
-    if (num > 9 || num < 0){
+    if (num > 9 || num < 0) {
         return console.log("Please, insert a number between 0 and 9")
     }
 }
@@ -679,7 +679,7 @@ numberToText(3);
 
 // [1, 2, 3] --> [2, 4, 6]
 
-function ArrayDoubled(arr : number[]): number[]{
+function ArrayDoubled(arr: number[]): number[] {
     return arr.map(element => element * 2)
 }
 
@@ -698,8 +698,8 @@ ArrayDoubled([10, 20, 30]);
 // 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
 // 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
 
-function divisibleOrNot(num: number, x : number, y : number): boolean{
-    if (num % x === 0 && num % y === 0){
+function divisibleOrNot(num: number, x: number, y: number): boolean {
+    if (num % x === 0 && num % y === 0) {
         return true;
     } else {
         return false;
@@ -793,7 +793,7 @@ pinControl("a92903");
 // descendingNumbers([38, 1, 9, 444, 100], "9021823");
 // Correct version
 
-function descendingNumbers(num: number): number{
+function descendingNumbers(num: number): number {
     return Number(
         num.toString().split("").map(Number).sort((a, b) => b - a).join("")
     );
@@ -811,7 +811,7 @@ descendingNumbers(283940);
 // filter_list([1,'a','b',0,15]) == [1,0,15]
 // filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 
-function filteredList(array: (number | string)[]): number []{
+function filteredList(array: (number | string)[]): number[] {
     return array.filter((item) => typeof item === 'number');
 }
 
@@ -826,7 +826,7 @@ filteredList(arrayBello);
 
 // [10, 343445353, 3453445, 3453545353453] should return 3453455.
 
-function lowestInt(arrayInt : number[]): number{
+function lowestInt(arrayInt: number[]): number {
     // Con questo sort vado ad ordinare gli elementi dell'array in ordine crescente
     // Poi controlliamo se l'array ha numeri con la virgola o negativi, se così parte il messaggio di errore
     if (arrayInt.some(num => num < 0 || !Number.isInteger(num))) {
@@ -857,7 +857,7 @@ lowestInt([-100, 90, 80, 1]);
 // ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
 // Note: In COBOL, it should return "found the needle at position 6"
 
-function findNeedle(arrString : string[]): string{
+function findNeedle(arrString: string[]): string {
     let position = arrString.indexOf("Needle".toLowerCase());
     return "found the needle at position" + " " + position;
 }
@@ -868,11 +868,45 @@ findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"])
 
 // Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
 
-function reverseString(str : string): string{
+function reverseString(str: string): string {
     return str.split(" ").map(word => word.split("")).reverse().join(" ")
 }
 
 console.log(reverseString("Quello che dice è vero"));
 
+// Snack 39
 
+// Gematria is an Assyro-Babylonian-Greek system of code and numerology later adopted into Jewish culture. The system assigns numerical value to a word or a phrase in the belief that words or phrases with identical numerical values bear some relation to each other or bear some relation to the number itself. While more commonly used on Hebrew words, there is also an English version.
+
+// Each letter has a value and the gematrian value of a word or a phrase is the sum of those values. The code takes a word or an expression and returns the gematrian value of it.
+
+// The calculation is case insensitive and counts no spaces.
+
+// Example: The gematrian value of "love" is 20+50+700+5 = 775
+
+// ‎These are the values of the different letters:
+
+// a=1, b=2, c=3, d=4, e=5, f=6, g=7, h=8, i=9, k=10, l=20, m=30, n=40, o=50, p=60, q=70, r=80, s=90, t=100, u=200, x=300, y=400, z=500, j=600, v=700, w=900
+
+
+function gematria(str: string): number {
+    const values: { [key: string]: number } = {
+        a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, 
+        k: 10, l: 20, m: 30, n: 40, o: 50, p: 60, q: 70, r: 80, 
+        s: 90, t: 100, u: 200, x: 300, y: 400, z: 500, j: 600, 
+        v: 700, w: 900
+    };
+    const normalizedStr = str.toLowerCase().replace(/\s+/g, "");
+
+    let total = 0;
+    for (const char of normalizedStr) {
+        if (values[char]) {
+            total += values[char];
+        } else {
+            console.warn(`Character "${char}" has no gematria value.`);
+        }
+    }
+
+    return total;
+}
 
