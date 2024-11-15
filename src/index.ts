@@ -910,3 +910,12 @@ function gematria(str: string): number {
     return total;
 }
 
+// Snack 40
+
+// Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid. Write a function to help Bob with this calculation.
+
+function calculateParameters(height : number, width : number, length : number): number{
+    return height * width * length;
+}
+
+console.log(calculateParameters(2, 2, 2));

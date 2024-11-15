@@ -442,4 +442,8 @@ function gematria(str) {
     }
     return total;
 }
+function calculateParameters(height, width, length) {
+    return height * width * length;
+}
+console.log(calculateParameters(2, 2, 2));
 //# sourceMappingURL=index.js.map
