@@ -952,5 +952,15 @@ function parseFloat(input: unknown): number | null {
 // toAlternatingCase("12345")       === "12345"                   // Non-alphabetical characters are unaffected
 // toAlternatingCase("1a2b3c4d5e")  === "1A2B3C4D5E"
 // toAlternatingCase("String.prototype.toAlternatingCase") === "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
-
 // As usual, your function/method should be pure, i.e. it should not mutate the original string.
+
+function toAlternatingCase(str: string): void{
+    let strMap = str.split("").map;
+    console.log(strMap);
+    console.log(str);
+}
+
+toAlternatingCase("HELLO WORLD");
+toAlternatingCase("hello WORLD");
+toAlternatingCase("HeLLo WoRLD");
+toAlternatingCase("12345");

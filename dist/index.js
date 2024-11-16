@@ -458,4 +458,13 @@ console.log(parseFloat(""));
 console.log(parseFloat(null));
 console.log(parseFloat(undefined));
 console.log(parseFloat("  123  "));
+function toAlternatingCase(str) {
+    let strMap = str.split("").map;
+    console.log(strMap);
+    console.log(str);
+}
+toAlternatingCase("HELLO WORLD");
+toAlternatingCase("hello WORLD");
+toAlternatingCase("HeLLo WoRLD");
+toAlternatingCase("12345");
 //# sourceMappingURL=index.js.map
