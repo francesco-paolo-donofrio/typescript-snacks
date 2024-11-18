@@ -474,4 +474,19 @@ function accum(str) {
         .join("-");
 }
 console.log(accum("abcd"));
+function removeDuplicates(array) {
+    const seen = new Set();
+    const result = [];
+    for (const num of array) {
+        if (!seen.has(num)) {
+            seen.add(num);
+            result.push(num);
+        }
+    }
+    return result;
+}
+console.log(removeDuplicates([1, 1, 2]));
+console.log(removeDuplicates([1, 2, 1, 1, 3, 2]));
+console.log(removeDuplicates([0, 0, 0, 0]));
+console.log(removeDuplicates([]));
 //# sourceMappingURL=index.js.map
