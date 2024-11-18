@@ -466,5 +466,11 @@ function toAlternatingCase(str) {
 toAlternatingCase("HELLO WORLD");
 toAlternatingCase("hello WORLD");
 toAlternatingCase("HeLLo WoRLD");
-toAlternatingCase("12345");
+function accum(str) {
+    return str
+        .split("")
+        .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index))
+        .join("-");
+}
+console.log(accum("abcd"));
 //# sourceMappingURL=index.js.map

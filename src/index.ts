@@ -963,4 +963,25 @@ function toAlternatingCase(str: string): void{
 toAlternatingCase("HELLO WORLD");
 toAlternatingCase("hello WORLD");
 toAlternatingCase("HeLLo WoRLD");
-toAlternatingCase("12345");
+
+// Snack 43
+
+// Description:
+
+// This time no story, no theory. The examples below show you how to write function accum:
+// Examples:
+
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+
+// The parameter of accum is a string which includes only letters from a..z and A..Z.
+
+function accum(str: string): string {
+    return str
+        .split("") // Split the string into an array of characters
+        .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index)) // Transform each character
+        .join("-"); // Join the transformed characters with a hyphen
+}
+
+console.log(accum("abcd"));
