@@ -891,9 +891,9 @@ console.log(reverseString("Quello che dice è vero"));
 
 function gematria(str: string): number {
     const values: { [key: string]: number } = {
-        a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, 
-        k: 10, l: 20, m: 30, n: 40, o: 50, p: 60, q: 70, r: 80, 
-        s: 90, t: 100, u: 200, x: 300, y: 400, z: 500, j: 600, 
+        a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9,
+        k: 10, l: 20, m: 30, n: 40, o: 50, p: 60, q: 70, r: 80,
+        s: 90, t: 100, u: 200, x: 300, y: 400, z: 500, j: 600,
         v: 700, w: 900
     };
     const normalizedStr = str.toLowerCase().replace(/\s+/g, "");
@@ -914,7 +914,7 @@ function gematria(str: string): number {
 
 // Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid. Write a function to help Bob with this calculation.
 
-function calculateParameters(height : number, width : number, length : number): number{
+function calculateParameters(height: number, width: number, length: number): number {
     return height * width * length;
 }
 
@@ -927,17 +927,17 @@ console.log(calculateParameters(2, 2, 2));
 function parseFloat(input: unknown): number | null {
     const number = Number(input);
     return isNaN(number) ? null : number;
-  }
-  
-  // Examples
-  console.log(parseFloat("42"));        // 42
-  console.log(parseFloat("42.42"));     // 42.42
-  console.log(parseFloat("abc"));       // null
-  console.log(parseFloat("3.14abc"));   // null
-  console.log(parseFloat(""));          // null
-  console.log(parseFloat(null));        // null
-  console.log(parseFloat(undefined));   // null
-  console.log(parseFloat("  123  "));   // 123
+}
+
+// Examples
+console.log(parseFloat("42"));        // 42
+console.log(parseFloat("42.42"));     // 42.42
+console.log(parseFloat("abc"));       // null
+console.log(parseFloat("3.14abc"));   // null
+console.log(parseFloat(""));          // null
+console.log(parseFloat(null));        // null
+console.log(parseFloat(undefined));   // null
+console.log(parseFloat("  123  "));   // 123
 
 //   Snack 42
 
@@ -954,15 +954,17 @@ function parseFloat(input: unknown): number | null {
 // toAlternatingCase("String.prototype.toAlternatingCase") === "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
 // As usual, your function/method should be pure, i.e. it should not mutate the original string.
 
-function toAlternatingCase(str: string): void{
-    let strMap = str.split("").map;
-    console.log(strMap);
-    console.log(str);
+function toAlternatingCase(str: string): string {
+    return str
+        .split("")
+        .map(char => char === char.toLowerCase() ? char.toUpperCase() : char.toLowerCase())
+        .join("");
 }
 
-toAlternatingCase("HELLO WORLD");
-toAlternatingCase("hello WORLD");
-toAlternatingCase("HeLLo WoRLD");
+
+console.log(toAlternatingCase("HELLO WORLD"));
+console.log(toAlternatingCase("hello WORLD"));
+console.log(toAlternatingCase("HeLLo WoRLD"));
 
 // Snack 43
 
@@ -979,9 +981,9 @@ toAlternatingCase("HeLLo WoRLD");
 
 function accum(str: string): string {
     return str
-        .split("") // Split the string into an array of characters
-        .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index)) // Transform each character
-        .join("-"); // Join the transformed characters with a hyphen
+        .split("")
+        .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index))
+        .join("-");
 }
 
 console.log(accum("abcd"));

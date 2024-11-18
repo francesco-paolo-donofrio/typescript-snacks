@@ -459,13 +459,14 @@ console.log(parseFloat(null));
 console.log(parseFloat(undefined));
 console.log(parseFloat("  123  "));
 function toAlternatingCase(str) {
-    let strMap = str.split("").map;
-    console.log(strMap);
-    console.log(str);
+    return str
+        .split("")
+        .map(char => char === char.toLowerCase() ? char.toUpperCase() : char.toLowerCase())
+        .join("");
 }
-toAlternatingCase("HELLO WORLD");
-toAlternatingCase("hello WORLD");
-toAlternatingCase("HeLLo WoRLD");
+console.log(toAlternatingCase("HELLO WORLD"));
+console.log(toAlternatingCase("hello WORLD"));
+console.log(toAlternatingCase("HeLLo WoRLD"));
 function accum(str) {
     return str
         .split("")
