@@ -434,4 +434,10 @@ function pipeFix(numbers) {
 }
 console.log(pipeFix([1, 3, 5, 6, 7, 8]));
 console.log(pipeFix([1, 4, 5, 7, 10]));
+function maxProduct(numbers, k) {
+    const sortedNumbers = numbers.sort((a, b) => b - a);
+    return sortedNumbers.slice(0, k).reduce((a, b) => a * b, 1);
+}
+console.log(maxProduct([4, 3, 5], 2));
+console.log(maxProduct([8, 10, 9, 7], 3));
 //# sourceMappingURL=index.js.map
