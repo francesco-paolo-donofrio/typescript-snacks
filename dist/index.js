@@ -423,70 +423,15 @@ function reverseString(str) {
     return str.split(" ").map(word => word.split("")).reverse().join(" ");
 }
 console.log(reverseString("Quello che dice è vero"));
-function gematria(str) {
-    const values = {
-        a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9,
-        k: 10, l: 20, m: 30, n: 40, o: 50, p: 60, q: 70, r: 80,
-        s: 90, t: 100, u: 200, x: 300, y: 400, z: 500, j: 600,
-        v: 700, w: 900
-    };
-    const normalizedStr = str.toLowerCase().replace(/\s+/g, "");
-    let total = 0;
-    for (const char of normalizedStr) {
-        if (values[char]) {
-            total += values[char];
-        }
-        else {
-            console.warn(`Character "${char}" has no gematria value.`);
-        }
+function pipeFix(numbers) {
+    const min = Math.min(...numbers);
+    const max = Math.max(...numbers);
+    const fixedPipes = [];
+    for (let i = min; i <= max; i++) {
+        fixedPipes.push(i);
     }
-    return total;
+    return fixedPipes;
 }
-function calculateParameters(height, width, length) {
-    return height * width * length;
-}
-console.log(calculateParameters(2, 2, 2));
-function parseFloat(input) {
-    const number = Number(input);
-    return isNaN(number) ? null : number;
-}
-console.log(parseFloat("42"));
-console.log(parseFloat("42.42"));
-console.log(parseFloat("abc"));
-console.log(parseFloat("3.14abc"));
-console.log(parseFloat(""));
-console.log(parseFloat(null));
-console.log(parseFloat(undefined));
-console.log(parseFloat("  123  "));
-function toAlternatingCase(str) {
-    return str
-        .split("")
-        .map(char => char === char.toLowerCase() ? char.toUpperCase() : char.toLowerCase())
-        .join("");
-}
-console.log(toAlternatingCase("HELLO WORLD"));
-console.log(toAlternatingCase("hello WORLD"));
-console.log(toAlternatingCase("HeLLo WoRLD"));
-function accum(str) {
-    return str
-        .split("")
-        .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index))
-        .join("-");
-}
-console.log(accum("abcd"));
-function removeDuplicates(array) {
-    const seen = new Set();
-    const result = [];
-    for (const num of array) {
-        if (!seen.has(num)) {
-            seen.add(num);
-            result.push(num);
-        }
-    }
-    return result;
-}
-console.log(removeDuplicates([1, 1, 2]));
-console.log(removeDuplicates([1, 2, 1, 1, 3, 2]));
-console.log(removeDuplicates([0, 0, 0, 0]));
-console.log(removeDuplicates([]));
+console.log(pipeFix([1, 3, 5, 6, 7, 8]));
+console.log(pipeFix([1, 4, 5, 7, 10]));
 //# sourceMappingURL=index.js.map
