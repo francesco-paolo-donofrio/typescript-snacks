@@ -449,4 +449,21 @@ function returnSum(arr) {
 }
 returnSum([10, "10", 20, "20", "30"]);
 returnSum([10, "10", 10, "40"]);
+class Lamp {
+    constructor(color) {
+        this.color = color;
+        this.on = false;
+    }
+    toggleSwitch() {
+        this.on = !this.on;
+    }
+    state() {
+        if (this.on) {
+            return "The lamp is on.";
+        }
+        else {
+            return "The lamp is off.";
+        }
+    }
+}
 //# sourceMappingURL=index.js.map
