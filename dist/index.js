@@ -440,4 +440,12 @@ function maxProduct(numbers, k) {
 }
 console.log(maxProduct([4, 3, 5], 2));
 console.log(maxProduct([8, 10, 9, 7], 3));
+function returnSum(arr) {
+    let arrNumbers = arr.map((char) => Number(char));
+    return arrNumbers.reduce(myFunction);
+    function myFunction(total, value) {
+        return total + value;
+    }
+}
+returnSum([10, "10", 20, "20", "30"]);
 //# sourceMappingURL=index.js.map

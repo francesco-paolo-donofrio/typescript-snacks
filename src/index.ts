@@ -940,4 +940,16 @@ function maxProduct(numbers: number[], k: number): number {
 console.log(maxProduct([4, 3, 5], 2));
 console.log(maxProduct([8, 10, 9, 7], 3));
 
+// Snack 41
 
+// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+function returnSum(arr : any[]) : number {
+    let arrNumbers = arr.map((char) => Number(char));
+    return arrNumbers.reduce(myFunction);
+    function myFunction(total: number, value : number) {
+        return total + value;
+      }
+}
+
+returnSum([10, "10", 20, "20", "30"]);
