@@ -448,4 +448,5 @@ function returnSum(arr) {
     }
 }
 returnSum([10, "10", 20, "20", "30"]);
+returnSum([10, "10", 10, "40"]);
 //# sourceMappingURL=index.js.map

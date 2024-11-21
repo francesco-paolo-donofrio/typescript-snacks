@@ -953,3 +953,4 @@ function returnSum(arr : any[]) : number {
 }
 
 returnSum([10, "10", 20, "20", "30"]);
+returnSum([10, "10", 10, "40"]);
