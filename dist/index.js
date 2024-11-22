@@ -472,4 +472,24 @@ function expressionsMatter(a, b, c) {
 expressionsMatter(1, 2, 3);
 expressionsMatter(1, 1, 1);
 expressionsMatter(9, 1, 1);
+function humanYearsCatYearsDogYears(humanYears) {
+    let catYears = 0;
+    let dogYears = 0;
+    if (humanYears === 1) {
+        catYears = 15;
+        dogYears = 15;
+    }
+    else if (humanYears === 2) {
+        catYears = 15 + 9;
+        dogYears = 15 + 9;
+    }
+    else {
+        catYears = 15 + 9 + (humanYears - 2) * 4;
+        dogYears = 15 + 9 + (humanYears - 2) * 5;
+    }
+    return [humanYears, catYears, dogYears];
+}
+humanYearsCatYearsDogYears(1);
+humanYearsCatYearsDogYears(2);
+humanYearsCatYearsDogYears(10);
 //# sourceMappingURL=index.js.map
