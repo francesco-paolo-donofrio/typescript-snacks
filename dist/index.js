@@ -466,4 +466,10 @@ class Lamp {
         }
     }
 }
+function expressionsMatter(a, b, c) {
+    return Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c), a + b * c, a * b + c);
+}
+expressionsMatter(1, 2, 3);
+expressionsMatter(1, 1, 1);
+expressionsMatter(9, 1, 1);
 //# sourceMappingURL=index.js.map
