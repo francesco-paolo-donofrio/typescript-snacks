@@ -492,4 +492,5 @@ function humanYearsCatYearsDogYears(humanYears) {
 humanYearsCatYearsDogYears(1);
 humanYearsCatYearsDogYears(2);
 humanYearsCatYearsDogYears(10);
+console.log(2 + "2");
 //# sourceMappingURL=index.js.map

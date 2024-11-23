@@ -1063,3 +1063,4 @@ function humanYearsCatYearsDogYears(humanYears : number) : number[] {
 humanYearsCatYearsDogYears(1);
 humanYearsCatYearsDogYears(2);
 humanYearsCatYearsDogYears(10);
+console.log(2 + "2");
