@@ -524,4 +524,11 @@ function toRoman(num) {
 toRoman(1987);
 toRoman(3999);
 toRoman(4);
+function nthEven(n) {
+    return (n - 1) * 2;
+}
+nthEven(1);
+nthEven(3);
+nthEven(100);
+nthEven(1298734);
 //# sourceMappingURL=index.js.map
