@@ -1146,3 +1146,27 @@ nthEven(1);
 nthEven(3);
 nthEven(100);
 nthEven(1298734);
+
+// Snack 47
+
+// The code provided is supposed replace all the dots . in the specified String str with dashes -
+
+// But it's not working properly.
+
+// Task
+// Fix the bug so we can all go home early.
+
+// Notes
+// String str will never be null.
+
+function replaceDots(str: string): string {
+    if (str === null) {
+        throw new Error("str cannot be null");
+    } else {
+        return str.replace(/\./g, '-');
+    }
+}
+
+replaceDots("one.two.three");
+replaceDots("one.two.three.four");
+replaceDots("one.two.three.four.five");

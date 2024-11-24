@@ -531,4 +531,15 @@ nthEven(1);
 nthEven(3);
 nthEven(100);
 nthEven(1298734);
+function replaceDots(str) {
+    if (str === null) {
+        throw new Error("str cannot be null");
+    }
+    else {
+        return str.replace(/\./g, '-');
+    }
+}
+replaceDots("one.two.three");
+replaceDots("one.two.three.four");
+replaceDots("one.two.three.four.five");
 //# sourceMappingURL=index.js.map
