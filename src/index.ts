@@ -1170,3 +1170,19 @@ function replaceDots(str: string): string {
 replaceDots("one.two.three");
 replaceDots("one.two.three.four");
 replaceDots("one.two.three.four.five");
+
+// Snack 48
+
+// Write a function that takes in a string of one or more words, and returns the same string, but with all words that have five or more letters reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+
+// Examples:
+
+// "Hey fellow warriors"  --> "Hey wollef sroirraw" 
+// "This is a test        --> "This is a test" 
+// "This is another test" --> "This is rehtona test"
+
+function reverseWord(str : string): string{
+    return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join() : word)).join(" ");
+}
+
+reverseWord("Ciao sono Massimo Decimo");

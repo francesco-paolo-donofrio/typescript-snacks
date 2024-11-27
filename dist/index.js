@@ -542,4 +542,8 @@ function replaceDots(str) {
 replaceDots("one.two.three");
 replaceDots("one.two.three.four");
 replaceDots("one.two.three.four.five");
+function reverseWord(str) {
+    return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join() : word)).join(" ");
+}
+reverseWord("Ciao sono Massimo Decimo");
 //# sourceMappingURL=index.js.map
