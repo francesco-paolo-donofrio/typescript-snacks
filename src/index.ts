@@ -1247,3 +1247,24 @@ function sumDigits(num : number): number{
 sumDigits(99);
 sumDigits(11);
 sumDigits(9);
+
+// Snack 51
+
+// Small enough? - Beginner
+// You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
+
+// You can assume all values in the array are numbers.
+
+function smallEnough(arrNum : number[], limitNumber : number): boolean {
+    for (let i = 0; i <= arrNum.length; i++){
+        if (arrNum[i] <= limitNumber){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    return true || false;
+}
+
+smallEnough([1,5,3,76], 566);
+smallEnough([1,5,3,76], 56);

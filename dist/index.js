@@ -573,4 +573,17 @@ function sumDigits(num) {
 sumDigits(99);
 sumDigits(11);
 sumDigits(9);
+function smallEnough(arrNum, limitNumber) {
+    for (let i = 0; i <= arrNum.length; i++) {
+        if (arrNum[i] <= limitNumber) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    return true || false;
+}
+smallEnough([1, 5, 3, 76], 566);
+smallEnough([1, 5, 3, 76], 56);
 //# sourceMappingURL=index.js.map
