@@ -1263,7 +1263,6 @@ function smallEnough(arrNum : number[], limitNumber : number): boolean {
             return false;
         }
     }
-    return true || false;
 }
 
 smallEnough([1,5,3,76], 566);
