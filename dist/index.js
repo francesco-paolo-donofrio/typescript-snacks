@@ -546,4 +546,23 @@ function reverseWord(str) {
     return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join() : word)).join(" ");
 }
 reverseWord("Ciao sono Massimo Decimo");
+function encryptThis(str) {
+    return str
+        .split(" ")
+        .map(word => {
+        if (word.length === 0)
+            return "";
+        const firstCharCode = word.charCodeAt(0).toString();
+        if (word.length === 1)
+            return firstCharCode;
+        const secondChar = word.length > 1 ? word[1] : "";
+        const lastChar = word.length > 2 ? word[word.length - 1] : "";
+        const middle = word.slice(2, -1);
+        return `${firstCharCode}${lastChar}${middle}${secondChar}`;
+    })
+        .join(" ");
+}
+console.log(encryptThis("Hello"));
+console.log(encryptThis("good"));
+console.log(encryptThis("hello world"));
 //# sourceMappingURL=index.js.map
