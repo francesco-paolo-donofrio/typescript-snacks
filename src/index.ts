@@ -1256,13 +1256,12 @@ sumDigits(9);
 // You can assume all values in the array are numbers.
 
 function smallEnough(arrNum : number[], limitNumber : number): boolean {
-    for (let i = 0; i <= arrNum.length; i++){
-        if (arrNum[i] <= limitNumber){
-            return true;
-        } else {
+    for (let i = 0; i < arrNum.length; i++) {
+        if (arrNum[i] > limitNumber){
             return false;
-        }
+        } 
     }
+    return true;
 }
 
 smallEnough([1,5,3,76], 566);
