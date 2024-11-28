@@ -1224,4 +1224,4 @@ function encryptThis(str: string): string {
 // Examples:
 console.log(encryptThis("Hello")); 
 console.log(encryptThis("good")); 
-console.log(encryptThis("hello world")); 
+encryptThis("hello world"); 
