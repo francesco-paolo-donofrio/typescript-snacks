@@ -1239,9 +1239,9 @@ encryptThis("hello world");
 // Let's assume that all numbers in the input will be integer values.
 
 function sumDigits(num : number): number{
-    const arraySingleNumber = num.toString().split("");
-    const sum = arraySingleNumber.map((num) => num + num).join();
-    return parseInt(sum);
+    const absNumber = Math.abs(num);
+    const sum = absNumber.toString().split("").map(Number).reduce((acc, digit) => acc + digit, 0); // Il reduce qui somma tutti i numeri nell'array, partendo da un accumulatore iniziale di 0.
+    return sum;
 }
 
 sumDigits(99);

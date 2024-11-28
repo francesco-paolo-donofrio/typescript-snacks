@@ -566,9 +566,9 @@ console.log(encryptThis("Hello"));
 console.log(encryptThis("good"));
 encryptThis("hello world");
 function sumDigits(num) {
-    const arraySingleNumber = num.toString().split("");
-    const sum = arraySingleNumber.map((num) => num + num).join();
-    return parseInt(sum);
+    const absNumber = Math.abs(num);
+    const sum = absNumber.toString().split("").map(Number).reduce((acc, digit) => acc + digit, 0);
+    return sum;
 }
 sumDigits(99);
 sumDigits(11);
