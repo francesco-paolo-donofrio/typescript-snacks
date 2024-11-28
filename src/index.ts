@@ -1225,3 +1225,25 @@ function encryptThis(str: string): string {
 console.log(encryptThis("Hello")); 
 console.log(encryptThis("good")); 
 encryptThis("hello world"); 
+
+// Snack 50
+
+// Summing a number's digits
+// Write a function named sumDigits which takes a number as input and returns the sum of the absolute value of each of the number's decimal digits.
+
+// For example: (Input --> Output)
+
+// 10 --> 1
+// 99 --> 18
+// -32 --> 5
+// Let's assume that all numbers in the input will be integer values.
+
+function sumDigits(num : number): number{
+    const arraySingleNumber = num.toString().split("");
+    const sum = arraySingleNumber.map((num) => num + num).join();
+    return parseInt(sum);
+}
+
+sumDigits(99);
+sumDigits(11);
+sumDigits(9);

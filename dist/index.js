@@ -564,5 +564,13 @@ function encryptThis(str) {
 }
 console.log(encryptThis("Hello"));
 console.log(encryptThis("good"));
-console.log(encryptThis("hello world"));
+encryptThis("hello world");
+function sumDigits(num) {
+    const arraySingleNumber = num.toString().split("");
+    const sum = arraySingleNumber.map((num) => num + num).join();
+    return parseInt(sum);
+}
+sumDigits(99);
+sumDigits(11);
+sumDigits(9);
 //# sourceMappingURL=index.js.map
