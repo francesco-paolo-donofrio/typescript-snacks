@@ -1186,3 +1186,42 @@ function reverseWord(str : string): string{
 }
 
 reverseWord("Ciao sono Massimo Decimo");
+
+// Snack 49
+
+// Encrypt this!
+
+// You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+
+// Your message is a string containing space separated words.
+// You need to encrypt each word in the message using the following rules:
+// The first letter must be converted to its ASCII code.
+// The second letter must be switched with the last letter
+// Keepin' it simple: There are no special characters in the input.
+// Examples:
+// encryptThis "Hello" == "72olle"
+// encryptThis "good" == "103doo"
+// encryptThis "hello world" == "104olle 119drlo"
+
+function encryptThis(str: string): string {
+    return str
+        .split(" ") 
+        .map(word => {
+            if (word.length === 0) return "";
+
+            const firstCharCode = word.charCodeAt(0).toString();
+            if (word.length === 1) return firstCharCode; 
+
+            const secondChar = word.length > 1 ? word[1] : ""; 
+            const lastChar = word.length > 2 ? word[word.length - 1] : "";
+            const middle = word.slice(2, -1); 
+
+            return `${firstCharCode}${lastChar}${middle}${secondChar}`;
+        })
+        .join(" "); 
+}
+
+// Examples:
+console.log(encryptThis("Hello")); // "72olle"
+console.log(encryptThis("good")); // "103doo"
+console.log(encryptThis("hello world")); // "104olle 119drlo"
