@@ -1113,7 +1113,7 @@ function toRoman(num: number): string {
     ];
 
     let result = "";
-    for (const { value, numeral } of romanMap){
+    for (const { value, numeral } of romanMap) {
         while (num >= value) {
             result += numeral;
             num -= value;
@@ -1124,7 +1124,7 @@ function toRoman(num: number): string {
 
 toRoman(1987);
 toRoman(3999);
-toRoman(4);    
+toRoman(4);
 
 // Snack 46
 
@@ -1181,7 +1181,7 @@ replaceDots("one.two.three.four.five");
 // "This is a test        --> "This is a test" 
 // "This is another test" --> "This is rehtona test"
 
-function reverseWord(str : string): string{
+function reverseWord(str: string): string {
     return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join() : word)).join(" ");
 }
 
@@ -1205,26 +1205,26 @@ reverseWord("Ciao sono Massimo Decimo");
 
 function encryptThis(str: string): string {
     return str
-        .split(" ") 
+        .split(" ")
         .map(word => {
             if (word.length === 0) return "";
 
             const firstCharCode = word.charCodeAt(0).toString();
-            if (word.length === 1) return firstCharCode; 
+            if (word.length === 1) return firstCharCode;
 
-            const secondChar = word.length > 1 ? word[1] : ""; 
+            const secondChar = word.length > 1 ? word[1] : "";
             const lastChar = word.length > 2 ? word[word.length - 1] : "";
-            const middle = word.slice(2, -1); 
+            const middle = word.slice(2, -1);
 
             return `${firstCharCode}${lastChar}${middle}${secondChar}`;
         })
-        .join(" "); 
+        .join(" ");
 }
 
 // Examples:
-console.log(encryptThis("Hello")); 
-console.log(encryptThis("good")); 
-encryptThis("hello world"); 
+console.log(encryptThis("Hello"));
+console.log(encryptThis("good"));
+encryptThis("hello world");
 
 // Snack 50
 
@@ -1238,7 +1238,7 @@ encryptThis("hello world");
 // -32 --> 5
 // Let's assume that all numbers in the input will be integer values.
 
-function sumDigits(num : number): number{
+function sumDigits(num: number): number {
     const absNumber = Math.abs(num);
     const sum = absNumber.toString().split("").map(Number).reduce((acc, digit) => acc + digit, 0); // Il reduce qui somma tutti i numeri nell'array, partendo da un accumulatore iniziale di 0.
     return sum;
@@ -1255,17 +1255,17 @@ sumDigits(9);
 
 // You can assume all values in the array are numbers.
 
-function smallEnough(arrNum : number[], limitNumber : number): boolean {
+function smallEnough(arrNum: number[], limitNumber: number): boolean {
     for (let i = 0; i < arrNum.length; i++) {
-        if (arrNum[i] > limitNumber){
+        if (arrNum[i] > limitNumber) {
             return false;
-        } 
+        }
     }
     return true;
 }
 
-smallEnough([1,5,3,76], 566);
-smallEnough([1,5,3,76], 56);
+smallEnough([1, 5, 3, 76], 566);
+smallEnough([1, 5, 3, 76], 56);
 
 // Snack 52
 
@@ -1303,8 +1303,8 @@ smallEnough([1,5,3,76], 56);
 // 2 <= number of steps <= 1000
 
 function minCostClimbingStairs(cost: number[]): number {
-    let prev1 = 0; 
-    let prev2 = 0; 
+    let prev1 = 0;
+    let prev2 = 0;
     for (let i = 0; i < cost.length; i++) {
         const current = cost[i] + Math.min(prev1, prev2);
         prev1 = prev2;
@@ -1332,16 +1332,16 @@ console.log(minCostClimbingStairs([0, 1, 2, 0, 1, 2])); // Output: 2
 
 // Good luck!
 
-function count(num : number): number{
-    function factorial(n : number) {
+function count(num: number): number {
+    function factorial(n: number) {
         let result = 1;
-        for (let i = 2; i <= n; i++){
+        for (let i = 2; i <= n; i++) {
             result *= i;
         }
         return result;
     }
-   const fact = factorial(num);
-   return fact.toString().length;
+    const fact = factorial(num);
+    return fact.toString().length;
 }
 
 count(3);
@@ -1357,16 +1357,12 @@ count(6);
 // 465 -> '3138.75 Chinese Yuan'
 // The conversion rate you should use is 6.75 CNY for every 1 USD. All numbers should be represented as a string with 2 decimal places. (e.g. "21.00" NOT "21.0" or "21")
 
-function converter(amount : number): string{
-    let valueCNY : number = 6.75;
-    let result : any = 0;
-
-    if (amount > 0){
-       result = (amount * valueCNY).toString();
-    } else {
-        console.error(`Insert a valid amount of dollar`);
-    }
+function converter(amount: number): string {
+    let valueCNY: number = 6.75;
+    
+    const result = (amount * valueCNY);
     return `${result.toFixed(2)} Chinese Yuan`;
+
 }
 
 converter(5);

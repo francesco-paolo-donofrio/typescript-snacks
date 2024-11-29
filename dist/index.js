@@ -614,14 +614,8 @@ count(4);
 count(6);
 function converter(amount) {
     let valueCNY = 6.75;
-    let result = 0;
-    if (amount) {
-        result = amount * valueCNY;
-    }
-    else {
-        console.error(`Insert a valid amount of dollar`);
-    }
-    return result.toString();
+    const result = (amount * valueCNY);
+    return `${result.toFixed(2)} Chinese Yuan`;
 }
 converter(5);
 //# sourceMappingURL=index.js.map
