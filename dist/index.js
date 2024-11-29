@@ -602,11 +602,12 @@ function count(num) {
     function factorial(n) {
         let result = 1;
         for (let i = 2; i <= n; i++) {
-            result *= 1;
+            result *= i;
         }
-        return result.toString().split(" ").length;
+        return result;
     }
-    return factorial(num);
+    const fact = factorial(num);
+    return fact.toString().length;
 }
 count(3);
 count(4);

@@ -1338,11 +1338,12 @@ function count(num : number): number{
         for (let i = 2; i <= n; i++){
             result *= i;
         }
-        return result.toString().split(" ").length;
+        return result;
     }
-    return factorial(num);
+   const fact = factorial(num);
+   return fact.toString().length;
 }
 
 count(3);
 count(4);
-count(6)
+count(6);
