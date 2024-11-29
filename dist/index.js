@@ -598,4 +598,17 @@ console.log(minCostClimbingStairs([0, 2, 3, 2]));
 console.log(minCostClimbingStairs([10, 15, 20]));
 console.log(minCostClimbingStairs([0, 0, 0, 0, 0, 0]));
 console.log(minCostClimbingStairs([0, 1, 2, 0, 1, 2]));
+function count(num) {
+    function factorial(n) {
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+            result *= 1;
+        }
+        return result.toString().split(" ").length;
+    }
+    return factorial(num);
+}
+count(3);
+count(4);
+count(6);
 //# sourceMappingURL=index.js.map
