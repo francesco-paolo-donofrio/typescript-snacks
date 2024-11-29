@@ -1347,3 +1347,26 @@ function count(num : number): number{
 count(3);
 count(4);
 count(6);
+
+// Snack 54
+
+// Create a function that converts US dollars (USD) to Chinese Yuan (CNY) . The input is the amount of USD as an integer, and the output should be a string that states the amount of Yuan followed by 'Chinese Yuan'
+
+// Examples (Input -> Output)
+// 15  -> '101.25 Chinese Yuan'
+// 465 -> '3138.75 Chinese Yuan'
+// The conversion rate you should use is 6.75 CNY for every 1 USD. All numbers should be represented as a string with 2 decimal places. (e.g. "21.00" NOT "21.0" or "21")
+
+function converter(amount : number): string{
+    let valueCNY : number = 6.75;
+    let result : any = 0;
+
+    if (amount > 0){
+       result = (amount * valueCNY).toString();
+    } else {
+        console.error(`Insert a valid amount of dollar`);
+    }
+    return `${result.toFixed(2)} Chinese Yuan`;
+}
+
+converter(5);

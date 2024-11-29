@@ -612,4 +612,16 @@ function count(num) {
 count(3);
 count(4);
 count(6);
+function converter(amount) {
+    let valueCNY = 6.75;
+    let result = 0;
+    if (amount) {
+        result = amount * valueCNY;
+    }
+    else {
+        console.error(`Insert a valid amount of dollar`);
+    }
+    return result.toString();
+}
+converter(5);
 //# sourceMappingURL=index.js.map
