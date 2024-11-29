@@ -1336,7 +1336,7 @@ function count(num : number): number{
     function factorial(n : number) {
         let result = 1;
         for (let i = 2; i <= n; i++){
-            result *= 1;
+            result *= i;
         }
         return result.toString().split(" ").length;
     }
