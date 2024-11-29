@@ -583,4 +583,19 @@ function smallEnough(arrNum, limitNumber) {
 }
 smallEnough([1, 5, 3, 76], 566);
 smallEnough([1, 5, 3, 76], 56);
+function minCostClimbingStairs(cost) {
+    let prev1 = 0;
+    let prev2 = 0;
+    for (let i = 0; i < cost.length; i++) {
+        const current = cost[i] + Math.min(prev1, prev2);
+        prev1 = prev2;
+        prev2 = current;
+    }
+    return Math.min(prev1, prev2);
+}
+console.log(minCostClimbingStairs([0, 2, 2, 1]));
+console.log(minCostClimbingStairs([0, 2, 3, 2]));
+console.log(minCostClimbingStairs([10, 15, 20]));
+console.log(minCostClimbingStairs([0, 0, 0, 0, 0, 0]));
+console.log(minCostClimbingStairs([0, 1, 2, 0, 1, 2]));
 //# sourceMappingURL=index.js.map
