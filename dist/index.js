@@ -618,4 +618,20 @@ function converter(amount) {
     return `${result.toFixed(2)} Chinese Yuan`;
 }
 converter(5);
+function altCapitalization(str) {
+    let evenCapitalized = "";
+    let oddCapitalized = "";
+    for (let i = 0; i < str.length; i++) {
+        if (i % 2 === 0) {
+            evenCapitalized += str[i].toUpperCase();
+            oddCapitalized += str[i].toLowerCase();
+        }
+        else {
+            evenCapitalized += str[i].toLowerCase();
+            oddCapitalized += str[i].toUpperCase();
+        }
+    }
+    return [evenCapitalized, oddCapitalized];
+}
+altCapitalization("abcdefghi");
 //# sourceMappingURL=index.js.map

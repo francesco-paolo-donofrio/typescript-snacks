@@ -1366,3 +1366,31 @@ function converter(amount: number): string {
 }
 
 converter(5);
+
+// Snack 55
+
+// Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
+
+// For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+
+// The input will be a lowercase string with no spaces.
+
+// Good luck!
+
+function altCapitalization(str : string): string[]{
+    let evenCapitalized = "";
+    let oddCapitalized = "";
+    for (let i = 0; i < str.length; i++) {
+        if (i % 2 === 0) {
+            evenCapitalized += str[i].toUpperCase();
+            oddCapitalized += str[i].toLowerCase();
+        } else {
+            evenCapitalized += str[i].toLowerCase();
+            oddCapitalized += str[i].toUpperCase();
+        }
+    }
+
+    return [evenCapitalized, oddCapitalized]
+}
+
+altCapitalization("abcdefghi");
