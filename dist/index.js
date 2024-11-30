@@ -634,4 +634,8 @@ function altCapitalization(str) {
     return [evenCapitalized, oddCapitalized];
 }
 altCapitalization("abcdefghi");
+function findOutlier(arr) {
+    const majorityEven = arr.slice(0, 3).filter(num => num % 2 === 0).length >= 2;
+    return arr.find(num => (num % 2 === 0) !== majorityEven);
+}
 //# sourceMappingURL=index.js.map
