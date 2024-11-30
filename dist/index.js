@@ -638,4 +638,5 @@ function findOutlier(arr) {
     const majorityEven = arr.slice(0, 3).filter(num => num % 2 === 0).length >= 2;
     return arr.find(num => (num % 2 === 0) !== majorityEven);
 }
+findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 //# sourceMappingURL=index.js.map

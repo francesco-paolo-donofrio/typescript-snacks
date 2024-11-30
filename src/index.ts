@@ -1405,8 +1405,10 @@ altCapitalization("abcdefghi");
 // [160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
 
 function findOutlier(arr: number[]): number {
-    
+
     const majorityEven = arr.slice(0, 3).filter(num => num % 2 === 0).length >= 2;
 
     return arr.find(num => (num % 2 === 0) !== majorityEven)!;
 }
+
+findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
