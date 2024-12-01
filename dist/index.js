@@ -676,4 +676,14 @@ function sumsOfParts(ls) {
     return result;
 }
 sumsOfParts([0, 1, 3, 6, 10]);
+function findNextSquare(num) {
+    const sqrt = Math.sqrt(num);
+    if (Number.isInteger(sqrt)) {
+        const nextSquare = Math.pow(sqrt + 1, 2);
+        return nextSquare;
+    }
+    return -1;
+}
+findNextSquare(121);
+findNextSquare(45);
 //# sourceMappingURL=index.js.map
