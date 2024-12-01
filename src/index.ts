@@ -1481,3 +1481,18 @@ rowWeights([100, 50]);
 
 // The function parts_sums (or its variants in other languages) will take as parameter a list ls and return a list of the sums of its parts as defined above.
 
+function sumsOfParts(ls : number[]) : number[]{
+    let totalSum = ls.reduce((acc, num) => acc + num, 0);
+    const result : number[] = [];
+
+    for (let i = 0; i < ls.length; i++) {
+        result.push(totalSum);
+        totalSum -= ls[i];
+    }
+
+    result.push(0);
+
+    return result;
+}
+
+sumsOfParts([0, 1, 3, 6, 10]);

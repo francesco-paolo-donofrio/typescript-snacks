@@ -665,4 +665,15 @@ function rowWeights(array) {
 }
 rowWeights([50, 60, 70, 80]);
 rowWeights([100, 50]);
+function sumsOfParts(ls) {
+    let totalSum = ls.reduce((acc, num) => acc + num, 0);
+    const result = [];
+    for (let i = 0; i < ls.length; i++) {
+        result.push(totalSum);
+        totalSum -= ls[i];
+    }
+    result.push(0);
+    return result;
+}
+sumsOfParts([0, 1, 3, 6, 10]);
 //# sourceMappingURL=index.js.map
