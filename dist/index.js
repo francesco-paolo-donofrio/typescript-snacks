@@ -649,4 +649,20 @@ function dontGiveMeFive(start, end) {
     return count;
 }
 dontGiveMeFive(1, 9);
+dontGiveMeFive(1, 33);
+function rowWeights(array) {
+    let team1 = 0;
+    let team2 = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            team1 += array[i];
+        }
+        else {
+            team2 += array[i];
+        }
+    }
+    return [team1, team2];
+}
+rowWeights([50, 60, 70, 80]);
+rowWeights([100, 50]);
 //# sourceMappingURL=index.js.map
