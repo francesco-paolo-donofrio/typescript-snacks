@@ -639,4 +639,14 @@ function findOutlier(arr) {
     return arr.find(num => (num % 2 === 0) !== majorityEven);
 }
 findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
+function dontGiveMeFive(start, end) {
+    let count = 0;
+    for (let i = start; i <= end; i++) {
+        if (!i.toString().includes("5")) {
+            count++;
+        }
+    }
+    return count;
+}
+dontGiveMeFive(1, 9);
 //# sourceMappingURL=index.js.map
