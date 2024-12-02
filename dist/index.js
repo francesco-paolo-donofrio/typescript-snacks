@@ -702,4 +702,15 @@ cleanString("abc#d##c");
 cleanString("abc##d######");
 cleanString("#######");
 cleanString("");
+function bumpsInTheRoad(str) {
+    let bumps = 0;
+    for (const char of str) {
+        if (char === "n") {
+            bumps++;
+        }
+    }
+    return bumps <= 15 ? "Whohoo!" : "Car Dead";
+}
+bumpsInTheRoad("________nnn___nn________________________");
+bumpsInTheRoad("_nnnnnnnnnnnnnnnnnn___nn__nnnnnnnnnnnnnn");
 //# sourceMappingURL=index.js.map
