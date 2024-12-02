@@ -1521,3 +1521,34 @@ function findNextSquare(num : number): number {
 
 findNextSquare(121);
 findNextSquare(45);
+
+// Snack 61
+
+// Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+
+// Your task is to process a string with "#" symbols.
+
+// Examples
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(str: string): string {
+    const stack: string[] = [];
+    
+    for (const char of str) {
+        if (char === "#") {
+            stack.pop();
+        } else {
+            stack.push(char);
+        }
+    }
+    
+    return stack.join("");
+}
+
+cleanString("abc#d##c");
+cleanString("abc##d######");
+cleanString("#######");
+cleanString("");

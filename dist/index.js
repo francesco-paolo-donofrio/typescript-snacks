@@ -686,4 +686,20 @@ function findNextSquare(num) {
 }
 findNextSquare(121);
 findNextSquare(45);
+function cleanString(str) {
+    const stack = [];
+    for (const char of str) {
+        if (char === "#") {
+            stack.pop();
+        }
+        else {
+            stack.push(char);
+        }
+    }
+    return stack.join("");
+}
+cleanString("abc#d##c");
+cleanString("abc##d######");
+cleanString("#######");
+cleanString("");
 //# sourceMappingURL=index.js.map
