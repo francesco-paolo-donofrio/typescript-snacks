@@ -757,4 +757,10 @@ function numberOfPeopleOnBus(busStops) {
 }
 numberOfPeopleOnBus([[10, 0], [3, 5], [5, 8]]);
 numberOfPeopleOnBus([]);
+function sortingList(strArr) {
+    const sortedArray = strArr.sort();
+    const firstValue = sortedArray[0];
+    return firstValue.split("").join("***");
+}
+sortingList(["abracadabra", "ciccioMerolla", "patrick", "antonio"]);
 //# sourceMappingURL=index.js.map

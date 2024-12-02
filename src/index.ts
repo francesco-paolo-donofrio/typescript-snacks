@@ -1690,3 +1690,10 @@ numberOfPeopleOnBus([]);
 
 // You should not remove or add elements from/to the array.
 
+function sortingList(strArr : string[]): string {
+    const sortedArray = strArr.sort();
+    const firstValue = sortedArray[0];
+    return firstValue.split("").join("***");
+}
+
+sortingList(["abracadabra", "ciccioMerolla", "patrick", "antonio"]);
