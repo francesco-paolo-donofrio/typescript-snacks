@@ -713,4 +713,26 @@ function bumpsInTheRoad(str) {
 }
 bumpsInTheRoad("________nnn___nn________________________");
 bumpsInTheRoad("_nnnnnnnnnnnnnnnnnn___nn__nnnnnnnnnnnnnn");
+function validBraces(str) {
+    const stack = [];
+    const matchingBraces = {
+        ")": "(",
+        "]": "[",
+        "}": "{",
+    };
+    for (const char of str) {
+        if (["(", "[", "{"].includes(char)) {
+            stack.push(char);
+        }
+        else {
+            if (stack.pop() !== matchingBraces[char]) {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+}
+validBraces("(){}[]");
+validBraces("([{}])");
+validBraces("(}");
 //# sourceMappingURL=index.js.map
