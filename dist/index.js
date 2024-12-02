@@ -735,4 +735,19 @@ function validBraces(str) {
 validBraces("(){}[]");
 validBraces("([{}])");
 validBraces("(}");
+function sumFirstSeries(num) {
+    if (num === 0) {
+        return "0.00";
+    }
+    let total = 0.0;
+    let denominator = 1;
+    for (let i = 0; i < num; i++) {
+        total += 1 / denominator;
+        denominator += 3;
+    }
+    return total.toFixed(2);
+}
+sumFirstSeries(5);
+sumFirstSeries(1);
+sumFirstSeries(0);
 //# sourceMappingURL=index.js.map
