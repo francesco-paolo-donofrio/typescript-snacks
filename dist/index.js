@@ -750,4 +750,11 @@ function sumFirstSeries(num) {
 sumFirstSeries(5);
 sumFirstSeries(1);
 sumFirstSeries(0);
+function numberOfPeopleOnBus(busStops) {
+    return busStops.reduce((peopleOnBus, [on, off]) => {
+        return peopleOnBus + on - off;
+    }, 0);
+}
+numberOfPeopleOnBus([[10, 0], [3, 5], [5, 8]]);
+numberOfPeopleOnBus([]);
 //# sourceMappingURL=index.js.map
