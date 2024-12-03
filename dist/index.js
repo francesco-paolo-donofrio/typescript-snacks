@@ -763,4 +763,7 @@ function sortingList(strArr) {
     return firstValue.split("").join("***");
 }
 sortingList(["abracadabra", "ciccioMerolla", "patrick", "antonio"]);
+const arr = [10, 20, 30];
+arr[100] = 50;
+console.log(arr.length);
 //# sourceMappingURL=index.js.map
