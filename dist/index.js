@@ -766,4 +766,11 @@ sortingList(["abracadabra", "ciccioMerolla", "patrick", "antonio"]);
 const arr = [10, 20, 30];
 arr[100] = 50;
 console.log(arr.length);
+function volumeOfCuboids(firstArr, secondArr) {
+    const volumeA = firstArr.reduce((acc, curr) => acc * curr, 1);
+    const volumeB = secondArr.reduce((acc, curr) => acc * curr, 1);
+    return Math.abs(volumeA - volumeB);
+}
+volumeOfCuboids([2, 2, 3], [5, 4, 1]);
+volumeOfCuboids([5, 4, 1], [2, 2, 3]);
 //# sourceMappingURL=index.js.map
