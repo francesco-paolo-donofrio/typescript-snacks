@@ -773,4 +773,9 @@ function volumeOfCuboids(firstArr, secondArr) {
 }
 volumeOfCuboids([2, 2, 3], [5, 4, 1]);
 volumeOfCuboids([5, 4, 1], [2, 2, 3]);
+function returnId(arr) {
+    return arr.sort(function (a, b) { return a - b; })[0];
+}
+returnId([23, 1, 56, 333]);
+returnId([22, 55, 23, 66]);
 //# sourceMappingURL=index.js.map

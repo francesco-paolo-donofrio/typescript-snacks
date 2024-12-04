@@ -1724,3 +1724,21 @@ volumeOfCuboids([2, 2, 3], [5, 4, 1]);
 volumeOfCuboids([5, 4, 1], [2, 2, 3]);
 
 
+// Snack 69 
+
+// Hey awesome programmer!
+
+// You've got much data to manage and of course you use zero-based and non-negative ID's to make each data item unique!
+
+// Therefore you need a method, which returns the smallest unused ID for your next new data item...
+
+// Note: The given array of used IDs may be unsorted. For test reasons there may be duplicate IDs, but you don't have to find or remove them!
+
+// Go on and code some pure awesomeness!
+
+function returnId(arr : number[]): number {
+    return arr.sort(function(a, b){return a - b})[0];
+}
+
+returnId([23, 1, 56, 333]);
+returnId([22, 55, 23, 66]);
