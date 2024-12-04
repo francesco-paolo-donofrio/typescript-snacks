@@ -778,4 +778,31 @@ function returnId(arr) {
 }
 returnId([23, 1, 56, 333]);
 returnId([22, 55, 23, 66]);
+function bartenderDrinks(str) {
+    const normalizedStr = str.toLowerCase();
+    switch (normalizedStr) {
+        case "Jabroni":
+            return "Patron Tequila";
+            break;
+        case "School Counselor":
+            return "Anything with Alcohol";
+            break;
+        case "Programmer":
+            return "Hipster Craft Beer";
+            break;
+        case "Bike Gang Member":
+            return "Moonshine";
+            break;
+        case "Politician":
+            return "Your tax dollars";
+            break;
+        case "Rapper":
+            return "Cristal";
+            break;
+        default:
+            return "Beer";
+    }
+}
+bartenderDrinks("Jabroni");
+bartenderDrinks("PolitiCIAN");
 //# sourceMappingURL=index.js.map
