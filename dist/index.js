@@ -781,24 +781,18 @@ returnId([22, 55, 23, 66]);
 function bartenderDrinks(str) {
     const normalizedStr = str.toLowerCase();
     switch (normalizedStr) {
-        case "Jabroni":
+        case "jabroni":
             return "Patron Tequila";
-            break;
-        case "School Counselor":
+        case "school counselor":
             return "Anything with Alcohol";
-            break;
-        case "Programmer":
+        case "programmer":
             return "Hipster Craft Beer";
-            break;
-        case "Bike Gang Member":
+        case "bike gang member":
             return "Moonshine";
-            break;
-        case "Politician":
+        case "politician":
             return "Your tax dollars";
-            break;
-        case "Rapper":
+        case "rapper":
             return "Cristal";
-            break;
         default:
             return "Beer";
     }
