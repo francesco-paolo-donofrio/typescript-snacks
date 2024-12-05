@@ -1815,3 +1815,24 @@ function reverseAeB(str : string): string {
 reverseAeB("aab");
 reverseAeB("bba");
 reverseAeB("aaabbb");
+
+// Snack 73
+
+// Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+// Example(Input => Output):
+
+// 35231 => [1,3,2,5,3]
+// 0 => [0]
+
+function reverseArray(num : number): number[]{
+    if (num === 0){
+        const zero : number[] = [0];
+        return zero;
+    }
+    return num.toString().split("").reverse().map(Number);
+} 
+
+reverseArray(35231);
+reverseArray(987654321);
+reverseArray(0);

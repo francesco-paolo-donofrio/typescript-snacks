@@ -818,4 +818,13 @@ function reverseAeB(str) {
 reverseAeB("aab");
 reverseAeB("bba");
 reverseAeB("aaabbb");
+function reverseArray(num) {
+    if (num === 0) {
+        const zero = [0];
+        return zero;
+    }
+    return num.toString().split("").reverse().map(Number);
+}
+reverseArray(35231);
+reverseArray(987654321);
 //# sourceMappingURL=index.js.map
