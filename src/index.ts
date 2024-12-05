@@ -1794,3 +1794,24 @@ function concatenateString(arr : string[]): string{
 
 concatenateString(["ciao", "bello", "come", "stai"]);
 concatenateString(["hola", "amigos", "como", "estas"]);
+
+// Snack 72
+
+// Given a string made up of letters a, b, and/or c, switch the position of letters a and b (change a to b and vice versa). Leave any incidence of c untouched.
+
+// Example:
+
+// 'acb' --> 'bca'
+// 'aabacbaa' --> 'bbabcabb'
+
+function reverseAeB(str : string): string {
+    return str.split("").map((char) => {
+        if (char === "a") return "b";
+        if (char === "b") return "a";
+        return char;
+    }).join("");
+}
+
+reverseAeB("aab");
+reverseAeB("bba");
+reverseAeB("aaabbb");

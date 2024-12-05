@@ -806,4 +806,16 @@ function concatenateString(arr) {
 }
 concatenateString(["ciao", "bello", "come", "stai"]);
 concatenateString(["hola", "amigos", "como", "estas"]);
+function reverseAeB(str) {
+    return str.split("").map((char) => {
+        if (char === "a")
+            return "b";
+        if (char === "b")
+            return "a";
+        return char;
+    }).join("");
+}
+reverseAeB("aab");
+reverseAeB("bba");
+reverseAeB("aaabbb");
 //# sourceMappingURL=index.js.map
