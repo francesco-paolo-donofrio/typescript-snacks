@@ -799,4 +799,11 @@ function bartenderDrinks(str) {
 }
 bartenderDrinks("Jabroni");
 bartenderDrinks("PolitiCIAN");
+function concatenateString(arr) {
+    if (arr.length === 0)
+        return "";
+    return arr[0] + arr.slice(1).join("");
+}
+concatenateString(["ciao", "bello", "come", "stai"]);
+concatenateString(["hola", "amigos", "como", "estas"]);
 //# sourceMappingURL=index.js.map

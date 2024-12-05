@@ -1782,3 +1782,15 @@ function bartenderDrinks(str : string): string {
 
 bartenderDrinks("Jabroni");
 bartenderDrinks("PolitiCIAN");
+
+// Snack 71
+
+// Create a function that accepts an array, and returns the first element of the array as a string with all of the other elements in the array concatenated to the end.
+
+function concatenateString(arr : string[]): string{
+    if (arr.length === 0) return "";
+    return arr[0] + arr.slice(1).join("");
+}
+
+concatenateString(["ciao", "bello", "come", "stai"]);
+concatenateString(["hola", "amigos", "como", "estas"]);
