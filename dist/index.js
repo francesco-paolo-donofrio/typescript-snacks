@@ -844,4 +844,9 @@ function leo(oscar) {
 }
 leo(80);
 leo(1);
+leo(88);
+function joinArray(arr) {
+    return arr.join(",");
+}
+joinArray(["h", "o", "l", "a"]);
 //# sourceMappingURL=index.js.map
