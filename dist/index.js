@@ -887,4 +887,11 @@ function pluralIsServed(num) {
 pluralIsServed(0);
 pluralIsServed(1);
 pluralIsServed(99);
+function all(sequence, method) {
+    return sequence.every(method);
+}
+const greaterThan9 = (n) => n > 9;
+const lessThan9 = (n) => n < 9;
+all([1, 2, 3, 4, 5], greaterThan9);
+all([1, 2, 3, 4, 5], lessThan9);
 //# sourceMappingURL=index.js.map
