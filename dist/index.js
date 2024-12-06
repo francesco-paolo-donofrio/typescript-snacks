@@ -875,4 +875,16 @@ function checkSameCase(firstCase, secondCase) {
 checkSameCase("a", "g");
 checkSameCase("b", "G");
 checkSameCase("0", "?");
+function pluralIsServed(num) {
+    if (num < 0) {
+        console.error("A positive number as input is required");
+    }
+    else if (num === 1) {
+        return false;
+    }
+    return true;
+}
+pluralIsServed(0);
+pluralIsServed(1);
+pluralIsServed(99);
 //# sourceMappingURL=index.js.map
