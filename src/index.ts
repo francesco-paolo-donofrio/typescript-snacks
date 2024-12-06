@@ -1481,9 +1481,9 @@ rowWeights([100, 50]);
 
 // The function parts_sums (or its variants in other languages) will take as parameter a list ls and return a list of the sums of its parts as defined above.
 
-function sumsOfParts(ls : number[]) : number[]{
+function sumsOfParts(ls: number[]): number[] {
     let totalSum = ls.reduce((acc, num) => acc + num, 0);
-    const result : number[] = [];
+    const result: number[] = [];
 
     for (let i = 0; i < ls.length; i++) {
         result.push(totalSum);
@@ -1510,7 +1510,7 @@ sumsOfParts([0, 1, 3, 6, 10]);
 // 625 --> 676
 // 114 --> -1  #  because 114 is not a perfect square
 
-function findNextSquare(num : number): number {
+function findNextSquare(num: number): number {
     const sqrt = Math.sqrt(num);
     if (Number.isInteger(sqrt)) {
         const nextSquare = Math.pow(sqrt + 1, 2);
@@ -1536,7 +1536,7 @@ findNextSquare(45);
 
 function cleanString(str: string): string {
     const stack: string[] = [];
-    
+
     for (const char of str) {
         if (char === "#") {
             stack.pop();
@@ -1544,7 +1544,7 @@ function cleanString(str: string): string {
             stack.push(char);
         }
     }
-    
+
     return stack.join("");
 }
 
@@ -1559,15 +1559,15 @@ cleanString("");
 
 // Unfortunately for you, your drive is very bumpy! Given a string showing either flat road (_) or bumps (n). If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead
 
-function bumpsInTheRoad(str : string): string {
+function bumpsInTheRoad(str: string): string {
     let bumps = 0;
 
-    for (const char of str){
-        if (char === "n"){
-            bumps ++;
+    for (const char of str) {
+        if (char === "n") {
+            bumps++;
         }
     }
-    
+
     return bumps <= 15 ? "Whohoo!" : "Car Dead";
 }
 
@@ -1602,10 +1602,10 @@ function validBraces(str: string): boolean {
 
     for (const char of str) {
         if (["(", "[", "{"].includes(char)) {
-            
+
             stack.push(char);
         } else {
-            
+
             if (stack.pop() !== matchingBraces[char]) {
                 return false;
             }
@@ -1639,8 +1639,8 @@ validBraces("(}");
 // 2 --> 1 + 1/4 --> "1.25"
 // 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
 
-function sumFirstSeries(num : number): string {
-    if (num === 0){
+function sumFirstSeries(num: number): string {
+    if (num === 0) {
         return "0.00";
     }
 
@@ -1673,8 +1673,8 @@ sumFirstSeries(0);
 
 // The second value in the first pair in the array is 0, since the bus is empty in the first bus stop
 
-function numberOfPeopleOnBus(busStops : [number, number][]): number {
-    return busStops.reduce((peopleOnBus, [on, off]) =>{
+function numberOfPeopleOnBus(busStops: [number, number][]): number {
+    return busStops.reduce((peopleOnBus, [on, off]) => {
         return peopleOnBus + on - off;
     }, 0)
 }
@@ -1690,7 +1690,7 @@ numberOfPeopleOnBus([]);
 
 // You should not remove or add elements from/to the array.
 
-function sortingList(strArr : string[]): string {
+function sortingList(strArr: string[]): string {
     const sortedArray = strArr.sort();
     const firstValue = sortedArray[0];
     return firstValue.split("").join("***");
@@ -1702,9 +1702,9 @@ sortingList(["abracadabra", "ciccioMerolla", "patrick", "antonio"]);
 
 // Instructions from Linkedin
 
-const arr = [10, 20, 30]; 
-arr[100] = 50; 
-console.log(arr.length); 
+const arr = [10, 20, 30];
+arr[100] = 50;
+console.log(arr.length);
 
 // Snack 68
 
@@ -1717,7 +1717,7 @@ console.log(arr.length);
 function volumeOfCuboids(firstArr: number[], secondArr: number[]): number {
     const volumeA = firstArr.reduce((acc, curr) => acc * curr, 1);
     const volumeB = secondArr.reduce((acc, curr) => acc * curr, 1);
-    return Math.abs(volumeA - volumeB); 
+    return Math.abs(volumeA - volumeB);
 }
 
 volumeOfCuboids([2, 2, 3], [5, 4, 1]);
@@ -1736,8 +1736,8 @@ volumeOfCuboids([5, 4, 1], [2, 2, 3]);
 
 // Go on and code some pure awesomeness!
 
-function returnId(arr : number[]): number {
-    return arr.sort(function(a, b){return a - b})[0];
+function returnId(arr: number[]): number {
+    return arr.sort(function (a, b) { return a - b })[0];
 }
 
 returnId([23, 1, 56, 333]);
@@ -1759,7 +1759,7 @@ returnId([22, 55, 23, 66]);
 
 // Make sure you cover the cases where certain words do not show up with correct capitalization. For example, the input "pOLitiCIaN" should still return "Your tax dollars".
 
-function bartenderDrinks(str : string): string { 
+function bartenderDrinks(str: string): string {
     const normalizedStr = str.toLowerCase();
 
     switch (normalizedStr) {
@@ -1787,7 +1787,7 @@ bartenderDrinks("PolitiCIAN");
 
 // Create a function that accepts an array, and returns the first element of the array as a string with all of the other elements in the array concatenated to the end.
 
-function concatenateString(arr : string[]): string{
+function concatenateString(arr: string[]): string {
     if (arr.length === 0) return "";
     return arr[0] + arr.slice(1).join("");
 }
@@ -1804,7 +1804,7 @@ concatenateString(["hola", "amigos", "como", "estas"]);
 // 'acb' --> 'bca'
 // 'aabacbaa' --> 'bbabcabb'
 
-function reverseAeB(str : string): string {
+function reverseAeB(str: string): string {
     return str.split("").map((char) => {
         if (char === "a") return "b";
         if (char === "b") return "a";
@@ -1825,13 +1825,13 @@ reverseAeB("aaabbb");
 // 35231 => [1,3,2,5,3]
 // 0 => [0]
 
-function reverseArray(num : number): number[]{
-    if (num === 0){
-        const zero : number[] = [0];
+function reverseArray(num: number): number[] {
+    if (num === 0) {
+        const zero: number[] = [0];
         return zero;
     }
     return num.toString().split("").reverse().map(Number);
-} 
+}
 
 reverseArray(35231);
 reverseArray(987654321);
@@ -1848,10 +1848,10 @@ reverseArray(0);
 // if it was not 88 or 86 (and below 88) you should return "When will you give Leo an Oscar?"
 // if it was over 88 you should return "Leo got one already!"
 
-function leo(oscar : number): string {
-    if (oscar === 88){
+function leo(oscar: number): string {
+    if (oscar === 88) {
         return "Leo finally won the oscar! Leo is happy"
-    } else if (oscar === 86){
+    } else if (oscar === 86) {
         return "Not even for Wolf of Wallstreet?"
     } else if (oscar < 88) {
         return "When will you give Leo an Oscar?"
@@ -1878,7 +1878,7 @@ leo(88);
 
 // Note2: the input data can be: boolean array, array of objects, array of string arrays, array of number arrays... 
 
-function joinArray(arr : string[]) : string {
+function joinArray(arr: string[]): string {
     return arr.join(",");
 }
 
@@ -1894,7 +1894,7 @@ joinArray(["h", "o", "l", "a"]);
 // mango(5, 3) ==> 12   # 4 mangoes for $3 per unit = $12; +1 mango for free
 // mango(9, 5) ==> 30   # 6 mangoes for $5 per unit = $30; +3 mangoes for free
 
-function actionMango(quantity : number, price : number) : number {
+function actionMango(quantity: number, price: number): number {
     const paidMangoes = Math.floor(quantity / 3) * 2 + (quantity % 3);
     return paidMangoes * price;
 }
@@ -1920,10 +1920,46 @@ actionMango(6, 2);
 
 function returnWithFilter(list: string[]): string[] {
     const geese: string[] = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-    
+
     const returnedArray: string[] = list.filter(item => !geese.includes(item));
-    
+
     return returnedArray;
 }
 
 returnWithFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]);
+
+// Snack 78
+
+// Write a function that will check if two given characters are the same case.
+
+// If either of the characters is not a letter, return -1
+// If both characters are the same case, return 1
+// If both characters are letters, but not the same case, return 0
+// Examples
+// 'a' and 'g' returns 1
+
+// 'A' and 'C' returns 1
+
+// 'b' and 'G' returns 0
+
+// 'B' and 'g' returns 0
+
+// '0' and '?' returns -1
+
+function checkSameCase(firstCase: string, secondCase: string): number {
+    if (!/^[a-zA-Z]$/.test(firstCase) || !/^[a-zA-Z]$/.test(secondCase)) {
+        return -1;
+    }
+    if (
+        (firstCase === firstCase.toUpperCase() && secondCase === secondCase.toUpperCase()) ||
+        (firstCase === firstCase.toLowerCase() && secondCase === secondCase.toLowerCase())
+    ) {
+        return 1;
+    }
+
+    return 0;
+}
+
+checkSameCase("a", "g");
+checkSameCase("b", "G");
+checkSameCase("0", "?");

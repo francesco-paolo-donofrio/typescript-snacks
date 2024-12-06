@@ -862,4 +862,17 @@ function returnWithFilter(list) {
     return returnedArray;
 }
 returnWithFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]);
+function checkSameCase(firstCase, secondCase) {
+    if (!/^[a-zA-Z]$/.test(firstCase) || !/^[a-zA-Z]$/.test(secondCase)) {
+        return -1;
+    }
+    if ((firstCase === firstCase.toUpperCase() && secondCase === secondCase.toUpperCase()) ||
+        (firstCase === firstCase.toLowerCase() && secondCase === secondCase.toLowerCase())) {
+        return 1;
+    }
+    return 0;
+}
+checkSameCase("a", "g");
+checkSameCase("b", "G");
+checkSameCase("0", "?");
 //# sourceMappingURL=index.js.map
