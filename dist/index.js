@@ -850,14 +850,16 @@ function joinArray(arr) {
 }
 joinArray(["h", "o", "l", "a"]);
 function actionMango(quantity, price) {
-    if (quantity % 3 === 0) {
-        return (quantity - 1) * price;
-    }
-    else {
-        return quantity * price;
-    }
+    const paidMangoes = Math.floor(quantity / 3) * 2 + (quantity % 3);
+    return paidMangoes * price;
 }
 actionMango(3, 2);
 actionMango(2, 2);
 actionMango(6, 2);
+function returnWithFilter(list) {
+    const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    const returnedArray = list.filter(item => !geese.includes(item));
+    return returnedArray;
+}
+returnWithFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]);
 //# sourceMappingURL=index.js.map
