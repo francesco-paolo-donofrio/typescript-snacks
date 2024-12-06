@@ -849,4 +849,15 @@ function joinArray(arr) {
     return arr.join(",");
 }
 joinArray(["h", "o", "l", "a"]);
+function actionMango(quantity, price) {
+    if (quantity % 3 === 0) {
+        return (quantity - 1) * price;
+    }
+    else {
+        return quantity * price;
+    }
+}
+actionMango(3, 2);
+actionMango(2, 2);
+actionMango(6, 2);
 //# sourceMappingURL=index.js.map
