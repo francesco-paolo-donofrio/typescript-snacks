@@ -1982,6 +1982,12 @@ function pluralIsServed(num : number): boolean {
     return true;
 }
 
+// or
+// function pluralIsServed(num: number): boolean {
+//     return num !== 1;
+// }
+
+
 pluralIsServed(0);
 pluralIsServed(1);
 pluralIsServed(99);
