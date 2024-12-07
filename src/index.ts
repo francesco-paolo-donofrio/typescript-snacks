@@ -2089,3 +2089,10 @@ sixToast(12);
 sixToast(5);
 sixToast(6);
 sixToast(1);
+
+// Alternative to snack 83
+
+// function sixToast(toasts: number): number {
+//     const maxToast = 6;
+//     return Math.abs(toasts - maxToast);
+// }
