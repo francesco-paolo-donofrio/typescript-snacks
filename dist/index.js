@@ -895,4 +895,12 @@ const lessThan9 = (n) => n < 9;
 all([1, 2, 3, 4, 5], greaterThan9);
 all([1, 2, 3, 4, 5], lessThan9);
 console.log(2 ** 3);
+function greetings(name) {
+    if (name === "Johnny") {
+        return "Hello, my love!";
+    }
+    return `Hello, ${name}!`;
+}
+greetings("Jhonny");
+greetings("Mario");
 //# sourceMappingURL=index.js.map
