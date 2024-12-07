@@ -910,4 +910,19 @@ function kmPerLiter(mpg) {
 }
 kmPerLiter(20);
 kmPerLiter(10);
+function sixToast(toasts) {
+    const maxToast = 6;
+    if (toasts > maxToast) {
+        return `You have to take ${toasts - maxToast} toast less`;
+    }
+    else if (toasts < maxToast) {
+        return `You have to take ${Math.abs(toasts - maxToast)} more toast`;
+    }
+    else {
+        return `You have 6 toasts inside`;
+    }
+}
+sixToast(12);
+sixToast(5);
+sixToast(6);
 //# sourceMappingURL=index.js.map
