@@ -901,6 +901,13 @@ function greetings(name) {
     }
     return `Hello, ${name}!`;
 }
-greetings("Jhonny");
+greetings("Johnny");
 greetings("Mario");
+const imperialGallon = 4.54609188;
+const oneMile = 1.609344;
+function kmPerLiter(mpg) {
+    return parseFloat((mpg * oneMile / imperialGallon).toFixed(2));
+}
+kmPerLiter(20);
+kmPerLiter(10);
 //# sourceMappingURL=index.js.map
