@@ -2088,3 +2088,4 @@ function sixToast(toasts : number): string {
 sixToast(12);
 sixToast(5);
 sixToast(6);
+sixToast(1);
