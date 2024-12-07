@@ -2014,3 +2014,6 @@ const lessThan9 = (n: number) => n < 9;
 
 all([1, 2, 3, 4, 5], greaterThan9);
 all([1, 2, 3, 4, 5], lessThan9);
+
+// Elevazione a potenza di 2 alla terza
+console.log(2 ** 3);

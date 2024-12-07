@@ -894,4 +894,5 @@ const greaterThan9 = (n) => n > 9;
 const lessThan9 = (n) => n < 9;
 all([1, 2, 3, 4, 5], greaterThan9);
 all([1, 2, 3, 4, 5], lessThan9);
+console.log(2 ** 3);
 //# sourceMappingURL=index.js.map
