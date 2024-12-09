@@ -925,4 +925,9 @@ function sixToast(toasts) {
 sixToast(12);
 sixToast(5);
 sixToast(6);
+sixToast(1);
+function replaceDot(str) {
+    return str.split("").map((char) => char === "." ? char.replace(".", "-") : char).join("");
+}
+replaceDot("Ciao.Sono.Mario");
 //# sourceMappingURL=index.js.map

@@ -2096,3 +2096,21 @@ sixToast(1);
 //     const maxToast = 6;
 //     return Math.abs(toasts - maxToast);
 // }
+
+// Snack 84
+
+// The code provided is supposed replace all the dots . in the specified String str with dashes -
+
+// But it's not working properly.
+
+// Task
+// Fix the bug so we can all go home early.
+
+// Notes
+// String str will never be null.
+
+function replaceDot(str : string): string {
+    return str.split("").map((char) => char === "." ? char.replace(".", "-") : char).join("");
+}
+
+replaceDot("Ciao.Sono.Mario")
