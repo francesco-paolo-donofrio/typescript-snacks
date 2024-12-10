@@ -2114,3 +2114,17 @@ function replaceDot(str : string): string {
 }
 
 replaceDot("Ciao.Sono.Mario")
+
+// Snack 85
+
+// Description:
+
+// Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a digit (0-9), false otherwise.
+
+function isDigit(str : string): boolean {
+    return !isNaN(parseInt(str));
+}
+
+isDigit("1");
+isDigit("a");
+

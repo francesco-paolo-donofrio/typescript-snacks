@@ -930,4 +930,9 @@ function replaceDot(str) {
     return str.split("").map((char) => char === "." ? char.replace(".", "-") : char).join("");
 }
 replaceDot("Ciao.Sono.Mario");
+function isDigit(str) {
+    return !isNaN(parseInt(str));
+}
+isDigit("1");
+isDigit("a");
 //# sourceMappingURL=index.js.map
