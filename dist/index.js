@@ -943,4 +943,11 @@ function helloName(name) {
 }
 helloName("Mario");
 helloName("");
+function whiskeyDiscount(normPrice, discount, holidayCost) {
+    const discountPerItem = (normPrice * discount) / 100;
+    const bottlesToBuy = holidayCost / discountPerItem;
+    return Math.round(bottlesToBuy);
+}
+whiskeyDiscount(10, 10, 500);
+whiskeyDiscount(12, 50, 1000);
 //# sourceMappingURL=index.js.map
