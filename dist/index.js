@@ -935,4 +935,12 @@ function isDigit(str) {
 }
 isDigit("1");
 isDigit("a");
+function helloName(name) {
+    if (name === "" || name === null) {
+        return "Hello, World!";
+    }
+    return `Hello, ${name}!`;
+}
+helloName("Mario");
+helloName("");
 //# sourceMappingURL=index.js.map
