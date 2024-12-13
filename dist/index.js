@@ -950,4 +950,12 @@ function whiskeyDiscount(normPrice, discount, holidayCost) {
 }
 whiskeyDiscount(10, 10, 500);
 whiskeyDiscount(12, 50, 1000);
+function sumTheDifferences(arr) {
+    return arr.sort(function (a, b) { return a - b; }).reduce(reduceFunc);
+    function reduceFunc(firstValue, secondValue) {
+        let result = firstValue - secondValue;
+        return result;
+    }
+}
+sumTheDifferences([2, 1, 10]);
 //# sourceMappingURL=index.js.map

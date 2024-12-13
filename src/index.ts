@@ -2194,3 +2194,22 @@ function sumTheDifferences(arr : number[]): number {
 }
 
 sumTheDifferences([2, 1, 10]);
+
+function sumTheDifferences(arr: number[]): number {
+    if (arr.length <= 1) return 0; // Handle empty or single-element arrays
+
+    // Sort the array in descending order
+    const sortedArr = arr.sort((a, b) => b - a);
+
+    // Calculate the sum of differences between consecutive pairs
+    let sum = 0;
+    for (let i = 0; i < sortedArr.length - 1; i++) {
+        sum += sortedArr[i] - sortedArr[i + 1];
+    }
+
+    return sum;
+}
+
+// Example usage
+console.log(sumTheDifferences([2, 1, 10])); // Output: 9
+
