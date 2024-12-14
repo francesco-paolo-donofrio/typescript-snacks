@@ -950,12 +950,30 @@ function whiskeyDiscount(normPrice, discount, holidayCost) {
 }
 whiskeyDiscount(10, 10, 500);
 whiskeyDiscount(12, 50, 1000);
-function sumTheDifferences(arr) {
-    return arr.sort(function (a, b) { return a - b; }).reduce(reduceFunc);
-    function reduceFunc(firstValue, secondValue) {
-        let result = firstValue - secondValue;
-        return result;
-    }
-}
 sumTheDifferences([2, 1, 10]);
+function sumTheDifferences(arr) {
+    if (arr.length <= 1)
+        return 0;
+    const sortedArr = arr.sort((a, b) => b - a);
+    let sum = 0;
+    for (let i = 0; i < sortedArr.length - 1; i++) {
+        sum += sortedArr[i] - sortedArr[i + 1];
+    }
+    return sum;
+}
+console.log(sumTheDifferences([2, 1, 10]));
+function finalGrade(grade, completedProjects) {
+    if (grade > 90 || completedProjects > 10)
+        return 100;
+    else if (grade > 75 || completedProjects < 5)
+        return 90;
+    else if (grade > 50 || completedProjects < 2)
+        return 75;
+    return 0;
+}
+finalGrade(100, 12);
+finalGrade(99, 0);
+finalGrade(85, 5);
+finalGrade(55, 0);
+finalGrade(20, 2);
 //# sourceMappingURL=index.js.map
