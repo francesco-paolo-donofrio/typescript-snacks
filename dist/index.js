@@ -965,9 +965,9 @@ console.log(sumTheDifferences([2, 1, 10]));
 function finalGrade(grade, completedProjects) {
     if (grade > 90 || completedProjects > 10)
         return 100;
-    else if (grade > 75 || completedProjects < 5)
+    else if (grade > 75 && completedProjects > 5)
         return 90;
-    else if (grade > 50 || completedProjects < 2)
+    else if (grade > 50 && completedProjects > 2)
         return 75;
     return 0;
 }
@@ -976,4 +976,20 @@ finalGrade(99, 0);
 finalGrade(85, 5);
 finalGrade(55, 0);
 finalGrade(20, 2);
+function animals(heads, legs) {
+    if (heads < 0 || legs < 0 || legs % 2 !== 0) {
+        return "No solutions";
+    }
+    const chickens = (4 * heads - legs) / 2;
+    const cows = heads - chickens;
+    if (chickens < 0 || cows < 0 || !Number.isInteger(chickens) || !Number.isInteger(cows)) {
+        return "No solutions";
+    }
+    return [chickens, cows];
+}
+console.log(animals(72, 200));
+console.log(animals(72, 201));
+console.log(animals(0, 0));
+console.log(animals(-1, 100));
+console.log(animals(100, 400));
 //# sourceMappingURL=index.js.map
