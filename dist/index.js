@@ -1009,4 +1009,17 @@ realFloor(0);
 realFloor(5);
 realFloor(15);
 realFloor(-3);
+function setAlarm(employed, vacation) {
+    if (employed && vacation)
+        return false;
+    else if (employed === true && vacation === false)
+        return true;
+    else if (employed === false && vacation === true)
+        return false;
+    return false;
+}
+setAlarm(true, false);
+setAlarm(false, false);
+setAlarm(true, true);
+setAlarm(false, true);
 //# sourceMappingURL=index.js.map
