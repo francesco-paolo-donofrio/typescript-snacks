@@ -2258,8 +2258,6 @@ finalGrade(20, 2);
 
 // Assuming there are no other types of animals, work out how many of each animal are there.
 
-// Return a tuple in Python - (chickens, cows) and an array list - [chickens, cows]/{chickens, cows} in all other languages
-
 // If either the heads & legs is negative, the result of your calculation is negative or the calculation is a float return "No solutions" (no valid cases), or [-1, -1] in COBOL.
 
 // In the form:
@@ -2302,3 +2300,40 @@ console.log(animals(72, 201));
 console.log(animals(0, 0));    
 console.log(animals(-1, 100)); 
 console.log(animals(100, 400)); 
+
+// Snack 91
+
+// Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
+
+// Write a function that given a floor in the american system returns the floor in the european system.
+
+// With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. In case of above 13, they move down by two because there are two omitted numbers below them.
+
+// Basements (negatives) stay the same as the universal level.
+
+// More information here
+
+// Examples
+// 1  =>  0 
+// 0  =>  0
+// 5  =>  4
+// 15  =>  13
+// -3  =>  -3
+
+function realFloor(americanFloor : number): number {
+        if (americanFloor === 1){
+            return 0;
+        } else if (americanFloor <= 13 && americanFloor > 0){
+            return americanFloor - 1;
+        } else if (americanFloor > 13){
+            return americanFloor - 2;
+        }
+        return americanFloor;
+}
+
+realFloor(1);
+realFloor(0);
+realFloor(5);
+realFloor(15);
+realFloor(-3);
+
