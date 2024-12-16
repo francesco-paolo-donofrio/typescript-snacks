@@ -1022,4 +1022,9 @@ setAlarm(true, false);
 setAlarm(false, false);
 setAlarm(true, true);
 setAlarm(false, true);
+function xYearsOld(str) {
+    return parseInt(str[0], 10);
+}
+xYearsOld("1 years old");
+xYearsOld("5 years old");
 //# sourceMappingURL=index.js.map
