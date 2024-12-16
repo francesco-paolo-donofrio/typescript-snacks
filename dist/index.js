@@ -1027,4 +1027,13 @@ function xYearsOld(str) {
 }
 xYearsOld("1 years old");
 xYearsOld("5 years old");
+function betweenInt(first, second) {
+    const result = [];
+    for (let i = first; i <= second; i++) {
+        result.push(i);
+    }
+    return result;
+}
+betweenInt(1, 4);
+betweenInt(3, 15);
 //# sourceMappingURL=index.js.map

@@ -2375,3 +2375,24 @@ function xYearsOld(str: string): number {
 
 xYearsOld("1 years old");
 xYearsOld("5 years old");
+
+// Snack 94
+
+// Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+// For example:
+
+// a = 1
+// b = 4
+// --> [1, 2, 3, 4]
+
+function betweenInt(first : number, second : number): number[]{
+    const result : number[] = [];
+    for (let i = first; i <= second; i++){
+        result.push(i)
+    }
+    return result;
+}
+
+betweenInt(1, 4);
+betweenInt(3, 15);
