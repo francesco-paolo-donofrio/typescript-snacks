@@ -1043,4 +1043,12 @@ function blankPages(n, m) {
 }
 blankPages(-5, 5);
 blankPages(5, 5);
+function beastFeast(name, dish) {
+    name.toLowerCase() && dish.toLowerCase();
+    if (name.length < 2 && dish.length < 2)
+        return false;
+    return name[0] === dish[0] && name[name.length - 1] === dish[dish.length - 1];
+}
+beastFeast("elefante", "torta");
+beastFeast("chickadee", "chocolate cake");
 //# sourceMappingURL=index.js.map
