@@ -1036,4 +1036,11 @@ function betweenInt(first, second) {
 }
 betweenInt(1, 4);
 betweenInt(3, 15);
+function blankPages(n, m) {
+    if (n < 0 || m < 0)
+        return 0;
+    return n * m;
+}
+blankPages(-5, 5);
+blankPages(5, 5);
 //# sourceMappingURL=index.js.map
