@@ -1044,11 +1044,17 @@ function blankPages(n, m) {
 blankPages(-5, 5);
 blankPages(5, 5);
 function beastFeast(name, dish) {
-    name.toLowerCase() && dish.toLowerCase();
     if (name.length < 2 && dish.length < 2)
         return false;
-    return name[0] === dish[0] && name[name.length - 1] === dish[dish.length - 1];
+    return (name[0].toLowerCase() === dish[0].toLowerCase() &&
+        name[name.length - 1].toLowerCase() === dish[dish.length - 1].toLowerCase());
 }
 beastFeast("elefante", "torta");
 beastFeast("chickadee", "chocolate cake");
+function hydratedDream(hour) {
+    return Math.floor(hour * 0.5);
+}
+hydratedDream(3);
+hydratedDream(6.7);
+hydratedDream(11.8);
 //# sourceMappingURL=index.js.map
