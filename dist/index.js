@@ -1057,4 +1057,8 @@ function hydratedDream(hour) {
 hydratedDream(3);
 hydratedDream(6.7);
 hydratedDream(11.8);
+function fakeBinary(str) {
+    return str.replace(/[0-4]/g, "0").replace(/[5-9]/g, "1");
+}
+fakeBinary("1234");
 //# sourceMappingURL=index.js.map
