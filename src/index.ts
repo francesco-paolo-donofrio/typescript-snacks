@@ -2129,3 +2129,332 @@ isDigit("1");
 isDigit("a");
 
 // Snack 86
+
+// Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
+
+// Assuming that name is a String and it checks for user typos to return a name with a first capital letter (Xxxx).
+
+// Examples:
+
+// * With `name` = "john"  => return "Hello, John!"
+// * With `name` = "aliCE" => return "Hello, Alice!"
+// * With `name` not given 
+//   or `name` = ""        => return "Hello, World!"
+
+function helloName(name : string) : string {
+    if (name === "" || name === null){
+        return "Hello, World!";
+    }
+
+    return `Hello, ${name}!`;
+}
+
+helloName("Mario");
+helloName("");
+
+// Snack 87
+
+// The purpose of this kata is to work out just how many bottles of duty free whiskey you would have to buy such that the savings over the normal high street price would effectively cover the cost of your holiday.
+
+// You will be given the high street price (normPrice, in £ (Pounds)), the duty free discount (discount, in percent) and the cost of the holiday (in £).
+
+// For example, if a bottle costs £10 normally and the duty free discount is 10%, you would save £1 per bottle. If your holiday will cost £500, you would have to purchase 500 bottles to save £500, so the answer you return should be 500.
+
+// Another example: if a bottle costs £12 normally and the duty free discount is 50%, you would save £6 per bottle. If your holiday will cost £1000, you would have to purchase 166.66 bottles to save £1000, so your answer should be 166 bottles.
+
+// All inputs will be integers. Please return an integer. Round down.
+
+ function whiskeyDiscount(normPrice : number, discount : number, holidayCost : number) : number {
+    const discountPerItem = (normPrice * discount) / 100;
+    const bottlesToBuy = holidayCost / discountPerItem;
+    return Math.round(bottlesToBuy); 
+ }
+
+ whiskeyDiscount(10, 10, 500);
+ whiskeyDiscount(12, 50, 1000);
+
+//  Snack 88
+
+// Your task is to sum the differences between consecutive pairs in the array in descending order.
+
+// Example
+// [2, 1, 10]  -->  9
+// In descending order: [10, 2, 1]
+
+// Sum: (10 - 2) + (2 - 1) = 8 + 1 = 9
+
+// If the array is empty or the array has only one element the result should be 0 (Nothing in Haskell, None in Rust).
+
+sumTheDifferences([2, 1, 10]);
+
+function sumTheDifferences(arr: number[]): number {
+    if (arr.length <= 1) return 0; // Handle empty or single-element arrays
+
+    // Sort the array in descending order
+    const sortedArr = arr.sort((a, b) => b - a);
+
+    // Calculate the sum of differences between consecutive pairs
+    let sum = 0;
+    for (let i = 0; i < sortedArr.length - 1; i++) {
+        sum += sortedArr[i] - sortedArr[i + 1];
+    }
+
+    return sum;
+}
+
+// Example usage
+console.log(sumTheDifferences([2, 1, 10])); // Output: 9
+
+// Snack 89
+
+// Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
+
+// This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
+
+// This function should return a number (final grade). There are four types of final grades:
+
+// 100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
+// 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
+// 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
+// 0, in other cases
+// Examples(Inputs-->Output):
+
+// 100, 12 --> 100
+// 99, 0 --> 100
+// 10, 15 --> 100
+
+// 85, 5 --> 90
+
+// 55, 3 --> 75
+
+// 55, 0 --> 0
+// 20, 2 --> 0
+// *Use Comparison and Logical Operators.
+
+function finalGrade(grade : number, completedProjects : number): number {
+    if (grade > 90 || completedProjects > 10) return 100;
+    else if (grade > 75 && completedProjects > 5) return 90;
+    else if (grade > 50 && completedProjects > 2) return 75;
+    return 0;
+}
+
+finalGrade(100, 12);
+finalGrade(99, 0);
+finalGrade(85, 5);
+finalGrade(55, 0);
+finalGrade(20, 2);
+
+// Snack 90
+
+// #Description
+
+// Everybody has probably heard of the animal heads and legs problem from the earlier years at school. It goes:
+
+// “A farm contains chickens and cows. There are x heads and y legs. How many chickens and cows are there?” 
+
+// Where x <= 1000 and y <=1000
+
+// #Task
+
+// Assuming there are no other types of animals, work out how many of each animal are there.
+
+// If either the heads & legs is negative, the result of your calculation is negative or the calculation is a float return "No solutions" (no valid cases), or [-1, -1] in COBOL.
+
+// In the form:
+
+// (Heads, Legs) = (72, 200)
+
+// VALID - (72, 200) =>             (44 , 28) 
+//                              (Chickens, Cows)
+
+// INVALID - (72, 201) => "No solutions"
+// However, if 0 heads and 0 legs are given always return [0, 0] since zero heads must give zero animals.
+
+// There are many different ways to solve this, but they all give the same answer.
+
+// You will only be given integers types - however negative values (edge cases) will be given.
+
+// Happy coding!
+
+function animals(heads: number, legs: number): [number, number] | "No solutions" {
+    // Edge case: If either heads or legs is negative, or not divisible as expected
+    if (heads < 0 || legs < 0 || legs % 2 !== 0) {
+        return "No solutions";
+    }
+
+    // Calculate the number of chickens and cows
+    const chickens = (4 * heads - legs) / 2;
+    const cows = heads - chickens;
+
+    // Check if the solution is valid
+    if (chickens < 0 || cows < 0 || !Number.isInteger(chickens) || !Number.isInteger(cows)) {
+        return "No solutions";
+    }
+
+    return [chickens, cows];
+}
+
+// Test cases
+console.log(animals(72, 200)); 
+console.log(animals(72, 201)); 
+console.log(animals(0, 0));    
+console.log(animals(-1, 100)); 
+console.log(animals(100, 400)); 
+
+// Snack 91
+
+// Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
+
+// Write a function that given a floor in the american system returns the floor in the european system.
+
+// With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. In case of above 13, they move down by two because there are two omitted numbers below them.
+
+// Basements (negatives) stay the same as the universal level.
+
+// More information here
+
+// Examples
+// 1  =>  0 
+// 0  =>  0
+// 5  =>  4
+// 15  =>  13
+// -3  =>  -3
+
+function realFloor(americanFloor : number): number {
+        if (americanFloor === 1){
+            return 0;
+        } else if (americanFloor <= 13 && americanFloor > 0){
+            return americanFloor - 1;
+        } else if (americanFloor > 13){
+            return americanFloor - 2;
+        }
+        return americanFloor;
+}
+
+realFloor(1);
+realFloor(0);
+realFloor(5);
+realFloor(15);
+realFloor(-3);
+
+// Snack 92
+
+// Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+
+// The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+
+// employed | vacation 
+// true     | true     => false
+// true     | false    => true
+// false    | true     => false
+// false    | false    => false
+
+function setAlarm(employed : boolean, vacation : boolean): boolean {
+    if (employed && vacation) return false;
+    else if (employed === true && vacation === false) return true;
+    else if (employed === false && vacation === true) return false;
+    return false;
+}
+
+setAlarm(true, false);
+setAlarm(false, false);
+setAlarm(true, true);
+setAlarm(false, true);
+
+// Snack 93
+
+// You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+
+// Write a program that returns the girl's age (0-9) as an integer.
+
+// Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
+
+function xYearsOld(str: string): number {
+    return parseInt(str[0], 10); 
+}
+
+xYearsOld("1 years old");
+xYearsOld("5 years old");
+
+// Snack 94
+
+// Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+// For example:
+
+// a = 1
+// b = 4
+// --> [1, 2, 3, 4]
+
+function betweenInt(first : number, second : number): number[]{
+    const result : number[] = [];
+    for (let i = first; i <= second; i++){
+        result.push(i)
+    }
+    return result;
+}
+
+betweenInt(1, 4);
+betweenInt(3, 15);
+
+// Snack 95
+
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+// Waiting for translations and Feedback! Thanks!
+
+function blankPages(n : number, m : number): number {
+    if (n < 0 || m < 0) return 0;
+    return n * m;
+}
+
+blankPages(-5, 5);
+blankPages(5, 5);
+
+// Snack 96 
+
+// All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
+
+// Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
+
+// Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
+
+function beastFeast(name : string, dish : string): boolean {
+    if (name.length < 2 && dish.length < 2) return false;
+    return (
+    name[0].toLowerCase() === dish[0].toLowerCase() &&
+    name[name.length - 1].toLowerCase() === dish[dish.length - 1].toLowerCase()
+    )
+}
+
+beastFeast("elefante", "torta");
+beastFeast("chickadee", "chocolate cake");
+
+// Snack 97
+
+// Nathan loves cycling.
+
+// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+
+// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+
+// For example:
+
+// time = 3 ----> litres = 1
+
+// time = 6.7---> litres = 3
+
+// time = 11.8--> litres = 5
+
+function hydratedDream(hour : number) : number {
+    return Math.floor(hour * 0.5);
+}
+
+hydratedDream(3);
+hydratedDream(6.7);
+hydratedDream(11.8);

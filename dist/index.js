@@ -935,4 +935,126 @@ function isDigit(str) {
 }
 isDigit("1");
 isDigit("a");
+function helloName(name) {
+    if (name === "" || name === null) {
+        return "Hello, World!";
+    }
+    return `Hello, ${name}!`;
+}
+helloName("Mario");
+helloName("");
+function whiskeyDiscount(normPrice, discount, holidayCost) {
+    const discountPerItem = (normPrice * discount) / 100;
+    const bottlesToBuy = holidayCost / discountPerItem;
+    return Math.round(bottlesToBuy);
+}
+whiskeyDiscount(10, 10, 500);
+whiskeyDiscount(12, 50, 1000);
+sumTheDifferences([2, 1, 10]);
+function sumTheDifferences(arr) {
+    if (arr.length <= 1)
+        return 0;
+    const sortedArr = arr.sort((a, b) => b - a);
+    let sum = 0;
+    for (let i = 0; i < sortedArr.length - 1; i++) {
+        sum += sortedArr[i] - sortedArr[i + 1];
+    }
+    return sum;
+}
+console.log(sumTheDifferences([2, 1, 10]));
+function finalGrade(grade, completedProjects) {
+    if (grade > 90 || completedProjects > 10)
+        return 100;
+    else if (grade > 75 && completedProjects > 5)
+        return 90;
+    else if (grade > 50 && completedProjects > 2)
+        return 75;
+    return 0;
+}
+finalGrade(100, 12);
+finalGrade(99, 0);
+finalGrade(85, 5);
+finalGrade(55, 0);
+finalGrade(20, 2);
+function animals(heads, legs) {
+    if (heads < 0 || legs < 0 || legs % 2 !== 0) {
+        return "No solutions";
+    }
+    const chickens = (4 * heads - legs) / 2;
+    const cows = heads - chickens;
+    if (chickens < 0 || cows < 0 || !Number.isInteger(chickens) || !Number.isInteger(cows)) {
+        return "No solutions";
+    }
+    return [chickens, cows];
+}
+console.log(animals(72, 200));
+console.log(animals(72, 201));
+console.log(animals(0, 0));
+console.log(animals(-1, 100));
+console.log(animals(100, 400));
+function realFloor(americanFloor) {
+    if (americanFloor === 1) {
+        return 0;
+    }
+    else if (americanFloor <= 13 && americanFloor > 0) {
+        return americanFloor - 1;
+    }
+    else if (americanFloor > 13) {
+        return americanFloor - 2;
+    }
+    return americanFloor;
+}
+realFloor(1);
+realFloor(0);
+realFloor(5);
+realFloor(15);
+realFloor(-3);
+function setAlarm(employed, vacation) {
+    if (employed && vacation)
+        return false;
+    else if (employed === true && vacation === false)
+        return true;
+    else if (employed === false && vacation === true)
+        return false;
+    return false;
+}
+setAlarm(true, false);
+setAlarm(false, false);
+setAlarm(true, true);
+setAlarm(false, true);
+function xYearsOld(str) {
+    return parseInt(str[0], 10);
+}
+xYearsOld("1 years old");
+xYearsOld("5 years old");
+function betweenInt(first, second) {
+    const result = [];
+    for (let i = first; i <= second; i++) {
+        result.push(i);
+    }
+    return result;
+}
+betweenInt(1, 4);
+betweenInt(3, 15);
+function blankPages(n, m) {
+    if (n < 0 || m < 0)
+        return 0;
+    return n * m;
+}
+blankPages(-5, 5);
+blankPages(5, 5);
+function beastFeast(name, dish) {
+    if (name.length < 2 && dish.length < 2)
+        return false;
+    return (name[0].toLowerCase() === dish[0].toLowerCase() &&
+        name[name.length - 1].toLowerCase() === dish[dish.length - 1].toLowerCase());
+}
+beastFeast("elefante", "torta");
+beastFeast("chickadee", "chocolate cake");
+function hydratedDream(hour) {
+    return Math.floor(hour * 0.5);
+}
+hydratedDream(3);
+hydratedDream(6.7);
+hydratedDream(11.8);
 //# sourceMappingURL=index.js.map
