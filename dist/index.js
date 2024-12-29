@@ -1057,4 +1057,23 @@ function hydratedDream(hour) {
 hydratedDream(3);
 hydratedDream(6.7);
 hydratedDream(11.8);
+function fakeBinary(str) {
+    return str.replace(/[0-4]/g, "0").replace(/[5-9]/g, "1");
+}
+fakeBinary("1234");
+function spotDiff(str1, str2) {
+    let result = [];
+    for (let i = 0; i < str1.length; i++) {
+        if (str1[i] !== str2[i]) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+spotDiff("abcdefg", "abcqetg");
+function cubeChecker(volume, side) {
+    return volume > 0 && side > 0 && volume === side ** 3;
+}
+cubeChecker(27, 3);
+cubeChecker(125, 3);
 //# sourceMappingURL=index.js.map

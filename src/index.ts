@@ -2458,3 +2458,70 @@ function hydratedDream(hour : number) : number {
 hydratedDream(3);
 hydratedDream(6.7);
 hydratedDream(11.8);
+
+// Snack 98
+
+// Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+function fakeBinary(str : string) : string {
+    return str.replace(/[0-4]/g, "0").replace(/[5-9]/g, "1");
+}
+
+fakeBinary("1234");
+
+// Snack 99
+
+// Description:
+// This kata is part of the collection Mary's Puzzle Books.
+
+// Mary brought home a "spot the differences" book. The book is full of a bunch of problems, and each problem consists of two strings that are similar. However, in each string there are a few characters that are different. An example puzzle from her book is:
+
+// String 1: "abcdefg"
+// String 2: "abcqetg"
+// Notice how the "d" from String 1 has become a "q" in String 2, and "f" from String 1 has become a "t" in String 2.
+
+// It's your job to help Mary solve the puzzles. Write a program spot_diff/Spot that will compare the two strings and return a list with the positions where the two strings differ. In the example above, your program should return [3, 5] because String 1 is different from String 2 at positions 3 and 5.
+
+// NOTES:
+
+// • If both strings are the same, return []
+
+// • Both strings will always be the same length
+
+// • Capitalization and punctuation matter
+
+function spotDiff(str1 : string, str2 : string) : number[] {
+    let result : number[] = [];
+    for (let i = 0; i < str1.length; i++) {
+        if (str1[i] !== str2[i]) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+
+spotDiff("abcdefg", "abcqetg");
+
+// Snack 100
+
+// Description:
+// To find the volume (centimeters cubed) of a cuboid you use the formula:
+
+// volume = Length * Width * Height
+
+// But someone forgot to use proper record keeping, so we only have the volume, and the length of a single side!
+
+// It's up to you to find out whether the cuboid has equal sides (= is a cube).
+
+// Return true if the cuboid could have equal sides, return false otherwise.
+
+// Return false for invalid numbers too (e.g volume or side is less than or equal to 0).
+
+// Note: side will be an integer
+
+function cubeChecker(volume : number, side : number) : boolean {
+    return volume > 0 && side > 0 && volume === side ** 3;
+}
+
+cubeChecker(27, 3);
+cubeChecker(125, 3);
