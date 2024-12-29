@@ -1061,4 +1061,14 @@ function fakeBinary(str) {
     return str.replace(/[0-4]/g, "0").replace(/[5-9]/g, "1");
 }
 fakeBinary("1234");
+function spotDiff(str1, str2) {
+    let result = [];
+    for (let i = 0; i < str1.length; i++) {
+        if (str1[i] !== str2[i]) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+spotDiff("abcdefg", "abcqetg");
 //# sourceMappingURL=index.js.map
