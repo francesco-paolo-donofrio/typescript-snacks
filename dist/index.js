@@ -1071,4 +1071,9 @@ function spotDiff(str1, str2) {
     return result;
 }
 spotDiff("abcdefg", "abcqetg");
+function cubeChecker(volume, side) {
+    return volume > 0 && side > 0 && volume === side ** 3;
+}
+cubeChecker(27, 3);
+cubeChecker(125, 3);
 //# sourceMappingURL=index.js.map
