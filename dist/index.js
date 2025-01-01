@@ -1080,4 +1080,8 @@ function twoSort(s) {
     return s.sort()[0].replace(/./g, "*");
 }
 twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]);
+function mouthSize(animal) {
+    return animal.toLowerCase() === "alligator" ? "small" : "wide";
+}
+mouthSize("alligator");
 //# sourceMappingURL=index.js.map
