@@ -1076,4 +1076,8 @@ function cubeChecker(volume, side) {
 }
 cubeChecker(27, 3);
 cubeChecker(125, 3);
+function twoSort(s) {
+    return s.sort()[0].replace(/./g, "*");
+}
+twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]);
 //# sourceMappingURL=index.js.map
