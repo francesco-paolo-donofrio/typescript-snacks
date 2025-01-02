@@ -2590,8 +2590,18 @@ sxor(5);
 
 // fix to 3 decimal places.
 
-function height(n : number) : number {
-    return (2.5 ** n).toFixed(3);
+function height(n: number): number {
+    const firstCatHeight = 2000000; 
+    const ratio = 0.4;              
+    let totalHeight = 0;
+
+    for (let i = 0; i < n; i++) {
+        totalHeight += firstCatHeight * Math.pow(ratio, i);
+    }
+
+    return parseFloat(totalHeight.toFixed(3));
 }
+
+console.log(height(26));
 
 
