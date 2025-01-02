@@ -1084,4 +1084,8 @@ function mouthSize(animal) {
     return animal.toLowerCase() === "alligator" ? "small" : "wide";
 }
 mouthSize("alligator");
+function sxor(n) {
+    return [...Array(n).keys()].reduce((a, b) => a ^ b);
+}
+sxor(5);
 //# sourceMappingURL=index.js.map

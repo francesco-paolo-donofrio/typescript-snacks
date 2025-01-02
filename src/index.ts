@@ -2560,3 +2560,16 @@ mouthSize("alligator");
 
 
 
+// Snack 103
+
+// Objective
+
+// Given a number n we will define it's sXORe to be 0 XOR 1 XOR 2 ... XOR n where XOR is the bitwise XOR operator.
+
+// Write a function that takes n and returns it's sXORe.
+
+function sxor(n : number) : number {
+    return [...Array(n).keys()].reduce((a, b) => a ^ b);
+}
+
+sxor(5);
