@@ -2541,5 +2541,67 @@ function twoSort(s : string[]) : string {
 
 twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]);
 
+// Snack 102
+
+// Description:
+// The wide-mouth frog is particularly interested in the eating habits of other creatures.
+
+// He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs!
+
+// When he meets the alligator, it then makes a tiny mouth.
+
+// Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.
+
+function mouthSize(animal : string) : string {
+    return animal.toLowerCase() === "alligator" ? "small" : "wide";
+}
+
+mouthSize("alligator");
+
+
+
+// Snack 103
+
+// Objective
+
+// Given a number n we will define it's sXORe to be 0 XOR 1 XOR 2 ... XOR n where XOR is the bitwise XOR operator.
+
+// Write a function that takes n and returns it's sXORe.
+
+function sxor(n : number) : number {
+    return [...Array(n).keys()].reduce((a, b) => a ^ b);
+}
+
+sxor(5);
+
+// Snack 104
+
+// The Cat In The Hat has cat A under his hat, cat A has cat B under his hat and so on until Z
+
+// The Cat In The Hat is 2,000,000 cat units tall.
+
+// Each cat is 2.5 times bigger than the cat underneath their hat.
+
+// Find the total height of the cats if they are standing on top of one another.
+
+// Counting starts from the Cat In The Hat
+
+// n = the number of cats
+
+// fix to 3 decimal places.
+
+function height(n: number): number {
+    const firstCatHeight = 2000000; 
+    const ratio = 0.4;              
+    let totalHeight = 0;
+
+    for (let i = 0; i < n; i++) {
+        totalHeight += firstCatHeight * Math.pow(ratio, i);
+    }
+
+    return parseFloat(totalHeight.toFixed(3));
+}
+
+console.log(height(26));
 
 

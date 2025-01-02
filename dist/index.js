@@ -1080,4 +1080,22 @@ function twoSort(s) {
     return s.sort()[0].replace(/./g, "*");
 }
 twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]);
+function mouthSize(animal) {
+    return animal.toLowerCase() === "alligator" ? "small" : "wide";
+}
+mouthSize("alligator");
+function sxor(n) {
+    return [...Array(n).keys()].reduce((a, b) => a ^ b);
+}
+sxor(5);
+function height(n) {
+    const firstCatHeight = 2000000;
+    const ratio = 0.4;
+    let totalHeight = 0;
+    for (let i = 0; i < n; i++) {
+        totalHeight += firstCatHeight * Math.pow(ratio, i);
+    }
+    return parseFloat(totalHeight.toFixed(3));
+}
+console.log(height(26));
 //# sourceMappingURL=index.js.map
