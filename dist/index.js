@@ -1098,4 +1098,23 @@ function height(n) {
     return parseFloat(totalHeight.toFixed(3));
 }
 console.log(height(26));
+function smallestID(arr) {
+    const idSet = new Set(arr);
+    let smallest = 0;
+    while (idSet.has(smallest)) {
+        smallest++;
+    }
+    return smallest;
+}
+const usedIDs = [3, 5, 1, 0, 2, 5, 3];
+smallestID(usedIDs);
+function score(n) {
+    let result = 1;
+    while (result <= n) {
+        result <<= 1;
+    }
+    return result - 1;
+}
+score(5);
+score(2);
 //# sourceMappingURL=index.js.map

@@ -2605,3 +2605,53 @@ function height(n: number): number {
 console.log(height(26));
 
 
+// Snack 105
+
+// Description:
+// Hey awesome programmer!
+
+// You've got much data to manage and of course you use zero-based and non-negative ID's to make each data item unique!
+
+// Therefore you need a method, which returns the smallest unused ID for your next new data item...
+
+// Note: The given array of used IDs may be unsorted. For test reasons there may be duplicate IDs, but you don't have to find or remove them!
+
+// Go on and code some pure awesomeness!
+
+function smallestID(arr: number[]): number {
+    
+    const idSet = new Set(arr);
+
+    
+    let smallest = 0;
+
+    
+    while (idSet.has(smallest)) {
+        smallest++;
+    }
+
+    return smallest;
+}
+
+const usedIDs = [3, 5, 1, 0, 2, 5, 3];
+smallestID(usedIDs);
+
+// Snack 106
+
+// Objective
+
+// Given a number n we will define its scORe to be 0 | 1 | 2 | 3 | ... | n, where | is the bitwise OR operator.
+
+// Write a function that takes n and finds it's scORe.
+
+function score(n: number): number {
+    
+    let result = 1;
+    while (result <= n) {
+        result <<= 1; 
+    }
+    return result - 1;
+}
+
+score(5);
+score(2);
