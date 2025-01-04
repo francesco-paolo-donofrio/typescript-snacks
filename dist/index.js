@@ -1108,4 +1108,13 @@ function smallestID(arr) {
 }
 const usedIDs = [3, 5, 1, 0, 2, 5, 3];
 smallestID(usedIDs);
+function score(n) {
+    let result = 1;
+    while (result <= n) {
+        result <<= 1;
+    }
+    return result - 1;
+}
+score(5);
+score(2);
 //# sourceMappingURL=index.js.map

@@ -2635,3 +2635,23 @@ function smallestID(arr: number[]): number {
 
 const usedIDs = [3, 5, 1, 0, 2, 5, 3];
 smallestID(usedIDs);
+
+// Snack 106
+
+// Objective
+
+// Given a number n we will define its scORe to be 0 | 1 | 2 | 3 | ... | n, where | is the bitwise OR operator.
+
+// Write a function that takes n and finds it's scORe.
+
+function score(n: number): number {
+    
+    let result = 1;
+    while (result <= n) {
+        result <<= 1; 
+    }
+    return result - 1;
+}
+
+score(5);
+score(2);
