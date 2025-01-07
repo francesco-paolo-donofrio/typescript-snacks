@@ -1117,4 +1117,10 @@ function score(n) {
 }
 score(5);
 score(2);
+function popZero(num) {
+    const trimmedNumber = num.toString().replace(/0+$/, "");
+    return Number(trimmedNumber);
+}
+popZero(0);
+popZero(1230);
 //# sourceMappingURL=index.js.map

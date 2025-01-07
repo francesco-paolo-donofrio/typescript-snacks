@@ -2655,3 +2655,25 @@ function score(n: number): number {
 
 score(5);
 score(2);
+
+// Snack 107
+
+// Numbers ending with zeros are boring.
+
+// They might be fun in your world, but not here.
+
+// Get rid of them. Only the ending ones.
+
+// 1450 -> 145
+// 960000 -> 96
+// 1050 -> 105
+// -1050 -> -105
+// Zero alone is fine, don't worry about it. Poor guy anyway
+
+function popZero(num: number): number {
+    const trimmedNumber = num.toString().replace(/0+$/, "");
+    return Number(trimmedNumber);
+}
+
+popZero(0);
+popZero(1230);
