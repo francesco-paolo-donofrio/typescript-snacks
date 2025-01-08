@@ -2677,3 +2677,24 @@ function popZero(num: number): number {
 
 popZero(0);
 popZero(1230);
+
+// Snack 108
+
+// The alligator is a creature that lives in the Amazon rainforest.
+
+// It loves to eat wide-mouthed frogs!
+
+// Create a function that determines whether or not the alligator will eat the frog based on size.
+
+// If the frog's head is bigger than the alligator's body, the alligator will eat the frog.
+
+// If the frog's head is smaller than the alligator's body, the alligator will not eat the frog.
+
+// If the frog's head is the same size as the alligator's body, the alligator will eat the frog.
+
+function alligatorEats(frogHead: number, alligatorBody: number): boolean {
+    return frogHead > alligatorBody;
+}
+
+alligatorEats(10, 20);
+alligatorEats(20, 10);

@@ -1123,4 +1123,9 @@ function popZero(num) {
 }
 popZero(0);
 popZero(1230);
+function alligatorEats(frogHead, alligatorBody) {
+    return frogHead > alligatorBody;
+}
+alligatorEats(10, 20);
+alligatorEats(10, 10);
 //# sourceMappingURL=index.js.map
