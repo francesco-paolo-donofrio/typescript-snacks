@@ -2677,3 +2677,5 @@ function popZero(num: number): number {
 
 popZero(0);
 popZero(1230);
+
+// Commit di prova
