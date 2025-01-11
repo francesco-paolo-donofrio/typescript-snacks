@@ -1123,4 +1123,9 @@ function popZero(num) {
 }
 popZero(0);
 popZero(1230);
+function twoOldestAges(ages) {
+    return ages.sort((a, b) => a - b).slice(-2);
+}
+twoOldestAges([1, 5, 87, 45, 8, 8]);
+twoOldestAges([1, 3, 10, 0]);
 //# sourceMappingURL=index.js.map
