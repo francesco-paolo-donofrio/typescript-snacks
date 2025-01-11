@@ -1128,4 +1128,17 @@ function twoOldestAges(ages) {
 }
 twoOldestAges([1, 5, 87, 45, 8, 8]);
 twoOldestAges([1, 3, 10, 0]);
+function triangularNumber(n) {
+    if (n <= 0)
+        return 0;
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += (i * (i + 1)) / 2;
+    }
+    return sum;
+}
+triangularNumber(1);
+triangularNumber(2);
+triangularNumber(3);
+triangularNumber(4);
 //# sourceMappingURL=index.js.map
