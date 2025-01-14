@@ -1141,4 +1141,8 @@ triangularNumber(1);
 triangularNumber(2);
 triangularNumber(3);
 triangularNumber(4);
+function removeSpaces(input) {
+    return input.split(" ").join("");
+}
+removeSpaces("  sss aa s fllf sl s s la  ");
 //# sourceMappingURL=index.js.map
