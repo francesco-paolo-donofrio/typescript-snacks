@@ -1145,4 +1145,11 @@ function removeSpaces(input) {
     return input.split(" ").join("");
 }
 removeSpaces("  sss aa s fllf sl s s la  ");
+function replaceWithGravel(input) {
+    return input
+        .split(" ")
+        .map(element => element === "gravel" || element === "rock" ? "element" : "gravel")
+        .join(" ");
+}
+replaceWithGravel("gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel");
 //# sourceMappingURL=index.js.map
