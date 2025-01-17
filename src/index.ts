@@ -2848,34 +2848,49 @@ collision(2, 2, 2, 1, 1, 2);
 // calculate(8,"m", 2); //Should return null
 // calculate(4,"/",0) //should return null
 
-function calculate(num1 : number, str : string, num2 : number): number | null {
-    let arrayOfAll = (num1 + str + num2).split("");
+// function calculate(num1 : number, str : string, num2 : number): number | null {
+//     let arrayOfAll = (num1 + str + num2).split("");
 
-    let arrayOfNumber = arrayOfAll.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
+//     let arrayOfNumber = arrayOfAll.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
     
-    let sum = function sum(num1 : number, num2 : number){
-        return num1 + num2;
-    };
-    let sottraction = function sottraction(num1 : number, num2 : number){
-        return num1 - num2;
-    };
-    let moltiplication = function moltiplication(num1 : number, num2 : number){
-        return num1 + num2;
-    };
-    let division = function division(num1 : number, num2 : number){
-        return num1 / num2;
-    };
+//     let sum = function sum(num1 : number, num2 : number){
+//         return num1 + num2;
+//     };
+//     let sottraction = function sottraction(num1 : number, num2 : number){
+//         return num1 - num2;
+//     };
+//     let moltiplication = function moltiplication(num1 : number, num2 : number){
+//         return num1 * num2;
+//     };
+//     let division = function division(num1 : number, num2 : number){
+//         return num1 / num2;
+//     };
 
-    if (str === "+"){
-        return arrayOfNumber.reduce(sum);
-    } else if (str === "-"){
-        return arrayOfNumber.reduce(sottraction);
-    } else if (str === "*"){
-        return arrayOfNumber.reduce(moltiplication);
-    } else if (str === "/"){
-        return arrayOfNumber.reduce(division);
-    } else {
-        return null;
+//     if (str === "+"){
+//         return arrayOfNumber.reduce(sum);
+//     } else if (str === "-"){
+//         return arrayOfNumber.reduce(sottraction);
+//     } else if (str === "*"){
+//         return arrayOfNumber.reduce(moltiplication);
+//     } else if (str === "/"){
+//         return arrayOfNumber.reduce(division);
+//     } else {
+//         return null;
+//     }
+// }
+
+function calculate(num1: number, str: string, num2: number): number | null {
+    switch (str) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num2 !== 0 ? num1 / num2 : null;
+        default:
+            return null;
     }
 }
 
