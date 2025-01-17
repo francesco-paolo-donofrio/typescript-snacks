@@ -1152,4 +1152,14 @@ function replaceWithGravel(input) {
         .join(" ");
 }
 replaceWithGravel("gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel");
+function meanAndConcatenate(arr) {
+    const integers = arr.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
+    const characters = arr.filter((element) => isNaN(Number(element)) && typeof element === 'string');
+    const mean = integers.reduce((sum, num) => sum + num, 0) / integers.length;
+    const concatenatedString = characters.join('');
+    return [mean, concatenatedString];
+}
+const lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0'];
+const result = meanAndConcatenate(lst);
+meanAndConcatenate(lst);
 //# sourceMappingURL=index.js.map
