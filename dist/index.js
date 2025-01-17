@@ -1168,4 +1168,10 @@ function itIsString(str) {
 itIsString("c");
 itIsString("HELLO I AM DONALD");
 itIsString("heLLO I AM DONALD");
+function collision(x1, y1, radius1, x2, y2, radius2) {
+    const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    return distance <= (radius1 + radius2);
+}
+collision(2, 2, 5, 1, 1, 5);
+collision(2, 2, 2, 1, 1, 2);
 //# sourceMappingURL=index.js.map

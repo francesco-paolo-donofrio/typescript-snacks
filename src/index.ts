@@ -2818,3 +2818,21 @@ function itIsString(str : string): boolean {
 itIsString("c");
 itIsString("HELLO I AM DONALD");
 itIsString("heLLO I AM DONALD");
+
+// Snack 114
+
+// Create a function to determine whether or not two circles are colliding. You will be given the position of both circles in addition to their radii:
+
+// function collision(x1, y1, radius1, x2, y2, radius2) {
+//   // collision?
+// }
+// If a collision is detected, return true. If not, return false.
+
+function collision(x1 : number, y1: number, radius1: number, x2: number, y2: number, radius2: number): boolean {
+    const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+
+    return distance <= (radius1 + radius2);
+}
+
+collision(2, 2, 5, 1, 1, 5);
+collision(2, 2, 2, 1, 1, 2);
