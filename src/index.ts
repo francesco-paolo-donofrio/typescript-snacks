@@ -2836,3 +2836,52 @@ function collision(x1 : number, y1: number, radius1: number, x2: number, y2: num
 
 collision(2, 2, 5, 1, 1, 5);
 collision(2, 2, 2, 1, 1, 2);
+
+// Snack 115
+
+// Debug a function called calculate that takes 3 values. The first and third values are numbers. The second value is a character. If the character is "+" , "-", "*", or "/", the function will return the result of the corresponding mathematical function on the two numbers. If the string is not one of the specified characters, the function should return null.
+
+// calculate(2,"+", 4); //Should return 6
+// calculate(6,"-", 1.5); //Should return 4.5
+// calculate(-4,"*", 8); //Should return -32
+// calculate(49,"/", -7); //Should return -7
+// calculate(8,"m", 2); //Should return null
+// calculate(4,"/",0) //should return null
+
+function calculate(num1 : number, str : string, num2 : number): number | null {
+    let arrayOfAll = (num1 + str + num2).split("");
+
+    let arrayOfNumber = arrayOfAll.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
+    
+    let sum = function sum(num1 : number, num2 : number){
+        return num1 + num2;
+    };
+    let sottraction = function sottraction(num1 : number, num2 : number){
+        return num1 - num2;
+    };
+    let moltiplication = function moltiplication(num1 : number, num2 : number){
+        return num1 + num2;
+    };
+    let division = function division(num1 : number, num2 : number){
+        return num1 / num2;
+    };
+
+    if (str === "+"){
+        return arrayOfNumber.reduce(sum);
+    } else if (str === "-"){
+        return arrayOfNumber.reduce(sottraction);
+    } else if (str === "*"){
+        return arrayOfNumber.reduce(moltiplication);
+    } else if (str === "/"){
+        return arrayOfNumber.reduce(division);
+    } else {
+        return null;
+    }
+}
+
+calculate(1, "+", 2);
+calculate(4, "-", 2);
+calculate(5, ",a", 2);
+calculate(2, "*", 2);
+calculate(10, "/", 2);
+
