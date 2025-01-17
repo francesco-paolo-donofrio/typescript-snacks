@@ -2796,3 +2796,25 @@ const lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1
 const result = meanAndConcatenate(lst);
 
 meanAndConcatenate(lst);
+
+// Snack 113
+
+// Is the string uppercase?
+// Task
+// Create a method to see whether the string is ALL CAPS.
+
+// Examples (input -> output)
+// "c" -> False
+// "C" -> True
+// "hello I AM DONALD" -> False
+// "HELLO I AM DONALD" -> True
+// "ACSKLDFJSgSKLDFJSKLDFJ" -> False
+// "ACSKLDFJSGSKLDFJSKLDFJ" -> True
+
+function itIsString(str : string): boolean {
+    return str === str.toUpperCase();
+}
+
+itIsString("c");
+itIsString("HELLO I AM DONALD");
+itIsString("heLLO I AM DONALD");

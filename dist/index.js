@@ -1162,4 +1162,10 @@ function meanAndConcatenate(arr) {
 const lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0'];
 const result = meanAndConcatenate(lst);
 meanAndConcatenate(lst);
+function itIsString(str) {
+    return str === str.toUpperCase();
+}
+itIsString("c");
+itIsString("HELLO I AM DONALD");
+itIsString("heLLO I AM DONALD");
 //# sourceMappingURL=index.js.map
