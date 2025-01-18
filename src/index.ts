@@ -2941,16 +2941,30 @@ getNames([
 // Task
 // Fix the bug so we can all go home early.
 
-function returnFullName(human : {firstName : string, lastName : string}[]): string{
-    const fullName : string[] = [];
-    for (let i = 0; i < human.length; i++){
-        fullName.push(` "The complete name is ${human[i].firstName} ${human[i].lastName}"`);
-    } 
-    return fullName.join("");
+// function returnFullName(human : {firstName : string, lastName : string}[]): string{
+//     const fullName : string[] = [];
+//     for (let i = 0; i < human.length; i++){
+//         fullName.push(` "The complete name is ${human[i].firstName} ${human[i].lastName}"`);
+//     } 
+//     return fullName.join("");
+// }
+
+// console.log(returnFullName([
+//     {firstName: 'Jorgie', lastName: ""},
+//     {firstName: 'Max', lastName: "Vinic"},
+//     {firstName: 'Jorgie', lastName: "Asd"}
+// ]));
+
+function returnFullNames(humans: { firstName: string; lastName: string }[]): string {
+    return humans
+        .map(human => `The complete name is ${human.firstName} ${human.lastName}`.trim())
+        .join('\n');
 }
 
-console.log(returnFullName([
-    {firstName: 'Jorgie', lastName: ""},
-    {firstName: 'Max', lastName: "Vinic"},
-    {firstName: 'Jorgie', lastName: "Asd"}
-]));
+console.log(
+    returnFullNames([
+        { firstName: 'Jorgie', lastName: '' },
+        { firstName: 'Max', lastName: 'Vinic' },
+        { firstName: 'Jorgie', lastName: 'Asd' }
+    ])
+);
