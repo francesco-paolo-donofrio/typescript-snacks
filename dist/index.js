@@ -1205,4 +1205,16 @@ getNames([
     { name: 'Bill', age: 30 },
     { name: 'Kate', age: 23 }
 ]);
+function returnFullName(human) {
+    const fullName = [];
+    for (let i = 0; i < human.length; i++) {
+        fullName.push(` "The complete name is ${human[i].firstName} ${human[i].lastName}"`);
+    }
+    return fullName.join("");
+}
+console.log(returnFullName([
+    { firstName: 'Jorgie', lastName: "" },
+    { firstName: 'Max', lastName: "Vinic" },
+    { firstName: 'Jorgie', lastName: "Asd" }
+]));
 //# sourceMappingURL=index.js.map

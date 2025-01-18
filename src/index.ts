@@ -2927,3 +2927,30 @@ getNames([
     { name: 'Bill', age: 30 },
     { name: 'Kate', age: 23 }
 ])
+
+
+// Snack 117
+
+// The code provided is supposed return a person's Full Name given their first and last names.
+
+// But it's not working properly.
+
+// Notes
+// The first and/or last names are never null, but may be empty.
+
+// Task
+// Fix the bug so we can all go home early.
+
+function returnFullName(human : {firstName : string, lastName : string}[]): string{
+    const fullName : string[] = [];
+    for (let i = 0; i < human.length; i++){
+        fullName.push(` "The complete name is ${human[i].firstName} ${human[i].lastName}"`);
+    } 
+    return fullName.join("");
+}
+
+console.log(returnFullName([
+    {firstName: 'Jorgie', lastName: ""},
+    {firstName: 'Max', lastName: "Vinic"},
+    {firstName: 'Jorgie', lastName: "Asd"}
+]));
