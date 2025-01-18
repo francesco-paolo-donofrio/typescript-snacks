@@ -1175,34 +1175,17 @@ function collision(x1, y1, radius1, x2, y2, radius2) {
 collision(2, 2, 5, 1, 1, 5);
 collision(2, 2, 2, 1, 1, 2);
 function calculate(num1, str, num2) {
-    let arrayOfAll = (num1 + str + num2).split("");
-    let arrayOfNumber = arrayOfAll.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
-    let sum = function sum(num1, num2) {
-        return num1 + num2;
-    };
-    let sottraction = function sottraction(num1, num2) {
-        return num1 - num2;
-    };
-    let moltiplication = function moltiplication(num1, num2) {
-        return num1 + num2;
-    };
-    let division = function division(num1, num2) {
-        return num1 / num2;
-    };
-    if (str === "+") {
-        return arrayOfNumber.reduce(sum);
-    }
-    else if (str === "-") {
-        return arrayOfNumber.reduce(sottraction);
-    }
-    else if (str === "*") {
-        return arrayOfNumber.reduce(moltiplication);
-    }
-    else if (str === "/") {
-        return arrayOfNumber.reduce(division);
-    }
-    else {
-        return null;
+    switch (str) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num2 !== 0 ? num1 / num2 : null;
+        default:
+            return null;
     }
 }
 calculate(1, "+", 2);
@@ -1210,4 +1193,16 @@ calculate(4, "-", 2);
 calculate(5, ",a", 2);
 calculate(2, "*", 2);
 calculate(10, "/", 2);
+function getNames(data) {
+    const names = [];
+    for (let i = 0; i < data.length; i++) {
+        names.push(data[i].name);
+    }
+    return names;
+}
+getNames([
+    { name: 'Joe', age: 20 },
+    { name: 'Bill', age: 30 },
+    { name: 'Kate', age: 23 }
+]);
 //# sourceMappingURL=index.js.map

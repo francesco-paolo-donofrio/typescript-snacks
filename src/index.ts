@@ -1973,12 +1973,12 @@ checkSameCase("0", "?");
 
 // All values will be positive integers or floats, or zero.
 
-function pluralIsServed(num : number): boolean {
-    if (num < 0){
+function pluralIsServed(num: number): boolean {
+    if (num < 0) {
         console.error("A positive number as input is required")
-    } else if(num === 1) {
+    } else if (num === 1) {
         return false;
-    } 
+    }
     return true;
 }
 
@@ -2005,7 +2005,7 @@ pluralIsServed(99);
 // all((1, 2, 3, 4, 5), greater_than_9) -> false
 // all((1, 2, 3, 4, 5), less_than_9)    -> True
 
-function all(sequence : number[], method: (n: number) => boolean): boolean {
+function all(sequence: number[], method: (n: number) => boolean): boolean {
     return sequence.every(method);
 }
 
@@ -2047,9 +2047,9 @@ greetings("Mario");
 // 1 Imperial Gallon = 4.54609188 litres
 // 1 Mile = 1.609344 kilometres
 
-const imperialGallon : number = 4.54609188; 
-const oneMile : number = 1.609344;
-function kmPerLiter(mpg : number): number {
+const imperialGallon: number = 4.54609188;
+const oneMile: number = 1.609344;
+function kmPerLiter(mpg: number): number {
     return parseFloat((mpg * oneMile / imperialGallon).toFixed(2))
 }
 
@@ -2074,11 +2074,11 @@ kmPerLiter(10);
 // six_toast(12) == 6
 
 
-function sixToast(toasts : number): string {
+function sixToast(toasts: number): string {
     const maxToast = 6;
-    if (toasts > maxToast){
+    if (toasts > maxToast) {
         return `You have to take ${toasts - maxToast} toast less`
-    } else if (toasts < maxToast){
+    } else if (toasts < maxToast) {
         return `You have to take ${Math.abs(toasts - maxToast)} more toast`
     } else {
         return `You have 6 toasts inside`
@@ -2109,7 +2109,7 @@ sixToast(1);
 // Notes
 // String str will never be null.
 
-function replaceDot(str : string): string {
+function replaceDot(str: string): string {
     return str.split("").map((char) => char === "." ? char.replace(".", "-") : char).join("");
 }
 
@@ -2121,7 +2121,7 @@ replaceDot("Ciao.Sono.Mario")
 
 // Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a digit (0-9), false otherwise.
 
-function isDigit(str : string): boolean {
+function isDigit(str: string): boolean {
     return !isNaN(parseInt(str));
 }
 
@@ -2141,8 +2141,8 @@ isDigit("a");
 // * With `name` not given 
 //   or `name` = ""        => return "Hello, World!"
 
-function helloName(name : string) : string {
-    if (name === "" || name === null){
+function helloName(name: string): string {
+    if (name === "" || name === null) {
         return "Hello, World!";
     }
 
@@ -2164,14 +2164,14 @@ helloName("");
 
 // All inputs will be integers. Please return an integer. Round down.
 
- function whiskeyDiscount(normPrice : number, discount : number, holidayCost : number) : number {
+function whiskeyDiscount(normPrice: number, discount: number, holidayCost: number): number {
     const discountPerItem = (normPrice * discount) / 100;
     const bottlesToBuy = holidayCost / discountPerItem;
-    return Math.round(bottlesToBuy); 
- }
+    return Math.round(bottlesToBuy);
+}
 
- whiskeyDiscount(10, 10, 500);
- whiskeyDiscount(12, 50, 1000);
+whiskeyDiscount(10, 10, 500);
+whiskeyDiscount(12, 50, 1000);
 
 //  Snack 88
 
@@ -2231,7 +2231,7 @@ console.log(sumTheDifferences([2, 1, 10])); // Output: 9
 // 20, 2 --> 0
 // *Use Comparison and Logical Operators.
 
-function finalGrade(grade : number, completedProjects : number): number {
+function finalGrade(grade: number, completedProjects: number): number {
     if (grade > 90 || completedProjects > 10) return 100;
     else if (grade > 75 && completedProjects > 5) return 90;
     else if (grade > 50 && completedProjects > 2) return 75;
@@ -2295,11 +2295,11 @@ function animals(heads: number, legs: number): [number, number] | "No solutions"
 }
 
 // Test cases
-console.log(animals(72, 200)); 
-console.log(animals(72, 201)); 
-console.log(animals(0, 0));    
-console.log(animals(-1, 100)); 
-console.log(animals(100, 400)); 
+console.log(animals(72, 200));
+console.log(animals(72, 201));
+console.log(animals(0, 0));
+console.log(animals(-1, 100));
+console.log(animals(100, 400));
 
 // Snack 91
 
@@ -2320,15 +2320,15 @@ console.log(animals(100, 400));
 // 15  =>  13
 // -3  =>  -3
 
-function realFloor(americanFloor : number): number {
-        if (americanFloor === 1){
-            return 0;
-        } else if (americanFloor <= 13 && americanFloor > 0){
-            return americanFloor - 1;
-        } else if (americanFloor > 13){
-            return americanFloor - 2;
-        }
-        return americanFloor;
+function realFloor(americanFloor: number): number {
+    if (americanFloor === 1) {
+        return 0;
+    } else if (americanFloor <= 13 && americanFloor > 0) {
+        return americanFloor - 1;
+    } else if (americanFloor > 13) {
+        return americanFloor - 2;
+    }
+    return americanFloor;
 }
 
 realFloor(1);
@@ -2349,7 +2349,7 @@ realFloor(-3);
 // false    | true     => false
 // false    | false    => false
 
-function setAlarm(employed : boolean, vacation : boolean): boolean {
+function setAlarm(employed: boolean, vacation: boolean): boolean {
     if (employed && vacation) return false;
     else if (employed === true && vacation === false) return true;
     else if (employed === false && vacation === true) return false;
@@ -2370,7 +2370,7 @@ setAlarm(false, true);
 // Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
 
 function xYearsOld(str: string): number {
-    return parseInt(str[0], 10); 
+    return parseInt(str[0], 10);
 }
 
 xYearsOld("1 years old");
@@ -2386,9 +2386,9 @@ xYearsOld("5 years old");
 // b = 4
 // --> [1, 2, 3, 4]
 
-function betweenInt(first : number, second : number): number[]{
-    const result : number[] = [];
-    for (let i = first; i <= second; i++){
+function betweenInt(first: number, second: number): number[] {
+    const result: number[] = [];
+    for (let i = first; i <= second; i++) {
         result.push(i)
     }
     return result;
@@ -2408,7 +2408,7 @@ betweenInt(3, 15);
 // n=-5, m=5:  0
 // Waiting for translations and Feedback! Thanks!
 
-function blankPages(n : number, m : number): number {
+function blankPages(n: number, m: number): number {
     if (n < 0 || m < 0) return 0;
     return n * m;
 }
@@ -2424,11 +2424,11 @@ blankPages(5, 5);
 
 // Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
 
-function beastFeast(name : string, dish : string): boolean {
+function beastFeast(name: string, dish: string): boolean {
     if (name.length < 2 && dish.length < 2) return false;
     return (
-    name[0].toLowerCase() === dish[0].toLowerCase() &&
-    name[name.length - 1].toLowerCase() === dish[dish.length - 1].toLowerCase()
+        name[0].toLowerCase() === dish[0].toLowerCase() &&
+        name[name.length - 1].toLowerCase() === dish[dish.length - 1].toLowerCase()
     )
 }
 
@@ -2451,7 +2451,7 @@ beastFeast("chickadee", "chocolate cake");
 
 // time = 11.8--> litres = 5
 
-function hydratedDream(hour : number) : number {
+function hydratedDream(hour: number): number {
     return Math.floor(hour * 0.5);
 }
 
@@ -2463,7 +2463,7 @@ hydratedDream(11.8);
 
 // Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
 
-function fakeBinary(str : string) : string {
+function fakeBinary(str: string): string {
     return str.replace(/[0-4]/g, "0").replace(/[5-9]/g, "1");
 }
 
@@ -2490,8 +2490,8 @@ fakeBinary("1234");
 
 // • Capitalization and punctuation matter
 
-function spotDiff(str1 : string, str2 : string) : number[] {
-    let result : number[] = [];
+function spotDiff(str1: string, str2: string): number[] {
+    let result: number[] = [];
     for (let i = 0; i < str1.length; i++) {
         if (str1[i] !== str2[i]) {
             result.push(i);
@@ -2519,7 +2519,7 @@ spotDiff("abcdefg", "abcqetg");
 
 // Note: side will be an integer
 
-function cubeChecker(volume : number, side : number) : boolean {
+function cubeChecker(volume: number, side: number): boolean {
     return volume > 0 && side > 0 && volume === side ** 3;
 }
 
@@ -2535,7 +2535,7 @@ cubeChecker(125, 3);
 
 // You should not remove or add elements from/to the array.
 
-function twoSort(s : string[]) : string {
+function twoSort(s: string[]): string {
     return s.sort()[0].replace(/./g, "*");
 }
 
@@ -2552,7 +2552,7 @@ twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "pe
 
 // Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.
 
-function mouthSize(animal : string) : string {
+function mouthSize(animal: string): string {
     return animal.toLowerCase() === "alligator" ? "small" : "wide";
 }
 
@@ -2568,7 +2568,7 @@ mouthSize("alligator");
 
 // Write a function that takes n and returns it's sXORe.
 
-function sxor(n : number) : number {
+function sxor(n: number): number {
     return [...Array(n).keys()].reduce((a, b) => a ^ b);
 }
 
@@ -2591,8 +2591,8 @@ sxor(5);
 // fix to 3 decimal places.
 
 function height(n: number): number {
-    const firstCatHeight = 2000000; 
-    const ratio = 0.4;              
+    const firstCatHeight = 2000000;
+    const ratio = 0.4;
     let totalHeight = 0;
 
     for (let i = 0; i < n; i++) {
@@ -2619,13 +2619,13 @@ console.log(height(26));
 // Go on and code some pure awesomeness!
 
 function smallestID(arr: number[]): number {
-    
+
     const idSet = new Set(arr);
 
-    
+
     let smallest = 0;
 
-    
+
     while (idSet.has(smallest)) {
         smallest++;
     }
@@ -2645,10 +2645,10 @@ smallestID(usedIDs);
 // Write a function that takes n and finds it's scORe.
 
 function score(n: number): number {
-    
+
     let result = 1;
     while (result <= n) {
-        result <<= 1; 
+        result <<= 1;
     }
     return result - 1;
 }
@@ -2714,11 +2714,11 @@ twoOldestAges([1, 3, 10, 0]);
 // Triangular Numbers cannot be negative so return 0 if a negative number is given.
 
 function triangularNumber(n: number): number {
-    if (n <= 0) return 0; 
-    
+    if (n <= 0) return 0;
+
     let sum = 0;
     for (let i = 1; i <= n; i++) {
-        sum += (i * (i + 1)) / 2; 
+        sum += (i * (i + 1)) / 2;
     }
     return sum;
 }
@@ -2740,7 +2740,7 @@ triangularNumber(4);
 
 function removeSpaces(input: string): string {
     return input.split(" ").join("");
-} 
+}
 
 removeSpaces("  sss aa s fllf sl s s la  ");
 
@@ -2760,11 +2760,11 @@ removeSpaces("  sss aa s fllf sl s s la  ");
 
 // garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
 
-function replaceWithGravel(input : string): string {
+function replaceWithGravel(input: string): string {
     return input
-    .split(" ")
-    .map(element => element === "gravel" || element === "rock" ? "element" : "gravel")
-    .join(" ");
+        .split(" ")
+        .map(element => element === "gravel" || element === "rock" ? "element" : "gravel")
+        .join(" ");
 }
 
 replaceWithGravel("gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel");
@@ -2784,7 +2784,7 @@ function meanAndConcatenate(arr: any[]): [number, string] {
     // Separate integers and characters
     const integers = arr.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
     const characters = arr.filter((element) => isNaN(Number(element)) && typeof element === 'string');
-    
+
     const mean = integers.reduce((sum, num) => sum + num, 0) / integers.length;
 
     const concatenatedString = characters.join('');
@@ -2811,7 +2811,7 @@ meanAndConcatenate(lst);
 // "ACSKLDFJSgSKLDFJSKLDFJ" -> False
 // "ACSKLDFJSGSKLDFJSKLDFJ" -> True
 
-function itIsString(str : string): boolean {
+function itIsString(str: string): boolean {
     return str === str.toUpperCase();
 }
 
@@ -2828,7 +2828,7 @@ itIsString("heLLO I AM DONALD");
 // }
 // If a collision is detected, return true. If not, return false.
 
-function collision(x1 : number, y1: number, radius1: number, x2: number, y2: number, radius2: number): boolean {
+function collision(x1: number, y1: number, radius1: number, x2: number, y2: number, radius2: number): boolean {
     const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
     return distance <= (radius1 + radius2);
@@ -2852,7 +2852,7 @@ collision(2, 2, 2, 1, 1, 2);
 //     let arrayOfAll = (num1 + str + num2).split("");
 
 //     let arrayOfNumber = arrayOfAll.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
-    
+
 //     let sum = function sum(num1 : number, num2 : number){
 //         return num1 + num2;
 //     };
@@ -2900,3 +2900,30 @@ calculate(5, ",a", 2);
 calculate(2, "*", 2);
 calculate(10, "/", 2);
 
+// Snack 116
+
+// The following code is not giving the expected results. Can you debug what the issue is?
+
+// The following is an example of data that would be passed in to the function.
+
+// var data = [
+//   {name: 'Joe', age: 20},
+//   {name: 'Bill', age: 30},
+//   {name: 'Kate', age: 23}
+// ]
+
+// getNames(data) // should return ['Joe', 'Bill', 'Kate']
+
+function getNames(data: { name: string, age: number }[]): string[] {
+    const names: string[] = [];
+    for (let i = 0; i < data.length; i++) {
+        names.push(data[i].name);
+    }
+    return names;
+}
+
+getNames([
+    { name: 'Joe', age: 20 },
+    { name: 'Bill', age: 30 },
+    { name: 'Kate', age: 23 }
+])
