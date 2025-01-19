@@ -2923,10 +2923,10 @@ function getNames(data: { name: string, age: number }[]): string[] {
 }
 
 getNames([
-    { name: 'Joe', age: 20 },
-    { name: 'Bill', age: 30 },
+    { name: 'Bibbo', age: 21 },
     { name: 'Kate', age: 23 }
-])
+]);
+
 
 
 // Snack 117
@@ -2943,7 +2943,7 @@ getNames([
 
 // function returnFullName(human : {firstName : string, lastName : string}[]): string{
 //     const fullName : string[] = [];
-//     for (let i = 0; i < human.length; i++){
+//     for (let i = 0; i < human.length; i++){w
 //         fullName.push(` "The complete name is ${human[i].firstName} ${human[i].lastName}"`);
 //     } 
 //     return fullName.join("");

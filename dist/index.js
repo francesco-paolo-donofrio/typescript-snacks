@@ -1201,8 +1201,7 @@ function getNames(data) {
     return names;
 }
 getNames([
-    { name: 'Joe', age: 20 },
-    { name: 'Bill', age: 30 },
+    { name: 'Bibbo', age: 21 },
     { name: 'Kate', age: 23 }
 ]);
 function returnFullNames(humans) {
