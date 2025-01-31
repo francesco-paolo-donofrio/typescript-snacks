@@ -1,15 +1,4 @@
 "use strict";
-function isEvenOrOdd(number) {
-    if (number % 2 === 0) {
-        return "Even";
-    }
-    else {
-        return "Odd";
-    }
-}
-;
-isEvenOrOdd(2);
-isEvenOrOdd(3);
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1215,4 +1204,12 @@ console.log(returnFullNames([
     { firstName: 'Max', lastName: 'Vinic' },
     { firstName: 'Jorgie', lastName: 'Asd' }
 ]));
+function containAllRots(strng, arr) {
+    if (strng === "")
+        return true;
+    const rotations = Array.from({ length: strng.length }, (_, i) => strng.slice(i) + strng.slice(0, i));
+    return rotations.every(rot => arr.includes(rot));
+}
+console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
+console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]));
 //# sourceMappingURL=index.js.map
