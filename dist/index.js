@@ -385,6 +385,7 @@ function create() {
     const eve = new Woman("Eve", 30);
     return [adam, eve];
 }
+create();
 function pinControl(code) {
     return (code.length === 4 || code.length === 6) && /^\d+$/.test(code);
 }
