@@ -1217,5 +1217,9 @@ function stringTemplate(userValue) {
     let fixValue = 10;
     return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
 }
+function sortingArray(numArr) {
+    return numArr.sort(function (a, b) { return a - b; });
+}
+console.log(sortingArray([22, 77, 11, 1, 0, 100]));
 console.log(stringTemplate(10));
 //# sourceMappingURL=index.js.map
