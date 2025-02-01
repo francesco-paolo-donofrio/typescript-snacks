@@ -3004,3 +3004,24 @@ function containAllRots(strng: string, arr: string[]): boolean {
 
 console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
 console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]));
+
+// Snack 119
+// Failed Sort - Bug Fixing #4
+// Oh no, Timmy's Sort doesn't seem to be working? Your task is to fix the sortArray function to sort all numbers in ascending order
+
+
+
+// Snack 120
+// Oh no! Timmy hasn't followed instructions very carefully and forgot how to use the new String Template feature, Help Timmy with his string template so it works as he expects!
+
+let str = "";
+function stringTemplate(userValue : number): string {
+    let fixValue = 10; 
+    return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
+}
+
+console.log(stringTemplate(10));
+
+// Snack 121
+// Switch/Case - Bug Fixing #6
+// Oh no! Timmy's evalObject function doesn't work. He uses Switch/Cases to evaluate the given properties of an object, can you fix timmy's function?

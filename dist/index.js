@@ -1212,4 +1212,10 @@ function containAllRots(strng, arr) {
 }
 console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
 console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]));
+let str = "";
+function stringTemplate(userValue) {
+    let fixValue = 10;
+    return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
+}
+console.log(stringTemplate(10));
 //# sourceMappingURL=index.js.map
