@@ -2994,7 +2994,7 @@ console.log(
 // and for any array arr: contain_all_rots("", arr) --> true
 
 function containAllRots(strng: string, arr: string[]): boolean {
-    if (strng === "") return true; 
+    if (strng === "") return true;
     const rotations = Array.from({ length: strng.length }, (_, i) =>
         strng.slice(i) + strng.slice(0, i)
     );
@@ -3009,8 +3009,8 @@ console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy
 // Oh no! Timmy hasn't followed instructions very carefully and forgot how to use the new String Template feature, Help Timmy with his string template so it works as he expects!
 
 let str = "";
-function stringTemplate(userValue : number): string {
-    let fixValue = 10; 
+function stringTemplate(userValue: number): string {
+    let fixValue = 10;
     return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
 }
 
@@ -3019,8 +3019,8 @@ function stringTemplate(userValue : number): string {
 // Failed Sort - Bug Fixing #4
 // Oh no, Timmy's Sort doesn't seem to be working? Your task is to fix the sortArray function to sort all numbers in ascending order
 
-function sortingArray(numArr : number[]): number[]{
-    return numArr.sort(function(a : number, b : number): any{return a - b});
+function sortingArray(numArr: number[]): number[] {
+    return numArr.sort(function (a: number, b: number): any { return a - b });
 }
 
 console.log(sortingArray([22, 77, 11, 1, 0, 100]));
@@ -3032,3 +3032,33 @@ console.log(stringTemplate(10));
 // Snack 121
 // Switch/Case - Bug Fixing #6
 // Oh no! Timmy's evalObject function doesn't work. He uses Switch/Cases to evaluate the given properties of an object, can you fix timmy's function?
+
+type Operation = {
+    a: number;
+    b: number;
+    operation: string;
+};
+
+function evalObject(value: Operation): number | string {
+    switch (value.operation) {
+        case '+':
+            return value.a + value.b;
+        case '-':
+            return value.a - value.b;
+        case '*':
+            return value.a * value.b;
+        case '/':
+            return value.b !== 0 ? value.a / value.b : 'Error: Division by zero';
+        case '%':
+            return value.a % value.b;
+        case '^':
+            return Math.pow(value.a, value.b);
+        default:
+            return 'Invalid operation';
+    }
+}
+
+console.log(evalObject({a: 2, b: 5, operation : "+"}));
+console.log(evalObject({a: 2, b: 5, operation : "*"}));
+console.log(evalObject({a: 2, b: 5, operation : "^"}));
+

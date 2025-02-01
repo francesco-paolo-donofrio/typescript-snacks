@@ -1222,4 +1222,25 @@ function sortingArray(numArr) {
 }
 console.log(sortingArray([22, 77, 11, 1, 0, 100]));
 console.log(stringTemplate(10));
+function evalObject(value) {
+    switch (value.operation) {
+        case '+':
+            return value.a + value.b;
+        case '-':
+            return value.a - value.b;
+        case '*':
+            return value.a * value.b;
+        case '/':
+            return value.b !== 0 ? value.a / value.b : 'Error: Division by zero';
+        case '%':
+            return value.a % value.b;
+        case '^':
+            return Math.pow(value.a, value.b);
+        default:
+            return 'Invalid operation';
+    }
+}
+console.log(evalObject({ a: 2, b: 5, operation: "+" }));
+console.log(evalObject({ a: 2, b: 5, operation: "*" }));
+console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 //# sourceMappingURL=index.js.map
