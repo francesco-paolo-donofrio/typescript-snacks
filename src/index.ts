@@ -2658,43 +2658,49 @@ score(2);
 
 // Snack 107
 
-// Numbers ending with zeros are boring.
+// Definition
+// A Tidy Number is a number whose digits are in non-decreasing order.
 
-// They might be fun in your world, but not here.
+// Task
+// Given a number, determine if it is tidy or not.
 
-// Get rid of them. Only the ending ones.
+// Notes
+// The number passed will always be positive.
+// Return the result as a boolean.
+// Examples
+// 12 ==> return true
+// Explanation: Digits {1, 2} are in non-decreasing order (1 <= 2).
 
-// 1450 -> 145
-// 960000 -> 96
-// 1050 -> 105
-// -1050 -> -105
-// Zero alone is fine, don't worry about it. Poor guy anyway
+// 32 ==> return false
+// Explanation: Digits {3, 2} are not in non-decreasing order (3 > 2).
 
-function popZero(num: number): number {
-    const trimmedNumber = num.toString().replace(/0+$/, "");
-    return Number(trimmedNumber);
+// 1024 ==> return false
+// Explanation: Digits {1, 0, 2, 4} are not in non-decreasing order (1 > 0).
+
+// 13579 ==> return true
+// Explanation: Digits {1, 3, 5, 7, 9} are in non-decreasing order.
+
+// 2335 ==> return true
+// Explanation: Digits {2, 3, 3, 5} are in non-decreasing order (3 = 3).
+
+function tidyNumber(num : number): boolean {
+    if (num < 0){
+        return false;
+    }
+
+    let arrOfNumbers : string[] = num.toString().split("");
+    
+    for (let i = 0; i <= arrOfNumbers.length; i++){
+        
+        if (arrOfNumbers[i] < arrOfNumbers[i + 1]){
+            return true;
+        }
+    }
+    return false;
 }
 
-popZero(0);
-popZero(1230);
-
-// Snack 108
-
-// The alligator is a creature that lives in the Amazon rainforest.
-
-// It loves to eat wide-mouthed frogs!
-
-// Create a function that determines whether or not the alligator will eat the frog based on size.
-
-// If the frog's head is bigger than the alligator's body, the alligator will eat the frog.
-
-// If the frog's head is smaller than the alligator's body, the alligator will not eat the frog.
-
-// If the frog's head is the same size as the alligator's body, the alligator will eat the frog.
-
-function alligatorEats(frogHead: number, alligatorBody: number): boolean {
-    return frogHead > alligatorBody;
-}
-
-alligatorEats(10, 20);
-alligatorEats(20, 10);
+console.log(tidyNumber(12));
+console.log(tidyNumber(32));
+console.log(tidyNumber(1024));
+console.log(tidyNumber(13579));
+console.log(tidyNumber(2335));

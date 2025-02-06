@@ -1117,15 +1117,21 @@ function score(n) {
 }
 score(5);
 score(2);
-function popZero(num) {
-    const trimmedNumber = num.toString().replace(/0+$/, "");
-    return Number(trimmedNumber);
+function tidyNumber(num) {
+    if (num < 0) {
+        return false;
+    }
+    let arrOfNumbers = num.toString().split("");
+    for (let i = 0; i <= arrOfNumbers.length; i++) {
+        if (arrOfNumbers[i] < arrOfNumbers[i + 1]) {
+            return true;
+        }
+    }
+    return false;
 }
-popZero(0);
-popZero(1230);
-function alligatorEats(frogHead, alligatorBody) {
-    return frogHead > alligatorBody;
-}
-alligatorEats(10, 20);
-alligatorEats(10, 10);
+console.log(tidyNumber(12));
+console.log(tidyNumber(32));
+console.log(tidyNumber(1024));
+console.log(tidyNumber(13579));
+console.log(tidyNumber(2335));
 //# sourceMappingURL=index.js.map
