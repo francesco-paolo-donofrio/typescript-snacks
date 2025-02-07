@@ -1122,7 +1122,11 @@ function tidyNumber(num) {
         return false;
     }
     let arrOfNumbers = num.toString().split("");
+    let zero = "0";
     for (let i = 0; i <= arrOfNumbers.length; i++) {
+        if (arrOfNumbers[i] = zero) {
+            zero = "1";
+        }
         if (arrOfNumbers[i] < arrOfNumbers[i + 1]) {
             return true;
         }
