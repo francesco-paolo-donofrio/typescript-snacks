@@ -1132,4 +1132,11 @@ console.log(tidyNumber(32));
 console.log(tidyNumber(1024));
 console.log(tidyNumber(13579));
 console.log(tidyNumber(2335));
+function transposeTwoStrings(arr) {
+    let leftArray = arr.slice(0);
+    let rightArray = arr.slice(1);
+    console.log(leftArray);
+    console.log(rightArray);
+}
+transposeTwoStrings(["Hello", "World"]);
 //# sourceMappingURL=index.js.map
