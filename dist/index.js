@@ -1118,22 +1118,16 @@ function score(n) {
 score(5);
 score(2);
 function tidyNumber(num) {
-    if (num < 0) {
-        return false;
-    }
     let arrOfNumbers = num.toString().split("");
-    let zero = "0";
-    for (let i = 0; i <= arrOfNumbers.length; i++) {
-        if (arrOfNumbers[i] = zero) {
-            zero = "1";
+    for (let i = 0; i <= arrOfNumbers.length - 1; i++) {
+        if (arrOfNumbers[i] > arrOfNumbers[i + 1]) {
+            return false;
         }
-        if (arrOfNumbers[i] < arrOfNumbers[i + 1]) {
-            return true;
-        }
+        ;
     }
-    return false;
+    return true;
 }
-console.log(tidyNumber(12));
+console.log(tidyNumber(127));
 console.log(tidyNumber(32));
 console.log(tidyNumber(1024));
 console.log(tidyNumber(13579));
