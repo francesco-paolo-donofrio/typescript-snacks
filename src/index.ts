@@ -2723,17 +2723,20 @@ console.log(tidyNumber(2335));
 //     You don't have to modify the case (i.e. no need to change to upper or lower)
 //     If one string is longer than the other, there should be a space where the character would be
 
-function transposeTwoStrings(arr : string[]): string[] {
-    let leftArray : string[] = [];
-    let rightArray : string[] = [];
-    // let finalArray : string[] = [];
-    for (let i = 0; i < 1; i++){
-        leftArray.push(arr[0]);
-        rightArray.push(arr[1]);
+function transposeTwoStrings(arr: string[]): string {
+    const maxLength = Math.max(arr[0].length, arr[1].length);
+    let result: string[] = [];
+
+    for (let i = 0; i < maxLength; i++) {
+        const leftChar = arr[0][i] || " "; // Se la lettera non esiste, usa spazio
+        const rightChar = arr[1][i] || " ";
+        result.push(`${leftChar} ${rightChar}`);
     }
-    console.log(leftArray);
-    console.log(rightArray);
-    return arr;
+
+    return result.join("\n"); // Unisce le righe con newline
 }
 
-transposeTwoStrings(["Hello", "World"]);
+// Test
+console.log(transposeTwoStrings(["Hello", "World"]));
+console.log(transposeTwoStrings(["Hi", "There"]));
+console.log(transposeTwoStrings(["Short", "LongerWord"]));
