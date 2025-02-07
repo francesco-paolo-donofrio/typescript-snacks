@@ -1133,10 +1133,15 @@ console.log(tidyNumber(1024));
 console.log(tidyNumber(13579));
 console.log(tidyNumber(2335));
 function transposeTwoStrings(arr) {
-    let leftArray = arr.slice(0);
-    let rightArray = arr.slice(1);
+    let leftArray = [];
+    let rightArray = [];
+    for (let i = 0; i < 1; i++) {
+        leftArray.push(arr[0]);
+        rightArray.push(arr[1]);
+    }
     console.log(leftArray);
     console.log(rightArray);
+    return arr;
 }
 transposeTwoStrings(["Hello", "World"]);
 //# sourceMappingURL=index.js.map

@@ -2726,12 +2726,14 @@ console.log(tidyNumber(2335));
 function transposeTwoStrings(arr : string[]): string[] {
     let leftArray : string[] = [];
     let rightArray : string[] = [];
-    for (let i = 0; i < arr.length; i++){
-        
-    }
     // let finalArray : string[] = [];
+    for (let i = 0; i < 1; i++){
+        leftArray.push(arr[0]);
+        rightArray.push(arr[1]);
+    }
     console.log(leftArray);
     console.log(rightArray);
+    return arr;
 }
 
 transposeTwoStrings(["Hello", "World"]);
