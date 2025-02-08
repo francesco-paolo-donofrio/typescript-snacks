@@ -2740,3 +2740,4 @@ function transposeTwoStrings(arr: string[]): string {
 console.log(transposeTwoStrings(["Hello", "World"]));
 console.log(transposeTwoStrings(["Hi", "There"]));
 console.log(transposeTwoStrings(["Short", "LongerWord"]));
+// Push
