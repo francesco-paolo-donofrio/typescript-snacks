@@ -1,15 +1,4 @@
 "use strict";
-function isEvenOrOdd(number) {
-    if (number % 2 === 0) {
-        return "Even";
-    }
-    else {
-        return "Odd";
-    }
-}
-;
-isEvenOrOdd(2);
-isEvenOrOdd(3);
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -385,6 +374,7 @@ function create() {
     const eve = new Woman("Eve", 30);
     return [adam, eve];
 }
+create();
 function pinControl(code) {
     return (code.length === 4 || code.length === 6) && /^\d+$/.test(code);
 }
@@ -1149,4 +1139,136 @@ function transposeTwoStrings(arr) {
     return resultString;
 }
 transposeTwoStrings(["Hello", "World"]);
+popZero(0);
+popZero(1230);
+function twoOldestAges(ages) {
+    return ages.sort((a, b) => a - b).slice(-2);
+}
+twoOldestAges([1, 5, 87, 45, 8, 8]);
+twoOldestAges([1, 3, 10, 0]);
+function triangularNumber(n) {
+    if (n <= 0)
+        return 0;
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += (i * (i + 1)) / 2;
+    }
+    return sum;
+}
+triangularNumber(1);
+triangularNumber(2);
+triangularNumber(3);
+triangularNumber(4);
+function removeSpaces(input) {
+    return input.split(" ").join("");
+}
+removeSpaces("  sss aa s fllf sl s s la  ");
+function replaceWithGravel(input) {
+    return input
+        .split(" ")
+        .map(element => element === "gravel" || element === "rock" ? "element" : "gravel")
+        .join(" ");
+}
+replaceWithGravel("gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel");
+function meanAndConcatenate(arr) {
+    const integers = arr.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
+    const characters = arr.filter((element) => isNaN(Number(element)) && typeof element === 'string');
+    const mean = integers.reduce((sum, num) => sum + num, 0) / integers.length;
+    const concatenatedString = characters.join('');
+    return [mean, concatenatedString];
+}
+const lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0'];
+const result = meanAndConcatenate(lst);
+meanAndConcatenate(lst);
+function itIsString(str) {
+    return str === str.toUpperCase();
+}
+itIsString("c");
+itIsString("HELLO I AM DONALD");
+itIsString("heLLO I AM DONALD");
+function collision(x1, y1, radius1, x2, y2, radius2) {
+    const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    return distance <= (radius1 + radius2);
+}
+collision(2, 2, 5, 1, 1, 5);
+collision(2, 2, 2, 1, 1, 2);
+function calculate(num1, str, num2) {
+    switch (str) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num2 !== 0 ? num1 / num2 : null;
+        default:
+            return null;
+    }
+}
+calculate(1, "+", 2);
+calculate(4, "-", 2);
+calculate(5, ",a", 2);
+calculate(2, "*", 2);
+calculate(10, "/", 2);
+function getNames(data) {
+    const names = [];
+    for (let i = 0; i < data.length; i++) {
+        names.push(data[i].name);
+    }
+    return names;
+}
+getNames([
+    { name: 'Bibbo', age: 21 },
+    { name: 'Kate', age: 23 }
+]);
+function returnFullNames(humans) {
+    return humans
+        .map(human => `The complete name is ${human.firstName} ${human.lastName}`.trim())
+        .join('\n');
+}
+console.log(returnFullNames([
+    { firstName: 'Jorgie', lastName: '' },
+    { firstName: 'Max', lastName: 'Vinic' },
+    { firstName: 'Jorgie', lastName: 'Asd' }
+]));
+function containAllRots(strng, arr) {
+    if (strng === "")
+        return true;
+    const rotations = Array.from({ length: strng.length }, (_, i) => strng.slice(i) + strng.slice(0, i));
+    return rotations.every(rot => arr.includes(rot));
+}
+console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
+console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]));
+let str = "";
+function stringTemplate(userValue) {
+    let fixValue = 10;
+    return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
+}
+function sortingArray(numArr) {
+    return numArr.sort(function (a, b) { return a - b; });
+}
+console.log(sortingArray([22, 77, 11, 1, 0, 100]));
+console.log(stringTemplate(10));
+function evalObject(value) {
+    switch (value.operation) {
+        case '+':
+            return value.a + value.b;
+        case '-':
+            return value.a - value.b;
+        case '*':
+            return value.a * value.b;
+        case '/':
+            return value.b !== 0 ? value.a / value.b : 'Error: Division by zero';
+        case '%':
+            return value.a % value.b;
+        case '^':
+            return Math.pow(value.a, value.b);
+        default:
+            return 'Invalid operation';
+    }
+}
+console.log(evalObject({ a: 2, b: 5, operation: "+" }));
+console.log(evalObject({ a: 2, b: 5, operation: "*" }));
+console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 //# sourceMappingURL=index.js.map

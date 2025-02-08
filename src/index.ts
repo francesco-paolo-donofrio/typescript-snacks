@@ -1,16 +1,16 @@
 // Snack 1
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 
-function isEvenOrOdd(number: number): string {
-    if (number % 2 === 0) {
-        return "Even";
-    } else {
-        return "Odd";
-    }
-};
+// function isEvenOrOdd(number: number): string {
+//     if (number % 2 === 0) {
+//         return "Even";
+//     } else {
+//         return "Odd";
+//     }
+// };
 
-isEvenOrOdd(2);
-isEvenOrOdd(3);
+// isEvenOrOdd(2);
+// isEvenOrOdd(3);
 
 // Snack 2
 
@@ -747,6 +747,8 @@ function create(): [Man, Woman] {
     const eve = new Woman("Eve", 30);
     return [adam, eve];
 }
+
+create();
 
 // Snack 33
 
@@ -2741,3 +2743,387 @@ console.log(transposeTwoStrings(["Hello", "World"]));
 console.log(transposeTwoStrings(["Hi", "There"]));
 console.log(transposeTwoStrings(["Short", "LongerWord"]));
 // Push
+popZero(0);
+popZero(1230);
+
+// Snack 108
+
+// The two oldest ages function/method needs to be completed. It should take an array of numbers as its argument and return the two highest numbers within the array. The returned value should be an array in the format [second oldest age,  oldest age].
+
+// The order of the numbers passed in could be any order. The array will always include at least 2 items. If there are two or more oldest age, then return both of them in array format.
+
+// For example (Input --> Output):
+
+// [1, 2, 10, 8] --> [8, 10]
+// [1, 5, 87, 45, 8, 8] --> [45, 87]
+// [1, 3, 10, 0]) --> [3, 10]
+
+function twoOldestAges(ages: number[]): number[] {
+    return ages.sort((a, b) => a - b).slice(-2);
+}
+
+twoOldestAges([1, 5, 87, 45, 8, 8]);
+twoOldestAges([1, 3, 10, 0]);
+
+// Snack 109
+
+// Your task is to return the sum of Triangular Numbers up-to-and-including the nth Triangular Number.
+
+// Triangular Number: "any of the series of numbers (1, 3, 6, 10, 15, etc.) obtained by continued summation of the natural numbers 1, 2, 3, 4, 5, etc."
+
+// [01]
+// 02 [03]
+// 04 05 [06]
+// 07 08 09 [10]
+// 11 12 13 14 [15]
+// 16 17 18 19 20 [21]
+// e.g. If 4 is given: 1 + 3 + 6 + 10 = 20.
+
+// Triangular Numbers cannot be negative so return 0 if a negative number is given.
+
+function triangularNumber(n: number): number {
+    if (n <= 0) return 0;
+
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += (i * (i + 1)) / 2;
+    }
+    return sum;
+}
+
+triangularNumber(1);
+triangularNumber(2);
+triangularNumber(3);
+triangularNumber(4);
+
+// Snack 110
+
+// Write a function that removes the spaces from the string, then return the resultant string.
+
+// Examples (Input -> Output):
+
+// "8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
+// "8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
+// "8aaaaa dddd r     " -> "8aaaaaddddr"
+
+function removeSpaces(input: string): string {
+    return input.split(" ").join("");
+}
+
+removeSpaces("  sss aa s fllf sl s s la  ");
+
+// Snack 111
+
+// Help Suzuki rake his garden!
+
+// The monastery has a magnificent Zen garden made of white gravel and rocks and it is raked diligently everyday by the monks. Suzuki having a keen eye is always on the lookout for anything creeping into the garden that must be removed during the daily raking such as insects or moss.
+
+// You will be given a string representing the garden such as:
+
+// garden = 'gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel ant gravel gravel gravel gravel rock slug gravel gravel gravel gravel gravel snail gravel gravel rock gravel snail slug gravel gravel spider gravel gravel gravel gravel gravel gravel gravel gravel moss gravel gravel gravel snail gravel gravel gravel ant gravel gravel moss gravel gravel gravel gravel snail gravel gravel gravel gravel slug gravel rock gravel gravel rock gravel gravel gravel gravel snail gravel gravel rock gravel gravel gravel gravel gravel spider gravel rock gravel gravel'
+// Rake out any items that are not a rock or gravel and replace them with gravel such that:
+
+// garden = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
+// Returns a string with all items except a rock or gravel replaced with gravel:
+
+// garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
+
+function replaceWithGravel(input: string): string {
+    return input
+        .split(" ")
+        .map(element => element === "gravel" || element === "rock" ? "element" : "gravel")
+        .join(" ");
+}
+
+replaceWithGravel("gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel");
+
+// Snack 112
+
+// You will be given an array which will include both integers and characters.
+
+// Return an array of length 2 with a[0] representing the mean of the ten integers as a floating point number. There will always be 10 integers and 10 characters. Create a single string with the characters and return it as a[1] while maintaining the original order.
+
+// lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0']
+// Here is an example of your return
+
+// [3.6, "udiwstagwo"]
+
+function meanAndConcatenate(arr: any[]): [number, string] {
+    // Separate integers and characters
+    const integers = arr.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
+    const characters = arr.filter((element) => isNaN(Number(element)) && typeof element === 'string');
+
+    const mean = integers.reduce((sum, num) => sum + num, 0) / integers.length;
+
+    const concatenatedString = characters.join('');
+
+    return [mean, concatenatedString];
+}
+
+const lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0'];
+const result = meanAndConcatenate(lst);
+
+meanAndConcatenate(lst);
+
+// Snack 113
+
+// Is the string uppercase?
+// Task
+// Create a method to see whether the string is ALL CAPS.
+
+// Examples (input -> output)
+// "c" -> False
+// "C" -> True
+// "hello I AM DONALD" -> False
+// "HELLO I AM DONALD" -> True
+// "ACSKLDFJSgSKLDFJSKLDFJ" -> False
+// "ACSKLDFJSGSKLDFJSKLDFJ" -> True
+
+function itIsString(str: string): boolean {
+    return str === str.toUpperCase();
+}
+
+itIsString("c");
+itIsString("HELLO I AM DONALD");
+itIsString("heLLO I AM DONALD");
+
+// Snack 114
+
+// Create a function to determine whether or not two circles are colliding. You will be given the position of both circles in addition to their radii:
+
+// function collision(x1, y1, radius1, x2, y2, radius2) {
+//   // collision?
+// }
+// If a collision is detected, return true. If not, return false.
+
+function collision(x1: number, y1: number, radius1: number, x2: number, y2: number, radius2: number): boolean {
+    const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+
+    return distance <= (radius1 + radius2);
+}
+
+collision(2, 2, 5, 1, 1, 5);
+collision(2, 2, 2, 1, 1, 2);
+
+// Snack 115
+
+// Debug a function called calculate that takes 3 values. The first and third values are numbers. The second value is a character. If the character is "+" , "-", "*", or "/", the function will return the result of the corresponding mathematical function on the two numbers. If the string is not one of the specified characters, the function should return null.
+
+// calculate(2,"+", 4); //Should return 6
+// calculate(6,"-", 1.5); //Should return 4.5
+// calculate(-4,"*", 8); //Should return -32
+// calculate(49,"/", -7); //Should return -7
+// calculate(8,"m", 2); //Should return null
+// calculate(4,"/",0) //should return null
+
+// function calculate(num1 : number, str : string, num2 : number): number | null {
+//     let arrayOfAll = (num1 + str + num2).split("");
+
+//     let arrayOfNumber = arrayOfAll.filter((element) => typeof element === 'number' || !isNaN(Number(element))).map(Number);
+
+//     let sum = function sum(num1 : number, num2 : number){
+//         return num1 + num2;
+//     };
+//     let sottraction = function sottraction(num1 : number, num2 : number){
+//         return num1 - num2;
+//     };
+//     let moltiplication = function moltiplication(num1 : number, num2 : number){
+//         return num1 * num2;
+//     };
+//     let division = function division(num1 : number, num2 : number){
+//         return num1 / num2;
+//     };
+
+//     if (str === "+"){
+//         return arrayOfNumber.reduce(sum);
+//     } else if (str === "-"){
+//         return arrayOfNumber.reduce(sottraction);
+//     } else if (str === "*"){
+//         return arrayOfNumber.reduce(moltiplication);
+//     } else if (str === "/"){
+//         return arrayOfNumber.reduce(division);
+//     } else {
+//         return null;
+//     }
+// }
+
+function calculate(num1: number, str: string, num2: number): number | null {
+    switch (str) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num2 !== 0 ? num1 / num2 : null;
+        default:
+            return null;
+    }
+}
+
+calculate(1, "+", 2);
+calculate(4, "-", 2);
+calculate(5, ",a", 2);
+calculate(2, "*", 2);
+calculate(10, "/", 2);
+
+// Snack 116
+
+// The following code is not giving the expected results. Can you debug what the issue is?
+
+// The following is an example of data that would be passed in to the function.
+
+// var data = [
+//   {name: 'Joe', age: 20},
+//   {name: 'Bill', age: 30},
+//   {name: 'Kate', age: 23}
+// ]
+
+// getNames(data) // should return ['Joe', 'Bill', 'Kate']
+
+function getNames(data: { name: string, age: number }[]): string[] {
+    const names: string[] = [];
+    for (let i = 0; i < data.length; i++) {
+        names.push(data[i].name);
+    }
+    return names;
+}
+
+getNames([
+    { name: 'Bibbo', age: 21 },
+    { name: 'Kate', age: 23 }
+]);
+
+
+
+// Snack 117
+
+// The code provided is supposed return a person's Full Name given their first and last names.
+
+// But it's not working properly.
+
+// Notes
+// The first and/or last names are never null, but may be empty.
+
+// Task
+// Fix the bug so we can all go home early.
+
+// function returnFullName(human : {firstName : string, lastName : string}[]): string{
+//     const fullName : string[] = [];
+//     for (let i = 0; i < human.length; i++){w
+//         fullName.push(` "The complete name is ${human[i].firstName} ${human[i].lastName}"`);
+//     } 
+//     return fullName.join("");
+// }
+
+// console.log(returnFullName([
+//     {firstName: 'Jorgie', lastName: ""},
+//     {firstName: 'Max', lastName: "Vinic"},
+//     {firstName: 'Jorgie', lastName: "Asd"}
+// ]));
+
+function returnFullNames(humans: { firstName: string; lastName: string }[]): string {
+    return humans
+        .map(human => `The complete name is ${human.firstName} ${human.lastName}`.trim())
+        .join('\n');
+}
+
+console.log(
+    returnFullNames([
+        { firstName: 'Jorgie', lastName: '' },
+        { firstName: 'Max', lastName: 'Vinic' },
+        { firstName: 'Jorgie', lastName: 'Asd' }
+    ])
+);
+
+// Snack 118
+
+// Input:
+
+// a string strng
+// an array of strings arr
+// Output of function contain_all_rots(strng, arr) (or containAllRots or contain-all-rots):
+
+// a boolean true if all rotations of strng are included in arr
+// false otherwise
+// Examples:
+// contain_all_rots(
+//   "bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]) -> true
+
+// contain_all_rots(
+//   "Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]) -> false)
+// Note:
+// Though not correct in a mathematical sense
+
+// we will consider that there are no rotations of strng == ""
+// and for any array arr: contain_all_rots("", arr) --> true
+
+function containAllRots(strng: string, arr: string[]): boolean {
+    if (strng === "") return true;
+    const rotations = Array.from({ length: strng.length }, (_, i) =>
+        strng.slice(i) + strng.slice(0, i)
+    );
+
+    return rotations.every(rot => arr.includes(rot));
+}
+
+console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
+console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]));
+
+// Snack 119
+// Oh no! Timmy hasn't followed instructions very carefully and forgot how to use the new String Template feature, Help Timmy with his string template so it works as he expects!
+
+let str = "";
+function stringTemplate(userValue: number): string {
+    let fixValue = 10;
+    return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
+}
+
+
+// Snack 120
+// Failed Sort - Bug Fixing #4
+// Oh no, Timmy's Sort doesn't seem to be working? Your task is to fix the sortArray function to sort all numbers in ascending order
+
+function sortingArray(numArr: number[]): number[] {
+    return numArr.sort(function (a: number, b: number): any { return a - b });
+}
+
+console.log(sortingArray([22, 77, 11, 1, 0, 100]));
+
+
+
+console.log(stringTemplate(10));
+
+// Snack 121
+// Switch/Case - Bug Fixing #6
+// Oh no! Timmy's evalObject function doesn't work. He uses Switch/Cases to evaluate the given properties of an object, can you fix timmy's function?
+
+type Operation = {
+    a: number;
+    b: number;
+    operation: string;
+};
+
+function evalObject(value: Operation): number | string {
+    switch (value.operation) {
+        case '+':
+            return value.a + value.b;
+        case '-':
+            return value.a - value.b;
+        case '*':
+            return value.a * value.b;
+        case '/':
+            return value.b !== 0 ? value.a / value.b : 'Error: Division by zero';
+        case '%':
+            return value.a % value.b;
+        case '^':
+            return Math.pow(value.a, value.b);
+        default:
+            return 'Invalid operation';
+    }
+}
+
+console.log(evalObject({a: 2, b: 5, operation : "+"}));
+console.log(evalObject({a: 2, b: 5, operation : "*"}));
+console.log(evalObject({a: 2, b: 5, operation : "^"}));
