@@ -3143,6 +3143,30 @@ const stairs: number[][] = [
 
 console.log(estimateStairs(stairs));
 
+// Snack 125
 
+// In this kata you should simply determine, whether a given year is a leap year or not. In case you don't know the rules, here they are:
+
+// Years divisible by 4 are leap years,
+// but years divisible by 100 are not leap years,
+// but years divisible by 400 are leap years.
+// Tested years are in range 1600 ≤ year ≤ 4000.
+
+function leapYear(yearNumber: number): boolean {
+    if (yearNumber % 100 === 0) {
+        return false;
+    }
+    else if (yearNumber % 4 === 0 || yearNumber % 400 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(leapYear(400));
+console.log(leapYear(100));
+console.log(leapYear(800));
+console.log(leapYear(4));
+console.log(leapYear(12));
 
 
