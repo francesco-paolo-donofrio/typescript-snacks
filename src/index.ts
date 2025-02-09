@@ -3153,10 +3153,13 @@ console.log(estimateStairs(stairs));
 // Tested years are in range 1600 ≤ year ≤ 4000.
 
 function leapYear(yearNumber: number): boolean {
-    if (yearNumber % 100 === 0) {
+    if (yearNumber % 400 === 0){
+        return true;
+    }
+    else if (yearNumber % 100 === 0) {
         return false;
     }
-    else if (yearNumber % 4 === 0 || yearNumber % 400 === 0) {
+    else if (yearNumber % 4 === 0) {
         return true;
     } else {
         return false;
