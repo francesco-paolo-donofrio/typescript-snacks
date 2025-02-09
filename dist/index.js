@@ -1246,14 +1246,11 @@ console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 function jadeSmithCap(strNuova) {
     let arrStrNuovo = strNuova.split("");
     for (let i = 0; i < arrStrNuovo.length; i++) {
-        if (arrStrNuovo[i].includes("'")) {
-            arrStrNuovo[i] = arrStrNuovo[i].charAt(0).toUpperCase() + arrStrNuovo[i].slice(1);
-        }
-        else {
-            arrStrNuovo[i] = arrStrNuovo[i].charAt(0).toUpperCase() + arrStrNuovo[i].slice(1).toLowerCase();
+        if (arrStrNuovo[i] === " ") {
+            arrStrNuovo[i + 1] = arrStrNuovo[i + 1].toUpperCase();
         }
     }
-    return arrStrNuovo.join(' ');
+    return arrStrNuovo.join('');
 }
 console.log(jadeSmithCap("How can mirrors be real if our eyes aren't real"));
 //# sourceMappingURL=index.js.map
