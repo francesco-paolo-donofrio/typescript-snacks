@@ -3058,9 +3058,9 @@ function evalObject(value: Operation): number | string {
     }
 }
 
-console.log(evalObject({a: 2, b: 5, operation : "+"}));
-console.log(evalObject({a: 2, b: 5, operation : "*"}));
-console.log(evalObject({a: 2, b: 5, operation : "^"}));
+console.log(evalObject({ a: 2, b: 5, operation: "+" }));
+console.log(evalObject({ a: 2, b: 5, operation: "*" }));
+console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 
 // Snack 122
 
@@ -3074,10 +3074,10 @@ console.log(evalObject({a: 2, b: 5, operation : "^"}));
 // Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
 // Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 
-function jadeSmithCap(strNuova : string): string{
+function jadeSmithCap(strNuova: string): string {
     let arrStrNuovo: string[] = strNuova.split("");
     for (let i = 0; i < arrStrNuovo.length; i++) {
-        if (arrStrNuovo[i] === " "){
+        if (arrStrNuovo[i] === " ") {
             arrStrNuovo[i + 1] = arrStrNuovo[i + 1].toUpperCase();
         }
     }
@@ -3097,10 +3097,10 @@ console.log(jadeSmithCap("How can mirrors be real if our eyes aren't real"));
 
 // Please also try Simple remove duplicates
 
-function forInAFor(streing: string): number { 
+function forInAFor(streing: string): number {
     // Using a regex we are going to find all the numbers that match
     let arrOfNumbers: number[] = [...streing.matchAll(/\d+/g)].map(match => parseInt(match[0], 10));
-    
+
     // It will give the maximum number found
     return Math.max(...arrOfNumbers);
 }
@@ -3127,18 +3127,22 @@ console.log(forInAFor("gh12cdy695m1"));
 // Your function should return the 20 year estimate of the stairs climbed using the formula above.
 
 function estimateStairs(stairs: number[][]): number {
-    
+
     const oneYearTotal = stairs.reduce((total, day) => {
         return total + day.reduce((dayTotal, stairsClimbed) => dayTotal + stairsClimbed, 0);
     }, 0);
-    
+
     const twentyYearEstimate = oneYearTotal * 20;
-    
+
     return twentyYearEstimate;
 }
 
 const stairs: number[][] = [
-    [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825], 
+    [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825],
 ];
 
-console.log(estimateStairs(stairs));  
+console.log(estimateStairs(stairs));
+
+
+
+
