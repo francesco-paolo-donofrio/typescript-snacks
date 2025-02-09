@@ -1253,4 +1253,9 @@ function jadeSmithCap(strNuova) {
     return arrStrNuovo.join('');
 }
 console.log(jadeSmithCap("How can mirrors be real if our eyes aren't real"));
+function forInAFor(streing) {
+    let arrOfNumbers = [...streing.matchAll(/\d+/g)].map(match => parseInt(match[0], 10));
+    return Math.max(...arrOfNumbers);
+}
+console.log(forInAFor("gh12cdy695m1"));
 //# sourceMappingURL=index.js.map
