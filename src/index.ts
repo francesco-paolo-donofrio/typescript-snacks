@@ -3194,24 +3194,24 @@ console.log(leapYear(12));
 // Write a function which takes a string (day of the week) and an integer (number to be tested) so it tells the doctor if I'm afraid or not. (return a boolean)
 
 function amIAfraid(dayOfWeek : string, num : number): boolean{
-    if (dayOfWeek === "Monday".toLowerCase() && num === 12){
+    if (dayOfWeek === "Monday" && num === 12){
         return true;
     } else if (dayOfWeek === "Tuesday" && num > 95){
         return true;
-    } else if (dayOfWeek === "Wednesday".toLowerCase() && num === 34){
+    } else if (dayOfWeek === "Wednesday" && num === 34){
         return true;
-    } else if (dayOfWeek === "Thursday".toLowerCase() && num === 0){
+    } else if (dayOfWeek === "Thursday" && num === 0){
         return true;
-    } else if (dayOfWeek === "Friday".toLowerCase() && num % 2 === 0){
+    } else if (dayOfWeek === "Friday" && num % 2 === 0){
         return true;
-    } else if (dayOfWeek === "Saturday".toLowerCase() && num === 56){
+    } else if (dayOfWeek === "Saturday" && num === 56){
         return true;
-    } else if (dayOfWeek === "Sunday".toLowerCase() && num === Math.abs(666)){
+    } else if (dayOfWeek === "Sunday" && num === 666 || num === -666){
         return true;
     }
     return false;
 }
-console.log("Afraid",amIAfraid("Monday", 12));
+console.log(amIAfraid("Monday", 12));
 console.log(amIAfraid("Tuesday", 96));
 console.log(amIAfraid("Wednesday", 34));
 console.log(amIAfraid("Thursday", 0));

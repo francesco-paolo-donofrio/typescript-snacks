@@ -1289,30 +1289,30 @@ console.log(leapYear(800));
 console.log(leapYear(4));
 console.log(leapYear(12));
 function amIAfraid(dayOfWeek, num) {
-    if (dayOfWeek === "Monday".toLowerCase() && num === 12) {
+    if (dayOfWeek === "Monday" && num === 12) {
         return true;
     }
     else if (dayOfWeek === "Tuesday" && num > 95) {
         return true;
     }
-    else if (dayOfWeek === "Wednesday".toLowerCase() && num === 34) {
+    else if (dayOfWeek === "Wednesday" && num === 34) {
         return true;
     }
-    else if (dayOfWeek === "Thursday".toLowerCase() && num === 0) {
+    else if (dayOfWeek === "Thursday" && num === 0) {
         return true;
     }
-    else if (dayOfWeek === "Friday".toLowerCase() && num % 2 === 0) {
+    else if (dayOfWeek === "Friday" && num % 2 === 0) {
         return true;
     }
-    else if (dayOfWeek === "Saturday".toLowerCase() && num === 56) {
+    else if (dayOfWeek === "Saturday" && num === 56) {
         return true;
     }
-    else if (dayOfWeek === "Sunday".toLowerCase() && num === Math.abs(666)) {
+    else if (dayOfWeek === "Sunday" && num === 666 || num === -666) {
         return true;
     }
     return false;
 }
-console.log("Afraid", amIAfraid("Monday", 12));
+console.log(amIAfraid("Monday", 12));
 console.log(amIAfraid("Tuesday", 96));
 console.log(amIAfraid("Wednesday", 34));
 console.log(amIAfraid("Thursday", 0));
