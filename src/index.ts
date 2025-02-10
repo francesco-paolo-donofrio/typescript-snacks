@@ -3218,3 +3218,38 @@ console.log(amIAfraid("Thursday", 0));
 console.log(amIAfraid("Friday", 4));
 console.log(amIAfraid("Saturday", 56));
 console.log(amIAfraid("Sunday", -666));
+
+// Snack 127
+
+// Description:
+// We will call a natural number a "doubleton number" if it contains exactly two distinct digits. For example, 23, 35, 100, 12121 are doubleton numbers, and 123 and 9980 are not.
+
+// For a given natural number n (from 1 to 1 000 000), you need to find the next doubleton number. If n itself is a doubleton, return the next bigger than n.
+
+// Examples:
+// doubleton(120) === 121
+// doubleton(1234) === 1311
+// doubleton(10) === 12
+
+function doubletonNumber(num: number): number | string {
+
+    if (num < 0 || num > 1000000) {
+        return "Only numbers included between 0 and 1.000.000 are allowed";
+    }
+
+    function isDoubleton(number: number): boolean {
+        const digits = new Set(String(number).split(''));
+        return digits.size === 2; 
+    }
+    for (let i = num + 1; i <= 1000000; i++) {
+        if (isDoubleton(i)) {
+            return i; 
+        }
+    }
+
+    return "No doubleton number found within the range.";
+}
+
+console.log(doubletonNumber(120));
+console.log(doubletonNumber(10));
+console.log(doubletonNumber(1234));

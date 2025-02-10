@@ -1319,4 +1319,22 @@ console.log(amIAfraid("Thursday", 0));
 console.log(amIAfraid("Friday", 4));
 console.log(amIAfraid("Saturday", 56));
 console.log(amIAfraid("Sunday", -666));
+function doubletonNumber(num) {
+    if (num < 0 || num > 1000000) {
+        return "Only numbers included between 0 and 1.000.000 are allowed";
+    }
+    function isDoubleton(number) {
+        const digits = new Set(String(number).split(''));
+        return digits.size === 2;
+    }
+    for (let i = num + 1; i <= 1000000; i++) {
+        if (isDoubleton(i)) {
+            return i;
+        }
+    }
+    return "No doubleton number found within the range.";
+}
+console.log(doubletonNumber(120));
+console.log(doubletonNumber(10));
+console.log(doubletonNumber(1234));
 //# sourceMappingURL=index.js.map
