@@ -3172,4 +3172,49 @@ console.log(leapYear(800));
 console.log(leapYear(4));
 console.log(leapYear(12));
 
+// Snack 126
 
+// Description:
+// I've got a crazy mental illness. I dislike numbers a lot. But it's a little complicated: The number I'm afraid of depends on which day of the week it is... This is a concrete description of my mental illness:
+
+// Monday --> 12
+
+// Tuesday --> numbers greater than 95
+
+// Wednesday --> 34
+
+// Thursday --> 0
+
+// Friday --> numbers divisible by 2
+
+// Saturday --> 56
+
+// Sunday --> 666 or -666
+
+// Write a function which takes a string (day of the week) and an integer (number to be tested) so it tells the doctor if I'm afraid or not. (return a boolean)
+
+function amIAfraid(dayOfWeek : string, num : number): boolean{
+    if (dayOfWeek === "Monday".toLowerCase() && num === 12){
+        return true;
+    } else if (dayOfWeek === "Tuesday" && num > 95){
+        return true;
+    } else if (dayOfWeek === "Wednesday".toLowerCase() && num === 34){
+        return true;
+    } else if (dayOfWeek === "Thursday".toLowerCase() && num === 0){
+        return true;
+    } else if (dayOfWeek === "Friday".toLowerCase() && num % 2 === 0){
+        return true;
+    } else if (dayOfWeek === "Saturday".toLowerCase() && num === 56){
+        return true;
+    } else if (dayOfWeek === "Sunday".toLowerCase() && num === Math.abs(666)){
+        return true;
+    }
+    return false;
+}
+console.log("Afraid",amIAfraid("Monday", 12));
+console.log(amIAfraid("Tuesday", 96));
+console.log(amIAfraid("Wednesday", 34));
+console.log(amIAfraid("Thursday", 0));
+console.log(amIAfraid("Friday", 4));
+console.log(amIAfraid("Saturday", 56));
+console.log(amIAfraid("Sunday", -666));

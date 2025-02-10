@@ -1270,10 +1270,13 @@ const stairs = [
 ];
 console.log(estimateStairs(stairs));
 function leapYear(yearNumber) {
-    if (yearNumber % 100 === 0) {
+    if (yearNumber % 400 === 0) {
+        return true;
+    }
+    else if (yearNumber % 100 === 0) {
         return false;
     }
-    else if (yearNumber % 4 === 0 || yearNumber % 400 === 0) {
+    else if (yearNumber % 4 === 0) {
         return true;
     }
     else {
@@ -1285,4 +1288,35 @@ console.log(leapYear(100));
 console.log(leapYear(800));
 console.log(leapYear(4));
 console.log(leapYear(12));
+function amIAfraid(dayOfWeek, num) {
+    if (dayOfWeek === "Monday".toLowerCase() && num === 12) {
+        return true;
+    }
+    else if (dayOfWeek === "Tuesday" && num > 95) {
+        return true;
+    }
+    else if (dayOfWeek === "Wednesday".toLowerCase() && num === 34) {
+        return true;
+    }
+    else if (dayOfWeek === "Thursday".toLowerCase() && num === 0) {
+        return true;
+    }
+    else if (dayOfWeek === "Friday".toLowerCase() && num % 2 === 0) {
+        return true;
+    }
+    else if (dayOfWeek === "Saturday".toLowerCase() && num === 56) {
+        return true;
+    }
+    else if (dayOfWeek === "Sunday".toLowerCase() && num === Math.abs(666)) {
+        return true;
+    }
+    return false;
+}
+console.log("Afraid", amIAfraid("Monday", 12));
+console.log(amIAfraid("Tuesday", 96));
+console.log(amIAfraid("Wednesday", 34));
+console.log(amIAfraid("Thursday", 0));
+console.log(amIAfraid("Friday", 4));
+console.log(amIAfraid("Saturday", 56));
+console.log(amIAfraid("Sunday", -666));
 //# sourceMappingURL=index.js.map
