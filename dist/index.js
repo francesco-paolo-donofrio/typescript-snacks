@@ -1337,4 +1337,7 @@ function doubletonNumber(num) {
 console.log(doubletonNumber(120));
 console.log(doubletonNumber(10));
 console.log(doubletonNumber(1234));
+let arrayOfWords = [];
+arrayOfWords[0] = "Salting";
+console.log(arrayOfWords[0]);
 //# sourceMappingURL=index.js.map

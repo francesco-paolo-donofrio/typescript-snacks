@@ -3256,3 +3256,7 @@ console.log(doubletonNumber(1234));
 
 // Esercizio AbbeyCode Anagrams
 
+let arrayOfWords : string[] = [];
+
+arrayOfWords[0] = "Salting";
+console.log(arrayOfWords[0]);
