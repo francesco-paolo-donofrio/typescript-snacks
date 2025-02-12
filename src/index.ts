@@ -3253,3 +3253,6 @@ function doubletonNumber(num: number): number | string {
 console.log(doubletonNumber(120));
 console.log(doubletonNumber(10));
 console.log(doubletonNumber(1234));
+
+// Esercizio AbbeyCode Anagrams
+
