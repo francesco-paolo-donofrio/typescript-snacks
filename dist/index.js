@@ -1352,13 +1352,7 @@ function isPowerOfFour(num) {
 console.log(isPowerOfFour(1024));
 console.log(isPowerOfFour(55));
 function replaceString(str) {
-    let arrayOfString = str.split(" ");
-    for (let i = 0; i < arrayOfString.length; i++) {
-        if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock") {
-            arrayOfString[i] = "gravel";
-        }
-    }
-    return arrayOfString.join(" ");
+    return str.split(" ").map(el => el === "gravel" || el === "rock" ? el : "gravel").join(" ");
 }
 console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
 //# sourceMappingURL=index.js.map
