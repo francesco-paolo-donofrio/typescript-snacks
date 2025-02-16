@@ -1123,24 +1123,18 @@ console.log(tidyNumber(1024));
 console.log(tidyNumber(13579));
 console.log(tidyNumber(2335));
 function transposeTwoStrings(arr) {
-    let leftArray = [];
-    let rightArray = [];
-    for (let i = 0; i <= 4; i++) {
-        leftArray.push(arr[0][i]);
-        rightArray.push(arr[1][i]);
+    const maxLength = Math.max(arr[0].length, arr[1].length);
+    let result = [];
+    for (let i = 0; i < maxLength; i++) {
+        const leftChar = arr[0][i] || " ";
+        const rightChar = arr[1][i] || " ";
+        result.push(`${leftChar} ${rightChar}`);
     }
-    console.log(leftArray);
-    console.log(rightArray);
-    let resultString = [];
-    for (let y = 0; y <= 4; y++) {
-        resultString = resultString.concat(leftArray[y], " ", rightArray[y], "\n");
-    }
-    console.log(resultString);
-    return resultString;
+    return result.join("\n");
 }
-transposeTwoStrings(["Hello", "World"]);
-popZero(0);
-popZero(1230);
+console.log(transposeTwoStrings(["Hello", "World"]));
+console.log(transposeTwoStrings(["Hi", "There"]));
+console.log(transposeTwoStrings(["Short", "LongerWord"]));
 function twoOldestAges(ages) {
     return ages.sort((a, b) => a - b).slice(-2);
 }
@@ -1271,6 +1265,9 @@ function evalObject(value) {
 console.log(evalObject({ a: 2, b: 5, operation: "+" }));
 console.log(evalObject({ a: 2, b: 5, operation: "*" }));
 console.log(evalObject({ a: 2, b: 5, operation: "^" }));
+console.log(evalObject({ a: 2, b: 5, operation: "+" }));
+console.log(evalObject({ a: 2, b: 5, operation: "*" }));
+console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 function jadeSmithCap(strNuova) {
     let arrStrNuovo = strNuova.split("");
     for (let i = 0; i < arrStrNuovo.length; i++) {
@@ -1380,13 +1377,17 @@ function isPowerOfFour(num) {
 console.log(isPowerOfFour(1024));
 console.log(isPowerOfFour(55));
 function replaceString(str) {
-    let arrayOfString = str.split(" ");
-    for (let i = 0; i < arrayOfString.length; i++) {
-        if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock") {
-            arrayOfString[i] = "gravel";
-        }
-    }
-    return arrayOfString.join(" ");
+    return str.split(" ").map(el => el === "gravel" || el === "rock" ? el : "gravel").join(" ");
 }
 console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
+function spot_diff(stringa1, stringa2) {
+    for (let i = 0; i < stringa1.length; i++) {
+        if (stringa1[i] !== stringa2[i]) {
+            result.push(i);
+        }
+    }
+}
+console.log(spotDiff("abcdefg", "abcqetg"));
+console.log(spotDiff("abcdefg", "abcdefq"));
+console.log(spotDiff("abcdefg", "abcdefg"));
 //# sourceMappingURL=index.js.map
