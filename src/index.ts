@@ -3257,6 +3257,26 @@ console.log(doubletonNumber(1234));
 // Esercizio AbbeyCode Anagrams
 
 let arrayOfWords : string[] = [];
-
 arrayOfWords[0] = "Salting";
 console.log(arrayOfWords[0]);
+
+// Snack 128
+
+// Write a method that returns true if a given parameter is a power of 4, and false if it's not. If parameter is not an Integer (eg String, Array) method should return false as well.
+
+// (In C# Integer means all integer Types like Int16,Int32,.....)
+
+// Examples
+// power_of_4(1024) => true
+// power_of_4(55)   => false
+// power_of_4("Four") => false
+
+function isPowerOfFour(num : number): boolean {
+    if (num !== Number(num)){
+        return false;
+    } else if (num === Math.pow(num, 4)){
+        return true;
+    }
+    return false;
+}
+
