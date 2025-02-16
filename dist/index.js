@@ -1337,4 +1337,28 @@ function doubletonNumber(num) {
 console.log(doubletonNumber(120));
 console.log(doubletonNumber(10));
 console.log(doubletonNumber(1234));
+let arrayOfWords = [];
+arrayOfWords[0] = "Salting";
+console.log(arrayOfWords[0]);
+function isPowerOfFour(num) {
+    if (num <= 0 || num % 1 !== 0) {
+        return false;
+    }
+    while (num % 4 === 0) {
+        num /= 4;
+    }
+    return num === 1;
+}
+console.log(isPowerOfFour(1024));
+console.log(isPowerOfFour(55));
+function replaceString(str) {
+    let arrayOfString = str.split(" ");
+    for (let i = 0; i < arrayOfString.length; i++) {
+        if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock") {
+            arrayOfString[i] = "gravel";
+        }
+    }
+    return arrayOfString.join(" ");
+}
+console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
 //# sourceMappingURL=index.js.map
