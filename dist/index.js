@@ -1340,4 +1340,15 @@ console.log(doubletonNumber(1234));
 let arrayOfWords = [];
 arrayOfWords[0] = "Salting";
 console.log(arrayOfWords[0]);
+function isPowerOfFour(num) {
+    if (num <= 0 || num % 1 !== 0) {
+        return false;
+    }
+    while (num % 4 === 0) {
+        num /= 4;
+    }
+    return num === 1;
+}
+console.log(isPowerOfFour(1024));
+console.log(isPowerOfFour(55));
 //# sourceMappingURL=index.js.map

@@ -3272,11 +3272,15 @@ console.log(arrayOfWords[0]);
 // power_of_4("Four") => false
 
 function isPowerOfFour(num : number): boolean {
-    if (num !== Number(num)){
+    if (num <= 0 || num % 1 !== 0) {
         return false;
-    } else if (num === Math.pow(num, 4)){
-        return true;
+    } 
+    
+    while (num % 4 === 0) {
+        num /= 4; 
     }
-    return false;
+    return num === 1;
 }
 
+console.log(isPowerOfFour(1024));
+console.log(isPowerOfFour(55));
