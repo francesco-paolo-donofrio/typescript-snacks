@@ -3409,12 +3409,17 @@ function replaceString(str : string): string {
 // • Capitalization and punctuation matter
 
 function spot_diff(stringa1 : string, stringa2 : string): string | void {
-    if (stringa1.length !== stringa2.length){
-        return "The length of both strings must be the same";
-    } else {
-        let iterator = stringa1.match(stringa2);
-        console.log(iterator);
+    for (let i = 0; i < stringa1.length; i++) {
+        if (stringa1[i] !== stringa2[i]) {
+            result.push(i); 
+        }
     }
+    // if (stringa1.length !== stringa2.length){
+    //     return "The length of both strings must be the same";
+    // } else {
+    //     let iterator = stringa1.match(stringa2);
+    //     console.log(iterator);
+    // }
 
 }
 
