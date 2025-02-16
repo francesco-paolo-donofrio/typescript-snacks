@@ -1107,10 +1107,38 @@ function score(n) {
 }
 score(5);
 score(2);
-function popZero(num) {
-    const trimmedNumber = num.toString().replace(/0+$/, "");
-    return Number(trimmedNumber);
+function tidyNumber(num) {
+    let arrOfNumbers = num.toString().split("");
+    for (let i = 0; i <= arrOfNumbers.length - 1; i++) {
+        if (arrOfNumbers[i] > arrOfNumbers[i + 1]) {
+            return false;
+        }
+        ;
+    }
+    return true;
 }
+console.log(tidyNumber(127));
+console.log(tidyNumber(32));
+console.log(tidyNumber(1024));
+console.log(tidyNumber(13579));
+console.log(tidyNumber(2335));
+function transposeTwoStrings(arr) {
+    let leftArray = [];
+    let rightArray = [];
+    for (let i = 0; i <= 4; i++) {
+        leftArray.push(arr[0][i]);
+        rightArray.push(arr[1][i]);
+    }
+    console.log(leftArray);
+    console.log(rightArray);
+    let resultString = [];
+    for (let y = 0; y <= 4; y++) {
+        resultString = resultString.concat(leftArray[y], " ", rightArray[y], "\n");
+    }
+    console.log(resultString);
+    return resultString;
+}
+transposeTwoStrings(["Hello", "World"]);
 popZero(0);
 popZero(1230);
 function twoOldestAges(ages) {

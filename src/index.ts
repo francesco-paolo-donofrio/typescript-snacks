@@ -2660,23 +2660,89 @@ score(2);
 
 // Snack 107
 
-// Numbers ending with zeros are boring.
+// Definition
+// A Tidy Number is a number whose digits are in non-decreasing order.
 
-// They might be fun in your world, but not here.
+// Task
+// Given a number, determine if it is tidy or not.
 
-// Get rid of them. Only the ending ones.
+// Notes
+// The number passed will always be positive.
+// Return the result as a boolean.
+// Examples
+// 12 ==> return true
+// Explanation: Digits {1, 2} are in non-decreasing order (1 <= 2).
 
-// 1450 -> 145
-// 960000 -> 96
-// 1050 -> 105
-// -1050 -> -105
-// Zero alone is fine, don't worry about it. Poor guy anyway
+// 32 ==> return false
+// Explanation: Digits {3, 2} are not in non-decreasing order (3 > 2).
 
-function popZero(num: number): number {
-    const trimmedNumber = num.toString().replace(/0+$/, "");
-    return Number(trimmedNumber);
+// 1024 ==> return false
+// Explanation: Digits {1, 0, 2, 4} are not in non-decreasing order (1 > 0).
+
+// 13579 ==> return true
+// Explanation: Digits {1, 3, 5, 7, 9} are in non-decreasing order.
+
+// 2335 ==> return true
+// Explanation: Digits {2, 3, 3, 5} are in non-decreasing order (3 = 3).
+
+function tidyNumber(num: number): boolean {
+
+    let arrOfNumbers: string[] = num.toString().split("");
+    for (let i = 0; i <= arrOfNumbers.length - 1; i++) {
+        if (arrOfNumbers[i] > arrOfNumbers[i + 1]){
+            return false;
+        };
+    }
+    
+    return true;
 }
 
+console.log(tidyNumber(127));
+console.log(tidyNumber(32));
+console.log(tidyNumber(1024));
+console.log(tidyNumber(13579));
+console.log(tidyNumber(2335));
+
+// Snack 108
+
+// Description:
+
+// You will be given an array that contains two strings. Your job is to create a function that will take those two strings and transpose them, so that the strings go from top to bottom instead of left to right.
+
+// e.g. transposeTwoStrings(['Hello','World']);
+
+// should return
+
+// H W  
+// e o  
+// l r  
+// l l  
+// o d
+
+// A few things to note:
+
+//     There should be one space in between the two characters
+//     You don't have to modify the case (i.e. no need to change to upper or lower)
+//     If one string is longer than the other, there should be a space where the character would be
+
+function transposeTwoStrings(arr: string[]): string {
+    const maxLength = Math.max(arr[0].length, arr[1].length);
+    let result: string[] = [];
+
+    for (let i = 0; i < maxLength; i++) {
+        const leftChar = arr[0][i] || " "; // Se la lettera non esiste, usa spazio
+        const rightChar = arr[1][i] || " ";
+        result.push(`${leftChar} ${rightChar}`);
+    }
+
+    return result.join("\n"); // Unisce le righe con newline
+}
+
+// Test
+console.log(transposeTwoStrings(["Hello", "World"]));
+console.log(transposeTwoStrings(["Hi", "There"]));
+console.log(transposeTwoStrings(["Short", "LongerWord"]));
+// Push
 popZero(0);
 popZero(1230);
 
@@ -3058,6 +3124,11 @@ function evalObject(value: Operation): number | string {
     }
 }
 
+
+console.log(evalObject({a: 2, b: 5, operation : "+"}));
+console.log(evalObject({a: 2, b: 5, operation : "*"}));
+console.log(evalObject({a: 2, b: 5, operation : "^"}));
+
 console.log(evalObject({ a: 2, b: 5, operation: "+" }));
 console.log(evalObject({ a: 2, b: 5, operation: "*" }));
 console.log(evalObject({ a: 2, b: 5, operation: "^" }));
@@ -3312,4 +3383,5 @@ function replaceString(str : string): string {
     return arrayOfString.join(" ")}
 
 console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
+
 
