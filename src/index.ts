@@ -2743,8 +2743,6 @@ console.log(transposeTwoStrings(["Hello", "World"]));
 console.log(transposeTwoStrings(["Hi", "There"]));
 console.log(transposeTwoStrings(["Short", "LongerWord"]));
 // Push
-popZero(0);
-popZero(1230);
 
 // Snack 108
 
