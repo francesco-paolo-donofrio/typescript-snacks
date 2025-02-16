@@ -1271,4 +1271,122 @@ function evalObject(value) {
 console.log(evalObject({ a: 2, b: 5, operation: "+" }));
 console.log(evalObject({ a: 2, b: 5, operation: "*" }));
 console.log(evalObject({ a: 2, b: 5, operation: "^" }));
+function jadeSmithCap(strNuova) {
+    let arrStrNuovo = strNuova.split("");
+    for (let i = 0; i < arrStrNuovo.length; i++) {
+        if (arrStrNuovo[i] === " ") {
+            arrStrNuovo[i + 1] = arrStrNuovo[i + 1].toUpperCase();
+        }
+    }
+    return arrStrNuovo.join('');
+}
+console.log(jadeSmithCap("How can mirrors be real if our eyes aren't real"));
+function forInAFor(streing) {
+    let arrOfNumbers = [...streing.matchAll(/\d+/g)].map(match => parseInt(match[0], 10));
+    return Math.max(...arrOfNumbers);
+}
+console.log(forInAFor("gh12cdy695m1"));
+function estimateStairs(stairs) {
+    const oneYearTotal = stairs.reduce((total, day) => {
+        return total + day.reduce((dayTotal, stairsClimbed) => dayTotal + stairsClimbed, 0);
+    }, 0);
+    const twentyYearEstimate = oneYearTotal * 20;
+    return twentyYearEstimate;
+}
+const stairs = [
+    [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825],
+];
+console.log(estimateStairs(stairs));
+function leapYear(yearNumber) {
+    if (yearNumber % 400 === 0) {
+        return true;
+    }
+    else if (yearNumber % 100 === 0) {
+        return false;
+    }
+    else if (yearNumber % 4 === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(leapYear(400));
+console.log(leapYear(100));
+console.log(leapYear(800));
+console.log(leapYear(4));
+console.log(leapYear(12));
+function amIAfraid(dayOfWeek, num) {
+    if (dayOfWeek === "Monday" && num === 12) {
+        return true;
+    }
+    else if (dayOfWeek === "Tuesday" && num > 95) {
+        return true;
+    }
+    else if (dayOfWeek === "Wednesday" && num === 34) {
+        return true;
+    }
+    else if (dayOfWeek === "Thursday" && num === 0) {
+        return true;
+    }
+    else if (dayOfWeek === "Friday" && num % 2 === 0) {
+        return true;
+    }
+    else if (dayOfWeek === "Saturday" && num === 56) {
+        return true;
+    }
+    else if (dayOfWeek === "Sunday" && num === 666 || num === -666) {
+        return true;
+    }
+    return false;
+}
+console.log(amIAfraid("Monday", 12));
+console.log(amIAfraid("Tuesday", 96));
+console.log(amIAfraid("Wednesday", 34));
+console.log(amIAfraid("Thursday", 0));
+console.log(amIAfraid("Friday", 4));
+console.log(amIAfraid("Saturday", 56));
+console.log(amIAfraid("Sunday", -666));
+function doubletonNumber(num) {
+    if (num < 0 || num > 1000000) {
+        return "Only numbers included between 0 and 1.000.000 are allowed";
+    }
+    function isDoubleton(number) {
+        const digits = new Set(String(number).split(''));
+        return digits.size === 2;
+    }
+    for (let i = num + 1; i <= 1000000; i++) {
+        if (isDoubleton(i)) {
+            return i;
+        }
+    }
+    return "No doubleton number found within the range.";
+}
+console.log(doubletonNumber(120));
+console.log(doubletonNumber(10));
+console.log(doubletonNumber(1234));
+let arrayOfWords = [];
+arrayOfWords[0] = "Salting";
+console.log(arrayOfWords[0]);
+function isPowerOfFour(num) {
+    if (num <= 0 || num % 1 !== 0) {
+        return false;
+    }
+    while (num % 4 === 0) {
+        num /= 4;
+    }
+    return num === 1;
+}
+console.log(isPowerOfFour(1024));
+console.log(isPowerOfFour(55));
+function replaceString(str) {
+    let arrayOfString = str.split(" ");
+    for (let i = 0; i < arrayOfString.length; i++) {
+        if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock") {
+            arrayOfString[i] = "gravel";
+        }
+    }
+    return arrayOfString.join(" ");
+}
+console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
 //# sourceMappingURL=index.js.map
