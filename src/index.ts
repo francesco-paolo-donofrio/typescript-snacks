@@ -3458,5 +3458,10 @@ console.log(spotDiff("abcdefg", "abcdefg"));
 // (185) is divisible by (37) , (185) is less than or equal to bound (200) , and (185) is > 0 .
 
 function divisibleBound(divisor : number, bound : number): number{
-    
+    for (let i = bound; i > 1; i--){
+        if (i % divisor == 0){
+            return i;
+        }
+    }
+    return 0;
 }
