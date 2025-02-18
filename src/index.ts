@@ -3427,3 +3427,5 @@ function spot_diff(stringa1 : string, stringa2 : string): string | void {
 console.log(spotDiff("abcdefg", "abcqetg"));
 console.log(spotDiff("abcdefg", "abcdefq"));
 console.log(spotDiff("abcdefg", "abcdefg"));
+
+// Push di prova
