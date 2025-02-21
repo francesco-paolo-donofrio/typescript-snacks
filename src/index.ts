@@ -3428,7 +3428,7 @@ console.log(spotDiff("abcdefg", "abcqetg"));
 console.log(spotDiff("abcdefg", "abcdefq"));
 console.log(spotDiff("abcdefg", "abcdefg"));
 
-// Snack 132
+// Snack 131
 
 // Description:
 // Create a function which accepts one arbitrary string as an argument, and return a string of length 26.
@@ -3443,10 +3443,8 @@ console.log(spotDiff("abcdefg", "abcdefg"));
 // "aaaaaaa79345675"  =>  "10000000000000000000000000"
 // "&%#*"  =>  "00000000000000000000000000"
 
-// function returnString(str : string): string {
-//     let startArray : number[] = [];
-//     for (let i = 0; i <= 25; i++){
-//         if (str[i] === )
-//     }
-// }
+
+function returnString(str : string): string {
+    
+}
 
