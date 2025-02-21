@@ -3097,418 +3097,418 @@ console.log(stringTemplate(10));
 // Switch/Case - Bug Fixing #6
 // Oh no! Timmy's evalObject function doesn't work. He uses Switch/Cases to evaluate the given properties of an object, can you fix timmy's function?
 
-type Operation = {
-    a: number;
-    b: number;
-    operation: string;
-};
-
-function evalObject(value: Operation): number | string {
-    switch (value.operation) {
-        case '+':
-            return value.a + value.b;
-        case '-':
-            return value.a - value.b;
-        case '*':
-            return value.a * value.b;
-        case '/':
-            return value.b !== 0 ? value.a / value.b : 'Error: Division by zero';
-        case '%':
-            return value.a % value.b;
-        case '^':
-            return Math.pow(value.a, value.b);
-        default:
-            return 'Invalid operation';
-    }
-}
-
-
-console.log(evalObject({ a: 2, b: 5, operation: "+" }));
-console.log(evalObject({ a: 2, b: 5, operation: "*" }));
-console.log(evalObject({ a: 2, b: 5, operation: "^" }));
-
-console.log(evalObject({ a: 2, b: 5, operation: "+" }));
-console.log(evalObject({ a: 2, b: 5, operation: "*" }));
-console.log(evalObject({ a: 2, b: 5, operation: "^" }));
-
-// Snack 122
-
-// Description:
-// Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
-
-// Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
-
-// Example:
-
-// Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
-// Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
-
-function jadeSmithCap(strNuova: string): string {
-    let arrStrNuovo: string[] = strNuova.split("");
-    for (let i = 0; i < arrStrNuovo.length; i++) {
-        if (arrStrNuovo[i] === " ") {
-            arrStrNuovo[i + 1] = arrStrNuovo[i + 1].toUpperCase();
-        }
-    }
-    return arrStrNuovo.join('');
-}
-
-console.log(jadeSmithCap("How can mirrors be real if our eyes aren't real"));
-
-// Snack 123
-
-// Description:
-// In this Kata, you will be given a string that has lowercase letters and numbers. Your task is to compare the number groupings and return the largest number. Numbers will not have leading zeros.
-
-// For example, solve("gh12cdy695m1") = 695, because this is the largest of all number groupings.
-
-// Good luck!
-
-// Please also try Simple remove duplicates
-
-function forInAFor(streing: string): number {
-    // Using a regex we are going to find all the numbers that match
-    let arrOfNumbers: number[] = [...streing.matchAll(/\d+/g)].map(match => parseInt(match[0], 10));
-
-    // It will give the maximum number found
-    return Math.max(...arrOfNumbers);
-}
-
-console.log(forInAFor("gh12cdy695m1"));
-
-// Snack 124
-
-// Description:
-// Suzuki is a monk who climbs a large staircase to the monastery as part of a ritual. Some days he climbs more stairs than others depending on the number of students he must train in the morning. He is curious how many stairs might be climbed over the next 20 years and has spent a year marking down his daily progress.
-
-// The sum of all the stairs logged in a year will be used for estimating the number he might climb in 20.
-
-// 20_year_estimate = one_year_total * 20
-
-// You will receive the following data structure representing the stairs Suzuki logged in a year. You will have all data for the entire year so regardless of how it is logged the problem should be simple to solve.
-
-// stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday]
-// Make sure your solution takes into account all of the nesting within the stairs array.
-
-// Each weekday in the stairs array is an array.
-
-// sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825]
-// Your function should return the 20 year estimate of the stairs climbed using the formula above.
-
-function estimateStairs(stairs: number[][]): number {
-
-    const oneYearTotal = stairs.reduce((total, day) => {
-        return total + day.reduce((dayTotal, stairsClimbed) => dayTotal + stairsClimbed, 0);
-    }, 0);
-
-    const twentyYearEstimate = oneYearTotal * 20;
-
-    return twentyYearEstimate;
-}
-
-const stairs: number[][] = [
-    [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825],
-];
-
-console.log(estimateStairs(stairs));
-
-// Snack 125
-
-// In this kata you should simply determine, whether a given year is a leap year or not. In case you don't know the rules, here they are:
-
-// Years divisible by 4 are leap years,
-// but years divisible by 100 are not leap years,
-// but years divisible by 400 are leap years.
-// Tested years are in range 1600 ≤ year ≤ 4000.
-
-function leapYear(yearNumber: number): boolean {
-    if (yearNumber % 400 === 0) {
-        return true;
-    }
-    else if (yearNumber % 100 === 0) {
-        return false;
-    }
-    else if (yearNumber % 4 === 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-console.log(leapYear(400));
-console.log(leapYear(100));
-console.log(leapYear(800));
-console.log(leapYear(4));
-console.log(leapYear(12));
-
-// Snack 126
-
-// Description:
-// I've got a crazy mental illness. I dislike numbers a lot. But it's a little complicated: The number I'm afraid of depends on which day of the week it is... This is a concrete description of my mental illness:
-
-// Monday --> 12
-
-// Tuesday --> numbers greater than 95
-
-// Wednesday --> 34
-
-// Thursday --> 0
-
-// Friday --> numbers divisible by 2
-
-// Saturday --> 56
-
-// Sunday --> 666 or -666
-
-// Write a function which takes a string (day of the week) and an integer (number to be tested) so it tells the doctor if I'm afraid or not. (return a boolean)
-
-function amIAfraid(dayOfWeek: string, num: number): boolean {
-    if (dayOfWeek === "Monday" && num === 12) {
-        return true;
-    } else if (dayOfWeek === "Tuesday" && num > 95) {
-        return true;
-    } else if (dayOfWeek === "Wednesday" && num === 34) {
-        return true;
-    } else if (dayOfWeek === "Thursday" && num === 0) {
-        return true;
-    } else if (dayOfWeek === "Friday" && num % 2 === 0) {
-        return true;
-    } else if (dayOfWeek === "Saturday" && num === 56) {
-        return true;
-    } else if (dayOfWeek === "Sunday" && num === 666 || num === -666) {
-        return true;
-    }
-    return false;
-}
-console.log(amIAfraid("Monday", 12));
-console.log(amIAfraid("Tuesday", 96));
-console.log(amIAfraid("Wednesday", 34));
-console.log(amIAfraid("Thursday", 0));
-console.log(amIAfraid("Friday", 4));
-console.log(amIAfraid("Saturday", 56));
-console.log(amIAfraid("Sunday", -666));
-
-// Snack 127
-
-// Description:
-// We will call a natural number a "doubleton number" if it contains exactly two distinct digits. For example, 23, 35, 100, 12121 are doubleton numbers, and 123 and 9980 are not.
-
-// For a given natural number n (from 1 to 1 000 000), you need to find the next doubleton number. If n itself is a doubleton, return the next bigger than n.
-
-// Examples:
-// doubleton(120) === 121
-// doubleton(1234) === 1311
-// doubleton(10) === 12
-
-function doubletonNumber(num: number): number | string {
-
-    if (num < 0 || num > 1000000) {
-        return "Only numbers included between 0 and 1.000.000 are allowed";
-    }
-
-    function isDoubleton(number: number): boolean {
-        const digits = new Set(String(number).split(''));
-        return digits.size === 2;
-    }
-    for (let i = num + 1; i <= 1000000; i++) {
-        if (isDoubleton(i)) {
-            return i;
-        }
-    }
-
-    return "No doubleton number found within the range.";
-}
-
-console.log(doubletonNumber(120));
-console.log(doubletonNumber(10));
-console.log(doubletonNumber(1234));
-
-// Esercizio AbbeyCode Anagrams
-
-let arrayOfWords: string[] = [];
-arrayOfWords[0] = "Salting";
-console.log(arrayOfWords[0]);
-
-// Snack 128
-
-// Write a method that returns true if a given parameter is a power of 4, and false if it's not. If parameter is not an Integer (eg String, Array) method should return false as well.
-
-// (In C# Integer means all integer Types like Int16,Int32,.....)
-
-// Examples
-// power_of_4(1024) => true
-// power_of_4(55)   => false
-// power_of_4("Four") => false
-
-function isPowerOfFour(num: number): boolean {
-    if (num <= 0 || num % 1 !== 0) {
-        return false;
-    }
-
-    while (num % 4 === 0) {
-        num /= 4;
-    }
-    return num === 1;
-}
-
-console.log(isPowerOfFour(1024));
-console.log(isPowerOfFour(55));
-
-// Snack 129
-
-// Help Suzuki rake his garden!
-
-// The monastery has a magnificent Zen garden made of white gravel and rocks and it is raked diligently everyday by the monks. Suzuki having a keen eye is always on the lookout for anything creeping into the garden that must be removed during the daily raking such as insects or moss.
-
-// You will be given a string representing the garden such as:
-
-// garden = 'gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel ant gravel gravel gravel gravel rock slug gravel gravel gravel gravel gravel snail gravel gravel rock gravel snail slug gravel gravel spider gravel gravel gravel gravel gravel gravel gravel gravel moss gravel gravel gravel snail gravel gravel gravel ant gravel gravel moss gravel gravel gravel gravel snail gravel gravel gravel gravel slug gravel rock gravel gravel rock gravel gravel gravel gravel snail gravel gravel rock gravel gravel gravel gravel gravel spider gravel rock gravel gravel'
-// Rake out any items that are not a rock or gravel and replace them with gravel such that:
-
-// garden = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
-// Returns a string with all items except a rock or gravel replaced with gravel:
-
-// garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
-
-function replaceString(str: string): string {
-
-    return str.split(" ").map(el => el === "gravel" || el === "rock" ? el : "gravel").join(" ")
-
-}
-
-// Trying another method
-// let arrayOfString : string[] = str.split(" ");
-
-// for (let i = 0; i < arrayOfString.length; i++){
-//     if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock"){
-//         arrayOfString[i] = "gravel";
+// type Operation = {
+//     a: number;
+//     b: number;
+//     operation: string;
+// };
+
+// function evalObject(value: Operation): number | string {
+//     switch (value.operation) {
+//         case '+':
+//             return value.a + value.b;
+//         case '-':
+//             return value.a - value.b;
+//         case '*':
+//             return value.a * value.b;
+//         case '/':
+//             return value.b !== 0 ? value.a / value.b : 'Error: Division by zero';
+//         case '%':
+//             return value.a % value.b;
+//         case '^':
+//             return Math.pow(value.a, value.b);
+//         default:
+//             return 'Invalid operation';
 //     }
 // }
-// return arrayOfString.join(" ")}
-
-console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
-
-// Snack 130
-
-// This kata is part of the collection Mary's Puzzle Books.
-
-// Mary brought home a "spot the differences" book. The book is full of a bunch of problems, and each problem consists of two strings that are similar. However, in each string there are a few characters that are different. An example puzzle from her book is:
-
-// String 1: "abcdefg"
-// String 2: "abcqetg"
-// Notice how the "d" from String 1 has become a "q" in String 2, and "f" from String 1 has become a "t" in String 2.
-
-// It's your job to help Mary solve the puzzles. Write a program spot_diff/Spot that will compare the two strings and return a list with the positions where the two strings differ. In the example above, your program should return [3, 5] because String 1 is different from String 2 at positions 3 and 5.
-
-// NOTES:
-
-// • If both strings are the same, return []
-
-// • Both strings will always be the same length
-
-// • Capitalization and punctuation matter
-
-function spot_diff(stringa1: string, stringa2: string): string | void {
-    for (let i = 0; i < stringa1.length; i++) {
-        if (stringa1[i] !== stringa2[i]) {
-            result.push(i);
-        }
-    }
-    // if (stringa1.length !== stringa2.length){
-    //     return "The length of both strings must be the same";
-    // } else {
-    //     let iterator = stringa1.match(stringa2);
-    //     console.log(iterator);
-    // }
-
-}
 
 
-console.log(spotDiff("abcdefg", "abcqetg"));
-console.log(spotDiff("abcdefg", "abcdefq"));
-console.log(spotDiff("abcdefg", "abcdefg"));
+// console.log(evalObject({ a: 2, b: 5, operation: "+" }));
+// console.log(evalObject({ a: 2, b: 5, operation: "*" }));
+// console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 
-// Snack 131
+// console.log(evalObject({ a: 2, b: 5, operation: "+" }));
+// console.log(evalObject({ a: 2, b: 5, operation: "*" }));
+// console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 
-// Description:
-// Create a function which accepts one arbitrary string as an argument, and return a string of length 26.
+// // Snack 122
 
-// The objective is to set each of the 26 characters of the output string to either '1' or '0' based on the fact whether the Nth letter of the alphabet is present in the input (independent of its case).
+// // Description:
+// // Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
 
-// So if an 'a' or an 'A' appears anywhere in the input string (any number of times), set the first character of the output string to '1', otherwise to '0'. if 'b' or 'B' appears in the string, set the second character to '1', and so on for the rest of the alphabet.
+// // Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
 
-// For instance:
+// // Example:
 
-// "a   **&  cZ"  =>  "10100000000000000000000001"
-// "aaaaaaa79345675"  =>  "10000000000000000000000000"
-// "&%#*"  =>  "00000000000000000000000000"
+// // Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+// // Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+// function jadeSmithCap(strNuova: string): string {
+//     let arrStrNuovo: string[] = strNuova.split("");
+//     for (let i = 0; i < arrStrNuovo.length; i++) {
+//         if (arrStrNuovo[i] === " ") {
+//             arrStrNuovo[i + 1] = arrStrNuovo[i + 1].toUpperCase();
+//         }
+//     }
+//     return arrStrNuovo.join('');
+// }
+
+// console.log(jadeSmithCap("How can mirrors be real if our eyes aren't real"));
+
+// // Snack 123
+
+// // Description:
+// // In this Kata, you will be given a string that has lowercase letters and numbers. Your task is to compare the number groupings and return the largest number. Numbers will not have leading zeros.
+
+// // For example, solve("gh12cdy695m1") = 695, because this is the largest of all number groupings.
+
+// // Good luck!
+
+// // Please also try Simple remove duplicates
+
+// function forInAFor(streing: string): number {
+//     // Using a regex we are going to find all the numbers that match
+//     let arrOfNumbers: number[] = [...streing.matchAll(/\d+/g)].map(match => parseInt(match[0], 10));
+
+//     // It will give the maximum number found
+//     return Math.max(...arrOfNumbers);
+// }
+
+// console.log(forInAFor("gh12cdy695m1"));
+
+// // Snack 124
+
+// // Description:
+// // Suzuki is a monk who climbs a large staircase to the monastery as part of a ritual. Some days he climbs more stairs than others depending on the number of students he must train in the morning. He is curious how many stairs might be climbed over the next 20 years and has spent a year marking down his daily progress.
+
+// // The sum of all the stairs logged in a year will be used for estimating the number he might climb in 20.
+
+// // 20_year_estimate = one_year_total * 20
+
+// // You will receive the following data structure representing the stairs Suzuki logged in a year. You will have all data for the entire year so regardless of how it is logged the problem should be simple to solve.
+
+// // stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday]
+// // Make sure your solution takes into account all of the nesting within the stairs array.
+
+// // Each weekday in the stairs array is an array.
+
+// // sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825]
+// // Your function should return the 20 year estimate of the stairs climbed using the formula above.
+
+// function estimateStairs(stairs: number[][]): number {
+
+//     const oneYearTotal = stairs.reduce((total, day) => {
+//         return total + day.reduce((dayTotal, stairsClimbed) => dayTotal + stairsClimbed, 0);
+//     }, 0);
+
+//     const twentyYearEstimate = oneYearTotal * 20;
+
+//     return twentyYearEstimate;
+// }
+
+// const stairs: number[][] = [
+//     [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825],
+// ];
+
+// console.log(estimateStairs(stairs));
+
+// // Snack 125
+
+// // In this kata you should simply determine, whether a given year is a leap year or not. In case you don't know the rules, here they are:
+
+// // Years divisible by 4 are leap years,
+// // but years divisible by 100 are not leap years,
+// // but years divisible by 400 are leap years.
+// // Tested years are in range 1600 ≤ year ≤ 4000.
+
+// function leapYear(yearNumber: number): boolean {
+//     if (yearNumber % 400 === 0) {
+//         return true;
+//     }
+//     else if (yearNumber % 100 === 0) {
+//         return false;
+//     }
+//     else if (yearNumber % 4 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// console.log(leapYear(400));
+// console.log(leapYear(100));
+// console.log(leapYear(800));
+// console.log(leapYear(4));
+// console.log(leapYear(12));
+
+// // Snack 126
+
+// // Description:
+// // I've got a crazy mental illness. I dislike numbers a lot. But it's a little complicated: The number I'm afraid of depends on which day of the week it is... This is a concrete description of my mental illness:
+
+// // Monday --> 12
+
+// // Tuesday --> numbers greater than 95
+
+// // Wednesday --> 34
+
+// // Thursday --> 0
+
+// // Friday --> numbers divisible by 2
+
+// // Saturday --> 56
+
+// // Sunday --> 666 or -666
+
+// // Write a function which takes a string (day of the week) and an integer (number to be tested) so it tells the doctor if I'm afraid or not. (return a boolean)
+
+// function amIAfraid(dayOfWeek: string, num: number): boolean {
+//     if (dayOfWeek === "Monday" && num === 12) {
+//         return true;
+//     } else if (dayOfWeek === "Tuesday" && num > 95) {
+//         return true;
+//     } else if (dayOfWeek === "Wednesday" && num === 34) {
+//         return true;
+//     } else if (dayOfWeek === "Thursday" && num === 0) {
+//         return true;
+//     } else if (dayOfWeek === "Friday" && num % 2 === 0) {
+//         return true;
+//     } else if (dayOfWeek === "Saturday" && num === 56) {
+//         return true;
+//     } else if (dayOfWeek === "Sunday" && num === 666 || num === -666) {
+//         return true;
+//     }
+//     return false;
+// }
+// console.log(amIAfraid("Monday", 12));
+// console.log(amIAfraid("Tuesday", 96));
+// console.log(amIAfraid("Wednesday", 34));
+// console.log(amIAfraid("Thursday", 0));
+// console.log(amIAfraid("Friday", 4));
+// console.log(amIAfraid("Saturday", 56));
+// console.log(amIAfraid("Sunday", -666));
+
+// // Snack 127
+
+// // Description:
+// // We will call a natural number a "doubleton number" if it contains exactly two distinct digits. For example, 23, 35, 100, 12121 are doubleton numbers, and 123 and 9980 are not.
+
+// // For a given natural number n (from 1 to 1 000 000), you need to find the next doubleton number. If n itself is a doubleton, return the next bigger than n.
+
+// // Examples:
+// // doubleton(120) === 121
+// // doubleton(1234) === 1311
+// // doubleton(10) === 12
+
+// function doubletonNumber(num: number): number | string {
+
+//     if (num < 0 || num > 1000000) {
+//         return "Only numbers included between 0 and 1.000.000 are allowed";
+//     }
+
+//     function isDoubleton(number: number): boolean {
+//         const digits = new Set(String(number).split(''));
+//         return digits.size === 2;
+//     }
+//     for (let i = num + 1; i <= 1000000; i++) {
+//         if (isDoubleton(i)) {
+//             return i;
+//         }
+//     }
+
+//     return "No doubleton number found within the range.";
+// }
+
+// console.log(doubletonNumber(120));
+// console.log(doubletonNumber(10));
+// console.log(doubletonNumber(1234));
+
+// // Esercizio AbbeyCode Anagrams
+
+// let arrayOfWords: string[] = [];
+// arrayOfWords[0] = "Salting";
+// console.log(arrayOfWords[0]);
+
+// // Snack 128
+
+// // Write a method that returns true if a given parameter is a power of 4, and false if it's not. If parameter is not an Integer (eg String, Array) method should return false as well.
+
+// // (In C# Integer means all integer Types like Int16,Int32,.....)
+
+// // Examples
+// // power_of_4(1024) => true
+// // power_of_4(55)   => false
+// // power_of_4("Four") => false
+
+// function isPowerOfFour(num: number): boolean {
+//     if (num <= 0 || num % 1 !== 0) {
+//         return false;
+//     }
+
+//     while (num % 4 === 0) {
+//         num /= 4;
+//     }
+//     return num === 1;
+// }
+
+// console.log(isPowerOfFour(1024));
+// console.log(isPowerOfFour(55));
+
+// // Snack 129
+
+// // Help Suzuki rake his garden!
+
+// // The monastery has a magnificent Zen garden made of white gravel and rocks and it is raked diligently everyday by the monks. Suzuki having a keen eye is always on the lookout for anything creeping into the garden that must be removed during the daily raking such as insects or moss.
+
+// // You will be given a string representing the garden such as:
+
+// // garden = 'gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel ant gravel gravel gravel gravel rock slug gravel gravel gravel gravel gravel snail gravel gravel rock gravel snail slug gravel gravel spider gravel gravel gravel gravel gravel gravel gravel gravel moss gravel gravel gravel snail gravel gravel gravel ant gravel gravel moss gravel gravel gravel gravel snail gravel gravel gravel gravel slug gravel rock gravel gravel rock gravel gravel gravel gravel snail gravel gravel rock gravel gravel gravel gravel gravel spider gravel rock gravel gravel'
+// // Rake out any items that are not a rock or gravel and replace them with gravel such that:
+
+// // garden = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
+// // Returns a string with all items except a rock or gravel replaced with gravel:
+
+// // garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
+
+// function replaceString(str: string): string {
+
+//     return str.split(" ").map(el => el === "gravel" || el === "rock" ? el : "gravel").join(" ")
+
+// }
+
+// // Trying another method
+// // let arrayOfString : string[] = str.split(" ");
+
+// // for (let i = 0; i < arrayOfString.length; i++){
+// //     if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock"){
+// //         arrayOfString[i] = "gravel";
+// //     }
+// // }
+// // return arrayOfString.join(" ")}
+
+// console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
+
+// // Snack 130
+
+// // This kata is part of the collection Mary's Puzzle Books.
+
+// // Mary brought home a "spot the differences" book. The book is full of a bunch of problems, and each problem consists of two strings that are similar. However, in each string there are a few characters that are different. An example puzzle from her book is:
+
+// // String 1: "abcdefg"
+// // String 2: "abcqetg"
+// // Notice how the "d" from String 1 has become a "q" in String 2, and "f" from String 1 has become a "t" in String 2.
+
+// // It's your job to help Mary solve the puzzles. Write a program spot_diff/Spot that will compare the two strings and return a list with the positions where the two strings differ. In the example above, your program should return [3, 5] because String 1 is different from String 2 at positions 3 and 5.
+
+// // NOTES:
+
+// // • If both strings are the same, return []
+
+// // • Both strings will always be the same length
+
+// // • Capitalization and punctuation matter
+
+// function spot_diff(stringa1: string, stringa2: string): string | void {
+//     for (let i = 0; i < stringa1.length; i++) {
+//         if (stringa1[i] !== stringa2[i]) {
+//             result.push(i);
+//         }
+//     }
+//     // if (stringa1.length !== stringa2.length){
+//     //     return "The length of both strings must be the same";
+//     // } else {
+//     //     let iterator = stringa1.match(stringa2);
+//     //     console.log(iterator);
+//     // }
+
+// }
 
 
-function returnString(str: string): string {
-    let result = Array(26).fill('0');
+// console.log(spotDiff("abcdefg", "abcqetg"));
+// console.log(spotDiff("abcdefg", "abcdefq"));
+// console.log(spotDiff("abcdefg", "abcdefg"));
 
-    let normalizedStr = str.toLowerCase();
+// // Snack 131
 
-    for (let char of normalizedStr) {
-        if (/[a-z]/.test(char)) {
-            let index = char.charCodeAt(0) - 'a'.charCodeAt(0);
-            result[index] = '1';
-        }
-    }
+// // Description:
+// // Create a function which accepts one arbitrary string as an argument, and return a string of length 26.
 
-    return result.join('');
-}
+// // The objective is to set each of the 26 characters of the output string to either '1' or '0' based on the fact whether the Nth letter of the alphabet is present in the input (independent of its case).
 
-console.log(returnString("a   **&  cZ"));
-console.log(returnString("aaaaaaa79345675"));
-console.log(returnString("&%#*"));
+// // So if an 'a' or an 'A' appears anywhere in the input string (any number of times), set the first character of the output string to '1', otherwise to '0'. if 'b' or 'B' appears in the string, set the second character to '1', and so on for the rest of the alphabet.
+
+// // For instance:
+
+// // "a   **&  cZ"  =>  "10100000000000000000000001"
+// // "aaaaaaa79345675"  =>  "10000000000000000000000000"
+// // "&%#*"  =>  "00000000000000000000000000"
 
 
-// Snack 132 
+// function returnString(str: string): string {
+//     let result = Array(26).fill('0');
 
-// A squared string is a string of n lines, each substring being n characters long. We are given two n-squared strings.
+//     let normalizedStr = str.toLowerCase();
 
-// For example:
+//     for (let char of normalizedStr) {
+//         if (/[a-z]/.test(char)) {
+//             let index = char.charCodeAt(0) - 'a'.charCodeAt(0);
+//             result[index] = '1';
+//         }
+//     }
 
-// s1 = "abcd\nefgh\nijkl\nmnop"
+//     return result.join('');
+// }
 
-// s2 = "qrst\nuvwx\nyz12\n3456"
+// console.log(returnString("a   **&  cZ"));
+// console.log(returnString("aaaaaaa79345675"));
+// console.log(returnString("&%#*"));
 
-// Let us build a new string strng of size (n + 1) x n in the following way:
 
-// The first line of strng has the first char of the first line of s1 plus the chars of the last line of s2.
-// The second line of strng has the first two chars of the second line of s1 plus the chars of the penultimate line of s2 except the last char
-// and so on until the nth line of strng has the n chars of the nth line of s1 plus the first char of the first line of s2.
-// So we have:
+// // Snack 132 
 
-// strng --> "a3456\nefyz1\nijkuv\nmnopq"
+// // A squared string is a string of n lines, each substring being n characters long. We are given two n-squared strings.
 
-// or printed:
-// abcd    qrst  -->  a3456
-// efgh    uvwx       efyz1
-// ijkl    yz12       ijkuv
-// mnop    3456       mnopq
+// // For example:
 
-function squaredString(s1: string, s2: string): string {
-    let result = "";
-    let s1Lines = s1.split("\n");
-    let s2Lines = s2.split("\n");
+// // s1 = "abcd\nefgh\nijkl\nmnop"
 
-    for (let i = 0; i < s1Lines.length; i++) {
-        let line = s1Lines[i];
-        for (let j = 0; j < line.length; j++) {
-            let char = line[j];
-            result += char;
-        }
-        if (i < s2Lines.length) {
-            result += s2Lines[s2Lines.length - 1][i];
-        }
-        result += "\n";
-    }
-    return result;
-}
+// // s2 = "qrst\nuvwx\nyz12\n3456"
 
-console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
+// // Let us build a new string strng of size (n + 1) x n in the following way:
+
+// // The first line of strng has the first char of the first line of s1 plus the chars of the last line of s2.
+// // The second line of strng has the first two chars of the second line of s1 plus the chars of the penultimate line of s2 except the last char
+// // and so on until the nth line of strng has the n chars of the nth line of s1 plus the first char of the first line of s2.
+// // So we have:
+
+// // strng --> "a3456\nefyz1\nijkuv\nmnopq"
+
+// // or printed:
+// // abcd    qrst  -->  a3456
+// // efgh    uvwx       efyz1
+// // ijkl    yz12       ijkuv
+// // mnop    3456       mnopq
+
+// function squaredString(s1: string, s2: string): string {
+//     let result = "";
+//     let s1Lines = s1.split("\n");
+//     let s2Lines = s2.split("\n");
+
+//     for (let i = 0; i < s1Lines.length; i++) {
+//         let line = s1Lines[i];
+//         for (let j = 0; j < line.length; j++) {
+//             let char = line[j];
+//             result += char;
+//         }
+//         if (i < s2Lines.length) {
+//             result += s2Lines[s2Lines.length - 1][i];
+//         }
+//         result += "\n";
+//     }
+//     return result;
+// }
+
+// console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
 
 // Snack 133
 
@@ -3526,11 +3526,28 @@ console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
 // 0      -> 0
 // Note: Zero should be left as it is.
 
-function getRidOfZero(number : number): void{
-    let str : string[] = number.toString().split("");
-    for (let i = 0; i < str.length; i++){
+function getRidOfZero(number: number): number {
+    
+    let streuza: string = number.toString();
 
+    if (streuza === "0") {
+        return 0;
+    }
+
+    if (streuza[0] === '-') {
+        streuza = streuza.slice(0, streuza.length - 1); 
+        let i = streuza.length - 1;
+        while (streuza[i] === '0') {
+            streuza = streuza.slice(0, i); 
+            i--;
+        }
+        return -parseInt(streuza);
+    } else {
+        let i = streuza.length - 1;
+        while (streuza[i] === '0') {
+            streuza = streuza.slice(0, i); 
+            i--;
+        }
+        return parseInt(streuza);
     }
 }
-
-console.log(getRidOfZero(22220));
