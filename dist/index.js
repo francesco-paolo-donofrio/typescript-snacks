@@ -1390,10 +1390,16 @@ function spot_diff(stringa1, stringa2) {
 console.log(spotDiff("abcdefg", "abcqetg"));
 console.log(spotDiff("abcdefg", "abcdefq"));
 console.log(spotDiff("abcdefg", "abcdefg"));
-let alphabetArray = [];
 function returnString(str) {
-    let arrOfStringa = str.split("").filter(el => /^[a-zA-Z]$/.test(el));
-    console.log(arrOfStringa);
+    let result = Array(26).fill('0');
+    let normalizedStr = str.toLowerCase();
+    for (let char of normalizedStr) {
+        if (/[a-z]/.test(char)) {
+            let index = char.charCodeAt(0) - 'a'.charCodeAt(0);
+            result[index] = '1';
+        }
+    }
+    return result.join('');
 }
 console.log(returnString("a   **&  cZ"));
 console.log(returnString("aaaaaaa79345675"));

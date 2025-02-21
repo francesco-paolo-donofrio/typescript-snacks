@@ -3444,18 +3444,19 @@ console.log(spotDiff("abcdefg", "abcdefg"));
 // "&%#*"  =>  "00000000000000000000000000"
 
 
-let alphabetArray : number[] = [];
-function returnString(str : string): void{
-    let arrOfStringa : string[] = str.split("").filter(el => /^[a-zA-Z]$/.test(el));
-    for (let i = 0; i <= arrOfStringa.length; i++){
-        if (arrOfStringa[i] === arrOfStringa[i]){
-            arrOfStringa[i]
+function returnString(str: string): string {
+    let result = Array(26).fill('0'); 
+    
+    let normalizedStr = str.toLowerCase();
+    
+    for (let char of normalizedStr) {
+        if (/[a-z]/.test(char)) { 
+            let index = char.charCodeAt(0) - 'a'.charCodeAt(0); 
+            result[index] = '1'; 
         }
     }
-    console.log(arrOfStringa);
-    // for (let i = 0; i < 25; i++){
-    //     if ()
-    // }
+    
+    return result.join(''); 
 }
 
 console.log(returnString("a   **&  cZ"));
