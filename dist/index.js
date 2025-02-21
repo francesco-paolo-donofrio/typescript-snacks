@@ -1390,4 +1390,12 @@ function spot_diff(stringa1, stringa2) {
 console.log(spotDiff("abcdefg", "abcqetg"));
 console.log(spotDiff("abcdefg", "abcdefq"));
 console.log(spotDiff("abcdefg", "abcdefg"));
+let alphabetArray = [];
+function returnString(str) {
+    let arrOfStringa = str.split("").filter(el => /^[a-zA-Z]$/.test(el));
+    console.log(arrOfStringa);
+}
+console.log(returnString("a   **&  cZ"));
+console.log(returnString("aaaaaaa79345675"));
+console.log(returnString("&%#*"));
 //# sourceMappingURL=index.js.map
