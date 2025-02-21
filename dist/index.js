@@ -1422,4 +1422,9 @@ function squaredString(s1, s2) {
     return result;
 }
 console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
+function getRidOfZero(number) {
+    let str = number.toString().split("");
+    console.log(str);
+}
+console.log(getRidOfZero(2222));
 //# sourceMappingURL=index.js.map

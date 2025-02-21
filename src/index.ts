@@ -3509,3 +3509,28 @@ function squaredString(s1: string, s2: string): string {
 }
 
 console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
+
+// Snack 133
+
+// Description:
+// Numbers ending with zeros are boring.
+
+// They might be fun in your world, but not here.
+
+// Get rid of them. Only the ending ones.
+
+// 1450   -> 145
+// 960000 -> 96
+// 1050   -> 105
+// -1050  -> -105
+// 0      -> 0
+// Note: Zero should be left as it is.
+
+function getRidOfZero(number : number): void{
+    let str : string[] = number.toString().split("");
+    for (let i = 0; i < str.length; i++){
+
+    }
+}
+
+console.log(getRidOfZero(22220));
