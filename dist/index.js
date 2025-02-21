@@ -1404,4 +1404,22 @@ function returnString(str) {
 console.log(returnString("a   **&  cZ"));
 console.log(returnString("aaaaaaa79345675"));
 console.log(returnString("&%#*"));
+function squaredString(s1, s2) {
+    let result = "";
+    let s1Lines = s1.split("\n");
+    let s2Lines = s2.split("\n");
+    for (let i = 0; i < s1Lines.length; i++) {
+        let line = s1Lines[i];
+        for (let j = 0; j < line.length; j++) {
+            let char = line[j];
+            result += char;
+        }
+        if (i < s2Lines.length) {
+            result += s2Lines[s2Lines.length - 1][i];
+        }
+        result += "\n";
+    }
+    return result;
+}
+console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
 //# sourceMappingURL=index.js.map

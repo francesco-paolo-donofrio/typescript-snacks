@@ -2689,11 +2689,11 @@ function tidyNumber(num: number): boolean {
 
     let arrOfNumbers: string[] = num.toString().split("");
     for (let i = 0; i <= arrOfNumbers.length - 1; i++) {
-        if (arrOfNumbers[i] > arrOfNumbers[i + 1]){
+        if (arrOfNumbers[i] > arrOfNumbers[i + 1]) {
             return false;
         };
     }
-    
+
     return true;
 }
 
@@ -3123,9 +3123,9 @@ function evalObject(value: Operation): number | string {
 }
 
 
-console.log(evalObject({a: 2, b: 5, operation : "+"}));
-console.log(evalObject({a: 2, b: 5, operation : "*"}));
-console.log(evalObject({a: 2, b: 5, operation : "^"}));
+console.log(evalObject({ a: 2, b: 5, operation: "+" }));
+console.log(evalObject({ a: 2, b: 5, operation: "*" }));
+console.log(evalObject({ a: 2, b: 5, operation: "^" }));
 
 console.log(evalObject({ a: 2, b: 5, operation: "+" }));
 console.log(evalObject({ a: 2, b: 5, operation: "*" }));
@@ -3222,7 +3222,7 @@ console.log(estimateStairs(stairs));
 // Tested years are in range 1600 ≤ year ≤ 4000.
 
 function leapYear(yearNumber: number): boolean {
-    if (yearNumber % 400 === 0){
+    if (yearNumber % 400 === 0) {
         return true;
     }
     else if (yearNumber % 100 === 0) {
@@ -3262,20 +3262,20 @@ console.log(leapYear(12));
 
 // Write a function which takes a string (day of the week) and an integer (number to be tested) so it tells the doctor if I'm afraid or not. (return a boolean)
 
-function amIAfraid(dayOfWeek : string, num : number): boolean{
-    if (dayOfWeek === "Monday" && num === 12){
+function amIAfraid(dayOfWeek: string, num: number): boolean {
+    if (dayOfWeek === "Monday" && num === 12) {
         return true;
-    } else if (dayOfWeek === "Tuesday" && num > 95){
+    } else if (dayOfWeek === "Tuesday" && num > 95) {
         return true;
-    } else if (dayOfWeek === "Wednesday" && num === 34){
+    } else if (dayOfWeek === "Wednesday" && num === 34) {
         return true;
-    } else if (dayOfWeek === "Thursday" && num === 0){
+    } else if (dayOfWeek === "Thursday" && num === 0) {
         return true;
-    } else if (dayOfWeek === "Friday" && num % 2 === 0){
+    } else if (dayOfWeek === "Friday" && num % 2 === 0) {
         return true;
-    } else if (dayOfWeek === "Saturday" && num === 56){
+    } else if (dayOfWeek === "Saturday" && num === 56) {
         return true;
-    } else if (dayOfWeek === "Sunday" && num === 666 || num === -666){
+    } else if (dayOfWeek === "Sunday" && num === 666 || num === -666) {
         return true;
     }
     return false;
@@ -3308,11 +3308,11 @@ function doubletonNumber(num: number): number | string {
 
     function isDoubleton(number: number): boolean {
         const digits = new Set(String(number).split(''));
-        return digits.size === 2; 
+        return digits.size === 2;
     }
     for (let i = num + 1; i <= 1000000; i++) {
         if (isDoubleton(i)) {
-            return i; 
+            return i;
         }
     }
 
@@ -3325,7 +3325,7 @@ console.log(doubletonNumber(1234));
 
 // Esercizio AbbeyCode Anagrams
 
-let arrayOfWords : string[] = [];
+let arrayOfWords: string[] = [];
 arrayOfWords[0] = "Salting";
 console.log(arrayOfWords[0]);
 
@@ -3340,13 +3340,13 @@ console.log(arrayOfWords[0]);
 // power_of_4(55)   => false
 // power_of_4("Four") => false
 
-function isPowerOfFour(num : number): boolean {
+function isPowerOfFour(num: number): boolean {
     if (num <= 0 || num % 1 !== 0) {
         return false;
-    } 
-    
+    }
+
     while (num % 4 === 0) {
-        num /= 4; 
+        num /= 4;
     }
     return num === 1;
 }
@@ -3370,23 +3370,23 @@ console.log(isPowerOfFour(55));
 
 // garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
 
-function replaceString(str : string): string {
+function replaceString(str: string): string {
 
     return str.split(" ").map(el => el === "gravel" || el === "rock" ? el : "gravel").join(" ")
- 
- }
- 
-     // Trying another method
-     // let arrayOfString : string[] = str.split(" ");
-     
-     // for (let i = 0; i < arrayOfString.length; i++){
-     //     if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock"){
-     //         arrayOfString[i] = "gravel";
-     //     }
-     // }
-     // return arrayOfString.join(" ")}
- 
- console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
+
+}
+
+// Trying another method
+// let arrayOfString : string[] = str.split(" ");
+
+// for (let i = 0; i < arrayOfString.length; i++){
+//     if (arrayOfString[i] !== "gravel" && arrayOfString[i] !== "rock"){
+//         arrayOfString[i] = "gravel";
+//     }
+// }
+// return arrayOfString.join(" ")}
+
+console.log(replaceString("slug spider rock gravel gravel gravel gravel gravel gravel gravel"));
 
 // Snack 130
 
@@ -3408,10 +3408,10 @@ function replaceString(str : string): string {
 
 // • Capitalization and punctuation matter
 
-function spot_diff(stringa1 : string, stringa2 : string): string | void {
+function spot_diff(stringa1: string, stringa2: string): string | void {
     for (let i = 0; i < stringa1.length; i++) {
         if (stringa1[i] !== stringa2[i]) {
-            result.push(i); 
+            result.push(i);
         }
     }
     // if (stringa1.length !== stringa2.length){
@@ -3445,20 +3445,67 @@ console.log(spotDiff("abcdefg", "abcdefg"));
 
 
 function returnString(str: string): string {
-    let result = Array(26).fill('0'); 
-    
+    let result = Array(26).fill('0');
+
     let normalizedStr = str.toLowerCase();
-    
+
     for (let char of normalizedStr) {
-        if (/[a-z]/.test(char)) { 
-            let index = char.charCodeAt(0) - 'a'.charCodeAt(0); 
-            result[index] = '1'; 
+        if (/[a-z]/.test(char)) {
+            let index = char.charCodeAt(0) - 'a'.charCodeAt(0);
+            result[index] = '1';
         }
     }
-    
-    return result.join(''); 
+
+    return result.join('');
 }
 
 console.log(returnString("a   **&  cZ"));
 console.log(returnString("aaaaaaa79345675"));
 console.log(returnString("&%#*"));
+
+
+// Snack 132 
+
+// A squared string is a string of n lines, each substring being n characters long. We are given two n-squared strings.
+
+// For example:
+
+// s1 = "abcd\nefgh\nijkl\nmnop"
+
+// s2 = "qrst\nuvwx\nyz12\n3456"
+
+// Let us build a new string strng of size (n + 1) x n in the following way:
+
+// The first line of strng has the first char of the first line of s1 plus the chars of the last line of s2.
+// The second line of strng has the first two chars of the second line of s1 plus the chars of the penultimate line of s2 except the last char
+// and so on until the nth line of strng has the n chars of the nth line of s1 plus the first char of the first line of s2.
+// So we have:
+
+// strng --> "a3456\nefyz1\nijkuv\nmnopq"
+
+// or printed:
+// abcd    qrst  -->  a3456
+// efgh    uvwx       efyz1
+// ijkl    yz12       ijkuv
+// mnop    3456       mnopq
+
+function squaredString(s1: string, s2: string): string {
+    let result = "";
+    let s1Lines = s1.split("\n");
+    let s2Lines = s2.split("\n");
+
+    for (let i = 0; i < s1Lines.length; i++) {
+        let line = s1Lines[i];
+        for (let j = 0; j < line.length; j++) {
+            let char = line[j];
+            result += char;
+        }
+        if (i < s2Lines.length) {
+            result += s2Lines[s2Lines.length - 1][i];
+        }
+        result += "\n";
+    }
+    return result;
+}
+
+console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
