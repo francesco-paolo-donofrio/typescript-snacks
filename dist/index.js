@@ -1244,11 +1244,54 @@ function sortingArray(numArr) {
 }
 console.log(sortingArray([22, 77, 11, 1, 0, 100]));
 console.log(stringTemplate(10));
+function squaredString(s1, s2) {
+    let result = "";
+    let s1Lines = s1.split("\n");
+    let s2Lines = s2.split("\n");
+    for (let i = 0; i < s1Lines.length; i++) {
+        let line = s1Lines[i];
+        for (let j = 0; j < line.length; j++) {
+            let char = line[j];
+            result += char;
+        }
+        if (i < s2Lines.length) {
+            result += s2Lines[s2Lines.length - 1][i];
+        }
+        result += "\n";
+    }
+    return result;
+}
 function getRidOfZero(number) {
-    let streuza = number.toString().split("");
-    for (let i = 0; i < streuza.length - 1; i++) {
-        console.log(streuza[i]);
+    let streuza = number.toString();
+    if (streuza === "0") {
+        return 0;
+    }
+    if (streuza[0] === '-') {
+        streuza = streuza.slice(0, streuza.length - 1);
+        let i = streuza.length - 1;
+        while (streuza[i] === '0') {
+            streuza = streuza.slice(0, i);
+            i--;
+        }
+        return -parseInt(streuza);
+    }
+    else {
+        let i = streuza.length - 1;
+        while (streuza[i] === '0') {
+            streuza = streuza.slice(0, i);
+            i--;
+        }
+        return parseInt(streuza);
     }
 }
-console.log(getRidOfZero(22220));
+function returnCentury(numb) {
+    let arrOfNumb = numb.toString().split("");
+    while (arrOfNumb[1] === arrOfNumb[1]) {
+        return parseInt(arrOfNumb.slice(0, 2).join("")) + 1;
+    }
+    return 0;
+}
+console.log(returnCentury(1705));
+console.log(returnCentury(0));
+console.log(returnCentury(1900));
 //# sourceMappingURL=index.js.map

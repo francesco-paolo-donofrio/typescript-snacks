@@ -3466,47 +3466,47 @@ console.log(stringTemplate(10));
 
 // // Snack 132 
 
-// // A squared string is a string of n lines, each substring being n characters long. We are given two n-squared strings.
+// A squared string is a string of n lines, each substring being n characters long. We are given two n-squared strings.
 
-// // For example:
+// For example:
 
-// // s1 = "abcd\nefgh\nijkl\nmnop"
+// s1 = "abcd\nefgh\nijkl\nmnop"
 
-// // s2 = "qrst\nuvwx\nyz12\n3456"
+// s2 = "qrst\nuvwx\nyz12\n3456"
 
-// // Let us build a new string strng of size (n + 1) x n in the following way:
+// Let us build a new string strng of size (n + 1) x n in the following way:
 
-// // The first line of strng has the first char of the first line of s1 plus the chars of the last line of s2.
-// // The second line of strng has the first two chars of the second line of s1 plus the chars of the penultimate line of s2 except the last char
-// // and so on until the nth line of strng has the n chars of the nth line of s1 plus the first char of the first line of s2.
-// // So we have:
+// The first line of strng has the first char of the first line of s1 plus the chars of the last line of s2.
+// The second line of strng has the first two chars of the second line of s1 plus the chars of the penultimate line of s2 except the last char
+// and so on until the nth line of strng has the n chars of the nth line of s1 plus the first char of the first line of s2.
+// So we have:
 
-// // strng --> "a3456\nefyz1\nijkuv\nmnopq"
+// strng --> "a3456\nefyz1\nijkuv\nmnopq"
 
-// // or printed:
-// // abcd    qrst  -->  a3456
-// // efgh    uvwx       efyz1
-// // ijkl    yz12       ijkuv
-// // mnop    3456       mnopq
+// or printed:
+// abcd    qrst  -->  a3456
+// efgh    uvwx       efyz1
+// ijkl    yz12       ijkuv
+// mnop    3456       mnopq
 
-// function squaredString(s1: string, s2: string): string {
-//     let result = "";
-//     let s1Lines = s1.split("\n");
-//     let s2Lines = s2.split("\n");
+function squaredString(s1: string, s2: string): string {
+    let result = "";
+    let s1Lines = s1.split("\n");
+    let s2Lines = s2.split("\n");
 
-//     for (let i = 0; i < s1Lines.length; i++) {
-//         let line = s1Lines[i];
-//         for (let j = 0; j < line.length; j++) {
-//             let char = line[j];
-//             result += char;
-//         }
-//         if (i < s2Lines.length) {
-//             result += s2Lines[s2Lines.length - 1][i];
-//         }
-//         result += "\n";
-//     }
-//     return result;
-// }
+    for (let i = 0; i < s1Lines.length; i++) {
+        let line = s1Lines[i];
+        for (let j = 0; j < line.length; j++) {
+            let char = line[j];
+            result += char;
+        }
+        if (i < s2Lines.length) {
+            result += s2Lines[s2Lines.length - 1][i];
+        }
+        result += "\n";
+    }
+    return result;
+}
 
 // console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
 
@@ -3527,7 +3527,7 @@ console.log(stringTemplate(10));
 // Note: Zero should be left as it is.
 
 function getRidOfZero(number: number): number {
-    
+     
     let streuza: string = number.toString();
 
     if (streuza === "0") {
@@ -3551,3 +3551,33 @@ function getRidOfZero(number: number): number {
         return parseInt(streuza);
     }
 }
+
+
+// // Snack 134
+
+// Introduction
+// The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+
+// Task
+// Given a year, return the century it is in.
+
+// Examples
+// 1705 --> 18
+// 1900 --> 19
+// 1601 --> 17
+// 2000 --> 20
+// 2742 --> 28
+// Note: this kata uses strict construction as shown in the description and the examples, you can read more about it here
+
+function returnCentury(numb : number): number {
+    let arrOfNumb : string[] = numb.toString().split("");
+    while (arrOfNumb[1] === arrOfNumb[1]){
+        return parseInt(arrOfNumb.slice(0, 2).join("")) + 1;
+        
+    }
+    return 0;
+}
+
+console.log(returnCentury(1705));
+console.log(returnCentury(0));
+console.log(returnCentury(1900));
