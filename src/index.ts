@@ -3608,3 +3608,24 @@ function evaporator(content: number, evap_per_day: number, threshold: number): n
     
     return durationDays;
 }
+
+// Fibonacci exercise
+
+// 1 + 1 = 2; 1 + 2 = 3; 2 + 3 = 5; 3 + 5 = 8; 5 + 8 = 13; 
+
+
+let resultFibonacci : number[] = [];
+let validFibonacci : number[] = [1, 2, 3, 5, 8, 13];
+
+function fibonacciSequence(input : number): string || number[]{
+    for (let i = 0; i < validFibonacci.length; i++){
+        if (input !== validFibonacci[i]){
+            return console.error("Please insert a valid fibonacci number to start the sequence");
+        } else {
+            resultFibonacci.push(validFibonacci[i] + validFibonacci[i + 1]);
+        }
+    }
+}
+
+console.log(fibonacciSequence(3));
+

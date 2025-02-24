@@ -1304,4 +1304,15 @@ function evaporator(content, evap_per_day, threshold) {
     }
     return durationDays;
 }
+let resultFibonacci = [];
+let validFibonacci = [1, 2, 3, 5, 8, 13];
+function fibonacciSequence(input) {
+    for (let i = 0; i < validFibonacci.length; i++) {
+        if (input !== validFibonacci[i]) {
+            console.error("Please insert a valid fibonacci number to start the sequence");
+        }
+        resultFibonacci.push(validFibonacci[i] + validFibonacci[i + 1]);
+    }
+}
+console.log(fibonacciSequence(1));
 //# sourceMappingURL=index.js.map
