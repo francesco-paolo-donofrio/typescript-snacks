@@ -3615,17 +3615,18 @@ function evaporator(content: number, evap_per_day: number, threshold: number): n
 
 
 let resultFibonacci : number[] = [];
-let validFibonacci : number[] = [1, 2, 3, 5, 8, 13];
+let validFibonacci : number[] = [1, 1, 2, 3, 5, 8, 13];
 
-function fibonacciSequence(input : number): string || number[]{
+function fibonacciSequence(inputFibo : number): number[]{
     for (let i = 0; i < validFibonacci.length; i++){
-        if (input !== validFibonacci[i]){
-            return console.error("Please insert a valid fibonacci number to start the sequence");
+        if (inputFibo !== validFibonacci[i]){
+            console.error("Please insert a valid fibonacci number to start the sequence");
         } else {
             resultFibonacci.push(validFibonacci[i] + validFibonacci[i + 1]);
-        }
+        } 
     }
+    return [1];
 }
 
-console.log(fibonacciSequence(3));
+console.log(fibonacciSequence(1));
 
