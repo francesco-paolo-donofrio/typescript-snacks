@@ -3599,11 +3599,12 @@ function evaporator(content: number, evap_per_day: number, threshold: number): n
     content = 90;
     evap_per_day = 7;
     let mlLossEveryDay : number = content * evap_per_day / 100; 
-    let minimumMlToThreshold : number = content * threshold / 100;
+    // let minimumMlToThreshold : number = content * threshold / 100;
     let durationDays : number = 0;
 
     for (let i = 0; i <= content; i++){
-        
+        content - mlLossEveryDay;
+durationDays = i;
     }
-    
+    return durationDays;
 }
