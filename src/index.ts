@@ -3527,7 +3527,7 @@ function squaredString(s1: string, s2: string): string {
 // Note: Zero should be left as it is.
 
 function getRidOfZero(number: number): number {
-     
+
     let streuza: string = number.toString();
 
     if (streuza === "0") {
@@ -3535,17 +3535,17 @@ function getRidOfZero(number: number): number {
     }
 
     if (streuza[0] === '-') {
-        streuza = streuza.slice(0, streuza.length - 1); 
+        streuza = streuza.slice(0, streuza.length - 1);
         let i = streuza.length - 1;
         while (streuza[i] === '0') {
-            streuza = streuza.slice(0, i); 
+            streuza = streuza.slice(0, i);
             i--;
         }
         return -parseInt(streuza);
     } else {
         let i = streuza.length - 1;
         while (streuza[i] === '0') {
-            streuza = streuza.slice(0, i); 
+            streuza = streuza.slice(0, i);
             i--;
         }
         return parseInt(streuza);
@@ -3569,11 +3569,11 @@ function getRidOfZero(number: number): number {
 // 2742 --> 28
 // Note: this kata uses strict construction as shown in the description and the examples, you can read more about it here
 
-function returnCentury(numb : number): number {
-    let arrOfNumb : string[] = numb.toString().split("");
-    while (arrOfNumb[1] === arrOfNumb[1]){
+function returnCentury(numb: number): number {
+    let arrOfNumb: string[] = numb.toString().split("");
+    while (arrOfNumb[1] === arrOfNumb[1]) {
         return parseInt(arrOfNumb.slice(0, 2).join("")) + 1;
-        
+
     }
     return 0;
 }
@@ -3596,15 +3596,15 @@ console.log(returnCentury(1900));
 // Content is in fact not necessary in the body of the function "evaporator", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.
 
 function evaporator(content: number, evap_per_day: number, threshold: number): number {
-    content = 90;
-    evap_per_day = 7;
-    let mlLossEveryDay : number = content * evap_per_day / 100; 
-    // let minimumMlToThreshold : number = content * threshold / 100;
-    let durationDays : number = 0;
-
-    for (let i = 0; i <= content; i++){
-        content - mlLossEveryDay;
-durationDays = i;
+    let initialContent = content; // Store the initial content to calculate the threshold
+    let currentContent = content; // This will decrease as the gas evaporates
+    let durationDays = 0;
+    
+    // Continue until the content drops below the threshold percentage of the initial content
+    while (currentContent > initialContent * (threshold / 100)) {
+        currentContent -= currentContent * (evap_per_day / 100); // Reduce content by the given daily evaporation rate
+        durationDays++; // Increment the day counter
     }
+    
     return durationDays;
 }

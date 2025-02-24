@@ -1294,4 +1294,14 @@ function returnCentury(numb) {
 console.log(returnCentury(1705));
 console.log(returnCentury(0));
 console.log(returnCentury(1900));
+function evaporator(content, evap_per_day, threshold) {
+    let initialContent = content;
+    let currentContent = content;
+    let durationDays = 0;
+    while (currentContent > initialContent * (threshold / 100)) {
+        currentContent -= currentContent * (evap_per_day / 100);
+        durationDays++;
+    }
+    return durationDays;
+}
 //# sourceMappingURL=index.js.map
