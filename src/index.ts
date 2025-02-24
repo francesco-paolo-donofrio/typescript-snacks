@@ -3599,13 +3599,13 @@ function evaporator(content: number, evap_per_day: number, threshold: number): n
     let initialContent = content; // Store the initial content to calculate the threshold
     let currentContent = content; // This will decrease as the gas evaporates
     let durationDays = 0;
-    
+
     // Continue until the content drops below the threshold percentage of the initial content
     while (currentContent > initialContent * (threshold / 100)) {
         currentContent -= currentContent * (evap_per_day / 100); // Reduce content by the given daily evaporation rate
         durationDays++; // Increment the day counter
     }
-    
+
     return durationDays;
 }
 
@@ -3614,18 +3614,21 @@ function evaporator(content: number, evap_per_day: number, threshold: number): n
 // 1 + 1 = 2; 1 + 2 = 3; 2 + 3 = 5; 3 + 5 = 8; 5 + 8 = 13; 
 
 
-let resultFibonacci : number[] = [];
-let validFibonacci : number[] = [1, 1, 2, 3, 5, 8, 13];
+let resultFibonacci: number[] = [];
+let validFibonacci: number[] = [1, 1, 2, 3, 5, 8, 13];
 
-function fibonacciSequence(inputFibo : number): number[]{
-    for (let i = 0; i < validFibonacci.length; i++){
-        if (inputFibo !== validFibonacci[i]){
-            console.error("Please insert a valid fibonacci number to start the sequence");
-        } else {
+function fibonacciSequence(inputFibo: number): number[] {
+    for (let i = 0; i < validFibonacci.length; i++) {
+        // if (inputFibo != validFibonacci[i]){
+        //     console.error("Please insert a valid fibonacci number to start the sequence");
+        // } else {
+        if (inputFibo === validFibonacci[i]) {
             resultFibonacci.push(validFibonacci[i] + validFibonacci[i + 1]);
-        } 
+        } else {
+            console.error("Please insert a valid fibonacci number to start the sequence");
+        }
     }
-    return [1];
+    return resultFibonacci;
 }
 
 console.log(fibonacciSequence(1));
