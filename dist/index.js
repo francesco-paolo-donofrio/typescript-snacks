@@ -1307,12 +1307,14 @@ function evaporator(content, evap_per_day, threshold) {
 function fibonacci(number) {
     let firstNumber = 0;
     let secondNumber = 1;
-    let result = [];
-    for (let i = 0; i = number; i++) {
-        result.push(firstNumber + secondNumber);
+    let result = 0;
+    for (let i = 0; i <= number; i++) {
+        result = firstNumber + secondNumber;
         firstNumber = secondNumber;
+        secondNumber = result;
+        console.log(secondNumber);
     }
-    return result;
+    return result.toString().split("").map(Number);
 }
-console.log(fibonacci(5));
+console.log(fibonacci(2));
 //# sourceMappingURL=index.js.map
