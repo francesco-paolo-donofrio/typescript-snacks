@@ -3626,3 +3626,17 @@ function evaporator(content: number, evap_per_day: number, threshold: number): n
 // Ogni numero successivo si ottiene sommando i due numeri precedenti.
 // Buona fortuna! Fammi sapere se hai bisogno di aiuto o vuoi condividere la tua soluzione!
 
+function fibonacci(number : number): number[]{
+    let firstNumber : number = 0;
+    let secondNumber : number = 1;
+    let result : number = 0;
+
+    for (let i = 0; i = number; i++){
+        result = firstNumber + secondNumber;
+        firstNumber = secondNumber;
+        secondNumber = result;
+    }
+    return result.toString().split("").map(Number);
+}
+
+console.log(fibonacci(5));
