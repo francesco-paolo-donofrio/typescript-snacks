@@ -3609,27 +3609,20 @@ function evaporator(content: number, evap_per_day: number, threshold: number): n
     return durationDays;
 }
 
-// Fibonacci exercise
+// Esercizio:
+// Scrivi una funzione in TypeScript che calcoli la sequenza di Fibonacci fino al n-esimo termine. La funzione dovrà restituire l'array con i primi n numeri della sequenza.
 
-// 1 + 1 = 2; 1 + 2 = 3; 2 + 3 = 5; 3 + 5 = 8; 5 + 8 = 13; 
+// Requisiti:
+// La funzione prenderà un parametro n (un numero intero) che rappresenta il numero di termini della sequenza da calcolare.
+// La funzione dovrà restituire un array contenente i primi n numeri della sequenza di Fibonacci.
+// Se n è minore o uguale a 0, la funzione dovrà restituire un array vuoto.
+// Esempio:
+// Input: n = 5
 
+// Output: [0, 1, 1, 2, 3]
 
-let resultFibonacci: number[] = [];
-let validFibonacci: number[] = [1, 1, 2, 3, 5, 8, 13];
-
-function fibonacciSequence(inputFibo: number): number[] {
-    for (let i = 0; i < validFibonacci.length; i++) {
-        // if (inputFibo != validFibonacci[i]){
-        //     console.error("Please insert a valid fibonacci number to start the sequence");
-        // } else {
-        if (inputFibo === validFibonacci[i]) {
-            resultFibonacci.push(validFibonacci[i] + validFibonacci[i + 1]);
-        } else {
-            console.error("Please insert a valid fibonacci number to start the sequence");
-        }
-    }
-    return resultFibonacci;
-}
-
-console.log(fibonacciSequence(1));
+// Suggerimenti:
+// I primi due numeri della sequenza di Fibonacci sono 0 e 1.
+// Ogni numero successivo si ottiene sommando i due numeri precedenti.
+// Buona fortuna! Fammi sapere se hai bisogno di aiuto o vuoi condividere la tua soluzione!
 

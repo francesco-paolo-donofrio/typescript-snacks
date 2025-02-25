@@ -1304,18 +1304,4 @@ function evaporator(content, evap_per_day, threshold) {
     }
     return durationDays;
 }
-let resultFibonacci = [];
-let validFibonacci = [1, 1, 2, 3, 5, 8, 13];
-function fibonacciSequence(inputFibo) {
-    for (let i = 0; i < validFibonacci.length; i++) {
-        if (inputFibo === validFibonacci[i]) {
-            resultFibonacci.push(validFibonacci[i] + validFibonacci[i + 1]);
-        }
-        else {
-            console.error("Please insert a valid fibonacci number to start the sequence");
-        }
-    }
-    return resultFibonacci;
-}
-console.log(fibonacciSequence(1));
 //# sourceMappingURL=index.js.map
