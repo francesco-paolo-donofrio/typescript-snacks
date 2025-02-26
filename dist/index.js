@@ -1327,13 +1327,29 @@ function sumFunction(total, value) {
     return total + value;
 }
 ;
+let firstAsciiSum = 0;
+let secondAsciiSum = 0;
 function comparingASCII(string1, string2) {
+    if (string1 === "null" || string1 === "" || /\d/.test(string1)) {
+        firstAsciiSum = 0;
+    }
+    if (string2 === "null" || string2 === "" || /\d/.test(string2)) {
+        secondAsciiSum = 0;
+    }
     let firstStringArr = string1.split("").map(char => (Number(char.charCodeAt(0))));
-    let firstAsciiSum = firstStringArr.reduce(sumFunction, 0);
+    firstAsciiSum = firstStringArr.reduce(sumFunction, 0);
     console.log(firstAsciiSum);
     let secondStringArr = string2.split("").map(char => (Number(char.charCodeAt(0))));
-    let secondAsciiSum = secondStringArr.reduce(sumFunction, 0);
+    secondAsciiSum = secondStringArr.reduce(sumFunction, 0);
     console.log(secondAsciiSum);
+    if (firstAsciiSum === secondAsciiSum) {
+        return "Equal";
+    }
+    return "Not Equal";
 }
-console.log(comparingASCII("AB", "AC"));
+console.log(comparingASCII("AD", "BC"));
+console.log(comparingASCII("AD", "DD"));
+console.log(comparingASCII("gf", "FG"));
+console.log(comparingASCII("zz1", ""));
+console.log(comparingASCII("ZzZz", "ffPFF"));
 //# sourceMappingURL=index.js.map

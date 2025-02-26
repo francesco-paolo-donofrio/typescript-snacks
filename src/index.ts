@@ -3670,7 +3670,7 @@ function sumFunction(total : number, value : number) {
   };
   let firstAsciiSum : number = 0;
   let secondAsciiSum : number = 0;
-function comparingASCII(string1 : string, string2 : string): void{
+function comparingASCII(string1 : string, string2 : string): string{
     if (string1 === "null" || string1 === "" || /\d/.test(string1)){
         firstAsciiSum = 0;
     }
@@ -3683,15 +3683,14 @@ function comparingASCII(string1 : string, string2 : string): void{
     let secondStringArr : number[] = string2.split("").map(char => (Number(char.charCodeAt(0))));
     secondAsciiSum = secondStringArr.reduce(sumFunction, 0);
     console.log(secondAsciiSum);
-    // for (let i = 0; i <= firstStringArr.length - 1; i++){
-    //     let firstSum : number = firstStringArr[i].charCodeAt(0) + firstStringArr[i + 1].charCodeAt(0);
-    //     console.log(firstSum);
-    // }
-    // for (let y = 0; y <= secondStringArr.length - 1; y++){
-    //     let secondSum : number = firstStringArr[y].charCodeAt(0) + firstStringArr[y + 1].charCodeAt(0);
-    //     console.log(secondSum);
-    // }
-    // return firstSum + secondSum;
+    if (firstAsciiSum === secondAsciiSum){
+        return "Equal";
+    }
+    return "Not Equal";
 }    
 
-console.log(comparingASCII("AB", "AC"));
+console.log(comparingASCII("AD", "BC"));
+console.log(comparingASCII("AD", "DD"));
+console.log(comparingASCII("gf", "FG"));
+console.log(comparingASCII("zz1", ""));
+console.log(comparingASCII("ZzZz", "ffPFF"));
