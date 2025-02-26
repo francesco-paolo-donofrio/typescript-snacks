@@ -3668,11 +3668,18 @@ console.log(fibonacci(7));
 function sumFunction(total : number, value : number) {
     return total + value;
   };
-function comparingASCII(string1 : string, string2 : string):void{
-    let firstSum : number[] = string1.split("").map(char => char.charCodeAt(0) + char.charCodeAt(1));
-    console.log(firstSum);
-    let secondSum : string = string2;
-    console.log(secondSum);
+function comparingASCII(string1 : string, string2 : string): void{
+    let firstStringArr : string[] = string1.split("");
+    let secondStringArr : string[] = string2.split("");
+    for (let i = 0; i <= firstStringArr.length - 1; i++){
+        let firstSum : number = firstStringArr[i].charCodeAt(0) + firstStringArr[i + 1].charCodeAt(0);
+        console.log(firstSum);
+    }
+    for (let y = 0; y <= secondStringArr.length - 1; y++){
+        let secondSum : number = firstStringArr[y].charCodeAt(0) + firstStringArr[y + 1].charCodeAt(0);
+        console.log(secondSum);
+    }
+    return firstSum + secondSum;
 }    
 
-console.log(comparingASCII("AB", ""));
+console.log(comparingASCII("AB", "AC"));

@@ -1328,10 +1328,16 @@ function sumFunction(total, value) {
 }
 ;
 function comparingASCII(string1, string2) {
-    let firstSum = string1.split("").map(char => Number(char.charCodeAt(0)) + Number(char.charCodeAt(1)));
-    console.log(firstSum);
-    let secondSum = string2;
-    console.log(secondSum);
+    let firstStringArr = string1.split("");
+    let secondStringArr = string2.split("");
+    for (let i = 0; i <= firstStringArr.length - 1; i++) {
+        let firstSum = firstStringArr[i].charCodeAt(0) + firstStringArr[i + 1].charCodeAt(0);
+        console.log(firstSum);
+    }
+    for (let y = 0; y <= secondStringArr.length - 1; y++) {
+        let secondSum = firstStringArr[y].charCodeAt(0) + firstStringArr[y + 1].charCodeAt(0);
+        console.log(secondSum);
+    }
 }
-console.log(comparingASCII("AB", ""));
+console.log(comparingASCII("AB", "AC"));
 //# sourceMappingURL=index.js.map
