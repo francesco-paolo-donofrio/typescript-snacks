@@ -3668,18 +3668,30 @@ console.log(fibonacci(7));
 function sumFunction(total : number, value : number) {
     return total + value;
   };
+  let firstAsciiSum : number = 0;
+  let secondAsciiSum : number = 0;
 function comparingASCII(string1 : string, string2 : string): void{
-    let firstStringArr : string[] = string1.split("");
-    let secondStringArr : string[] = string2.split("");
-    for (let i = 0; i <= firstStringArr.length - 1; i++){
-        let firstSum : number = firstStringArr[i].charCodeAt(0) + firstStringArr[i + 1].charCodeAt(0);
-        console.log(firstSum);
+    if (string1 === "null" || string1 === "" || /\d/.test(string1)){
+        firstAsciiSum = 0;
     }
-    for (let y = 0; y <= secondStringArr.length - 1; y++){
-        let secondSum : number = firstStringArr[y].charCodeAt(0) + firstStringArr[y + 1].charCodeAt(0);
-        console.log(secondSum);
+    if (string2 === "null" || string2 === "" || /\d/.test(string2)){
+        secondAsciiSum = 0;
     }
-    return firstSum + secondSum;
+    let firstStringArr : number[] = string1.split("").map(char => (Number(char.charCodeAt(0))));
+    firstAsciiSum = firstStringArr.reduce(sumFunction, 0);
+    console.log(firstAsciiSum);
+    let secondStringArr : number[] = string2.split("").map(char => (Number(char.charCodeAt(0))));
+    secondAsciiSum = secondStringArr.reduce(sumFunction, 0);
+    console.log(secondAsciiSum);
+    // for (let i = 0; i <= firstStringArr.length - 1; i++){
+    //     let firstSum : number = firstStringArr[i].charCodeAt(0) + firstStringArr[i + 1].charCodeAt(0);
+    //     console.log(firstSum);
+    // }
+    // for (let y = 0; y <= secondStringArr.length - 1; y++){
+    //     let secondSum : number = firstStringArr[y].charCodeAt(0) + firstStringArr[y + 1].charCodeAt(0);
+    //     console.log(secondSum);
+    // }
+    // return firstSum + secondSum;
 }    
 
 console.log(comparingASCII("AB", "AC"));
