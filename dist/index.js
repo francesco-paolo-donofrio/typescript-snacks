@@ -1307,14 +1307,31 @@ function evaporator(content, evap_per_day, threshold) {
 function fibonacci(number) {
     let firstNumber = 0;
     let secondNumber = 1;
-    let result = 0;
-    for (let i = 0; i <= number; i++) {
-        result = firstNumber + secondNumber;
+    let result = [firstNumber, secondNumber];
+    if (number <= 0)
+        return [];
+    if (number === 1)
+        return [firstNumber];
+    for (let i = 2; i < number; i++) {
+        const nextNumber = firstNumber + secondNumber;
+        result.push(nextNumber);
         firstNumber = secondNumber;
-        secondNumber = result;
-        console.log(secondNumber);
+        secondNumber = nextNumber;
     }
-    return result.toString().split("").map(Number);
+    return result;
 }
 console.log(fibonacci(2));
+console.log(fibonacci(5));
+console.log(fibonacci(7));
+function sumFunction(total, value) {
+    return total + value;
+}
+;
+function comparingASCII(string1, string2) {
+    let firstSum = string1.split("").map(char => Number(char.charCodeAt(0)) + Number(char.charCodeAt(1)));
+    console.log(firstSum);
+    let secondSum = string2;
+    console.log(secondSum);
+}
+console.log(comparingASCII("AB", ""));
 //# sourceMappingURL=index.js.map

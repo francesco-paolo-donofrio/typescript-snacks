@@ -3647,3 +3647,32 @@ function fibonacci(number: number): number[] {
 console.log(fibonacci(2));  
 console.log(fibonacci(5));  
 console.log(fibonacci(7));  
+
+// Snack 136 
+
+// Compare two strings by comparing the sum of their values (ASCII character code).
+
+// For comparing treat all letters as UpperCase
+// null/NULL/Nil/None should be treated as empty strings
+// If the string contains other characters than letters, treat the whole string as it would be empty
+// Your method should return true, if the strings are equal and false if they are not equal.
+
+// Examples:
+// "AD", "BC"  -> equal
+// "AD", "DD"  -> not equal
+// "gf", "FG"  -> equal
+// "zz1", ""   -> equal (both are considered empty)
+// "ZzZz", "ffPFF" -> equal
+// "kl", "lz"  -> not equal
+// null, ""    -> equal
+function sumFunction(total : number, value : number) {
+    return total + value;
+  };
+function comparingASCII(string1 : string, string2 : string):void{
+    let firstSum : number[] = string1.split("").map(char => char.charCodeAt(0) + char.charCodeAt(1));
+    console.log(firstSum);
+    let secondSum : string = string2;
+    console.log(secondSum);
+}    
+
+console.log(comparingASCII("AB", ""));
