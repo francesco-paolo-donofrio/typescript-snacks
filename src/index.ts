@@ -3694,3 +3694,32 @@ console.log(comparingASCII("AD", "DD"));
 console.log(comparingASCII("gf", "FG"));
 console.log(comparingASCII("zz1", ""));
 console.log(comparingASCII("ZzZz", "ffPFF"));
+
+// Snack 137
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+// Example: (Input --> Output)
+
+// "Dermatoglyphics" --> true
+// "aba" --> false
+// "moOse" --> false (ignore letter case)
+
+function isAnIsogram(str : string): boolean{
+    let strArr : string[] = str.split("");
+    let charArr : string[] = [];
+    if (str === ""){
+        return true;
+    }
+    for (let i = 0; i <= strArr.length; i++){
+        charArr.push(strArr[i]);
+        if (charArr.includes(strArr[i])){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isAnIsogram("Dermatoglyphics"));
+console.log(isAnIsogram("aba"));
+console.log(isAnIsogram(""));

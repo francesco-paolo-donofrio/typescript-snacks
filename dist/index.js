@@ -1352,4 +1352,21 @@ console.log(comparingASCII("AD", "DD"));
 console.log(comparingASCII("gf", "FG"));
 console.log(comparingASCII("zz1", ""));
 console.log(comparingASCII("ZzZz", "ffPFF"));
+function isAnIsogram(str) {
+    let strArr = str.split("");
+    let charArr = [];
+    if (str === "") {
+        return true;
+    }
+    for (let i = 0; i <= strArr.length; i++) {
+        charArr.push(strArr[i]);
+        if (charArr.includes(strArr[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isAnIsogram("Dermatoglyphics"));
+console.log(isAnIsogram("aba"));
+console.log(isAnIsogram(""));
 //# sourceMappingURL=index.js.map
