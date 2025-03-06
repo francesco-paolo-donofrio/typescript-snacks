@@ -1368,12 +1368,19 @@ console.log(isAnIsogram("aba"));
 console.log(isAnIsogram("moOse"));
 console.log(isAnIsogram(""));
 function calculateGpsDistance(seconds, distance) {
-    seconds;
     let drivenDistance = [];
+    const constant = 3600;
+    let result = [];
     for (let i = 0; i < distance.length - 1; i++) {
         drivenDistance.push(distance[i + 1] - distance[i]);
     }
-    console.log(drivenDistance);
+    function calculateDeltaDistance(constant, drivenDistance) {
+        for (let i = 0; i <= drivenDistance.length - 1; i++) {
+            result.push(constant * drivenDistance[i] / seconds);
+        }
+        return result;
+    }
+    console.log(calculateDeltaDistance(constant, drivenDistance));
 }
 console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));
 //# sourceMappingURL=index.js.map
