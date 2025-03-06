@@ -3747,7 +3747,7 @@ console.log(isAnIsogram(""));
 
 // Happy coding!
 
-function calculateGpsDistance(seconds : number, distance : number[]): void{
+function calculateGpsDistance(seconds : number, distance : number[]): number{
     let drivenDistance : number[] = [];
     const constant : number = 3600;
     let firstResult : number[] = [];
@@ -3765,10 +3765,11 @@ function calculateGpsDistance(seconds : number, distance : number[]): void{
     }
     calculateDeltaDistance(constant, drivenDistance);
     
-    let floorResult : number[] = firstResult.map(el => el <= 0 ? 0 : Math.floor(el));
+    let floorResult : number[] = firstResult.map(el => el <= 1 ? 0 : Math.floor(el));
     let maxInteger : number = Math.max(... floorResult);
 
     console.log(maxInteger);
+    return maxInteger;
 }
 
 console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));

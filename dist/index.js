@@ -1381,9 +1381,11 @@ function calculateGpsDistance(seconds, distance) {
         return firstResult;
     }
     calculateDeltaDistance(constant, drivenDistance);
-    let floorResult = firstResult.map(el => el <= 0 ? 0 : Math.floor(el));
+    let floorResult = firstResult.map(el => el <= 1 ? 0 : Math.floor(el));
     let maxInteger = Math.max(...floorResult);
     console.log(maxInteger);
+    return maxInteger;
 }
 console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));
+console.log(calculateGpsDistance);
 //# sourceMappingURL=index.js.map
