@@ -3746,3 +3746,18 @@ console.log(isAnIsogram(""));
 //  (3600 * delta_distance) / s.
 
 // Happy coding!
+
+function calculateGpsDistance(seconds : number, distance : number[]): void{
+    seconds;
+    let drivenDistance : number[] = [];
+    for (let i = 0; i < distance.length - 1; i++){
+        drivenDistance.push(distance[i + 1] - distance[i]);
+    }
+    console.log(drivenDistance);
+    // function calculateDeltaDistance(constant : number, deltaDistance : number): number{
+    //     constant = 3600;
+
+    // }
+}
+
+console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));

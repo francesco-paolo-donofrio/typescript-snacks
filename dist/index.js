@@ -1367,4 +1367,13 @@ console.log(isAnIsogram("Dermatoglyphics"));
 console.log(isAnIsogram("aba"));
 console.log(isAnIsogram("moOse"));
 console.log(isAnIsogram(""));
+function calculateGpsDistance(seconds, distance) {
+    seconds;
+    let drivenDistance = [];
+    for (let i = 0; i < distance.length - 1; i++) {
+        drivenDistance.push(distance[i + 1] - distance[i]);
+    }
+    console.log(drivenDistance);
+}
+console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));
 //# sourceMappingURL=index.js.map
