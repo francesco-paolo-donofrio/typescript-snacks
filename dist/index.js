@@ -1370,17 +1370,20 @@ console.log(isAnIsogram(""));
 function calculateGpsDistance(seconds, distance) {
     let drivenDistance = [];
     const constant = 3600;
-    let result = [];
+    let firstResult = [];
     for (let i = 0; i < distance.length - 1; i++) {
         drivenDistance.push(distance[i + 1] - distance[i]);
     }
     function calculateDeltaDistance(constant, drivenDistance) {
         for (let i = 0; i <= drivenDistance.length - 1; i++) {
-            result.push(constant * drivenDistance[i] / seconds);
+            firstResult.push(constant * drivenDistance[i] / seconds);
         }
-        return result;
+        return firstResult;
     }
-    console.log(calculateDeltaDistance(constant, drivenDistance));
+    calculateDeltaDistance(constant, drivenDistance);
+    let floorResult = firstResult.map(el => el <= 0 ? 0 : Math.floor(el));
+    let maxInteger = Math.max(...floorResult);
+    console.log(maxInteger);
 }
 console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));
 //# sourceMappingURL=index.js.map
