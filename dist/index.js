@@ -1387,5 +1387,23 @@ function calculateGpsDistance(seconds, distance) {
     return maxInteger;
 }
 console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));
-console.log(calculateGpsDistance);
+function multiplesOf3(number) {
+    let arrNumbers = [];
+    let somma = 0;
+    if (number < 0) {
+        return 0;
+    }
+    for (let i = number - 1; i > 0; i--) {
+        if (i % 5 === 0) {
+            arrNumbers.push(i);
+            continue;
+        }
+        if (i % 3 === 0) {
+            arrNumbers.push(i);
+        }
+    }
+    somma = arrNumbers.reduce((acc, num) => acc + num, 0);
+    return somma;
+}
+console.log(multiplesOf3(172));
 //# sourceMappingURL=index.js.map

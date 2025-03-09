@@ -3773,3 +3773,40 @@ function calculateGpsDistance(seconds : number, distance : number[]): number{
 }
 
 console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]));
+
+// Snack 139
+
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Additionally, if the number is negative, return 0.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once.
+
+function multiplesOf3(number : number): void | number {
+    let arrNumbers : number[] = [];
+    let somma : number = 0;
+
+    if (number < 0){
+        return 0;
+    }
+
+    for (let i = number - 1; i > 0; i--){
+        
+        if (i % 5 === 0){
+            arrNumbers.push(i);
+            continue;
+        }
+        if (i % 3 === 0){
+            arrNumbers.push(i);
+        }
+    }
+
+    somma = arrNumbers.reduce((acc, num) => acc + num, 0);
+    return somma;
+}
+
+console.log(multiplesOf3(172));
+
+// 172
