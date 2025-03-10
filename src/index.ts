@@ -3823,8 +3823,12 @@ export function catMouse(x: string): string {
     let mouse : string = "m";
     let stringArray : string[] = x.split(" ");
     for (let i = 0; i < stringArray.length; i++){
-        if (stringArray[i] === "C"){
-            for (let y =
+        if (stringArray[i] === cat){
+            if (stringArray[i + 1] && (stringArray[i + 2] && (stringArray[i + 3] === "." && stringArray[i + 4] === mouse ))){
+                return "Caught";
+            }
         }
     }
+    return "Escaped";
   }
+
