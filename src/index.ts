@@ -1190,7 +1190,7 @@ replaceDots("one.two.three.four.five");
 // "This is another test" --> "This is rehtona test"
 
 function reverseWord(str: string): string {
-    return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join() : word)).join(" ");
+    return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join("") : word)).join(" ");
 }
 
 reverseWord("Ciao sono Massimo Decimo");
@@ -3875,24 +3875,24 @@ export function catDogMouse(x: string, j: number): string {
     let arrayOfChar: string[] = x.split("");
     let mouseInFront: boolean = arrayOfChar.indexOf("C") < arrayOfChar.indexOf("m");
     let dotArray2: string[] = [];
-    let distance : number = 0;
+    let distance: number = 0;
 
-    
 
-    if (!arrayOfChar.includes("D") && !arrayOfChar.includes("C") && !arrayOfChar.includes("m")){
+
+    if (!arrayOfChar.includes("D") && !arrayOfChar.includes("C") && !arrayOfChar.includes("m")) {
         return "boring without all three";
     }
     if (mouseInFront) {
-        
+
         //Check misurazione distanza C e m
         for (let i = arrayOfChar.indexOf("C"); i < arrayOfChar.length; i++) {
-            if (arrayOfChar[i] === "m"){
+            if (arrayOfChar[i] === "m") {
                 break;
             }
             distance++;
         }
 
-        if (distance > j){
+        if (distance > j) {
             console.log("Salto troppo corto");
             return "Escaped!";
         }
@@ -3903,9 +3903,9 @@ export function catDogMouse(x: string, j: number): string {
 
             if (arrayOfChar.indexOf("C"))
 
-            if (dotArray2.length > j) {
-                break;
-            }
+                if (dotArray2.length > j) {
+                    break;
+                }
 
             if (charC === ".") {
                 dotArray2.push(charC);
@@ -3925,13 +3925,13 @@ export function catDogMouse(x: string, j: number): string {
 
         //Check misurazione distanza C e m
         for (let i = arrayOfChar.indexOf("C"); i >= 0; i--) {
-            if (arrayOfChar[i] === "m"){
+            if (arrayOfChar[i] === "m") {
                 break;
             }
             distance++;
         }
 
-        if (distance > j){
+        if (distance > j) {
             console.log("Salto troppo corto");
             return "Escaped!";
         }
@@ -3963,3 +3963,35 @@ export function catDogMouse(x: string, j: number): string {
 
 console.log(catDogMouse(".......m.....D................C...", 20));
 
+console.log(reverseWord("Hey fellow warriors"));
+
+// Snack 142
+
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+// Examples
+// [7, 1]  =>  [1, 7]
+// [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+// [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+function sortArray(array : number[]) {
+    let arrayOfOdd: number[] = [];
+    for (let i = 0; i < array.length; i++){
+        if (array[i] % 2 != 0) {
+            arrayOfOdd.push(array[i]);
+        }
+    }
+
+    arrayOfOdd.sort(function(a, b){return a - b});
+    console.log(arrayOfOdd);
+
+    for (let i = 0; i < array.length; i++){
+        if (array[i] % 2 != 0) {
+            array[i] = arrayOfOdd[0];
+            arrayOfOd
+        }
+    }
+    console.log(array);
+}
+
+console.log(sortArray([5, 8, 6, 3, 4]));

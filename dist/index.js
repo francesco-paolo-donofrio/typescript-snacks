@@ -517,7 +517,7 @@ replaceDots("one.two.three");
 replaceDots("one.two.three.four");
 replaceDots("one.two.three.four.five");
 function reverseWord(str) {
-    return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join() : word)).join(" ");
+    return str.split(" ").map(word => (word.length >= 5 ? word.split("").reverse().join("") : word)).join(" ");
 }
 reverseWord("Ciao sono Massimo Decimo");
 function encryptThis(str) {
@@ -1453,4 +1453,23 @@ function catDogMouse(x, j) {
     return "Escaped!";
 }
 console.log(catDogMouse(".......m.....D................C...", 20));
+console.log(reverseWord("Hey fellow warriors"));
+function sortArray(array) {
+    let arrayOfOdd = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 != 0) {
+            arrayOfOdd.push(array[i]);
+        }
+    }
+    arrayOfOdd.sort(function (a, b) { return a - b; });
+    console.log(arrayOfOdd);
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 != 0) {
+            array[i] = arrayOfOdd[0];
+            array;
+        }
+    }
+    console.log(array);
+}
+console.log(sortArray([5, 8, 6, 3, 4]));
 //# sourceMappingURL=index.js.map
