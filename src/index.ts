@@ -3844,9 +3844,9 @@ export function catMouse(x: string): string {
     return "Escaped";
 }
 
-console.log(catMouse("C.....m"));
-console.log(catMouse("C...m"));
-console.log(catMouse("C.m"));
+// console.log(catMouse("C.....m"));
+// console.log(catMouse("C...m"));
+// console.log(catMouse("C.m"));
 
 // Snack 141
 
@@ -3875,16 +3875,75 @@ export function catDogMouse(x: string, j: number): string {
     let arrayOfChar: string[] = x.split("");
     let mouseInFront: boolean = arrayOfChar.indexOf("C") < arrayOfChar.indexOf("m");
     let dotArray2: string[] = [];
+    let distance : number = 0;
 
+    
+
+    if (!arrayOfChar.includes("D") && !arrayOfChar.includes("C") && !arrayOfChar.includes("m")){
+        return "boring without all three";
+    }
     if (mouseInFront) {
+        
+        //Check misurazione distanza C e m
+        for (let i = arrayOfChar.indexOf("C"); i < arrayOfChar.length; i++) {
+            if (arrayOfChar[i] === "m"){
+                break;
+            }
+            distance++;
+        }
+
+        if (distance > j){
+            console.log("Salto troppo corto");
+            return "Escaped!";
+        }
+
+
         for (let i = arrayOfChar.indexOf("C"); i < arrayOfChar.length; i++) {
             let charC: string = arrayOfChar[i];
+
+            if (arrayOfChar.indexOf("C"))
 
             if (dotArray2.length > j) {
                 break;
             }
 
             if (charC === ".") {
+                dotArray2.push(charC);
+                console.log(dotArray2.length)
+            }
+
+
+            if (charC === "m") {
+                return "Caught!"
+            }
+
+            if (charC === "D") {
+                return "Protected!"
+            }
+        }
+    } else {
+
+        //Check misurazione distanza C e m
+        for (let i = arrayOfChar.indexOf("C"); i >= 0; i--) {
+            if (arrayOfChar[i] === "m"){
+                break;
+            }
+            distance++;
+        }
+
+        if (distance > j){
+            console.log("Salto troppo corto");
+            return "Escaped!";
+        }
+
+        for (let i = arrayOfChar.indexOf("C"); i >= 0; i--) {
+            let charC: string = arrayOfChar[i];
+
+            if (dotArray2.length > j) {
+                break;
+            }
+
+            if (charC === "." && dotArray2.length < j) {
                 dotArray2.push(charC);
             }
 
@@ -3896,22 +3955,11 @@ export function catDogMouse(x: string, j: number): string {
                 return "Protected!"
             }
         }
-
-        console.log(dotArray2);
-        console.log(dotArray2.length);
-        // } else {
-        //     for (let y = arrayOfChar.indexOf("C"); y >= 0; y--){
-        //         let charC : string = arrayOfChar[y];
-        //     }
-        // }
-        // if (dotArray2.length <= j){
-        //     return "Caught!"
     }
-    // console.log(dotArray2);
+
 
     return "Escaped!"
 }
 
-console.log(catDogMouse("..C.....m...D", 5));
-
+console.log(catDogMouse(".......m.....D................C...", 20));
 

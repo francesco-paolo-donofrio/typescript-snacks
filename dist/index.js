@@ -1386,20 +1386,60 @@ function catMouse(x) {
     }
     return "Escaped";
 }
-console.log(catMouse("C.....m"));
-console.log(catMouse("C...m"));
-console.log(catMouse("C.m"));
 function catDogMouse(x, j) {
     let arrayOfChar = x.split("");
     let mouseInFront = arrayOfChar.indexOf("C") < arrayOfChar.indexOf("m");
     let dotArray2 = [];
+    let distance = 0;
+    if (!arrayOfChar.includes("D") && !arrayOfChar.includes("C") && !arrayOfChar.includes("m")) {
+        return "boring without all three";
+    }
     if (mouseInFront) {
         for (let i = arrayOfChar.indexOf("C"); i < arrayOfChar.length; i++) {
+            if (arrayOfChar[i] === "m") {
+                break;
+            }
+            distance++;
+        }
+        if (distance > j) {
+            console.log("Salto troppo corto");
+            return "Escaped!";
+        }
+        for (let i = arrayOfChar.indexOf("C"); i < arrayOfChar.length; i++) {
+            let charC = arrayOfChar[i];
+            if (arrayOfChar.indexOf("C"))
+                if (dotArray2.length > j) {
+                    break;
+                }
+            if (charC === ".") {
+                dotArray2.push(charC);
+                console.log(dotArray2.length);
+            }
+            if (charC === "m") {
+                return "Caught!";
+            }
+            if (charC === "D") {
+                return "Protected!";
+            }
+        }
+    }
+    else {
+        for (let i = arrayOfChar.indexOf("C"); i >= 0; i--) {
+            if (arrayOfChar[i] === "m") {
+                break;
+            }
+            distance++;
+        }
+        if (distance > j) {
+            console.log("Salto troppo corto");
+            return "Escaped!";
+        }
+        for (let i = arrayOfChar.indexOf("C"); i >= 0; i--) {
             let charC = arrayOfChar[i];
             if (dotArray2.length > j) {
                 break;
             }
-            if (charC === ".") {
+            if (charC === "." && dotArray2.length < j) {
                 dotArray2.push(charC);
             }
             if (charC === "m") {
@@ -1409,10 +1449,8 @@ function catDogMouse(x, j) {
                 return "Protected!";
             }
         }
-        console.log(dotArray2);
-        console.log(dotArray2.length);
     }
     return "Escaped!";
 }
-console.log(catDogMouse("..C.....m...D", 5));
+console.log(catDogMouse(".......m.....D................C...", 20));
 //# sourceMappingURL=index.js.map
