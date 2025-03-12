@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.catMouse = catMouse;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -125,28 +127,6 @@ function reverseSeq(n) {
 reverseSeq(5);
 reverseSeq(3);
 reverseSeq(1);
-function removeVowels(input) {
-    return input.replace(/[aeiouAEIOU]/g, '');
-}
-;
-const myString = "This website is for losers LOL!";
-removeVowels("This website is for losers LOL!");
-function playingBanjo(name) {
-    if (name.charAt(0).toLowerCase() === "r") {
-        return `${name} plays banjo`;
-    }
-    else {
-        return `${name} does not play banjo`;
-    }
-}
-const name1 = "Francesco";
-const name2 = "roberto";
-const name3 = "Matteo";
-const name4 = "Rapunzel";
-const result1 = playingBanjo(name1);
-const result2 = playingBanjo(name2);
-const result3 = playingBanjo(name3);
-const result4 = playingBanjo(name4);
 function moltiplicationNumber(number) {
     if (number % 2 === 0) {
         return number * 8;
@@ -155,6 +135,7 @@ function moltiplicationNumber(number) {
         return number * 9;
     }
 }
+console.log(moltiplicationNumber);
 function fixTheMeerkat(arr) {
     return arr.reverse();
 }
@@ -211,6 +192,7 @@ function position(letter) {
         return "Please insert a valid lowercase letter";
     }
 }
+console.log(position);
 function ageForDrink(num) {
     if (num <= 14) {
         return `${num} drink toddy`;
@@ -456,6 +438,7 @@ class Lamp {
         }
     }
 }
+console.log(Lamp);
 function expressionsMatter(a, b, c) {
     return Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c), a + b * c, a * b + c);
 }
@@ -1174,6 +1157,7 @@ function meanAndConcatenate(arr) {
 const lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0'];
 const result = meanAndConcatenate(lst);
 meanAndConcatenate(lst);
+console.log(result);
 function itIsString(str) {
     return str === str.toUpperCase();
 }
@@ -1234,16 +1218,6 @@ function containAllRots(strng, arr) {
 }
 console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
 console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]));
-let str = "";
-function stringTemplate(userValue) {
-    let fixValue = 10;
-    return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
-}
-function sortingArray(numArr) {
-    return numArr.sort(function (a, b) { return a - b; });
-}
-console.log(sortingArray([22, 77, 11, 1, 0, 100]));
-console.log(stringTemplate(10));
 function squaredString(s1, s2) {
     let result = "";
     let s1Lines = s1.split("\n");
@@ -1261,6 +1235,7 @@ function squaredString(s1, s2) {
     }
     return result;
 }
+console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
 function getRidOfZero(number) {
     let streuza = number.toString();
     if (streuza === "0") {
@@ -1284,6 +1259,7 @@ function getRidOfZero(number) {
         return parseInt(streuza);
     }
 }
+console.log(getRidOfZero(2));
 function returnCentury(numb) {
     let arrOfNumb = numb.toString().split("");
     while (arrOfNumb[1] === arrOfNumb[1]) {
@@ -1294,16 +1270,6 @@ function returnCentury(numb) {
 console.log(returnCentury(1705));
 console.log(returnCentury(0));
 console.log(returnCentury(1900));
-function evaporator(content, evap_per_day, threshold) {
-    let initialContent = content;
-    let currentContent = content;
-    let durationDays = 0;
-    while (currentContent > initialContent * (threshold / 100)) {
-        currentContent -= currentContent * (evap_per_day / 100);
-        durationDays++;
-    }
-    return durationDays;
-}
 function fibonacci(number) {
     let firstNumber = 0;
     let secondNumber = 1;
@@ -1406,4 +1372,20 @@ function multiplesOf3(number) {
     return somma;
 }
 console.log(multiplesOf3(172));
+function catMouse(x) {
+    let dotArray = [];
+    let stringArray = x.split("");
+    for (let i = 0; i < stringArray.length; i++) {
+        if (stringArray[i] === ".") {
+            dotArray.push(stringArray[i]);
+        }
+    }
+    if (dotArray.length <= 3) {
+        return "Caught";
+    }
+    return "Escaped";
+}
+console.log(catMouse("C.....m"));
+console.log(catMouse("C...m"));
+console.log(catMouse("C.m"));
 //# sourceMappingURL=index.js.map

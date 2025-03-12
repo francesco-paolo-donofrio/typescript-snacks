@@ -3652,9 +3652,9 @@ function fibonacci(number: number): number[] {
     return result;
 }
 
-console.log(fibonacci(2));  
-console.log(fibonacci(5));  
-console.log(fibonacci(7));  
+console.log(fibonacci(2));
+console.log(fibonacci(5));
+console.log(fibonacci(7));
 
 // Snack 136 
 
@@ -3673,29 +3673,29 @@ console.log(fibonacci(7));
 // "ZzZz", "ffPFF" -> equal
 // "kl", "lz"  -> not equal
 // null, ""    -> equal
-function sumFunction(total : number, value : number) {
+function sumFunction(total: number, value: number) {
     return total + value;
-  };
-  let firstAsciiSum : number = 0;
-  let secondAsciiSum : number = 0;
-function comparingASCII(string1 : string, string2 : string): string{
-    if (string1 === "null" || string1 === "" || /\d/.test(string1)){
+};
+let firstAsciiSum: number = 0;
+let secondAsciiSum: number = 0;
+function comparingASCII(string1: string, string2: string): string {
+    if (string1 === "null" || string1 === "" || /\d/.test(string1)) {
         firstAsciiSum = 0;
     }
-    if (string2 === "null" || string2 === "" || /\d/.test(string2)){
+    if (string2 === "null" || string2 === "" || /\d/.test(string2)) {
         secondAsciiSum = 0;
     }
-    let firstStringArr : number[] = string1.split("").map(char => (Number(char.charCodeAt(0))));
+    let firstStringArr: number[] = string1.split("").map(char => (Number(char.charCodeAt(0))));
     firstAsciiSum = firstStringArr.reduce(sumFunction, 0);
     console.log(firstAsciiSum);
-    let secondStringArr : number[] = string2.split("").map(char => (Number(char.charCodeAt(0))));
+    let secondStringArr: number[] = string2.split("").map(char => (Number(char.charCodeAt(0))));
     secondAsciiSum = secondStringArr.reduce(sumFunction, 0);
     console.log(secondAsciiSum);
-    if (firstAsciiSum === secondAsciiSum){
+    if (firstAsciiSum === secondAsciiSum) {
         return "Equal";
     }
     return "Not Equal";
-}    
+}
 
 console.log(comparingASCII("AD", "BC"));
 console.log(comparingASCII("AD", "DD"));
@@ -3713,12 +3713,12 @@ console.log(comparingASCII("ZzZz", "ffPFF"));
 // "aba" --> false
 // "moOse" --> false (ignore letter case)
 
-function isAnIsogram(str : string): boolean{
+function isAnIsogram(str: string): boolean {
     str = str.toLowerCase();
     const seen = new Set(); //Con il set riusciamo a verificare la presenza di doppioni quasi instantaneamente
-    
-    for (const char of str){
-        if (seen.has(char)){
+
+    for (const char of str) {
+        if (seen.has(char)) {
             return false;
         }
         seen.add(char);
@@ -3754,26 +3754,26 @@ console.log(isAnIsogram(""));
 
 // Happy coding!
 
-function calculateGpsDistance(seconds : number, distance : number[]): number{
-    let drivenDistance : number[] = [];
-    const constant : number = 3600;
-    let firstResult : number[] = [];
+function calculateGpsDistance(seconds: number, distance: number[]): number {
+    let drivenDistance: number[] = [];
+    const constant: number = 3600;
+    let firstResult: number[] = [];
 
-    for (let i = 0; i < distance.length - 1; i++){
+    for (let i = 0; i < distance.length - 1; i++) {
         drivenDistance.push(distance[i + 1] - distance[i]);
     }
 
-     
-    function calculateDeltaDistance(constant : number, drivenDistance : number[]): number[]{
-        for (let i = 0; i <= drivenDistance.length - 1; i++){
+
+    function calculateDeltaDistance(constant: number, drivenDistance: number[]): number[] {
+        for (let i = 0; i <= drivenDistance.length - 1; i++) {
             firstResult.push(constant * drivenDistance[i] / seconds);
-        } 
+        }
         return firstResult;
     }
     calculateDeltaDistance(constant, drivenDistance);
-    
-    let floorResult : number[] = firstResult.map(el => el <= 1 ? 0 : Math.floor(el));
-    let maxInteger : number = Math.max(... floorResult);
+
+    let floorResult: number[] = firstResult.map(el => el <= 1 ? 0 : Math.floor(el));
+    let maxInteger: number = Math.max(...floorResult);
 
     console.log(maxInteger);
     return maxInteger;
@@ -3791,21 +3791,21 @@ console.log(calculateGpsDistance(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75
 
 // Note: If the number is a multiple of both 3 and 5, only count it once.
 
-function multiplesOf3(number : number): void | number {
-    let arrNumbers : number[] = [];
-    let somma : number = 0;
+function multiplesOf3(number: number): void | number {
+    let arrNumbers: number[] = [];
+    let somma: number = 0;
 
-    if (number < 0){
+    if (number < 0) {
         return 0;
     }
 
-    for (let i = number - 1; i > 0; i--){
-        
-        if (i % 5 === 0){
+    for (let i = number - 1; i > 0; i--) {
+
+        if (i % 5 === 0) {
             arrNumbers.push(i);
             continue;
         }
-        if (i % 3 === 0){
+        if (i % 3 === 0) {
             arrNumbers.push(i);
         }
     }
@@ -3827,15 +3827,23 @@ console.log(multiplesOf3(172));
 // "C...m" returns "Caught!" <-- as there are three characters between the two, the cat can jump.
 
 export function catMouse(x: string): string {
-    // let cat : string = "C";
-    // let mouse : string = "m";
-    let dotArray : string[] = [];
-    let stringArray : string[] = x.split(" ");
-    for (let i = 0; i < stringArray.length; i++){
-        dotArray.push(".");
-    }
-    console.log(dotArray);
-    return "Escaped";
-  }
 
-  console.log(catMouse("C.....m"));
+    let dotArray: string[] = [];
+    let stringArray: string[] = x.split("");
+
+    for (let i = 0; i < stringArray.length; i++) {
+        if (stringArray[i] === ".") {
+            dotArray.push(stringArray[i]);
+        }
+    }
+
+    if (dotArray.length <= 3) {
+        return "Caught";
+    }
+
+    return "Escaped";
+}
+
+console.log(catMouse("C.....m"));
+console.log(catMouse("C...m"));
+console.log(catMouse("C.m"));
