@@ -3974,24 +3974,25 @@ console.log(reverseWord("Hey fellow warriors"));
 // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
 // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
-function sortArray(array : number[]) {
-    let arrayOfOdd: number[] = [];
+function sortArray(array : number[]) : number[] {
+    let arrayOfOdd : any = [];
+
     for (let i = 0; i < array.length; i++){
         if (array[i] % 2 != 0) {
             arrayOfOdd.push(array[i]);
         }
     }
 
-    arrayOfOdd.sort(function(a, b){return a - b});
-    console.log(arrayOfOdd);
+    arrayOfOdd.sort(function(b : number, a : number){return a - b});
 
+    
     for (let i = 0; i < array.length; i++){
         if (array[i] % 2 != 0) {
-            array[i] = arrayOfOdd[0];
-            arrayOfOd
+            array[i] = arrayOfOdd.pop();
         }
     }
-    console.log(array);
+    return array;
 }
 
 console.log(sortArray([5, 8, 6, 3, 4]));
+console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));

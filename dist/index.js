@@ -1461,15 +1461,14 @@ function sortArray(array) {
             arrayOfOdd.push(array[i]);
         }
     }
-    arrayOfOdd.sort(function (a, b) { return a - b; });
-    console.log(arrayOfOdd);
+    arrayOfOdd.sort(function (b, a) { return a - b; });
     for (let i = 0; i < array.length; i++) {
         if (array[i] % 2 != 0) {
-            array[i] = arrayOfOdd[0];
-            array;
+            array[i] = arrayOfOdd.pop();
         }
     }
-    console.log(array);
+    return array;
 }
 console.log(sortArray([5, 8, 6, 3, 4]));
+console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
 //# sourceMappingURL=index.js.map
