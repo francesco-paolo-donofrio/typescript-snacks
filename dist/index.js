@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.catMouse = catMouse;
+exports.catDogMouse = catDogMouse;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1388,4 +1389,30 @@ function catMouse(x) {
 console.log(catMouse("C.....m"));
 console.log(catMouse("C...m"));
 console.log(catMouse("C.m"));
+function catDogMouse(x, j) {
+    let arrayOfChar = x.split("");
+    let mouseInFront = arrayOfChar.indexOf("C") < arrayOfChar.indexOf("m");
+    let dotArray2 = [];
+    if (mouseInFront) {
+        for (let i = arrayOfChar.indexOf("C"); i < arrayOfChar.length; i++) {
+            let charC = arrayOfChar[i];
+            if (dotArray2.length > j) {
+                break;
+            }
+            if (charC === ".") {
+                dotArray2.push(charC);
+            }
+            if (charC === "m") {
+                return "Caught!";
+            }
+            if (charC === "D") {
+                return "Protected!";
+            }
+        }
+        console.log(dotArray2);
+        console.log(dotArray2.length);
+    }
+    return "Escaped!";
+}
+console.log(catDogMouse("..C.....m...D", 5));
 //# sourceMappingURL=index.js.map

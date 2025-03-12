@@ -3847,3 +3847,71 @@ export function catMouse(x: string): string {
 console.log(catMouse("C.....m"));
 console.log(catMouse("C...m"));
 console.log(catMouse("C.m"));
+
+// Snack 141
+
+// You will be given a string (x) featuring a cat 'C', a dog 'D' and a mouse 'm'. The rest of the string will be made up of '.'.
+
+// You need to find out if the cat can catch the mouse from its current position. The cat can jump at most (j) characters, and cannot jump over the dog.
+
+// So:
+
+// if j = 5:
+
+// ..C.....m...D returns 'Caught!' <-- not more than j characters between the cat and the mouse
+
+// .....C............m......D returns 'Escaped!' <-- as there are more than j characters between the two, the cat cannot jump far enough
+
+// if j = 10:
+
+// ...m.........C...D returns 'Caught!' <-- Cat can jump far enough and jump is not over dog
+
+// ...m....D....C....... returns 'Protected!' <-- Cat can jump far enough, but dog is in the way, protecting the mouse
+
+// Finally, if not all three animals are present, return 'boring without all three'
+
+export function catDogMouse(x: string, j: number): string {
+
+    let arrayOfChar: string[] = x.split("");
+    let mouseInFront: boolean = arrayOfChar.indexOf("C") < arrayOfChar.indexOf("m");
+    let dotArray2: string[] = [];
+
+    if (mouseInFront) {
+        for (let i = arrayOfChar.indexOf("C"); i < arrayOfChar.length; i++) {
+            let charC: string = arrayOfChar[i];
+
+            if (dotArray2.length > j) {
+                break;
+            }
+
+            if (charC === ".") {
+                dotArray2.push(charC);
+            }
+
+            if (charC === "m") {
+                return "Caught!"
+            }
+
+            if (charC === "D") {
+                return "Protected!"
+            }
+        }
+
+        console.log(dotArray2);
+        console.log(dotArray2.length);
+        // } else {
+        //     for (let y = arrayOfChar.indexOf("C"); y >= 0; y--){
+        //         let charC : string = arrayOfChar[y];
+        //     }
+        // }
+        // if (dotArray2.length <= j){
+        //     return "Caught!"
+    }
+    // console.log(dotArray2);
+
+    return "Escaped!"
+}
+
+console.log(catDogMouse("..C.....m...D", 5));
+
+
