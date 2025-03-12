@@ -282,12 +282,12 @@ reverseSeq(1);
 
 // Note: for this kata y isn't considered a vowel.
 
-function removeVowels(input: string): string {
-    return input.replace(/[aeiouAEIOU]/g, '');
-};
+// function removeVowels(input: string): string {
+//     return input.replace(/[aeiouAEIOU]/g, '');
+// };
 
-const myString: string = "This website is for losers LOL!";
-removeVowels("This website is for losers LOL!");
+// const myString: string = "This website is for losers LOL!";
+// removeVowels("This website is for losers LOL!");
 
 // const appElement = document.getElementById("app");
 // if (appElement){
@@ -308,22 +308,22 @@ removeVowels("This website is for losers LOL!");
 // name + " does not play banjo"
 // Names given are always valid strings.
 
-function playingBanjo(name: string): string {
-    if (name.charAt(0).toLowerCase() === "r") {
-        return `${name} plays banjo`;
-    } else {
-        return `${name} does not play banjo`;
-    }
-}
+// function playingBanjo(name: string): string {
+//     if (name.charAt(0).toLowerCase() === "r") {
+//         return `${name} plays banjo`;
+//     } else {
+//         return `${name} does not play banjo`;
+//     }
+// }
 
-const name1 = "Francesco";
-const name2 = "roberto";
-const name3 = "Matteo";
-const name4 = "Rapunzel";
-const result1 = playingBanjo(name1);
-const result2 = playingBanjo(name2);
-const result3 = playingBanjo(name3);
-const result4 = playingBanjo(name4);
+// const name1 = "Francesco";
+// const name2 = "roberto";
+// const name3 = "Matteo";
+// const name4 = "Rapunzel";
+// const result1 = playingBanjo(name1);
+// const result2 = playingBanjo(name2);
+// const result3 = playingBanjo(name3);
+// const result4 = playingBanjo(name4);
 
 
 // if (appElement){
@@ -342,6 +342,8 @@ function moltiplicationNumber(number: number): number {
         return number * 9
     }
 }
+
+console.log(moltiplicationNumber);
 
 // if (appElement){
 //     appElement.innerHTML = `<p>${moltiplicationNumber(8)} & ${moltiplicationNumber(9)}`;
@@ -463,6 +465,8 @@ function position(letter: string): number | string {
         return "Please insert a valid lowercase letter";
     }
 }
+
+console.log(position)
 
 // Snack 22
 
@@ -983,6 +987,8 @@ class Lamp {
         }
     }
 }
+
+console.log(Lamp);
 
 // Snack 43
 
@@ -2862,7 +2868,7 @@ const lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1
 const result = meanAndConcatenate(lst);
 
 meanAndConcatenate(lst);
-
+console.log(result);
 // Snack 113
 
 // Is the string uppercase?
@@ -3072,26 +3078,26 @@ console.log(containAllRots("Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy
 // Snack 119
 // Oh no! Timmy hasn't followed instructions very carefully and forgot how to use the new String Template feature, Help Timmy with his string template so it works as he expects!
 
-let str = "";
-function stringTemplate(userValue: number): string {
-    let fixValue = 10;
-    return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
-}
+// function stringTemplate(userValue: number): string {
+//     let str = "";
+//     let fixValue = 10;
+//     return str = `This is a string template, you can add a ${userValue} and moltiplicate it with ${fixValue}, and the result will be ${(userValue * fixValue)}`;
+// }
 
 
 // Snack 120
 // Failed Sort - Bug Fixing #4
 // Oh no, Timmy's Sort doesn't seem to be working? Your task is to fix the sortArray function to sort all numbers in ascending order
 
-function sortingArray(numArr: number[]): number[] {
-    return numArr.sort(function (a: number, b: number): any { return a - b });
-}
+// function sortingArray(numArr: number[]): number[] {
+//     return numArr.sort(function (a: number, b: number): any { return a - b });
+// }
 
-console.log(sortingArray([22, 77, 11, 1, 0, 100]));
+// console.log(sortingArray([22, 77, 11, 1, 0, 100]));
 
 
 
-console.log(stringTemplate(10));
+// console.log(stringTemplate(10));
 
 // Snack 121
 // Switch/Case - Bug Fixing #6
@@ -3508,7 +3514,7 @@ function squaredString(s1: string, s2: string): string {
     return result;
 }
 
-// console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
+console.log(squaredString("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
 
 // Snack 133
 
@@ -3551,6 +3557,8 @@ function getRidOfZero(number: number): number {
         return parseInt(streuza);
     }
 }
+
+console.log(getRidOfZero(2));
 
 
 // // Snack 134
@@ -3595,19 +3603,19 @@ console.log(returnCentury(1900));
 // Note:
 // Content is in fact not necessary in the body of the function "evaporator", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.
 
-function evaporator(content: number, evap_per_day: number, threshold: number): number {
-    let initialContent = content; // Store the initial content to calculate the threshold
-    let currentContent = content; // This will decrease as the gas evaporates
-    let durationDays = 0;
+// function evaporator(content: number, evap_per_day: number, threshold: number): number {
+//     let initialContent = content; // Store the initial content to calculate the threshold
+//     let currentContent = content; // This will decrease as the gas evaporates
+//     let durationDays = 0;
 
-    // Continue until the content drops below the threshold percentage of the initial content
-    while (currentContent > initialContent * (threshold / 100)) {
-        currentContent -= currentContent * (evap_per_day / 100); // Reduce content by the given daily evaporation rate
-        durationDays++; // Increment the day counter
-    }
+//     // Continue until the content drops below the threshold percentage of the initial content
+//     while (currentContent > initialContent * (threshold / 100)) {
+//         currentContent -= currentContent * (evap_per_day / 100); // Reduce content by the given daily evaporation rate
+//         durationDays++; // Increment the day counter
+//     }
 
-    return durationDays;
-}
+//     return durationDays;
+// }
 
 // Esercizio:
 // Scrivi una funzione in TypeScript che calcoli la sequenza di Fibonacci fino al n-esimo termine. La funzione dovrà restituire l'array con i primi n numeri della sequenza.
@@ -3819,16 +3827,15 @@ console.log(multiplesOf3(172));
 // "C...m" returns "Caught!" <-- as there are three characters between the two, the cat can jump.
 
 export function catMouse(x: string): string {
-    let cat : string = "C";
-    let mouse : string = "m";
+    // let cat : string = "C";
+    // let mouse : string = "m";
+    let dotArray : string[] = [];
     let stringArray : string[] = x.split(" ");
     for (let i = 0; i < stringArray.length; i++){
-        if (stringArray[i] === cat){
-            if (stringArray[i + 1] && (stringArray[i + 2] && (stringArray[i + 3] === "." && stringArray[i + 4] === mouse ))){
-                return "Caught";
-            }
-        }
+        dotArray.push(".");
     }
+    console.log(dotArray);
     return "Escaped";
   }
 
+  console.log(catMouse("C.....m"));
