@@ -1471,4 +1471,24 @@ function sortArray(array) {
 }
 console.log(sortArray([5, 8, 6, 3, 4]));
 console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
+function whoLikesIt(array) {
+    if (array.length === 0) {
+        return "no one likes this";
+    }
+    if (array.length === 1) {
+        return `${array[0]} likes this`;
+    }
+    if (array.length === 3) {
+        return `${array[0]}, ${array[1]} and ${array[2]} like this`;
+    }
+    if (array.length >= 4) {
+        return `${array[0]}, ${array[1]} and ${array.length - 2} others like this`;
+    }
+    return `${array[0]} and ${array[1]} like this`;
+}
+console.log(whoLikesIt([]));
+console.log(whoLikesIt(["Peter"]));
+console.log(whoLikesIt(["Peter", "Mario"]));
+console.log(whoLikesIt(["Max", "John", "Mark"]));
+console.log(whoLikesIt(["Alex", "Jacob", "Mark", "Max"]));
 //# sourceMappingURL=index.js.map
