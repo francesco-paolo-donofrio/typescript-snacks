@@ -3974,22 +3974,22 @@ console.log(reverseWord("Hey fellow warriors"));
 // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
 // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
-function sortArray(array : number[]) : number[] {
-    let arrayOfOdd : any = [];
+function sortArray(array: number[]): number[] {
+    let arrayOfOdd: any = [];
 
-    for (let i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++) {
         if (array[i] % 2 != 0) {
             arrayOfOdd.push(array[i]);
         }
     }
 
-    arrayOfOdd.sort(function(b : number, a : number){return a - b});
-    
-    for (let i = 0; i < array.length; i++){
+    arrayOfOdd.sort(function (b: number, a: number) { return a - b });
+
+    for (let i = 0; i < array.length; i++) {
         if (array[i] % 2 != 0) {
             array[i] = arrayOfOdd.pop();
         }
-    } 
+    }
     return array;
 }
 
@@ -4012,24 +4012,67 @@ console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
 
 
 
-export const likes = (a : string[]) : string => {
-    if (a.length === 0){
+export const likes = (a: string[]): string => {
+    if (a.length === 0) {
         return "no one likes this";
     }
 
-    if (a.length === 1){
+    if (a.length === 1) {
         return `${a[0]} likes this`;
     }
 
-    if (a.length === 3){
+    if (a.length === 3) {
         return `${a[0]}, ${a[1]} and ${a[2]} like this`;
     }
 
-    if (a.length >= 4){
+    if (a.length >= 4) {
         return `${a[0]}, ${a[1]} and ${a.length - 2} others like this`;
     }
 
     return `${a[0]} and ${a[1]} like this`;
-  }
+}
 
-  
+//   Snack 144
+
+// A Narcissistic Number (or Armstrong Number) is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
+
+// For example, take 153 (3 digits), which is narcissistic:
+
+//     1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+// and 1652 (4 digits), which isn't:
+
+//     1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938
+// The Challenge:
+
+// Your code must return true or false (not 'true' and 'false') depending upon whether the given number is a Narcissistic number in base 10.
+
+// This may be True and False in your language, e.g. PHP.
+
+// Error checking for text strings or other invalid inputs is not required, only valid positive non-zero integers will be passed into the function.
+
+export function narcissistic(value: number): boolean {
+
+    let arrayOfValue: string[] = value.toString().split("");
+    let valueLength: number = arrayOfValue.length;
+    let arrayOfResult: number[] = [];
+
+    for (let i = 0; i < arrayOfValue.length; i++) {
+        let number: number = parseInt(arrayOfValue[i]);
+        arrayOfResult.push(Math.pow(number, valueLength));
+    }
+    console.log(arrayOfResult);
+    if (arrayOfResult.reduce(myFunction) === value) {
+        console.log(arrayOfResult.reduce(myFunction));
+        return true;
+    }
+    function myFunction(total: number, value: number) {
+        return total + value;
+    }
+
+    return false;
+}
+
+console.log(narcissistic(153));
+console.log(narcissistic(1652));
+
+
