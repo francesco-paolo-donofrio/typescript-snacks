@@ -4,6 +4,7 @@ exports.likes = void 0;
 exports.catMouse = catMouse;
 exports.catDogMouse = catDogMouse;
 exports.narcissistic = narcissistic;
+exports.interlockable = interlockable;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1509,4 +1510,15 @@ function narcissistic(value) {
 }
 console.log(narcissistic(153));
 console.log(narcissistic(1652));
+function interlockable(a, b) {
+    function dec2bin(dec) {
+        return (dec >>> 0).toString(2);
+    }
+    let aToBinary = parseFloat(dec2bin(a));
+    let bToBinary = parseFloat(dec2bin(b));
+    console.log(aToBinary);
+    console.log(bToBinary);
+    return true || false;
+}
+console.log(interlockable(3, 6));
 //# sourceMappingURL=index.js.map
