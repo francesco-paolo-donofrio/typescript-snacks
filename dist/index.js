@@ -1514,14 +1514,26 @@ function interlockable(a, b) {
     function dec2bin(dec) {
         return (dec >>> 0).toString(2);
     }
-    b;
     let arrayOfA = [];
+    let arrayOfB = [];
     let aToBinary = dec2bin(a).split("");
-    for (let i = aToBinary.length - 1; i >= 0; i--) {
+    let bToBinary = dec2bin(b).split("");
+    for (let i = 0; i < aToBinary.length; i++) {
         arrayOfA.push(aToBinary[i]);
     }
     console.log(arrayOfA);
-    return true || false;
+    for (let i = 0; i < bToBinary.length; i++) {
+        arrayOfB.push(bToBinary[i]);
+    }
+    console.log(arrayOfB);
+    for (let i = arrayOfA.length - 1; i >= 0; i--) {
+        for (let y = arrayOfB.length - 1; y >= 0; y--) {
+            if (arrayOfA[i].toString() === arrayOfB[y].toString()) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 console.log(interlockable(9, 4));
 //# sourceMappingURL=index.js.map

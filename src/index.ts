@@ -4109,26 +4109,35 @@ console.log(narcissistic(1652));
 // Boolean true or false whether or not these integers are interlockable.
 
 export function interlockable(a: number, b: number): boolean {
-    function dec2bin(dec : number){
+    function dec2bin(dec: number) {
         return (dec >>> 0).toString(2);
-      }
-      b;
-    let arrayOfA : string[] = [];
-      let aToBinary : string[] = dec2bin(a).split("");
-    
-      
-      for (let i = aToBinary.length - 1; i >= 0; i--){
+    }
+
+    let arrayOfA: string[] = [];
+    let arrayOfB: string[] = [];
+
+    let aToBinary: string[] = dec2bin(a).split("");
+    let bToBinary: string[] = dec2bin(b).split("");
+
+    for (let i = 0; i < aToBinary.length; i++) {
         arrayOfA.push(aToBinary[i]);
-      }
-      
-      for (let i = arrayOfA.length - 1; i >= 0; i--){
-        if (i.toString() === arrayOfA[i]){
-            console.log("This case is an interlock");
-            return false;
+    }
+    console.log(arrayOfA);
+    for (let i = 0; i < bToBinary.length; i++) {
+        arrayOfB.push(bToBinary[i]);
+    }
+    console.log(arrayOfB);
+
+    for (let i = arrayOfA.length - 1; i >= 0; i--) {
+        for (let y = arrayOfB.length - 1; y >= 0; y--){
+            if (arrayOfA[i].toString() === arrayOfB[y].toString()){
+                return false;
+            }
         }
       }
-    
-    return true;
-  }
 
-  console.log(interlockable(9, 4));
+    return true;
+}
+
+console.log(interlockable(9, 4));
+
