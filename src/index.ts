@@ -4112,13 +4112,23 @@ export function interlockable(a: number, b: number): boolean {
     function dec2bin(dec : number){
         return (dec >>> 0).toString(2);
       }
+      b;
+    let arrayOfA : string[] = [];
+      let aToBinary : string[] = dec2bin(a).split("");
     
-      let aToBinary : number = parseFloat(dec2bin(a));
-      let bToBinary : number = parseFloat(dec2bin(b));
-      console.log(aToBinary);
-      console.log(bToBinary);
+      
+      for (let i = aToBinary.length - 1; i >= 0; i--){
+        arrayOfA.push(aToBinary[i]);
+      }
+      
+      for (let i = arrayOfA.length - 1; i >= 0; i--){
+        if (i.toString() === arrayOfA[i]){
+            console.log("This case is an interlock");
+            return false;
+        }
+      }
     
-    return true || false;
+    return true;
   }
 
-  console.log(interlockable(3, 6));
+  console.log(interlockable(9, 4));
