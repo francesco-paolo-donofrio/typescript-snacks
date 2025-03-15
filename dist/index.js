@@ -1514,4 +1514,12 @@ function interlockable(a, b) {
     return (a & b) === 0;
 }
 console.log(interlockable(3, 6));
+function order(words) {
+    let arrOfWords = words.split(" ");
+    console.log(arrOfWords);
+    let sortedWords = arrOfWords.filter(char => Number(char));
+    console.log(sortedWords);
+    return "";
+}
+console.log(order("is2 Thi1s T4est 3a"));
 //# sourceMappingURL=index.js.map

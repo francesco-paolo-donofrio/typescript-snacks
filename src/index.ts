@@ -4146,19 +4146,24 @@ console.log(interlockable(3, 6));
 
 // Snack 146
 
-// The accounts of the "Fat to Fit Club (FFC)" association are supervised by John as a volunteered accountant. The association is funded through financial donations from generous benefactors. John has a list of the first n donations: [14, 30, 5, 7, 9, 11, 15] He wants to know how much the next benefactor should give to the association so that the average of the first n + 1 donations should reach an average of 30. After doing the math he found 149. He thinks that he could have made a mistake.
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
 
-// Could you help him?
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
 
-// Task
-// The function should return the expected donation (rounded up to the next integer) that will permit to reach the average.
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
 
-// Should the last donation be a non positive number (<= 0) John wants us either to throw an error or return such value so he will clearly see that his expectations are not great enough.
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
 
-// In "Sample Tests" you can see what to return.
+function order(words: string): string {
+    let arrOfWords: string[] = words.split(" ");
+    console.log(arrOfWords);
+    let sortedWords:any = arrOfWords.filter(char => Number(char));
+    console.log(sortedWords);
+    
+    return "";
+}
 
-// Notes:
-// all donations and new average are numbers (integers or floats), array of donations can be empty.
-// See examples below and "Sample Tests" to see which return is to be done.
-// array: [14, 30, 5, 7, 9, 11, 15], new average: 92 -> result: 645
-// array: [14, 30, 5, 7, 9, 11, 15], new average: 2  -> result: variable, see "Sample Tests" 
+console.log(order("is2 Thi1s T4est 3a"));
