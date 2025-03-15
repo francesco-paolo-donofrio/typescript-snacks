@@ -4108,36 +4108,57 @@ console.log(narcissistic(1652));
 // Output
 // Boolean true or false whether or not these integers are interlockable.
 
+// export function interlockable(a: number, b: number): boolean {
+//     function dec2bin(dec: number) {
+//         return (dec >>> 0).toString(2);
+//     }
+
+//     let arrayOfA: string[] = [];
+//     let arrayOfB: string[] = [];
+
+//     let aToBinary: string[] = dec2bin(a).split("");
+//     let bToBinary: string[] = dec2bin(b).split("");
+
+//     for (let i = 0; i < aToBinary.length; i++) {
+//         arrayOfA.push(aToBinary[i]);
+//     }
+//     console.log(arrayOfA);
+//     for (let i = 0; i < bToBinary.length; i++) {
+//         arrayOfB.push(bToBinary[i]);
+//     }
+//     console.log(arrayOfB);
+
+//     for (let i = arrayOfA.length; i >= 0; i--) {
+//         console.log(arrayOfB[i]);
+//         if (arrayOfA[i] !== arrayOfB[i]){
+//             return true; 
+//         }
+//       }
+
+//     return false;
+// }
+
 export function interlockable(a: number, b: number): boolean {
-    function dec2bin(dec: number) {
-        return (dec >>> 0).toString(2);
-    }
-
-    let arrayOfA: string[] = [];
-    let arrayOfB: string[] = [];
-
-    let aToBinary: string[] = dec2bin(a).split("");
-    let bToBinary: string[] = dec2bin(b).split("");
-
-    for (let i = 0; i < aToBinary.length; i++) {
-        arrayOfA.push(aToBinary[i]);
-    }
-    console.log(arrayOfA);
-    for (let i = 0; i < bToBinary.length; i++) {
-        arrayOfB.push(bToBinary[i]);
-    }
-    console.log(arrayOfB);
-
-    for (let i = arrayOfA.length - 1; i >= 0; i--) {
-        for (let y = arrayOfB.length - 1; y >= 0; y--){
-            if (arrayOfA[i].toString() === arrayOfB[y].toString()){
-                return false;
-            }
-        }
-      }
-
-    return true;
+    return (a & b) === 0;
 }
 
-console.log(interlockable(9, 4));
+console.log(interlockable(3, 6));
 
+// Snack 146
+
+// The accounts of the "Fat to Fit Club (FFC)" association are supervised by John as a volunteered accountant. The association is funded through financial donations from generous benefactors. John has a list of the first n donations: [14, 30, 5, 7, 9, 11, 15] He wants to know how much the next benefactor should give to the association so that the average of the first n + 1 donations should reach an average of 30. After doing the math he found 149. He thinks that he could have made a mistake.
+
+// Could you help him?
+
+// Task
+// The function should return the expected donation (rounded up to the next integer) that will permit to reach the average.
+
+// Should the last donation be a non positive number (<= 0) John wants us either to throw an error or return such value so he will clearly see that his expectations are not great enough.
+
+// In "Sample Tests" you can see what to return.
+
+// Notes:
+// all donations and new average are numbers (integers or floats), array of donations can be empty.
+// See examples below and "Sample Tests" to see which return is to be done.
+// array: [14, 30, 5, 7, 9, 11, 15], new average: 92 -> result: 645
+// array: [14, 30, 5, 7, 9, 11, 15], new average: 2  -> result: variable, see "Sample Tests" 

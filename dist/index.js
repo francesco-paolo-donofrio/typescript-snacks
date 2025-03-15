@@ -1511,29 +1511,7 @@ function narcissistic(value) {
 console.log(narcissistic(153));
 console.log(narcissistic(1652));
 function interlockable(a, b) {
-    function dec2bin(dec) {
-        return (dec >>> 0).toString(2);
-    }
-    let arrayOfA = [];
-    let arrayOfB = [];
-    let aToBinary = dec2bin(a).split("");
-    let bToBinary = dec2bin(b).split("");
-    for (let i = 0; i < aToBinary.length; i++) {
-        arrayOfA.push(aToBinary[i]);
-    }
-    console.log(arrayOfA);
-    for (let i = 0; i < bToBinary.length; i++) {
-        arrayOfB.push(bToBinary[i]);
-    }
-    console.log(arrayOfB);
-    for (let i = arrayOfA.length - 1; i >= 0; i--) {
-        for (let y = arrayOfB.length - 1; y >= 0; y--) {
-            if (arrayOfA[i].toString() === arrayOfB[y].toString()) {
-                return false;
-            }
-        }
-    }
-    return true;
+    return (a & b) === 0;
 }
-console.log(interlockable(9, 4));
+console.log(interlockable(3, 6));
 //# sourceMappingURL=index.js.map
