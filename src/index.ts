@@ -4158,10 +4158,31 @@ console.log(interlockable(3, 6));
 // ""  -->  ""
 
 function order(words: string): string {
-    let arrOfWords: string[] = words.split(" ");
-    console.log(arrOfWords);
-    let sortedWords:any = arrOfWords.filter(char => Number(char));
-    console.log(sortedWords);
+    if (words !== "") {
+        let arrayOfWords: string[] = words.split(" ");
+        let arrayOfNumbers: number[] = [];
+
+        for (let i = 0; i < arrayOfWords.length; i++) {
+            for (let j = 0; j < arrayOfWords[i].length; j++) {
+                if (arrayOfWords[i][j] >= "1" && arrayOfWords[i][j] <= "9") {
+                    arrayOfNumbers.push(parseInt(arrayOfWords[i][j]));
+                }
+            }
+        }
+
+
+        let arrayOfResult: string[] = [];
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 0; j < arrayOfNumbers.length; j++) {
+                console.log("This is arrayOfNumbersDiJ", arrayOfNumbers[j]);
+                if (arrayOfNumbers[j] === i) {
+                    arrayOfResult.push(arrayOfWords[j]);
+                }
+            }
+        }
+        return arrayOfResult.join(" ");
+    }
+    
     
     return "";
 }
