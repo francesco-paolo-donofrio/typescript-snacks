@@ -4174,7 +4174,7 @@ function order(words: string): string {
         let arrayOfResult: string[] = [];
         for (let i = 1; i <= 9; i++) {
             for (let j = 0; j < arrayOfNumbers.length; j++) {
-                console.log("This is arrayOfNumbersDiJ", arrayOfNumbers[j]);
+                
                 if (arrayOfNumbers[j] === i) {
                     arrayOfResult.push(arrayOfWords[j]);
                 }
@@ -4200,3 +4200,21 @@ console.log(order("is2 Thi1s T4est 3a"));
 
 // You can find some examples in the test fixtures.
 
+export function humanReadable(seconds :number):string {
+    let arrayOfHours : string[] = [];
+    let arrayOfMinutes : string[] = [];
+    let arrayOfSeconds : number[] = [];
+
+    for (let i = 1; i <= 60; i++){
+        if (seconds <= 59 && seconds > 0){
+            arrayOfSeconds.push(seconds);
+        }
+    }
+    for (let i = 1; i <= 60; i++){
+        if (seconds <= 59 && seconds > 0){
+            arrayOfSeconds.push(seconds.toString());
+        }
+    }
+  }
+
+  console.log(humanReadable(60));

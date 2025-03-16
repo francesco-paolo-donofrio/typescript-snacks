@@ -5,6 +5,7 @@ exports.catMouse = catMouse;
 exports.catDogMouse = catDogMouse;
 exports.narcissistic = narcissistic;
 exports.interlockable = interlockable;
+exports.humanReadable = humanReadable;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1525,11 +1526,9 @@ function order(words) {
                 }
             }
         }
-        console.log("This is arrayOfNumbers", arrayOfNumbers);
         let arrayOfResult = [];
         for (let i = 1; i <= 9; i++) {
             for (let j = 0; j < arrayOfNumbers.length; j++) {
-                console.log("This is arrayOfNumbersDiJ", arrayOfNumbers[j]);
                 if (arrayOfNumbers[j] === i) {
                     arrayOfResult.push(arrayOfWords[j]);
                 }
@@ -1540,4 +1539,25 @@ function order(words) {
     return "";
 }
 console.log(order("is2 Thi1s T4est 3a"));
+function humanReadable(seconds) {
+    let arrayOfHours = [];
+    let arrayOfMinutes = [];
+    let arrayOfSeconds = [];
+    if (seconds === 60) {
+        arrayOfMinutes.push("01");
+        arrayOfMinutes.push("00");
+        arrayOfSeconds.push(seconds.toString());
+    }
+    else if (seconds === 3600) {
+        arrayOfHours.push("01");
+    }
+    else if (seconds < 60 && seconds > 0) {
+        arrayOfSeconds.push(seconds.toString());
+    }
+    console.log(arrayOfHours);
+    console.log(arrayOfMinutes);
+    console.log(arrayOfSeconds);
+    return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(" ");
+}
+console.log(humanReadable(60));
 //# sourceMappingURL=index.js.map
