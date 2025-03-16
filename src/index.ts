@@ -4174,7 +4174,7 @@ function order(words: string): string {
         let arrayOfResult: string[] = [];
         for (let i = 1; i <= 9; i++) {
             for (let j = 0; j < arrayOfNumbers.length; j++) {
-                
+
                 if (arrayOfNumbers[j] === i) {
                     arrayOfResult.push(arrayOfWords[j]);
                 }
@@ -4182,8 +4182,8 @@ function order(words: string): string {
         }
         return arrayOfResult.join(" ");
     }
-    
-    
+
+
     return "";
 }
 
@@ -4200,21 +4200,33 @@ console.log(order("is2 Thi1s T4est 3a"));
 
 // You can find some examples in the test fixtures.
 
-export function humanReadable(seconds :number):string {
-    let arrayOfHours : string[] = [];
-    let arrayOfMinutes : string[] = [];
-    let arrayOfSeconds : number[] = [];
-
-    for (let i = 1; i <= 60; i++){
-        if (seconds <= 59 && seconds > 0){
-            arrayOfSeconds.push(seconds);
+export function humanReadable(seconds: number): string {
+    let arrayOfHours: string[] = [];
+    let arrayOfMinutes: string[] = [];
+    let arrayOfSeconds: string[] = [];
+    if (seconds < 60 || seconds === 0) {
+        let zeroSolution: string = "00";
+        arrayOfMinutes.push(zeroSolution);
+        arrayOfHours.push(zeroSolution);
+    }
+    if (seconds <= 59 && seconds > 0) {
+        arrayOfSeconds.push(seconds.toString());
+    }
+    for (let i = 60; i <= seconds; i++) {
+        if (seconds >= 60 && seconds < 3600) {
+            arrayOfMinutes.push(i.toString());
         }
     }
-    for (let i = 1; i <= 60; i++){
-        if (seconds <= 59 && seconds > 0){
-            arrayOfSeconds.push(seconds.toString());
-        }
-    }
-  }
+    console.log("This is arrayOfSeconds", arrayOfSeconds);
+    console.log("This is arrayOfMinutes", arrayOfMinutes);
+    console.log("This is arrayOfHours", arrayOfHours);
 
-  console.log(humanReadable(60));
+    // for (let i = 1; i <= seconds; i++){
+    //     if (seconds <= 59 && seconds > 0){
+    //         arrayOfSeconds.push(seconds.toString());
+    //     }
+    // }
+    return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
+}
+
+console.log(humanReadable(22));

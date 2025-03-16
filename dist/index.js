@@ -1543,21 +1543,23 @@ function humanReadable(seconds) {
     let arrayOfHours = [];
     let arrayOfMinutes = [];
     let arrayOfSeconds = [];
-    if (seconds === 60) {
-        arrayOfMinutes.push("01");
-        arrayOfMinutes.push("00");
+    if (seconds < 60 || seconds === 0) {
+        let zeroSolution = "00";
+        arrayOfMinutes.push(zeroSolution);
+        arrayOfHours.push(zeroSolution);
+    }
+    if (seconds <= 59 && seconds > 0) {
         arrayOfSeconds.push(seconds.toString());
     }
-    else if (seconds === 3600) {
-        arrayOfHours.push("01");
+    for (let i = 60; i <= seconds; i++) {
+        if (seconds >= 60 && seconds < 3600) {
+            arrayOfMinutes.push(i.toString());
+        }
     }
-    else if (seconds < 60 && seconds > 0) {
-        arrayOfSeconds.push(seconds.toString());
-    }
-    console.log(arrayOfHours);
-    console.log(arrayOfMinutes);
-    console.log(arrayOfSeconds);
-    return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(" ");
+    console.log("This is arrayOfSeconds", arrayOfSeconds);
+    console.log("This is arrayOfMinutes", arrayOfMinutes);
+    console.log("This is arrayOfHours", arrayOfHours);
+    return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
-console.log(humanReadable(60));
+console.log(humanReadable(22));
 //# sourceMappingURL=index.js.map
