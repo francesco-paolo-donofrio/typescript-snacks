@@ -4204,17 +4204,21 @@ export function humanReadable(seconds: number): string {
     let arrayOfHours: string[] = [];
     let arrayOfMinutes: string[] = [];
     let arrayOfSeconds: string[] = [];
-    if (seconds < 60 || seconds === 0) {
+    if (seconds < 60 || seconds === 0 && seconds >= 10) {
         let zeroSolution: string = "00";
         arrayOfMinutes.push(zeroSolution);
         arrayOfHours.push(zeroSolution);
+        if (seconds < 10){
+            arrayOfSeconds[0] = "0" + seconds;
+        }
     }
-    if (seconds <= 59 && seconds > 0) {
+    if (seconds <= 59 && seconds > 10) {
         arrayOfSeconds.push(seconds.toString());
     }
     for (let i = 60; i <= seconds; i++) {
         if (seconds >= 60 && seconds < 3600) {
-            arrayOfMinutes.push(i.toString());
+            arrayOfMinutes.push(seconds.toString());
+            i++;
         }
     }
     console.log("This is arrayOfSeconds", arrayOfSeconds);
@@ -4229,4 +4233,4 @@ export function humanReadable(seconds: number): string {
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
 
-console.log(humanReadable(22));
+console.log(humanReadable(2));

@@ -1543,17 +1543,21 @@ function humanReadable(seconds) {
     let arrayOfHours = [];
     let arrayOfMinutes = [];
     let arrayOfSeconds = [];
-    if (seconds < 60 || seconds === 0) {
+    if (seconds < 60 || seconds === 0 && seconds >= 10) {
         let zeroSolution = "00";
         arrayOfMinutes.push(zeroSolution);
         arrayOfHours.push(zeroSolution);
+        if (seconds < 10) {
+            arrayOfSeconds[0] = "0" + seconds;
+        }
     }
-    if (seconds <= 59 && seconds > 0) {
+    if (seconds <= 59 && seconds > 10) {
         arrayOfSeconds.push(seconds.toString());
     }
     for (let i = 60; i <= seconds; i++) {
         if (seconds >= 60 && seconds < 3600) {
-            arrayOfMinutes.push(i.toString());
+            arrayOfMinutes.push(seconds.toString());
+            i++;
         }
     }
     console.log("This is arrayOfSeconds", arrayOfSeconds);
@@ -1561,5 +1565,5 @@ function humanReadable(seconds) {
     console.log("This is arrayOfHours", arrayOfHours);
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
-console.log(humanReadable(22));
+console.log(humanReadable(2));
 //# sourceMappingURL=index.js.map
