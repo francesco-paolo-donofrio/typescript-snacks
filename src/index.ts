@@ -4220,13 +4220,12 @@ export function humanReadable(seconds: number): string {
 
     if(seconds >= 60 && seconds < 3600){
         if (seconds % 60 === 0){
+            minutesToPush++;
             if (seconds === 60){
                 minutesToPush = 1;
             }
-            if (seconds < 600 && seconds >= 60){
-                let firstZero = minutesToPush.toString().split("");
-                minutesToPush++;
-                firstZero[0] = "0" + minutesToPush;
+            if (seconds < 600 && seconds > 60){
+               
             }
         }
         arrayOfMinutes.push(minutesToPush.toString());
