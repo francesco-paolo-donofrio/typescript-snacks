@@ -1543,33 +1543,37 @@ function humanReadable(seconds) {
     let arrayOfHours = [];
     let arrayOfMinutes = [];
     let arrayOfSeconds = [];
-    let zeroSolution = "00";
-    if (seconds <= 59) {
-        arrayOfHours.push(zeroSolution);
-        arrayOfMinutes.push(zeroSolution);
+    let minutes = 0;
+    let hours = 0;
+    for (let i = seconds; i <= 356400; i++) {
+        i++;
         if (seconds < 10) {
             arrayOfSeconds[0] = "0" + seconds;
+            arrayOfMinutes[0] = "0" + minutes;
+            arrayOfHours[0] = "0" + hours;
         }
-        else {
+        if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            arrayOfMinutes.push(minutes.toString());
+            arrayOfHours.push(hours.toString());
             arrayOfSeconds.push(seconds.toString());
         }
-    }
-    if (seconds >= 60 && seconds < 3600) {
-        let minutes = 1;
-        for (let i = minutes; i < 3600; i++) {
-            if (seconds < 600) {
-                minutes % 60 === 0;
-            }
-            minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+            arrayOfMinutes.push(minutes.toString());
+            arrayOfHours.push(hours.toString());
+            arrayOfSeconds.push(seconds.toString());
         }
-        arrayOfMinutes.push(minutes.toString());
-        arrayOfHours.push(zeroSolution);
-        arrayOfSeconds.push(zeroSolution);
+        if (hours >= 99) {
+            break;
+        }
     }
     console.log("This is arrayOfSeconds", arrayOfSeconds);
     console.log("This is arrayOfMinutes", arrayOfMinutes);
     console.log("This is arrayOfHours", arrayOfHours);
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
-console.log(humanReadable(120));
+console.log(humanReadable(9));
 //# sourceMappingURL=index.js.map
