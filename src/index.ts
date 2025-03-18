@@ -4205,10 +4205,10 @@ export function humanReadable(seconds: number): string {
     let arrayOfMinutes: string[] = [];
     let arrayOfSeconds: string[] = [];
     let minutesToPush: number = 1;
-    
+
     let zeroSolution: string = "00";
 
-    if (seconds < 60 || seconds === 0 && seconds >= 10) {
+    if (seconds === 0 || seconds >= 10 && seconds < 60) {
         arrayOfMinutes.push(zeroSolution);
         arrayOfHours.push(zeroSolution);
         if (seconds < 10) {
@@ -4219,23 +4219,15 @@ export function humanReadable(seconds: number): string {
         arrayOfSeconds.push(seconds.toString());
     }
 
-    if(seconds >= 60 && seconds < 3600){
-        if (seconds % 60 === 0){
-           
-            
-            if (seconds === 60){
-                minutesToPush = 1;
-            }
-            if (seconds < 600 && seconds >= 60){
-               arrayOfMinutes[0] = "0" + minutesToPush;
-            }
-            
+    if (seconds >= 60 && seconds < 3600) {
+        if (seconds % 60 === 0 && seconds < 600 && seconds >= 60) {
+            arrayOfMinutes[0] = "0" + minutesToPush.toString();
         }
-        minutesToPush++;
-        arrayOfMinutes.push(minutesToPush.toString());
+        
         arrayOfHours.push(zeroSolution);
         arrayOfSeconds.push(zeroSolution);
     }
+
 
     console.log("This is arrayOfSeconds", arrayOfSeconds);
     console.log("This is arrayOfMinutes", arrayOfMinutes);

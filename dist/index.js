@@ -1545,7 +1545,7 @@ function humanReadable(seconds) {
     let arrayOfSeconds = [];
     let minutesToPush = 1;
     let zeroSolution = "00";
-    if (seconds < 60 || seconds === 0 && seconds >= 10) {
+    if (seconds === 0 || seconds >= 10 && seconds < 60) {
         arrayOfMinutes.push(zeroSolution);
         arrayOfHours.push(zeroSolution);
         if (seconds < 10) {
@@ -1556,16 +1556,9 @@ function humanReadable(seconds) {
         arrayOfSeconds.push(seconds.toString());
     }
     if (seconds >= 60 && seconds < 3600) {
-        if (seconds % 60 === 0) {
-            if (seconds === 60) {
-                minutesToPush = 1;
-            }
-            if (seconds < 600 && seconds >= 60) {
-                arrayOfMinutes[0] = "0" + minutesToPush;
-            }
+        if (seconds % 60 === 0 && seconds < 600 && seconds >= 60) {
+            arrayOfMinutes[0] = "0" + minutesToPush.toString();
         }
-        minutesToPush++;
-        arrayOfMinutes.push(minutesToPush.toString());
         arrayOfHours.push(zeroSolution);
         arrayOfSeconds.push(zeroSolution);
     }
