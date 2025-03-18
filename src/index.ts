@@ -4204,26 +4204,30 @@ export function humanReadable(seconds: number): string {
     let arrayOfHours: string[] = [];
     let arrayOfMinutes: string[] = [];
     let arrayOfSeconds: string[] = [];
-    let minutesToPush: number = 1;
-
     let zeroSolution: string = "00";
 
-    if (seconds === 0 || seconds >= 10 && seconds < 60) {
-        arrayOfMinutes.push(zeroSolution);
+    if (seconds <= 59) {
         arrayOfHours.push(zeroSolution);
+        arrayOfMinutes.push(zeroSolution);
         if (seconds < 10) {
             arrayOfSeconds[0] = "0" + seconds;
+        } else {
+            arrayOfSeconds.push(seconds.toString());
         }
-    }
-    if (seconds <= 59 && seconds >= 10) {
-        arrayOfSeconds.push(seconds.toString());
     }
 
     if (seconds >= 60 && seconds < 3600) {
-        if (seconds % 60 === 0 && seconds < 600 && seconds >= 60) {
-            arrayOfMinutes[0] = "0" + minutesToPush.toString();
+        let minutes: number = 1;
+        for (let i = minutes; i < 3600; i++) {
+            if (seconds < 600){
+                minutes % 60 === 0;
+            }
+            minutes++;
         }
-        
+        // if (seconds % 60 === 0 && seconds < 600 && seconds > 60) {
+
+        // }
+        arrayOfMinutes.push(minutes.toString());
         arrayOfHours.push(zeroSolution);
         arrayOfSeconds.push(zeroSolution);
     }

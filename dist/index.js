@@ -1543,22 +1543,26 @@ function humanReadable(seconds) {
     let arrayOfHours = [];
     let arrayOfMinutes = [];
     let arrayOfSeconds = [];
-    let minutesToPush = 1;
     let zeroSolution = "00";
-    if (seconds === 0 || seconds >= 10 && seconds < 60) {
-        arrayOfMinutes.push(zeroSolution);
+    if (seconds <= 59) {
         arrayOfHours.push(zeroSolution);
+        arrayOfMinutes.push(zeroSolution);
         if (seconds < 10) {
             arrayOfSeconds[0] = "0" + seconds;
         }
-    }
-    if (seconds <= 59 && seconds >= 10) {
-        arrayOfSeconds.push(seconds.toString());
+        else {
+            arrayOfSeconds.push(seconds.toString());
+        }
     }
     if (seconds >= 60 && seconds < 3600) {
-        if (seconds % 60 === 0 && seconds < 600 && seconds >= 60) {
-            arrayOfMinutes[0] = "0" + minutesToPush.toString();
+        let minutes = 1;
+        for (let i = minutes; i < 3600; i++) {
+            if (seconds < 600) {
+                minutes % 60 === 0;
+            }
+            minutes++;
         }
+        arrayOfMinutes.push(minutes.toString());
         arrayOfHours.push(zeroSolution);
         arrayOfSeconds.push(zeroSolution);
     }
