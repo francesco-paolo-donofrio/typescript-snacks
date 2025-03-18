@@ -4228,4 +4228,4 @@ export function humanReadable(seconds: number): string {
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
 
-console.log(humanReadable(1));
+console.log(humanReadable(3600));

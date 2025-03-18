@@ -1561,5 +1561,5 @@ function humanReadable(seconds) {
     console.log("This is arrayOfHours", arrayOfHours);
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
-console.log(humanReadable(1));
+console.log(humanReadable(3600));
 //# sourceMappingURL=index.js.map
