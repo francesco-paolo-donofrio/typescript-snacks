@@ -4204,50 +4204,28 @@ export function humanReadable(seconds: number): string {
     let arrayOfHours: string[] = [];
     let arrayOfMinutes: string[] = [];
     let arrayOfSeconds: string[] = [];
-    // let zeroSolution: string = "00";
     let minutes: number = 0;
     let hours: number = 0;
 
 
-    for (let i = seconds; i <= 356400; i++) {
-        i++;
-        if (seconds < 10) {
-            arrayOfSeconds[0] = "0" + seconds;
-            arrayOfMinutes[0] = "0" + minutes;
-            arrayOfHours[0] = "0" + hours;
-        }
-        if (seconds >= 60) {
-            seconds = 0;
-            minutes++;
-            arrayOfSeconds[0] = "0" + seconds;
-            arrayOfMinutes[0] = "0" + minutes;
-            arrayOfHours[0] = "0" + hours;
-        }
+    while (seconds >= 60) {
+        seconds -= 60;
+        minutes++;
         if (minutes >= 60) {
             minutes = 0;
             hours++;
-            arrayOfSeconds[0] = "0" + seconds;
-            arrayOfMinutes[0] = "0" + minutes;
-            arrayOfHours[0] = "0" + hours;
-        }
-        if (hours >= 99) {
-            break;
         }
     }
 
-
-
+    arrayOfHours[0] = hours.toString().padStart(2, '0');
+    arrayOfMinutes[0] = minutes.toString().padStart(2, '0');
+    arrayOfSeconds[0] = seconds.toString().padStart(2, '0');
 
     console.log("This is arrayOfSeconds", arrayOfSeconds);
     console.log("This is arrayOfMinutes", arrayOfMinutes);
     console.log("This is arrayOfHours", arrayOfHours);
 
-    // for (let i = 1; i <= seconds; i++){
-    //     if (seconds <= 59 && seconds > 0){
-    //         arrayOfSeconds.push(seconds.toString());
-    //     }
-    // }
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
 
-console.log(humanReadable(9));
+console.log(humanReadable(1));

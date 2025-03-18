@@ -1545,35 +1545,21 @@ function humanReadable(seconds) {
     let arrayOfSeconds = [];
     let minutes = 0;
     let hours = 0;
-    for (let i = seconds; i <= 356400; i++) {
-        i++;
-        if (seconds < 10) {
-            arrayOfSeconds[0] = "0" + seconds;
-            arrayOfMinutes[0] = "0" + minutes;
-            arrayOfHours[0] = "0" + hours;
-        }
-        if (seconds >= 60) {
-            seconds = 0;
-            minutes++;
-            arrayOfMinutes.push(minutes.toString());
-            arrayOfHours.push(hours.toString());
-            arrayOfSeconds.push(seconds.toString());
-        }
+    while (seconds >= 60) {
+        seconds -= 60;
+        minutes++;
         if (minutes >= 60) {
             minutes = 0;
             hours++;
-            arrayOfMinutes.push(minutes.toString());
-            arrayOfHours.push(hours.toString());
-            arrayOfSeconds.push(seconds.toString());
-        }
-        if (hours >= 99) {
-            break;
         }
     }
+    arrayOfHours[0] = hours.toString().padStart(2, '0');
+    arrayOfMinutes[0] = minutes.toString().padStart(2, '0');
+    arrayOfSeconds[0] = seconds.toString().padStart(2, '0');
     console.log("This is arrayOfSeconds", arrayOfSeconds);
     console.log("This is arrayOfMinutes", arrayOfMinutes);
     console.log("This is arrayOfHours", arrayOfHours);
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
-console.log(humanReadable(9));
+console.log(humanReadable(1));
 //# sourceMappingURL=index.js.map
