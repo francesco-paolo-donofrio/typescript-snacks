@@ -1,6 +1,8 @@
 // Snack 1
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 
+import { start } from "repl";
+
 // function isEvenOrOdd(number: number): string {
 //     if (number % 2 === 0) {
 //         return "Even";
@@ -4239,7 +4241,7 @@ console.log(humanReadable(3600));
 function countBits(n: number): number {
     // Converte il numero in binario come stringa
     const binaryRepresentation = n.toString(2);
-    console.log(binaryRepresentation); 
+    console.log(binaryRepresentation);
 
     // Conta il numero di '1' nella rappresentazione binaria
     let count = 0;
@@ -4252,7 +4254,7 @@ function countBits(n: number): number {
     return count;
 }
 
-  console.log(countBits(1234));
+console.log(countBits(1234));
 
 //   Find the missing letter
 // Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
@@ -4269,20 +4271,60 @@ function countBits(n: number): number {
 // Have fun coding it and please don't forget to vote and rank this kata! :-)
 
 // I have also created other katas. Take a look if you enjoyed this kata!
+export function findMissingLetter(array: string[]): string {
+    const lowerCaseAlphabet: string[] = [];
+    // const upperCaseAlphabet: string[] = [];
 
-  const lowerCaseAlphabet : string[] = [];
-  const upperCaseAlphabet : string[] = [];
-    
-    let lowerCaseFirstLetter : number = 97;
-    let upperCaseFirstLetter : number = 65;
-  for (let count = 0; count < 26; count++){
-    let c : string = String.fromCharCode(lowerCaseFirstLetter + count);
-    lowerCaseAlphabet.push(c);
-  }
+    let lowerCaseFirstLetter: number = 97;
+    // let upperCaseFirstLetter: number = 65;
 
-  for (let count = 0; count < 26; count++){
-    let c : string = String.fromCharCode(upperCaseFirstLetter + count);
-    upperCaseAlphabet.push(c);
-  }
-  console.log(lowerCaseAlphabet);
-  console.log(upperCaseAlphabet);
+    for (let count = 0; count < 26; count++) {
+        let c: string = String.fromCharCode(lowerCaseFirstLetter + count);
+        lowerCaseAlphabet.push(c);
+    }
+
+    // alfabeto in uppercase
+
+    // for (let count = 0; count < 26; count++) {
+    //     let c: string = String.fromCharCode(upperCaseFirstLetter + count);
+    //     upperCaseAlphabet.push(c);
+    // }
+
+    let firstChar : string = array[0];
+    let firstCharUpperCase : string = firstChar.toUpperCase();
+    let startIndex : number = lowerCaseAlphabet.indexOf(array[0].toLowerCase());
+    let countLetter : number = 0;
+
+    for (let i = startIndex; i < lowerCaseAlphabet.length; i++){
+        if (array[countLetter].toLowerCase() != lowerCaseAlphabet[i]){
+            if (array[0] === firstCharUpperCase){
+                return lowerCaseAlphabet[i].toUpperCase();
+            } else {
+                return lowerCaseAlphabet[i];
+            }
+        } 
+        countLetter++;
+    }
+
+    // if (firstChar === firstCharUpperCase){
+    //     let arrayOfUpperCharachters: string[] = [];
+    //     for (let i = 0; i <= upperCaseAlphabet.length; i++) {
+    //         arrayOfUpperCharachters.push(upperCaseAlphabet[i]);
+    //         if (!array.includes(arrayOfUpperCharachters[i])) {
+    //             return arrayOfUpperCharachters[i];
+    //         }
+    //     }
+    // } else {
+    //     let arrayOfLowerCharachters: string[] = [];
+    //     for (let i = 0; i <= lowerCaseAlphabet.length; i++) {
+    //         arrayOfLowerCharachters.push(lowerCaseAlphabet[i]);
+    //         if (!array.includes(arrayOfLowerCharachters[i])) {
+    //             return arrayOfLowerCharachters[i];
+    //         }
+    //     }
+    // }
+    return "";
+}
+
+console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f']));
+console.log(findMissingLetter(['O', 'Q', 'R', 'S']));

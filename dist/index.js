@@ -6,6 +6,7 @@ exports.catDogMouse = catDogMouse;
 exports.narcissistic = narcissistic;
 exports.interlockable = interlockable;
 exports.humanReadable = humanReadable;
+exports.findMissingLetter = findMissingLetter;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1574,18 +1575,41 @@ function countBits(n) {
     return count;
 }
 console.log(countBits(1234));
-const lowerCaseAlphabet = [];
-const upperCaseAlphabet = [];
-let lowerCaseFirstLetter = 97;
-let upperCaseFirstLetter = 65;
-for (let count = 0; count < 26; count++) {
-    let c = String.fromCharCode(lowerCaseFirstLetter + count);
-    lowerCaseAlphabet.push(c);
+function findMissingLetter(array) {
+    const lowerCaseAlphabet = [];
+    const upperCaseAlphabet = [];
+    let lowerCaseFirstLetter = 97;
+    let upperCaseFirstLetter = 65;
+    for (let count = 0; count < 26; count++) {
+        let c = String.fromCharCode(lowerCaseFirstLetter + count);
+        lowerCaseAlphabet.push(c);
+    }
+    for (let count = 0; count < 26; count++) {
+        let c = String.fromCharCode(upperCaseFirstLetter + count);
+        upperCaseAlphabet.push(c);
+    }
+    let firstChar = array[0];
+    let firstCharUpperCase = firstChar.toUpperCase();
+    if (firstChar === firstCharUpperCase) {
+        let arrayOfUpperCharachters = [];
+        for (let i = 0; i <= upperCaseAlphabet.length; i++) {
+            arrayOfUpperCharachters.push(upperCaseAlphabet[i]);
+            if (!array.includes(arrayOfUpperCharachters[i])) {
+                return arrayOfUpperCharachters[i];
+            }
+        }
+    }
+    else {
+        let arrayOfLowerCharachters = [];
+        for (let i = 0; i <= lowerCaseAlphabet.length; i++) {
+            arrayOfLowerCharachters.push(lowerCaseAlphabet[i]);
+            if (!array.includes(arrayOfLowerCharachters[i])) {
+                return arrayOfLowerCharachters[i];
+            }
+        }
+    }
+    return "";
 }
-for (let count = 0; count < 26; count++) {
-    let c = String.fromCharCode(upperCaseFirstLetter + count);
-    upperCaseAlphabet.push(c);
-}
-console.log(lowerCaseAlphabet);
-console.log(upperCaseAlphabet);
+console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f']));
+console.log(findMissingLetter(['O', 'Q', 'R', 'S']));
 //# sourceMappingURL=index.js.map
