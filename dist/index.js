@@ -1562,4 +1562,16 @@ function humanReadable(seconds) {
     return arrayOfHours.concat(arrayOfMinutes, arrayOfSeconds).join(":");
 }
 console.log(humanReadable(3600));
+function countBits(n) {
+    const binaryRepresentation = n.toString(2);
+    console.log(binaryRepresentation);
+    let count = 0;
+    for (let i = 0; i < binaryRepresentation.length; i++) {
+        if (binaryRepresentation[i] === '1') {
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countBits(1234));
 //# sourceMappingURL=index.js.map

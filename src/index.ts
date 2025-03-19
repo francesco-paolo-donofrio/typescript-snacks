@@ -4193,10 +4193,10 @@ console.log(order("is2 Thi1s T4est 3a"));
 
 // Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
 
-// HH = hours, padded to 2 digits, range: 00 - 99
-// MM = minutes, padded to 2 digits, range: 00 - 59
-// SS = seconds, padded to 2 digits, range: 00 - 59
-// The maximum time never exceeds 359999 (99:59:59)
+// HH = hours, padded to 2 digits, range: 00 - 99.
+// MM = minutes, padded to 2 digits, range: 00 - 59.
+// SS = seconds, padded to 2 digits, range: 00 - 59.
+// The maximum time never exceeds 359999 (99:59:59).
 
 // You can find some examples in the test fixtures.
 
@@ -4229,3 +4229,27 @@ export function humanReadable(seconds: number): string {
 }
 
 console.log(humanReadable(3600));
+
+// Snack 147
+
+// Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
+
+// Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+
+function countBits(n: number): number {
+    // Converte il numero in binario come stringa
+    const binaryRepresentation = n.toString(2);
+    console.log(binaryRepresentation); 
+
+    // Conta il numero di '1' nella rappresentazione binaria
+    let count = 0;
+    for (let i = 0; i < binaryRepresentation.length; i++) {
+        if (binaryRepresentation[i] === '1') {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+  console.log(countBits(1234));
