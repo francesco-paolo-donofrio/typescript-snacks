@@ -1574,4 +1574,18 @@ function countBits(n) {
     return count;
 }
 console.log(countBits(1234));
+const lowerCaseAlphabet = [];
+const upperCaseAlphabet = [];
+let lowerCaseFirstLetter = 97;
+let upperCaseFirstLetter = 65;
+for (let count = 0; count < 26; count++) {
+    let c = String.fromCharCode(lowerCaseFirstLetter + count);
+    lowerCaseAlphabet.push(c);
+}
+for (let count = 0; count < 26; count++) {
+    let c = String.fromCharCode(upperCaseFirstLetter + count);
+    upperCaseAlphabet.push(c);
+}
+console.log(lowerCaseAlphabet);
+console.log(upperCaseAlphabet);
 //# sourceMappingURL=index.js.map
