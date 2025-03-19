@@ -1577,36 +1577,25 @@ function countBits(n) {
 console.log(countBits(1234));
 function findMissingLetter(array) {
     const lowerCaseAlphabet = [];
-    const upperCaseAlphabet = [];
     let lowerCaseFirstLetter = 97;
-    let upperCaseFirstLetter = 65;
     for (let count = 0; count < 26; count++) {
         let c = String.fromCharCode(lowerCaseFirstLetter + count);
         lowerCaseAlphabet.push(c);
     }
-    for (let count = 0; count < 26; count++) {
-        let c = String.fromCharCode(upperCaseFirstLetter + count);
-        upperCaseAlphabet.push(c);
-    }
     let firstChar = array[0];
     let firstCharUpperCase = firstChar.toUpperCase();
-    if (firstChar === firstCharUpperCase) {
-        let arrayOfUpperCharachters = [];
-        for (let i = 0; i <= upperCaseAlphabet.length; i++) {
-            arrayOfUpperCharachters.push(upperCaseAlphabet[i]);
-            if (!array.includes(arrayOfUpperCharachters[i])) {
-                return arrayOfUpperCharachters[i];
+    let startIndex = lowerCaseAlphabet.indexOf(array[0].toLowerCase());
+    let countLetter = 0;
+    for (let i = startIndex; i < lowerCaseAlphabet.length; i++) {
+        if (array[countLetter].toLowerCase() != lowerCaseAlphabet[i]) {
+            if (array[0] === firstCharUpperCase) {
+                return lowerCaseAlphabet[i].toUpperCase();
+            }
+            else {
+                return lowerCaseAlphabet[i];
             }
         }
-    }
-    else {
-        let arrayOfLowerCharachters = [];
-        for (let i = 0; i <= lowerCaseAlphabet.length; i++) {
-            arrayOfLowerCharachters.push(lowerCaseAlphabet[i]);
-            if (!array.includes(arrayOfLowerCharachters[i])) {
-                return arrayOfLowerCharachters[i];
-            }
-        }
+        countLetter++;
     }
     return "";
 }
