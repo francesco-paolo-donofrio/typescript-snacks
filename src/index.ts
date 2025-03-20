@@ -4364,22 +4364,31 @@ export function findEvenIndex(arr: number[]): number
 {
   let arrayOfLeft : number[] = [];
   let arrayOfRight : number[] = [];
+  let sumLeft : number = arrayOfLeft.reduce(myFunction);
+  let sumRight : number = arrayOfRight.reduce(myFunction);
+
 //   let index0 : number = 0;
 
-  for (let i = 0; i < arr.length; i++){
-    if (i === 0){
-        arrayOfLeft.push(0);
-        arrayOfRight = arr;
-    }
-    if (i === arr.length - 1){
-        arrayOfRight.push(0);
-        arrayOfLeft = arr;
-    }
+function myFunction(total : number, value : number) {
+    return total + value;
   }
 
+  for (let i = 0; i < arr.length; i++){
+      
+    let sumLeft : number = arr.splice(0, i).reduce((acc, curr) => acc + curr, 0);
+      let sumRight : number = arr.splice(i + 1).reduce((acc, curr) => acc + curr, 0);
+
+
+      if (sumLeft === sumRight){
+          return i;
+      }
+    }
+  }
+console.log("This is the sumLeft", sumLeft);
+console.log("This is the sumRight", sumRight);
   console.log("This is array of left", arrayOfLeft);
   console.log("This is array of right" , arrayOfRight);
-  return 0;
+  return -1;
 }
 
 console.log(findEvenIndex([1,2,3,4,3,2,1]));
