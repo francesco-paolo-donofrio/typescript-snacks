@@ -1605,29 +1605,16 @@ console.log(findMissingLetter(['O', 'Q', 'R', 'S']));
 function findEvenIndex(arr) {
     let arrayOfLeft = [];
     let arrayOfRight = [];
-    let sumLeft = arrayOfLeft.reduce(myFunction);
-    let sumRight = arrayOfRight.reduce(myFunction);
-    function myFunction(total, value) {
-        return total + value;
-    }
     for (let i = 0; i < arr.length; i++) {
-        i++;
-        if (i === 0) {
-            arrayOfLeft.push(0);
-            arrayOfRight = arr;
-        }
-        if (i === arr.length - 1) {
-            arrayOfRight.push(0);
-            arrayOfLeft = arr;
-        }
-        if (arrayOfLeft.reduce((myFunction)) === arrayOfRight.reduce(myFunction)) {
+        let sumLeft = arr.slice(0, i).reduce((acc, curr) => acc + curr, 0);
+        let sumRight = arr.slice(i + 1).reduce((acc, curr) => acc + curr, 0);
+        if (sumLeft === sumRight) {
+            return i;
         }
     }
-    console.log("This is the sumLeft", sumLeft);
-    console.log("This is the sumRight", sumRight);
     console.log("This is array of left", arrayOfLeft);
     console.log("This is array of right", arrayOfRight);
-    return 0;
+    return -1;
 }
 console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
 //# sourceMappingURL=index.js.map
