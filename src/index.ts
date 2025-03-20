@@ -4362,5 +4362,20 @@ console.log(findMissingLetter(['O', 'Q', 'R', 'S']));
 
 export function findEvenIndex(arr: number[]): number
 {
-  //Code goes here!
+  let arrayOfLeft : number[] = [];
+  let arrayOfRight : number[] = [];
+//   let index0 : number = 0;
+
+  for (let i = 0; i < arr.length; i++){
+    if (i === 0){
+        arrayOfLeft.push(0)
+        arrayOfRight.push(arr[i]);
+    }
+  }
+
+  console.log("This is array of left", arrayOfLeft);
+  console.log("This is array of right" , arrayOfRight);
+  return 0;
 }
+
+console.log(findEvenIndex([1,2,3,4,3,2,1]));
