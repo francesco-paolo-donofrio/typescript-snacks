@@ -1608,7 +1608,7 @@ function findEvenIndex(arr) {
     for (let i = 0; i < arr.length; i++) {
         if (i === 0) {
             arrayOfLeft.push(0);
-            arrayOfRight.push(arr[i]);
+            arrayOfRight = arr;
         }
     }
     console.log("This is array of left", arrayOfLeft);

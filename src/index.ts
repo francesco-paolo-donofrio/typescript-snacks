@@ -4368,8 +4368,12 @@ export function findEvenIndex(arr: number[]): number
 
   for (let i = 0; i < arr.length; i++){
     if (i === 0){
-        arrayOfLeft.push(0)
-        arrayOfRight.push(arr[i]);
+        arrayOfLeft.push(0);
+        arrayOfRight = arr;
+    }
+    if (i === arr.length - 1){
+        arrayOfRight.push(0);
+        arrayOfLeft = arr;
     }
   }
 
