@@ -4393,13 +4393,7 @@ console.log(findEvenIndex([1,2,3,4,3,2,1]));
 // solution('abc', 'd') // returns false
 
 export function solution(str: string, ending: string): boolean {
-    for (let i = str.length - 1; i > 0; i--){
-        if (ending.includes(str[i])){
-            return true;
-        }
-    }
-
-    return false; 
+    return str.endsWith(ending);
   }
 
   console.log(solution("abc", "bc"));

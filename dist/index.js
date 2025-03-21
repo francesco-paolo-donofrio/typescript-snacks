@@ -1619,12 +1619,7 @@ function findEvenIndex(arr) {
 }
 console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
 function solution(str, ending) {
-    for (let i = str.length - 1; i > 0; i--) {
-        if (ending.includes(str[i])) {
-            return true;
-        }
-    }
-    return false;
+    return str.endsWith(ending);
 }
 console.log(solution("abc", "bc"));
 console.log(solution("abc", "d"));
