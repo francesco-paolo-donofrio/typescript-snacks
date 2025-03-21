@@ -4420,3 +4420,6 @@ function magnitude(vector: number[]): number {
 }
 
 console.log(magnitude([2, 3, 5]))
+
+// Snack 152 
+
