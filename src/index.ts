@@ -4407,13 +4407,16 @@ export function solution(str: string, ending: string): boolean {
 // The array will always contain at least 2 and at most 100 elements (2 ≤ vector.Length ≤ 100), each of which will be within the range [-100, 100].
 // An array containing four elements represents a vector in 4D space.
 
-function magnitude(vector : number[]): number[]{
-        for (let i = 2; i <= vector.length; i++){
-            if (vector[i] >= -100 && vector[i] <= 100){
-                console.log("Questo è corretto");
-            }
+function magnitude(vector: number[]): number {
+    for (let i = 0; i < vector.length; i++) {
+        if (vector[i] < -100 || vector[i] > 100) {
+            throw new Error(`Il valore del componente ${i} è fuori dal range consentito.`);
         }
-        return vector;
     }
+
+    const sumOfSquares = vector.reduce((sum, value) => sum + value * value, 0);
+
+    return Math.sqrt(sumOfSquares);
+}
 
 console.log(magnitude([2, 3, 5]))
