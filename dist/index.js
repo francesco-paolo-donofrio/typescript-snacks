@@ -8,6 +8,7 @@ exports.interlockable = interlockable;
 exports.humanReadable = humanReadable;
 exports.findMissingLetter = findMissingLetter;
 exports.findEvenIndex = findEvenIndex;
+exports.solution = solution;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1617,4 +1618,14 @@ function findEvenIndex(arr) {
     return -1;
 }
 console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
+function solution(str, ending) {
+    for (let i = str.length - 1; i > 0; i--) {
+        if (ending.includes(str[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+console.log(solution("abc", "bc"));
+console.log(solution("abc", "d"));
 //# sourceMappingURL=index.js.map
