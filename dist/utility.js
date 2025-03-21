@@ -119,4 +119,5 @@ function giorgioVaAlMare() {
     console.log("Giorgio va al mare");
 }
 ;
+giorgioVaAlMare();
 //# sourceMappingURL=utility.js.map

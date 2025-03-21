@@ -211,3 +211,5 @@ console.log(customer?.name);
 function giorgioVaAlMare() {
     console.log("Giorgio va al mare");
 };
+
+giorgioVaAlMare();
