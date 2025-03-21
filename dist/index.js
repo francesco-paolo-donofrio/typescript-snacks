@@ -9,6 +9,7 @@ exports.humanReadable = humanReadable;
 exports.findMissingLetter = findMissingLetter;
 exports.findEvenIndex = findEvenIndex;
 exports.solution = solution;
+exports.countLettersAndDigits = countLettersAndDigits;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1633,4 +1634,14 @@ function magnitude(vector) {
     return Math.sqrt(sumOfSquares);
 }
 console.log(magnitude([2, 3, 5]));
+function countLettersAndDigits(input) {
+    let arrayOfGoods = [];
+    for (let i = 0; i < input.length; i++) {
+        if (/[0-9]/.test(input[i]) || /[a-zA-Z]/.test(input[i])) {
+            arrayOfGoods.push(input[i]);
+        }
+    }
+    return arrayOfGoods.length;
+}
+console.log(countLettersAndDigits("hel2!lo"));
 //# sourceMappingURL=index.js.map

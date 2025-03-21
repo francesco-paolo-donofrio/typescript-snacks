@@ -4436,7 +4436,13 @@ console.log(magnitude([2, 3, 5]))
 // "!?..A" --> 1
 
 export function countLettersAndDigits(input: string): number {
-    let arrayOfGoods : number[] = [];
-    
-    return 0;
+    let arrayOfGoods : string[] = [];
+    for (let i = 0; i < input.length; i++){
+        // Usiamo il test per utilizzare le regex altrimenti non funziona
+        if (/[0-9]/.test(input[i]) || /[a-zA-Z]/.test(input[i])){
+            arrayOfGoods.push(input[i]);
+        } 
+    }
+    return arrayOfGoods.length;
   }
+console.log(countLettersAndDigits("hel2!lo"));
