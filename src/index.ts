@@ -4527,19 +4527,18 @@ function boredom(){
 
 // If the sequence is empty, you should return 0.
 
-function evenLast(numbers : number[]) {
-    let arrayOfOdd1 : number[] = [];
-    for (let i = 0; i < numbers.length; i++){
-        if (numbers[i] % 2 === 0){
-            arrayOfOdd1.push(numbers[i]);
-        }
-    }
-    let result1 : number = arrayOfOdd1.reduce((a,b) => a + b);
-    let lastIndex : number = numbers[numbers.length - 1];
-    let result : number = result1 * lastIndex;
-    console.log("This is the result1", result1);
-    console.log("This is last index", lastIndex);
-    console.log("This is result", result);
+function evenLast(numbers: number[]): number {
+    
+    let arrayOfEven = numbers.filter(num => num % 2 === 0);
+    if (arrayOfEven.length === 0) {
+        return 0;
+      }
+    let sumOfEven = arrayOfEven.reduce((a, b) => a + b, 0); 
+    if (numbers.length === 0) {
+        return 0;
+      }
+    let lastIndex = numbers[numbers.length - 1];
+    return sumOfEven * lastIndex;
   }
 
   evenLast([1,2,3,4]);

@@ -1669,18 +1669,16 @@ function boredom() {
 }
 boredom();
 function evenLast(numbers) {
-    let arrayOfOdd1 = [];
-    for (let i = 0; i < numbers.length; i++) {
-        if (numbers[i] % 2 === 0) {
-            arrayOfOdd1.push(numbers[i]);
-        }
+    let arrayOfEven = numbers.filter(num => num % 2 === 0);
+    if (arrayOfEven.length === 0) {
+        return 0;
     }
-    let result1 = arrayOfOdd1.reduce((a, b) => a + b);
+    let sumOfEven = arrayOfEven.reduce((a, b) => a + b, 0);
+    if (numbers.length === 0) {
+        return 0;
+    }
     let lastIndex = numbers[numbers.length - 1];
-    let result = result1 * lastIndex;
-    console.log("This is the result1", result1);
-    console.log("This is last index", lastIndex);
-    console.log("This is result", result);
+    return sumOfEven * lastIndex;
 }
 evenLast([1, 2, 3, 4]);
 //# sourceMappingURL=index.js.map
