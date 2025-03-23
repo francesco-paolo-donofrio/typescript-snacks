@@ -1644,4 +1644,28 @@ function countLettersAndDigits(input) {
     return arrayOfGoods.length;
 }
 console.log(countLettersAndDigits("hel2!lo"));
+function boredom() {
+    const staff = {
+        Alice: "accounts",
+        Bob: "canteen",
+        Charlie: "finance",
+        Dave: "trading",
+        Eve: "pissing about",
+    };
+    console.log(staff.values);
+    const boredomScores = {
+        accounts: 1,
+        finance: 2,
+        canteen: 10,
+        regulation: 3,
+        trading: 6,
+        change: 6,
+        IS: 8,
+        retail: 5,
+        cleaning: 4,
+        "pissing about": 25,
+    };
+    console.log("This is boredom keys", boredomScores.accounts);
+}
+boredom();
 //# sourceMappingURL=index.js.map
