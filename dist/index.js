@@ -1675,8 +1675,12 @@ function evenLast(numbers) {
             arrayOfOdd1.push(numbers[i]);
         }
     }
-    let result = arrayOfOdd1.reduce((a, b) => a + b);
-    console.log(result);
+    let result1 = arrayOfOdd1.reduce((a, b) => a + b);
+    let lastIndex = numbers[numbers.length - 1];
+    let result = result1 * lastIndex;
+    console.log("This is the result1", result1);
+    console.log("This is last index", lastIndex);
+    console.log("This is result", result);
 }
 evenLast([1, 2, 3, 4]);
 //# sourceMappingURL=index.js.map

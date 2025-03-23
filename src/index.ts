@@ -4532,11 +4532,14 @@ function evenLast(numbers : number[]) {
     for (let i = 0; i < numbers.length; i++){
         if (numbers[i] % 2 === 0){
             arrayOfOdd1.push(numbers[i]);
-            let result1 : number = arrayOfOdd1.reduce((a,b) => a + b);
-            let result : number = result1 * 
         }
     }
-    
+    let result1 : number = arrayOfOdd1.reduce((a,b) => a + b);
+    let lastIndex : number = numbers[numbers.length - 1];
+    let result : number = result1 * lastIndex;
+    console.log("This is the result1", result1);
+    console.log("This is last index", lastIndex);
+    console.log("This is result", result);
   }
 
   evenLast([1,2,3,4]);
