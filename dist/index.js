@@ -1668,4 +1668,15 @@ function boredom() {
     console.log("This is boredom keys", boredomScores.accounts);
 }
 boredom();
+function evenLast(numbers) {
+    let arrayOfOdd1 = [];
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 === 0) {
+            arrayOfOdd1.push(numbers[i]);
+        }
+    }
+    let result = arrayOfOdd1.reduce((a, b) => a + b);
+    console.log(result);
+}
+evenLast([1, 2, 3, 4]);
 //# sourceMappingURL=index.js.map

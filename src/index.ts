@@ -2,6 +2,8 @@
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 
 
+
+
 // function isEvenOrOdd(number: number): string {
 //     if (number % 2 === 0) {
 //         return "Even";
@@ -4516,3 +4518,25 @@ function boredom(){
 //       }
 //       getSentiment(staff)
 //   }
+
+// Snack 153
+
+// Given a sequence of integers, return the sum of all the integers that have an even index (odd index in COBOL), multiplied by the integer at the last index.
+
+// Indices in sequence start from 0.
+
+// If the sequence is empty, you should return 0.
+
+function evenLast(numbers : number[]) {
+    let arrayOfOdd1 : number[] = [];
+    for (let i = 0; i < numbers.length; i++){
+        if (numbers[i] % 2 === 0){
+            arrayOfOdd1.push(numbers[i]);
+            let result1 : number = arrayOfOdd1.reduce((a,b) => a + b);
+            let result : number = result1 * 
+        }
+    }
+    
+  }
+
+  evenLast([1,2,3,4]);
