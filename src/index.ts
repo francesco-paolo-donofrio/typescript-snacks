@@ -4597,18 +4597,28 @@ export function litres(time: number): number {
 
 // JavaScript random tests completed by @matt c.
 
-function phone (strng: string):string {
+function phone (strng: string, num : string):string {
     let arrOfString : string[] = strng.split("");
-    let newCleanedArr : string[] = [];
-    // let cleanStrng : string = "";
-    // let cleanNum : string = "";
+    let arrOfNum : string[] = num.split("");
+    let newCleanedString : string[] = [];
+    let newCleanedNum : string[] = [];
+
     for (let i = 0; i < arrOfString.length; i++){
         if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])){
-            newCleanedArr.push(arrOfString[i]);
+            newCleanedString.push(arrOfString[i]);
+            if (arrOfString[i] === "\n"){
+                newCleanedString.pop();
+            }
         };
     }
-    console.log(newCleanedArr);
+    for (let i = 0; i <= arrOfNum.length; i++){
+        if (/[-+]?\d+/g.test(arrOfString[i])){
+            newCleanedNum.push(arrOfString[i]);
+        };
+    }
+    console.log(newCleanedString);
+    console.log(newCleanedNum);
     return '...'
   }
 
-  console.log(phone("!?abc"));
+  console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+1-541-754-3010" ));

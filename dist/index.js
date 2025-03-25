@@ -1687,17 +1687,29 @@ function litres(time) {
 }
 console.log(litres(6.7));
 console.log(litres(11.8));
-function phone(strng) {
+function phone(strng, num) {
     let arrOfString = strng.split("");
-    let newCleanedArr = [];
+    let arrOfNum = num.split("");
+    let newCleanedString = [];
+    let newCleanedNum = [];
     for (let i = 0; i < arrOfString.length; i++) {
         if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
-            newCleanedArr.push(arrOfString[i]);
+            newCleanedString.push(arrOfString[i]);
+            if (arrOfString[i] === "\n") {
+                newCleanedString.pop();
+            }
         }
         ;
     }
-    console.log(newCleanedArr);
+    for (let i = 0; i <= arrOfNum.length; i++) {
+        if (/[-+]?\d+/g.test(arrOfString[i])) {
+            newCleanedNum.push(arrOfString[i]);
+        }
+        ;
+    }
+    console.log(newCleanedString);
+    console.log(newCleanedNum);
     return '...';
 }
-console.log(phone("!?abc"));
+console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+1-541-754-3010"));
 //# sourceMappingURL=index.js.map
