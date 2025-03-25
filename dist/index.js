@@ -1706,9 +1706,16 @@ function phone(strng, num) {
             newCleanedNum.push(arrOfString[i]);
         }
         ;
+        if (i === 1 || i === 5 || i === 9) {
+            arrOfNum[1] = "-";
+            arrOfNum[5] = "-";
+            arrOfNum[9] = "-";
+        }
     }
-    console.log(newCleanedString);
-    console.log(newCleanedNum);
+    let resultStrng = newCleanedString.join("");
+    let resultNum = newCleanedNum.join("");
+    console.log(resultStrng);
+    console.log(resultNum);
     return '...';
 }
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+1-541-754-3010"));
