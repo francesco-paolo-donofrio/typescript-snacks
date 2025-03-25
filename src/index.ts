@@ -4597,7 +4597,17 @@ export function litres(time: number): number {
 
 // JavaScript random tests completed by @matt c.
 
-export const phone = (strng: string, num: string):string => {
-    
+function phone (strng: string):string {
+    let arrOfString : string[] = strng.split("");
+    // let cleanStrng : string = "";
+    // let cleanNum : string = "";
+    for (let i = 0; i < arrOfString.length; i++){
+        if (/[^a-zA-Z0-9\s]/.test(arrOfString.toString())){
+            arrOfString.pop();
+        };
+    }
+    console.log(arrOfString);
     return '...'
   }
+
+  console.log(phone("!?£$abc"));
