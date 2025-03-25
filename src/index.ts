@@ -4599,15 +4599,16 @@ export function litres(time: number): number {
 
 function phone (strng: string):string {
     let arrOfString : string[] = strng.split("");
+    let newCleanedArr : string[] = [];
     // let cleanStrng : string = "";
     // let cleanNum : string = "";
     for (let i = 0; i < arrOfString.length; i++){
-        if (/[^a-zA-Z0-9\s]/.test(arrOfString.toString())){
-            arrOfString.pop();
+        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])){
+            newCleanedArr.push(arrOfString[i]);
         };
     }
-    console.log(arrOfString);
+    console.log(newCleanedArr);
     return '...'
   }
 
-  console.log(phone("!?£$abc"));
+  console.log(phone("!?abc"));

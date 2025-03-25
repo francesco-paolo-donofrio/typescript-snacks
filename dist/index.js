@@ -1689,14 +1689,15 @@ console.log(litres(6.7));
 console.log(litres(11.8));
 function phone(strng) {
     let arrOfString = strng.split("");
+    let newCleanedArr = [];
     for (let i = 0; i < arrOfString.length; i++) {
-        if (/[^a-zA-Z0-9\s]/.test(arrOfString.toString())) {
-            arrOfString.pop();
+        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
+            newCleanedArr.push(arrOfString[i]);
         }
         ;
     }
-    console.log(arrOfString);
+    console.log(newCleanedArr);
     return '...';
 }
-console.log(phone("!?£$abc"));
+console.log(phone("!?abc"));
 //# sourceMappingURL=index.js.map
