@@ -1692,30 +1692,29 @@ function phone(strng, num) {
     let arrOfNum = num.split("");
     let newCleanedString = [];
     let newCleanedNum = [];
+    let name = [];
     for (let i = 0; i < arrOfString.length; i++) {
         if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
             newCleanedString.push(arrOfString[i]);
-            if (arrOfString[i] === "\n") {
-                newCleanedString.pop();
-            }
         }
         ;
+        if (arrOfString[i] === "<") {
+            name.push(i.toString());
+        }
     }
     for (let i = 0; i <= arrOfNum.length; i++) {
         if (/[-+]?\d+/g.test(arrOfString[i])) {
             newCleanedNum.push(arrOfString[i]);
         }
         ;
-        if (i === 1 || i === 5 || i === 9) {
-            arrOfNum[1] = "-";
-            arrOfNum[5] = "-";
-            arrOfNum[9] = "-";
-        }
     }
     let resultStrng = newCleanedString.join("");
     let resultNum = newCleanedNum.join("");
+    let resultName = name.join("");
+    console.log(arrOfString);
     console.log(resultStrng);
     console.log(resultNum);
+    console.log("This is name", resultName);
     return '...';
 }
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+1-541-754-3010"));
