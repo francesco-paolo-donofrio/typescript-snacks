@@ -10,6 +10,7 @@ exports.findMissingLetter = findMissingLetter;
 exports.findEvenIndex = findEvenIndex;
 exports.solution = solution;
 exports.countLettersAndDigits = countLettersAndDigits;
+exports.litres = litres;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1681,4 +1682,9 @@ function evenLast(numbers) {
     return sumOfEven * lastIndex;
 }
 evenLast([1, 2, 3, 4]);
+function litres(time) {
+    return Math.floor(time * 0.5);
+}
+console.log(litres(6.7));
+console.log(litres(11.8));
 //# sourceMappingURL=index.js.map
