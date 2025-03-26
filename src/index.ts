@@ -4606,14 +4606,14 @@ function phone(strng: string, num: string): string {
     for (let i = 0; i < arrOfString.length; i++) {
         if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
             newCleanedString.push(arrOfString[i]);
-            // if (arrOfString[i] === "\n") {
-            //     newCleanedString.pop();
-            // }
+            if (arrOfString[i] === "\n") {
+                newCleanedString.pop();
+            }
         };
         if (arrOfString[i] === "<"){
-            // while(arrOfString[i] !== ">"){
-                name.push(i.toString());
-            // }
+            while(!/[^a-zA-Z0-9\s]/.test(arrOfString[i]) && arrOfString[i] !== ">"){
+                name.push(arrOfString[i]);
+            }
         }
     }
     for (let i = 0; i <= arrOfNum.length; i++) {
