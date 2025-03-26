@@ -1695,6 +1695,7 @@ function phone(strng, num) {
     let name = [];
     let isInside = false;
     let temp = "";
+    let resultNum = "";
     if (num === "") {
         return "Error => Not found: num";
     }
@@ -1715,11 +1716,11 @@ function phone(strng, num) {
     for (let i = 0; i <= arrOfNum.length; i++) {
         if (/[-+]?\d+/g.test(arrOfString[i])) {
             newCleanedNum.push(arrOfString[i]);
+            resultNum = newCleanedNum.join("-");
         }
         ;
     }
     let resultStrng = newCleanedString.join("");
-    let resultNum = newCleanedNum.join("");
     let resultName = name.join("");
     console.log(arrOfString);
     console.log(resultStrng);

@@ -4604,11 +4604,13 @@ function phone(strng: string, num: string): string {
     let name : string[] = [];
     let isInside : boolean = false;
     let temp : string = "";
-
+    let resultNum : string = "";
+    
     if (num === ""){
         return "Error => Not found: num";
     }
-// Code to take the name into the string
+
+    // Code to take the name into the string
 
     for (let i = 0; i < arrOfString.length; i++) {
         if (arrOfString[i] === "<") {
@@ -4633,17 +4635,11 @@ function phone(strng: string, num: string): string {
     for (let i = 0; i <= arrOfNum.length; i++) {
         if (/[-+]?\d+/g.test(arrOfString[i])) {
             newCleanedNum.push(arrOfString[i]);
+            resultNum = newCleanedNum.join("-")
         };
-        // if (i === 1 || i === 5 || i === 9){
-        //     arrOfNum[1] = "-";
-        //     arrOfNum[5] = "-";
-        //     arrOfNum[9] = "-";
-        // } 
     }
     
-    
     let resultStrng : string = newCleanedString.join("");
-    let resultNum : string = newCleanedNum.join("")
     let resultName : string = name.join("");
 
     console.log(arrOfString);
