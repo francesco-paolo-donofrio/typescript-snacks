@@ -1716,7 +1716,10 @@ function phone(strng, num) {
     for (let i = 0; i <= arrOfNum.length; i++) {
         if (/[-+]?\d+/g.test(arrOfString[i])) {
             newCleanedNum.push(arrOfString[i]);
-            resultNum = newCleanedNum.join("-");
+            resultNum = newCleanedNum.slice(0, 1).join("") + "-" +
+                newCleanedNum.slice(1, 4).join("") + "-" +
+                newCleanedNum.slice(4, 7).join("") + "-" +
+                newCleanedNum.slice(7).join("");
         }
         ;
     }

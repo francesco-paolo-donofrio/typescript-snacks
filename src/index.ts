@@ -4601,12 +4601,12 @@ function phone(strng: string, num: string): string {
     let arrOfNum: string[] = num.split("");
     let newCleanedString: string[] = [];
     let newCleanedNum: string[] = [];
-    let name : string[] = [];
-    let isInside : boolean = false;
-    let temp : string = "";
-    let resultNum : string = "";
-    
-    if (num === ""){
+    let name: string[] = [];
+    let isInside: boolean = false;
+    let temp: string = "";
+    let resultNum: string = "";
+
+    if (num === "") {
         return "Error => Not found: num";
     }
 
@@ -4617,14 +4617,14 @@ function phone(strng: string, num: string): string {
             isInside = true;
             temp = "";
         } else if (arrOfString[i] === ">" && isInside) {
-            isInside = false; 
-            name.push(temp); 
+            isInside = false;
+            name.push(temp);
             break;
         } else if (isInside) {
             temp += arrOfString[i];
         }
     }
-    
+
     // if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
     //     newCleanedString.push(arrOfString[i]);
     //     if (arrOfString[i] === "\n") {
@@ -4635,17 +4635,21 @@ function phone(strng: string, num: string): string {
     for (let i = 0; i <= arrOfNum.length; i++) {
         if (/[-+]?\d+/g.test(arrOfString[i])) {
             newCleanedNum.push(arrOfString[i]);
-            resultNum = newCleanedNum.join("-")
+            resultNum = newCleanedNum.slice(0,1).join("") + "-" +
+            newCleanedNum.slice(1,4).join("") + "-" +
+            newCleanedNum.slice(4,7).join("") + "-" +
+            newCleanedNum.slice(7).join("");
+            
         };
     }
-    
-    let resultStrng : string = newCleanedString.join("");
-    let resultName : string = name.join("");
+
+    let resultStrng: string = newCleanedString.join("");
+    let resultName: string = name.join("");
 
     console.log(arrOfString);
     console.log(resultStrng);
     console.log(resultNum);
-    console.log("This is name" , resultName);
+    console.log("This is name", resultName);
     return '...'
 }
 
