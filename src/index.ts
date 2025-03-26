@@ -4291,19 +4291,19 @@ export function findMissingLetter(array: string[]): string {
     //     upperCaseAlphabet.push(c);
     // }
 
-    let firstChar : string = array[0];
-    let firstCharUpperCase : string = firstChar.toUpperCase();
-    let startIndex : number = lowerCaseAlphabet.indexOf(array[0].toLowerCase());
-    let countLetter : number = 0;
+    let firstChar: string = array[0];
+    let firstCharUpperCase: string = firstChar.toUpperCase();
+    let startIndex: number = lowerCaseAlphabet.indexOf(array[0].toLowerCase());
+    let countLetter: number = 0;
 
-    for (let i = startIndex; i < lowerCaseAlphabet.length; i++){
-        if (array[countLetter].toLowerCase() != lowerCaseAlphabet[i]){
-            if (array[0] === firstCharUpperCase){
+    for (let i = startIndex; i < lowerCaseAlphabet.length; i++) {
+        if (array[countLetter].toLowerCase() != lowerCaseAlphabet[i]) {
+            if (array[0] === firstCharUpperCase) {
                 return lowerCaseAlphabet[i].toUpperCase();
             } else {
                 return lowerCaseAlphabet[i];
             }
-        } 
+        }
         countLetter++;
     }
 
@@ -4362,28 +4362,27 @@ console.log(findMissingLetter(['O', 'Q', 'R', 'S']));
 // Note
 // If you are given an array with multiple answers, return the lowest correct index.
 
-export function findEvenIndex(arr: number[]): number
-{
-  let arrayOfLeft : number[] = [];
-  let arrayOfRight : number[] = [];
+export function findEvenIndex(arr: number[]): number {
+    let arrayOfLeft: number[] = [];
+    let arrayOfRight: number[] = [];
 
-  for (let i = 0; i < arr.length; i++){
-      
-    let sumLeft : number = arr.slice(0, i).reduce((acc, curr) => acc + curr, 0);
-      let sumRight : number = arr.slice(i + 1).reduce((acc, curr) => acc + curr, 0);
+    for (let i = 0; i < arr.length; i++) {
+
+        let sumLeft: number = arr.slice(0, i).reduce((acc, curr) => acc + curr, 0);
+        let sumRight: number = arr.slice(i + 1).reduce((acc, curr) => acc + curr, 0);
 
 
-      if (sumLeft === sumRight){
-          return i;
-      }
+        if (sumLeft === sumRight) {
+            return i;
+        }
     }
 
-  console.log("This is array of left", arrayOfLeft);
-  console.log("This is array of right" , arrayOfRight);
-  return -1;
+    console.log("This is array of left", arrayOfLeft);
+    console.log("This is array of right", arrayOfRight);
+    return -1;
 }
 
-console.log(findEvenIndex([1,2,3,4,3,2,1]));
+console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
 
 // Snack 150
 
@@ -4396,11 +4395,11 @@ console.log(findEvenIndex([1,2,3,4,3,2,1]));
 
 export function solution(str: string, ending: string): boolean {
     return str.endsWith(ending);
-  }
+}
 
-  console.log(solution("abc", "bc"));
-  console.log(solution("abc", "d"));
-  
+console.log(solution("abc", "bc"));
+console.log(solution("abc", "d"));
+
 // Snack 151
 
 // Return the magnitude of a vector, given as an array of its component values.
@@ -4438,15 +4437,15 @@ console.log(magnitude([2, 3, 5]))
 // "!?..A" --> 1
 
 export function countLettersAndDigits(input: string): number {
-    let arrayOfGoods : string[] = [];
-    for (let i = 0; i < input.length; i++){
+    let arrayOfGoods: string[] = [];
+    for (let i = 0; i < input.length; i++) {
         // Usiamo il test per utilizzare le regex altrimenti non funziona
-        if (/[0-9]/.test(input[i]) || /[a-zA-Z]/.test(input[i])){
+        if (/[0-9]/.test(input[i]) || /[a-zA-Z]/.test(input[i])) {
             arrayOfGoods.push(input[i]);
-        } 
+        }
     }
     return arrayOfGoods.length;
-  }
+}
 console.log(countLettersAndDigits("hel2!lo"));
 
 // Snack 153
@@ -4474,16 +4473,16 @@ console.log(countLettersAndDigits("hel2!lo"));
 // < 100 & > 80: 'i can handle this'
 // 100 or over: 'party time!!'
 
-function boredom(){
-    const staff : Record<string, string> = {
+function boredom() {
+    const staff: Record<string, string> = {
         Alice: "accounts",
         Bob: "canteen",
         Charlie: "finance",
         Dave: "trading",
         Eve: "pissing about",
-      };
-      console.log(staff.values);
-    
+    };
+    console.log(staff.values);
+
     const boredomScores: Record<string, number> = {
         accounts: 1,
         finance: 2,
@@ -4495,19 +4494,19 @@ function boredom(){
         retail: 5,
         cleaning: 4,
         "pissing about": 25,
-      };
-    
-      console.log("This is boredom keys", boredomScores.accounts);
-    }
+    };
 
-    boredom();
-      
+    console.log("This is boredom keys", boredomScores.accounts);
+}
+
+boredom();
+
 //       function getSentiment(staff: Record<string, string>): string {
-      
+
 //         const totalBoredomScore = Object.values(staff).reduce((total, department) => {
 //           return total + (boredomScores[department] || 0); 
 //         }, 0);
-      
+
 //         if (totalBoredomScore <= 80) {
 //           return "mi uccideranno ora";
 //         } else if (totalBoredomScore < 100) {
@@ -4528,20 +4527,20 @@ function boredom(){
 // If the sequence is empty, you should return 0.
 
 function evenLast(numbers: number[]): number {
-    
+
     let arrayOfEven = numbers.filter(num => num % 2 === 0);
     if (arrayOfEven.length === 0) {
         return 0;
-      }
-    let sumOfEven = arrayOfEven.reduce((a, b) => a + b, 0); 
+    }
+    let sumOfEven = arrayOfEven.reduce((a, b) => a + b, 0);
     if (numbers.length === 0) {
         return 0;
-      }
+    }
     let lastIndex = numbers[numbers.length - 1];
     return sumOfEven * lastIndex;
-  }
+}
 
-  evenLast([1,2,3,4]);
+evenLast([1, 2, 3, 4]);
 
 //   Snack 154
 
@@ -4561,10 +4560,10 @@ function evenLast(numbers: number[]): number {
 
 export function litres(time: number): number {
     return Math.floor(time * 0.5);
-  }
+}
 
-   console.log(litres(6.7));
-   console.log(litres(11.8));
+console.log(litres(6.7));
+console.log(litres(11.8));
 
 //    Snack 155
 
@@ -4597,18 +4596,48 @@ export function litres(time: number): number {
 
 // JavaScript random tests completed by @matt c.
 
-function phone (strng: string):string {
-    let arrOfString : string[] = strng.split("");
-    let newCleanedArr : string[] = [];
-    // let cleanStrng : string = "";
-    // let cleanNum : string = "";
-    for (let i = 0; i < arrOfString.length; i++){
-        if (/^[a-zA-Z0-9\s\\]$/.test(arrOfString[i])){
-            newCleanedArr.push(arrOfString[i]);
-        };
-    }
-    console.log(newCleanedArr);
-    return '...'
-  }
+function phone(strng: string, num: string): string {
+    let arrOfString: string[] = strng.split("");
+    let arrOfNum: string[] = num.split("");
+    let newCleanedString: string[] = [];
+    let newCleanedNum: string[] = [];
+    let name : string[] = [];
 
-  console.log(phone("/+1-541-754-3010 156 Alphand_St. \///<J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n"));
+    for (let i = 0; i < arrOfString.length; i++) {
+        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
+            newCleanedString.push(arrOfString[i]);
+            // if (arrOfString[i] === "\n") {
+            //     newCleanedString.pop();
+            // }
+        };
+        if (arrOfString[i] === "<"){
+            // while(arrOfString[i] !== ">"){
+                name.push(i.toString());
+            // }
+        }
+    }
+    for (let i = 0; i <= arrOfNum.length; i++) {
+        if (/[-+]?\d+/g.test(arrOfString[i])) {
+            newCleanedNum.push(arrOfString[i]);
+        };
+        // if (i === 1 || i === 5 || i === 9){
+        //     arrOfNum[1] = "-";
+        //     arrOfNum[5] = "-";
+        //     arrOfNum[9] = "-";
+        // } 
+    }
+    
+    
+    let resultStrng : string = newCleanedString.join("");
+    let resultNum : string = newCleanedNum.join("")
+    let resultName : string = name.join("");
+
+    console.log(arrOfString);
+    console.log(resultStrng);
+    console.log(resultNum);
+    console.log("This is name" , resultName);
+    return '...'
+}
+
+console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+1-541-754-3010"));
+

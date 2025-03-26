@@ -1687,17 +1687,35 @@ function litres(time) {
 }
 console.log(litres(6.7));
 console.log(litres(11.8));
-function phone(strng) {
+function phone(strng, num) {
     let arrOfString = strng.split("");
-    let newCleanedArr = [];
+    let arrOfNum = num.split("");
+    let newCleanedString = [];
+    let newCleanedNum = [];
+    let name = [];
     for (let i = 0; i < arrOfString.length; i++) {
-        if (/^[a-zA-Z0-9\s\\]$/.test(arrOfString[i])) {
-            newCleanedArr.push(arrOfString[i]);
+        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
+            newCleanedString.push(arrOfString[i]);
+        }
+        ;
+        if (arrOfString[i] === "<") {
+            name.push(i.toString());
+        }
+    }
+    for (let i = 0; i <= arrOfNum.length; i++) {
+        if (/[-+]?\d+/g.test(arrOfString[i])) {
+            newCleanedNum.push(arrOfString[i]);
         }
         ;
     }
-    console.log(newCleanedArr);
+    let resultStrng = newCleanedString.join("");
+    let resultNum = newCleanedNum.join("");
+    let resultName = name.join("");
+    console.log(arrOfString);
+    console.log(resultStrng);
+    console.log(resultNum);
+    console.log("This is name", resultName);
     return '...';
 }
-console.log(phone("/+1-541-754-3010 156 Alphand_St. \///<J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n"));
+console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+1-541-754-3010"));
 //# sourceMappingURL=index.js.map
