@@ -4602,20 +4602,34 @@ function phone(strng: string, num: string): string {
     let newCleanedString: string[] = [];
     let newCleanedNum: string[] = [];
     let name : string[] = [];
+    let isInside : boolean = false;
+    let temp : string = "";
+
+    if (num === ""){
+        return "Error => Not found: num";
+    }
+// Code to take the name into the string
 
     for (let i = 0; i < arrOfString.length; i++) {
-        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
-            newCleanedString.push(arrOfString[i]);
-            if (arrOfString[i] === "\n") {
-                newCleanedString.pop();
-            }
-        };
-        if (arrOfString[i] === "<"){
-            while(!/[^a-zA-Z0-9\s]/.test(arrOfString[i]) && arrOfString[i] !== ">"){
-                name.push(arrOfString[i]);
-            }
+        if (arrOfString[i] === "<") {
+            isInside = true;
+            temp = "";
+        } else if (arrOfString[i] === ">" && isInside) {
+            isInside = false; 
+            name.push(temp); 
+            break;
+        } else if (isInside) {
+            temp += arrOfString[i];
         }
     }
+    
+    // if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
+    //     newCleanedString.push(arrOfString[i]);
+    //     if (arrOfString[i] === "\n") {
+    //         newCleanedString.pop();
+    //     }
+    // };
+
     for (let i = 0; i <= arrOfNum.length; i++) {
         if (/[-+]?\d+/g.test(arrOfString[i])) {
             newCleanedNum.push(arrOfString[i]);

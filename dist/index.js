@@ -1693,18 +1693,23 @@ function phone(strng, num) {
     let newCleanedString = [];
     let newCleanedNum = [];
     let name = [];
+    let isInside = false;
+    let temp = "";
+    if (num === "") {
+        return "Error => Not found: num";
+    }
     for (let i = 0; i < arrOfString.length; i++) {
-        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
-            newCleanedString.push(arrOfString[i]);
-            if (arrOfString[i] === "\n") {
-                newCleanedString.pop();
-            }
-        }
-        ;
         if (arrOfString[i] === "<") {
-            while (!/[^a-zA-Z0-9\s]/.test(arrOfString[i]) && arrOfString[i] !== ">") {
-                name.push(arrOfString[i]);
-            }
+            isInside = true;
+            temp = "";
+        }
+        else if (arrOfString[i] === ">" && isInside) {
+            isInside = false;
+            name.push(temp);
+            break;
+        }
+        else if (isInside) {
+            temp += arrOfString[i];
         }
     }
     for (let i = 0; i <= arrOfNum.length; i++) {
