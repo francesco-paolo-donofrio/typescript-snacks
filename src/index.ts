@@ -4603,7 +4603,7 @@ function phone (strng: string):string {
     // let cleanStrng : string = "";
     // let cleanNum : string = "";
     for (let i = 0; i < arrOfString.length; i++){
-        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])){
+        if (/^[a-zA-Z0-9\s\\]$/.test(arrOfString[i])){
             newCleanedArr.push(arrOfString[i]);
         };
     }
@@ -4611,4 +4611,4 @@ function phone (strng: string):string {
     return '...'
   }
 
-  console.log(phone("!?abc"));
+  console.log(phone("/+1-541-754-3010 156 Alphand_St. \///<J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n"));
