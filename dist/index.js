@@ -1696,6 +1696,7 @@ function phone(strng, num) {
     let isInside = false;
     let temp = "";
     let resultNum = "";
+    let address = [];
     if (num === "") {
         return "Error => Not found: num";
     }
@@ -1712,6 +1713,12 @@ function phone(strng, num) {
         else if (isInside) {
             temp += arrOfString[i];
         }
+        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
+            if (arrOfString[i] === resultNum) {
+                arrOfString[i] = "";
+            }
+            address.push(arrOfString[i]);
+        }
     }
     let firstTwoChar = [];
     for (let i = 0; i <= arrOfNum.length; i++) {
@@ -1727,6 +1734,7 @@ function phone(strng, num) {
     console.log(resultStrng);
     console.log("This is number", resultNum);
     console.log("This is name", resultName);
+    console.log("This is address", address);
     console.log(firstTwoChar);
     return '...';
 }

@@ -4599,17 +4599,26 @@ console.log(litres(11.8));
 function phone(strng: string, num: string): string {
     let arrOfString: string[] = strng.split("");
     let arrOfNum: string[] = num.split("");
-    let newCleanedString: string[] = [];
     let newCleanedNum: string[] = [];
     let name: string[] = [];
     let isInside: boolean = false;
     let temp: string = "";
     let resultNum: string = "";
-
+    let address : string[] = [];
+    
     if (num === "") {
         return "Error => Not found: num";
     }
-
+    
+    // Code to take the telephone-number
+    
+    for (let i = 0; i <= arrOfNum.length; i++) {
+        if (/[-+]?\d+/g.test(arrOfNum[i]) || arrOfNum[i] === "-") {
+            newCleanedNum.push(arrOfNum[i]);
+            resultNum = newCleanedNum.join("");
+        };
+    }
+    
     // Code to take the name into the string
 
     for (let i = 0; i < arrOfString.length; i++) {
@@ -4623,34 +4632,21 @@ function phone(strng: string, num: string): string {
         } else if (isInside) {
             temp += arrOfString[i];
         }
+
+        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])){
+            if (){
+                arrOfString[i] = "";
+            }
+            address.push(arrOfString[i]);
+        }
     }
-
-    // if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
-    //     newCleanedString.push(arrOfString[i]);
-    //     if (arrOfString[i] === "\n") {
-    //         newCleanedString.pop();
-    //     }
-    // };
-
-    // Code to take the telephone-number
-
-    let firstTwoChar : string[] = [];
     
-    for (let i = 0; i <= arrOfNum.length; i++) {
-        if (/[-+]?\d+/g.test(arrOfNum[i]) || arrOfNum[i] === "-") {
-            newCleanedNum.push(arrOfNum[i]);
-            resultNum = newCleanedNum.join("");
-        };
-    }
-
-    let resultStrng: string = newCleanedString.join("");
     let resultName: string = name.join("");
 
-    console.log(arrOfString);
-    console.log(resultStrng);
+    // console.log(arrOfString);
     console.log("This is number", resultNum);
     console.log("This is name", resultName);
-    console.log(firstTwoChar);
+    console.log("This is address", address);
     return '...'
 }
 
