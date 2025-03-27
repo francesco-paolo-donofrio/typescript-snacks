@@ -1713,13 +1713,11 @@ function phone(strng, num) {
             temp += arrOfString[i];
         }
     }
+    let firstTwoChar = [];
     for (let i = 0; i <= arrOfNum.length; i++) {
-        if (/[-+]?\d+/g.test(arrOfString[i])) {
-            newCleanedNum.push(arrOfString[i]);
-            resultNum = newCleanedNum.slice(0, 1).join("") + "-" +
-                newCleanedNum.slice(1, 4).join("") + "-" +
-                newCleanedNum.slice(4, 7).join("") + "-" +
-                newCleanedNum.slice(7).join("");
+        if (/[-+]?\d+/g.test(arrOfNum[i]) || arrOfNum[i] === "-") {
+            newCleanedNum.push(arrOfNum[i]);
+            resultNum = newCleanedNum.join("");
         }
         ;
     }
@@ -1727,9 +1725,10 @@ function phone(strng, num) {
     let resultName = name.join("");
     console.log(arrOfString);
     console.log(resultStrng);
-    console.log(resultNum);
+    console.log("This is number", resultNum);
     console.log("This is name", resultName);
+    console.log(firstTwoChar);
     return '...';
 }
-console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+1-541-754-3010"));
+console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));
 //# sourceMappingURL=index.js.map
