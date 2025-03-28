@@ -4633,21 +4633,38 @@ function phone(strng: string, num: string): string {
             temp += arrOfString[i];
         }
 
-        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])){
-            if (){
-                arrOfString[i] = "";
-            }
-            address.push(arrOfString[i]);
-        }
+
     }
     
+    // Code to take the address
+    
     let resultName: string = name.join("");
+    
+    for (let i = 0; i < arrOfString.length; i++) {
+        
+        if (arrOfString[i] === resultNum[0]) {
+            
+            let phonePart = arrOfString.slice(i, i + resultNum.length).join('');
+            if (phonePart === resultNum) {
+                
+                let addressString = strng.slice(i + resultNum.length + resultName.length + 3); 
+                address = addressString.split(/\s+/).filter(part => /^[a-zA-Z0-9\s]*$/.test(part));
+                break;
+            }
+        }
+    }
 
-    // console.log(arrOfString);
-    console.log("This is number", resultNum);
-    console.log("This is name", resultName);
-    console.log("This is address", address);
-    return '...'
+    // CLeaning of the address
+
+    let addressString = address.join(" ").replace(/[^a-zA-Z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (addressString === "") {
+        return `Error => Too many people: ${num}`;
+    }
+
+    // Final result
+
+    return `Phone => ${resultNum}, Name => ${resultName}, Address => ${addressString}`;
+
 }
 
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));

@@ -1690,7 +1690,6 @@ console.log(litres(11.8));
 function phone(strng, num) {
     let arrOfString = strng.split("");
     let arrOfNum = num.split("");
-    let newCleanedString = [];
     let newCleanedNum = [];
     let name = [];
     let isInside = false;
@@ -1699,6 +1698,13 @@ function phone(strng, num) {
     let address = [];
     if (num === "") {
         return "Error => Not found: num";
+    }
+    for (let i = 0; i <= arrOfNum.length; i++) {
+        if (/[-+]?\d+/g.test(arrOfNum[i]) || arrOfNum[i] === "-") {
+            newCleanedNum.push(arrOfNum[i]);
+            resultNum = newCleanedNum.join("");
+        }
+        ;
     }
     for (let i = 0; i < arrOfString.length; i++) {
         if (arrOfString[i] === "<") {
@@ -1713,30 +1719,23 @@ function phone(strng, num) {
         else if (isInside) {
             temp += arrOfString[i];
         }
-        if (!/[^a-zA-Z0-9\s]/.test(arrOfString[i])) {
-            if (arrOfString[i] === resultNum) {
-                arrOfString[i] = "";
-            }
-            address.push(arrOfString[i]);
-        }
     }
-    let firstTwoChar = [];
-    for (let i = 0; i <= arrOfNum.length; i++) {
-        if (/[-+]?\d+/g.test(arrOfNum[i]) || arrOfNum[i] === "-") {
-            newCleanedNum.push(arrOfNum[i]);
-            resultNum = newCleanedNum.join("");
-        }
-        ;
-    }
-    let resultStrng = newCleanedString.join("");
     let resultName = name.join("");
-    console.log(arrOfString);
-    console.log(resultStrng);
-    console.log("This is number", resultNum);
-    console.log("This is name", resultName);
-    console.log("This is address", address);
-    console.log(firstTwoChar);
-    return '...';
+    for (let i = 0; i < arrOfString.length; i++) {
+        if (arrOfString[i] === resultNum[0]) {
+            let phonePart = arrOfString.slice(i, i + resultNum.length).join('');
+            if (phonePart === resultNum) {
+                let addressString = strng.slice(i + resultNum.length + resultName.length + 3);
+                address = addressString.split(/\s+/).filter(part => /^[a-zA-Z0-9\s]*$/.test(part));
+                break;
+            }
+        }
+    }
+    let addressString = address.join(" ").replace(/[^a-zA-Z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (addressString === "") {
+        return `Error => Too many people: ${num}`;
+    }
+    return `Phone => ${resultNum}, Name => ${resultName}, Address => ${addressString}`;
 }
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));
 //# sourceMappingURL=index.js.map
