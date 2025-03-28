@@ -1688,54 +1688,30 @@ function litres(time) {
 console.log(litres(6.7));
 console.log(litres(11.8));
 function phone(strng, num) {
-    let arrOfString = strng.split("");
-    let arrOfNum = num.split("");
-    let newCleanedNum = [];
-    let name = [];
-    let isInside = false;
-    let temp = "";
-    let resultNum = "";
-    let address = [];
-    if (num === "") {
-        return "Error => Not found: num";
-    }
-    for (let i = 0; i <= arrOfNum.length; i++) {
-        if (/[-+]?\d+/g.test(arrOfNum[i]) || arrOfNum[i] === "-") {
-            newCleanedNum.push(arrOfNum[i]);
-            resultNum = newCleanedNum.join("");
-        }
-        ;
-    }
-    for (let i = 0; i < arrOfString.length; i++) {
-        if (arrOfString[i] === "<") {
-            isInside = true;
-            temp = "";
-        }
-        else if (arrOfString[i] === ">" && isInside) {
-            isInside = false;
-            name.push(temp);
-            break;
-        }
-        else if (isInside) {
-            temp += arrOfString[i];
-        }
-    }
-    let resultName = name.join("");
-    for (let i = 0; i < arrOfString.length; i++) {
-        if (arrOfString[i] === resultNum[0]) {
-            let phonePart = arrOfString.slice(i, i + resultNum.length).join('');
-            if (phonePart === resultNum) {
-                let addressString = strng.slice(i + resultNum.length + resultName.length + 3);
-                address = addressString.split(/\s+/).filter(part => /^[a-zA-Z0-9\s]*$/.test(part));
-                break;
+    let lines = strng.split("\n");
+    let matches = [];
+    for (let line of lines) {
+        let phoneMatch = line.match(/(\+?\d{1,2}-\d{1,3}-\d{1,3}-\d{1,4})/);
+        if (phoneMatch && phoneMatch[0].includes(num)) {
+            let nameMatch = line.match(/<([^<>]+)>/);
+            let addressMatch = line.replace(/<[^<>]+>/, '').replace(phoneMatch[0], '').trim();
+            if (nameMatch) {
+                matches.push({
+                    phone: phoneMatch[0].replace('+', ''),
+                    name: nameMatch[1],
+                    address: addressMatch
+                });
             }
         }
     }
-    let addressString = address.join(" ").replace(/[^a-zA-Z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
-    if (addressString === "") {
+    if (matches.length > 1) {
         return `Error => Too many people: ${num}`;
     }
-    return `Phone => ${resultNum}, Name => ${resultName}, Address => ${addressString}`;
+    if (matches.length === 0) {
+        return `Error => Not found: ${num}`;
+    }
+    let match = matches[0];
+    return `Phone => ${match.phone}, Name => ${match.name}, Address => ${match.address}`;
 }
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));
 //# sourceMappingURL=index.js.map

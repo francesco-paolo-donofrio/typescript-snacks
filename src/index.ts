@@ -4597,75 +4597,49 @@ console.log(litres(11.8));
 // JavaScript random tests completed by @matt c.
 
 function phone(strng: string, num: string): string {
-    let arrOfString: string[] = strng.split("");
-    let arrOfNum: string[] = num.split("");
-    let newCleanedNum: string[] = [];
-    let name: string[] = [];
-    let isInside: boolean = false;
-    let temp: string = "";
-    let resultNum: string = "";
-    let address : string[] = [];
-    
-    if (num === "") {
-        return "Error => Not found: num";
-    }
-    
-    // Code to take the telephone-number
-    
-    for (let i = 0; i <= arrOfNum.length; i++) {
-        if (/[-+]?\d+/g.test(arrOfNum[i]) || arrOfNum[i] === "-") {
-            newCleanedNum.push(arrOfNum[i]);
-            resultNum = newCleanedNum.join("");
-        };
-    }
-    
-    // Code to take the name into the string
+    // Suddividiamo la stringa in righe
+    let lines = strng.split("\n");
 
-    for (let i = 0; i < arrOfString.length; i++) {
-        if (arrOfString[i] === "<") {
-            isInside = true;
-            temp = "";
-        } else if (arrOfString[i] === ">" && isInside) {
-            isInside = false;
-            name.push(temp);
-            break;
-        } else if (isInside) {
-            temp += arrOfString[i];
-        }
+    // Inizializzare variabili per nome, indirizzo e numero
+    let matches = [];
 
-
-    }
-    
-    // Code to take the address
-    
-    let resultName: string = name.join("");
-    
-    for (let i = 0; i < arrOfString.length; i++) {
+    // Iteriamo su ogni riga per cercare la corrispondenza
+    for (let line of lines) {
+        // Estraiamo il numero di telefono usando regex
+        let phoneMatch = line.match(/(\+?\d{1,2}-\d{1,3}-\d{1,3}-\d{1,4})/);
         
-        if (arrOfString[i] === resultNum[0]) {
-            
-            let phonePart = arrOfString.slice(i, i + resultNum.length).join('');
-            if (phonePart === resultNum) {
-                
-                let addressString = strng.slice(i + resultNum.length + resultName.length + 3); 
-                address = addressString.split(/\s+/).filter(part => /^[a-zA-Z0-9\s]*$/.test(part));
-                break;
+        // Se troviamo una corrispondenza per il numero
+        if (phoneMatch && phoneMatch[0].includes(num)) {
+            // Estraiamo il nome tra "<>" e l'indirizzo
+            let nameMatch = line.match(/<([^<>]+)>/);
+            let addressMatch = line.replace(/<[^<>]+>/, '').replace(phoneMatch[0], '').trim();
+
+            // Se abbiamo trovato un nome e un indirizzo
+            if (nameMatch) {
+                matches.push({
+                    phone: phoneMatch[0].replace('+', ''),  // Formattiamo senza "+"
+                    name: nameMatch[1],
+                    address: addressMatch
+                });
             }
         }
     }
 
-    // CLeaning of the address
-
-    let addressString = address.join(" ").replace(/[^a-zA-Z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
-    if (addressString === "") {
+    // If more than one result has been found (for num)
+    if (matches.length > 1) {
         return `Error => Too many people: ${num}`;
     }
-
-    // Final result
-
-    return `Phone => ${resultNum}, Name => ${resultName}, Address => ${addressString}`;
-
+    
+    // If no results has been found
+    if (matches.length === 0) {
+        return `Error => Not found: ${num}`;
+    }
+    // If one result has been found
+    let match = matches[0];
+    return `Phone => ${match.phone}, Name => ${match.name}, Address => ${match.address}`;
 }
 
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));
+
+
 
