@@ -1712,6 +1712,8 @@ function phone(strng, num) {
     }
     let match = matches[0];
     let addressString = match.address.replace(/[^a-zA-Z0-9\s,.-]/g, '').trim();
+    addressString = addressString.replace(/_/g, ' ');
+    addressString = addressString.replace(/\s+/g, ' ').trim();
     return `Phone => ${match.phone}, Name => ${match.name}, Address => ${addressString}`;
 }
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));

@@ -4597,27 +4597,22 @@ console.log(litres(11.8));
 // JavaScript random tests completed by @matt c.
 
 function phone(strng: string, num: string): string {
-    // Suddividiamo la stringa in righe
     let lines = strng.split("\n");
-
-    // Inizializzare variabili per nome, indirizzo e numero
     let matches = [];
 
-    // Iteriamo su ogni riga per cercare la corrispondenza
     for (let line of lines) {
-        // Estraiamo il numero di telefono usando regex
+        
         let phoneMatch = line.match(/(\+?\d{1,2}-\d{1,3}-\d{1,3}-\d{1,4})/);
         
-        // Se troviamo una corrispondenza per il numero
+        
         if (phoneMatch && phoneMatch[0].includes(num)) {
-            // Estraiamo il nome tra "<>" e l'indirizzo
+            
             let nameMatch = line.match(/<([^<>]+)>/);
             let addressMatch = line.replace(/<[^<>]+>/, '').replace(phoneMatch[0], '').trim();
 
-            // Se abbiamo trovato un nome e un indirizzo
             if (nameMatch) {
                 matches.push({
-                    phone: phoneMatch[0].replace('+', ''),  // Formattiamo senza "+"
+                    phone: phoneMatch[0].replace('+', ''),
                     name: nameMatch[1],
                     address: addressMatch
                 });
@@ -4625,18 +4620,28 @@ function phone(strng: string, num: string): string {
         }
     }
 
-    // If more than one result has been found (for num)
+    
     if (matches.length > 1) {
         return `Error => Too many people: ${num}`;
     }
     
-    // If no results has been found
+    // Se non è stato trovato nessun risultato
     if (matches.length === 0) {
         return `Error => Not found: ${num}`;
     }
-    // If one result has been found
+
+    // Se è stato trovato un solo risultato
     let match = matches[0];
+    
+    // Puliamo l'indirizzo, mantenendo i caratteri validi (alfanumerici, spazi, punti, virgole, trattini)
     let addressString = match.address.replace(/[^a-zA-Z0-9\s,.-]/g, '').trim();
+
+    // Sostituire gli underscore con spazi
+    addressString = addressString.replace(/_/g, ' ');
+
+    // Evitiamo di aggiungere spazi in eccesso
+    addressString = addressString.replace(/\s+/g, ' ').trim();  // Assicuriamo che ci sia un solo spazio
+
     return `Phone => ${match.phone}, Name => ${match.name}, Address => ${addressString}`;
 }
 
