@@ -4647,5 +4647,27 @@ function phone(strng: string, num: string): string {
 
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));
 
+// Snack 156
 
+// Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
 
+// Note: a and b are not ordered!
+
+// Examples (a, b) --> output (explanation)
+// (1, 0) --> 1 (1 + 0 = 1)
+// (1, 2) --> 3 (1 + 2 = 3)
+// (0, 1) --> 1 (0 + 1 = 1)
+// (1, 1) --> 1 (1 since both are same)
+// (-1, 0) --> -1 (-1 + 0 = -1)
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+// Your function should only return a number, not the explanation about how you get that number.
+
+export function getSum(a: number, b: number): number {
+    let majorN
+    for (let i = 0; i <= b; i++){
+        
+    }
+  }
+getSum(1, 1);
+getSum(1, 0);
+getSum(0, 1);
