@@ -4674,6 +4674,12 @@ export function getSum(a: number, b: number): number {
             arrOfIntegers.push(i);
         }
     }
+    if (a > b) {
+        for (let i = b; i <= a; i++) {
+            arrOfIntegers.push(i);
+        }
+    }
+
     let result : number = arrOfIntegers.reduce((a,b) => a + b);
     console.log(result);
     return result;
