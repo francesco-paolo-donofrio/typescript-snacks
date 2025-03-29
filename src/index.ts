@@ -4601,12 +4601,12 @@ function phone(strng: string, num: string): string {
     let matches = [];
 
     for (let line of lines) {
-        
+
         let phoneMatch = line.match(/(\+?\d{1,2}-\d{1,3}-\d{1,3}-\d{1,4})/);
-        
-        
+
+
         if (phoneMatch && phoneMatch[0].includes(num)) {
-            
+
             let nameMatch = line.match(/<([^<>]+)>/);
             let addressMatch = line.replace(/<[^<>]+>/, '').replace(phoneMatch[0], '').trim();
 
@@ -4620,11 +4620,11 @@ function phone(strng: string, num: string): string {
         }
     }
 
-    
+
     if (matches.length > 1) {
         return `Error => Too many people: ${num}`;
     }
-    
+
     // Se non è stato trovato nessun risultato
     if (matches.length === 0) {
         return `Error => Not found: ${num}`;
@@ -4632,7 +4632,7 @@ function phone(strng: string, num: string): string {
 
     // Se è stato trovato un solo risultato
     let match = matches[0];
-    
+
     // Puliamo l'indirizzo, mantenendo i caratteri validi (alfanumerici, spazi, punti, virgole, trattini)
     let addressString = match.address.replace(/[^a-zA-Z0-9\s,.-]/g, '').trim();
 
@@ -4663,11 +4663,19 @@ console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd.
 // Your function should only return a number, not the explanation about how you get that number.
 
 export function getSum(a: number, b: number): number {
-    let majorN
-    for (let i = 0; i <= b; i++){
-        
+    let arrOfIntegers: number[] = [];
+
+    if (a === b) {
+        return a;
     }
-  }
-getSum(1, 1);
-getSum(1, 0);
-getSum(0, 1);
+
+    if (a < b) {
+        for (let i = a; i <= b; i++) {
+            arrOfIntegers.push(i);
+        }
+    }
+    let result : number = arrOfIntegers.reduce((a,b) => a + b);
+    console.log(result);
+    return result;
+}
+getSum(1, 4);

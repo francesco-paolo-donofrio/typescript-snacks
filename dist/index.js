@@ -11,6 +11,7 @@ exports.findEvenIndex = findEvenIndex;
 exports.solution = solution;
 exports.countLettersAndDigits = countLettersAndDigits;
 exports.litres = litres;
+exports.getSum = getSum;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1717,4 +1718,19 @@ function phone(strng, num) {
     return `Phone => ${match.phone}, Name => ${match.name}, Address => ${addressString}`;
 }
 console.log(phone("/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010!\n", "+12-541-754-3010"));
+function getSum(a, b) {
+    let arrOfIntegers = [];
+    if (a === b) {
+        return a;
+    }
+    if (a < b) {
+        for (let i = a; i <= b; i++) {
+            arrOfIntegers.push(i);
+        }
+    }
+    let result = arrOfIntegers.reduce((a, b) => a + b);
+    console.log(result);
+    return result;
+}
+getSum(1, 4);
 //# sourceMappingURL=index.js.map
