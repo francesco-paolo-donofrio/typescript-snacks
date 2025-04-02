@@ -12,6 +12,7 @@ exports.solution = solution;
 exports.countLettersAndDigits = countLettersAndDigits;
 exports.litres = litres;
 exports.getSum = getSum;
+exports.toCamelCase = toCamelCase;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1728,9 +1729,26 @@ function getSum(a, b) {
             arrOfIntegers.push(i);
         }
     }
+    if (a > b) {
+        for (let i = b; i <= a; i++) {
+            arrOfIntegers.push(i);
+        }
+    }
     let result = arrOfIntegers.reduce((a, b) => a + b);
     console.log(result);
     return result;
 }
 getSum(1, 4);
+function toCamelCase(str) {
+    let arrOfString = str.split("");
+    let regex = /^[A-Za-z0-9\s_]$/;
+    for (let i = 0; i < arrOfString.length; i++) {
+        if (regex.test(arrOfString[i])) {
+            arrOfString[i].replace(arrOfString[i], " ");
+        }
+    }
+    console.log(arrOfString);
+    return "";
+}
+console.log(toCamelCase("the-stealth-warrior"));
 //# sourceMappingURL=index.js.map
