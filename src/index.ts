@@ -4697,16 +4697,16 @@ getSum(1, 4);
 
 // "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
 
-export function toCamelCase(str:string):string{
-    let arrOfString : string[] = str.split("");
-    let regex : RegExp = /[^A-Za-z0-9\s_]/;
-    for (let i = 0; i < arrOfString.length; i++){
-        if (regex.test(arrOfString[i])){
-            arrOfString[i] = "";
-            arrOfString[i + 1].toUpperCase();
-        }
+export function toCamelCase(str: string): string {
+
+    if (!str) return str;
+
+    let arrOfString: string[] = str.split(/[-_]/);
+
+    for (let i = 1; i < arrOfString.length; i++) {
+        arrOfString[i] = arrOfString[i].charAt(0).toUpperCase() + arrOfString[i].slice(1).toLowerCase();
     }
-    console.log(arrOfString);
-    return "";
+
+    return arrOfString.join("");
 }
 console.log(toCamelCase("the-stealth-warrior"));

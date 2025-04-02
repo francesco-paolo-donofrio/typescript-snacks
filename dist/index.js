@@ -1740,17 +1740,13 @@ function getSum(a, b) {
 }
 getSum(1, 4);
 function toCamelCase(str) {
-    let arrOfString = str.split("");
-    let regex = /[^A-Za-z0-9\s_]/;
-    for (let i = 0; i < arrOfString.length; i++) {
-        if (regex.test(arrOfString[i])) {
-            arrOfString[i] = "";
-            arrOfString[i + 1].toUpperCase();
-            i++;
-        }
+    if (!str)
+        return str;
+    let arrOfString = str.split(/[-_]/);
+    for (let i = 1; i < arrOfString.length; i++) {
+        arrOfString[i] = arrOfString[i].charAt(0).toUpperCase() + arrOfString[i].slice(1).toLowerCase();
     }
-    console.log(arrOfString);
-    return "";
+    return arrOfString.join("");
 }
 console.log(toCamelCase("the-stealth-warrior"));
 //# sourceMappingURL=index.js.map
