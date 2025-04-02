@@ -1741,10 +1741,12 @@ function getSum(a, b) {
 getSum(1, 4);
 function toCamelCase(str) {
     let arrOfString = str.split("");
-    let regex = /^[A-Za-z0-9\s_]$/;
+    let regex = /[^A-Za-z0-9\s_]/;
     for (let i = 0; i < arrOfString.length; i++) {
         if (regex.test(arrOfString[i])) {
-            arrOfString[i].replace(arrOfString[i], " ");
+            arrOfString[i] = "";
+            arrOfString[i + 1].toUpperCase();
+            i++;
         }
     }
     console.log(arrOfString);

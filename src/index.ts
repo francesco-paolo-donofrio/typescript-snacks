@@ -4699,10 +4699,11 @@ getSum(1, 4);
 
 export function toCamelCase(str:string):string{
     let arrOfString : string[] = str.split("");
-    let regex : RegExp = /^[A-Za-z0-9\s_]$/;
+    let regex : RegExp = /[^A-Za-z0-9\s_]/;
     for (let i = 0; i < arrOfString.length; i++){
         if (regex.test(arrOfString[i])){
-            arrOfString[i].replace(arrOfString[i], " ");
+            arrOfString[i] = "";
+            arrOfString[i + 1].toUpperCase();
         }
     }
     console.log(arrOfString);
