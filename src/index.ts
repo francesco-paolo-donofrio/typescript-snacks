@@ -4727,7 +4727,9 @@ function finddOutlier(integers: number[]): number | string {
 
   for (let i = 0; i < integers.length; i++){
     if (integers[i] % 2 === 0){
-        console.log("È pari");
+        console.log(integers[i], "è pari");
+    } else {
+        console.log(integers[i], "è dispari")
     }
   }
   return 0;
