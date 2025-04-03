@@ -4720,6 +4720,17 @@ console.log(toCamelCase("the-stealth-warrior"));
 
 // [160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
 
-// export function findOutlier(integers: number[]): number {
-//   // your code here
-// }
+function finddOutlier(integers: number[]): number | string {
+  if (integers.length < 3){
+    return "The array's length must be bigger or equal than 3";
+  }
+
+  for (let i = 0; i < integers.length; i++){
+    if (integers[i] % 2 === 0){
+        console.log("È pari");
+    }
+  }
+  return 0;
+}
+
+finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);

@@ -1749,4 +1749,16 @@ function toCamelCase(str) {
     return arrOfString.join("");
 }
 console.log(toCamelCase("the-stealth-warrior"));
+function finddOutlier(integers) {
+    if (integers.length < 3) {
+        return "The array's length must be bigger or equal than 3";
+    }
+    for (let i = 0; i < integers.length; i++) {
+        if (integers[i] % 2 === 0) {
+            console.log("È pari");
+        }
+    }
+    return 0;
+}
+finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 //# sourceMappingURL=index.js.map
