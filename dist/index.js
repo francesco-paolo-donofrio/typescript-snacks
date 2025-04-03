@@ -1750,15 +1750,19 @@ function toCamelCase(str) {
 }
 console.log(toCamelCase("the-stealth-warrior"));
 function finddOutlier(integers) {
+    let evenNumber = 0;
+    let oddNumber = 0;
     if (integers.length < 3) {
         return "The array's length must be bigger or equal than 3";
     }
     for (let i = 0; i < integers.length; i++) {
         if (integers[i] % 2 === 0) {
-            console.log(integers[i], "è pari");
+            evenNumber = integers[i];
+            console.log("These are the even numbers", evenNumber);
         }
         else {
-            console.log(integers[i], "è dispari");
+            oddNumber = integers[i];
+            console.log("This is the odd number", oddNumber);
         }
     }
     return 0;

@@ -4680,7 +4680,7 @@ export function getSum(a: number, b: number): number {
         }
     }
 
-    let result : number = arrOfIntegers.reduce((a,b) => a + b);
+    let result: number = arrOfIntegers.reduce((a, b) => a + b);
     console.log(result);
     return result;
 }
@@ -4721,18 +4721,25 @@ console.log(toCamelCase("the-stealth-warrior"));
 // [160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
 
 function finddOutlier(integers: number[]): number | string {
-  if (integers.length < 3){
-    return "The array's length must be bigger or equal than 3";
-  }
+    let evenNumber: number = 0;
+    let oddNumber: number = 0;
 
-  for (let i = 0; i < integers.length; i++){
-    if (integers[i] % 2 === 0){
-        console.log(integers[i], "è pari");
-    } else {
-        console.log(integers[i], "è dispari")
+    if (integers.length < 3) {
+        return "The array's length must be bigger or equal than 3";
     }
-  }
-  return 0;
+
+    for (let i = 0; i < integers.length; i++) {
+        if (integers[i] % 2 === 0) {
+            evenNumber = integers[i];
+            console.log("These are the even numbers", evenNumber)
+        }
+        else {
+            oddNumber = integers[i];
+            console.log("This is the odd number", oddNumber);
+        }
+    }
+
+    return 0;
 }
 
 finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
