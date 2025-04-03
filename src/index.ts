@@ -4721,8 +4721,8 @@ console.log(toCamelCase("the-stealth-warrior"));
 // [160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
 
 function finddOutlier(integers: number[]): number | string {
-    let evenNumber: number = 0;
-    let oddNumber: number = 0;
+    let evenNumber: number[] = [];
+    let oddNumber: number[] = [];
 
     if (integers.length < 3) {
         return "The array's length must be bigger or equal than 3";
@@ -4730,16 +4730,18 @@ function finddOutlier(integers: number[]): number | string {
 
     for (let i = 0; i < integers.length; i++) {
         if (integers[i] % 2 === 0) {
-            evenNumber = integers[i];
-            console.log("These are the even numbers", evenNumber)
+            evenNumber.push(integers[i]);
         }
         else {
-            oddNumber = integers[i];
-            console.log("This is the odd number", oddNumber);
+            oddNumber.push(integers[i]);
         }
     }
 
-    return 0;
+    if (evenNumber.length > oddNumber.length){
+        return oddNumber[0];
+    } else {
+        return evenNumber[0];
+    }
 }
 
 finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);

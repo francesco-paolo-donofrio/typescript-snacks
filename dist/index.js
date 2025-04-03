@@ -1750,22 +1750,25 @@ function toCamelCase(str) {
 }
 console.log(toCamelCase("the-stealth-warrior"));
 function finddOutlier(integers) {
-    let evenNumber = 0;
-    let oddNumber = 0;
+    let evenNumber = [];
+    let oddNumber = [];
     if (integers.length < 3) {
         return "The array's length must be bigger or equal than 3";
     }
     for (let i = 0; i < integers.length; i++) {
         if (integers[i] % 2 === 0) {
-            evenNumber = integers[i];
-            console.log("These are the even numbers", evenNumber);
+            evenNumber.push(integers[i]);
         }
         else {
-            oddNumber = integers[i];
-            console.log("This is the odd number", oddNumber);
+            oddNumber.push(integers[i]);
         }
     }
-    return 0;
+    if (evenNumber.length > oddNumber.length) {
+        return oddNumber[0];
+    }
+    else {
+        return evenNumber[0];
+    }
 }
 finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 //# sourceMappingURL=index.js.map
