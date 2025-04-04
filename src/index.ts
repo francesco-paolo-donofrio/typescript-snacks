@@ -4760,5 +4760,8 @@ finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 // You may assume the input only contain English alphabet and spaces.
 
 export function stringTransformer(str: string) {
-    // Your code here
+    let arrOfString : string[] = str.split("");
+    console.log(arrOfString);
   }
+
+  stringTransformer("Example Input");

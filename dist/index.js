@@ -13,6 +13,7 @@ exports.countLettersAndDigits = countLettersAndDigits;
 exports.litres = litres;
 exports.getSum = getSum;
 exports.toCamelCase = toCamelCase;
+exports.stringTransformer = stringTransformer;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1771,4 +1772,9 @@ function finddOutlier(integers) {
     }
 }
 finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
+function stringTransformer(str) {
+    let arrOfString = str.split("");
+    console.log(arrOfString);
+}
+stringTransformer("Example Input");
 //# sourceMappingURL=index.js.map
