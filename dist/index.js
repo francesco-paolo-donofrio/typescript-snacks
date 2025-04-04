@@ -1774,6 +1774,17 @@ function finddOutlier(integers) {
 finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 function stringTransformer(str) {
     let arrOfString = str.split("");
+    let flag = false;
+    for (let i = 0; i < arrOfString.length; i++) {
+        if (arrOfString[i] === arrOfString[i].toUpperCase()) {
+            flag = true;
+            arrOfString[i] = arrOfString[i].toLowerCase();
+        }
+        else {
+            flag;
+            arrOfString[i] = arrOfString[i].toUpperCase();
+        }
+    }
     console.log(arrOfString);
 }
 stringTransformer("Example Input");
