@@ -4759,7 +4759,7 @@ finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 // "Example Input" ==> "iNPUT eXAMPLE"
 // You may assume the input only contain English alphabet and spaces.
 
-export function stringTransformer(str: string) {
+export function stringTransformer(str: string):string[] {
     let arrOfString : string[] = str.split("");
     let flag : boolean = false;
     for (let i = 0; i < arrOfString.length; i++){
@@ -4771,7 +4771,7 @@ export function stringTransformer(str: string) {
             arrOfString[i] = arrOfString[i].toUpperCase();
         }
     }
-    console.log(arrOfString);
+    return arrOfString;
   }
 
 
@@ -4786,3 +4786,7 @@ export function stringTransformer(str: string) {
 // "Dermatoglyphics" --> true
 // "aba" --> false
 // "moOse" --> false (ignore letter case)
+
+// function isIsogram(str){
+//     //...
+//   }

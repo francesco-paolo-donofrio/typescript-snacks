@@ -1785,7 +1785,8 @@ function stringTransformer(str) {
             arrOfString[i] = arrOfString[i].toUpperCase();
         }
     }
-    console.log(arrOfString);
+    
+    return arrOfString;
 }
 stringTransformer("Example Input");
 //# sourceMappingURL=index.js.map
