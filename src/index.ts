@@ -4737,7 +4737,7 @@ function finddOutlier(integers: number[]): number | string {
         }
     }
 
-    if (evenNumber.length > oddNumber.length){
+    if (evenNumber.length > oddNumber.length) {
         return oddNumber[0];
     } else {
         return evenNumber[0];
@@ -4759,23 +4759,22 @@ finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 // "Example Input" ==> "iNPUT eXAMPLE"
 // You may assume the input only contain English alphabet and spaces.
 
-export function stringTransformer(str: string):string[] {
-    let arrOfString : string[] = str.split("");
-    let flag : boolean = false;
-    for (let i = 0; i < arrOfString.length; i++){
-        if (arrOfString[i] === arrOfString[i].toUpperCase()){
-            flag = true;
-            arrOfString[i] = arrOfString[i].toLowerCase();
-        } else {
-            flag;
-            arrOfString[i] = arrOfString[i].toUpperCase();
+export function stringTransformer(str: string): string {
+    let arrOfString: string[] = str.split(" ");
+    for (let i = 0; i < arrOfString.length; i++) {
+        let arrOfWords : string[] = arrOfString[i].split("");
+        if (arrOfWords[0] === arrOfWords[0].toUpperCase()){
+            arrOfWords[0] = arrOfWords[0].toLowerCase()
         }
     }
+    
+    arrOfString.reverse();
+    console.log("This is arrOfString", arrOfString);
     return arrOfString;
-  }
+}
 
 
-  stringTransformer("Example Input");
+stringTransformer("Example Input");
 
 //   Snack 160
 
