@@ -4790,6 +4790,23 @@ stringTransformer("Example Input");
 // "aba" --> false
 // "moOse" --> false (ignore letter case)
 
-// function isIsogram(str){
-//     //...
-//   }
+export function isIsogram(str: string): boolean{
+    if (str = ""){
+        return true;
+    }
+    let existentLetters : string[] = [];
+    let arrOfString : string[] = str.toLowerCase().split("");
+
+    for (let i = 0; i < arrOfString.length; i++){
+        existentLetters.push(arrOfString[i].toLowerCase());
+    }
+    for (let i = 0; i < existentLetters.length; i++){
+        if (arrOfString.includes(existentLetters[i])){
+            return false
+        }
+    }
+    return true;
+  }
+
+  isIsogram("Dermatoglyphics");
+  isIsogram("aba");
