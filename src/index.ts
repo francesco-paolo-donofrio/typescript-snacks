@@ -4759,17 +4759,21 @@ finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 // "Example Input" ==> "iNPUT eXAMPLE"
 // You may assume the input only contain English alphabet and spaces.
 
-export function stringTransformer(str: string): string {
-    let arrOfStringReversed: string[] = str.trim().split(/\s+/).reverse();
-    
-   for (let i = 0; i < arrOfStringReversed.length; i++) {
-        arrOfStringReversed[i] = arrOfStringReversed[i]
-            .split('')
-            .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
-            .join(''); 
-    }
+export function stringTransformer(str: string): string | null{
+    let wordsWithSpaces : RegExpMatchArray | null = str.match(/\S+\s*/g);
 
-    return arrOfStringReversed.join(' ');
+    let arrOfStringReversed: string[] | null = wordsWithSpaces ? wordsWithSpaces.reverse() : null;
+
+    if (arrOfStringReversed){
+        for (let i = 0; i < arrOfStringReversed.length; i++) {
+            arrOfStringReversed[i] = arrOfStringReversed[i]
+                .split('')
+                .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()) // Invertiamo il caso
+                .join('');
+        }
+        return arrOfStringReversed.join('');
+    }
+return null;
 }
 
 

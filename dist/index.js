@@ -1780,6 +1780,7 @@ function stringTransformer(str) {
             .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
             .join('');
     }
+    console.log(arrOfStringReversed.join(' '));
     return arrOfStringReversed.join(' ');
 }
 stringTransformer("Example Input");
