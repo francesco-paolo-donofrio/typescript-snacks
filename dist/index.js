@@ -1773,15 +1773,19 @@ function finddOutlier(integers) {
 }
 finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 function stringTransformer(str) {
-    let arrOfStringReversed = str.trim().split(/\s+/).reverse();
-    for (let i = 0; i < arrOfStringReversed.length; i++) {
-        arrOfStringReversed[i] = arrOfStringReversed[i]
-            .split('')
-            .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
-            .join('');
+    let wordsWithSpaces = str.match(/\S+\s*/g);
+    let arrOfStringReversed = wordsWithSpaces ? wordsWithSpaces.reverse() : null;
+    if (arrOfStringReversed) {
+        for (let i = 0; i < arrOfStringReversed.length; i++) {
+            arrOfStringReversed[i] = arrOfStringReversed[i]
+                .split('')
+                .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
+                .join('');
+        }
+        console.log(arrOfStringReversed.join(''));
+        return arrOfStringReversed.join('');
     }
-    console.log(arrOfStringReversed.join(' '));
-    return arrOfStringReversed.join(' ');
+    return null;
 }
 stringTransformer("Example Input");
 //# sourceMappingURL=index.js.map

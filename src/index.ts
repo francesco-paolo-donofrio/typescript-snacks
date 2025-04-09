@@ -4771,6 +4771,7 @@ export function stringTransformer(str: string): string | null{
                 .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()) // Invertiamo il caso
                 .join('');
         }
+        console.log(arrOfStringReversed.join(''));
         return arrOfStringReversed.join('');
     }
 return null;
