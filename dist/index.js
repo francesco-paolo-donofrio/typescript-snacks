@@ -1773,13 +1773,14 @@ function finddOutlier(integers) {
 }
 finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 function stringTransformer(str) {
-    let arrOfStringReversed = str.split(" ").reverse();
-    console.log(arrOfStringReversed);
-    arrOfStringReversed.forEach(element => {
-        let splittedArr = element.split("").map((el) => el[0].toUpperCase() ? el.toUpperCase() && el[1].toLowerCase() : el[0]);
-        console.log(splittedArr);
-    });
-    return "";
+    let arrOfStringReversed = str.trim().split(/\s+/).reverse();
+    for (let i = 0; i < arrOfStringReversed.length; i++) {
+        arrOfStringReversed[i] = arrOfStringReversed[i]
+            .split('')
+            .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
+            .join('');
+    }
+    return arrOfStringReversed.join(' ');
 }
 stringTransformer("Example Input");
 //# sourceMappingURL=index.js.map

@@ -4760,21 +4760,16 @@ finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 // You may assume the input only contain English alphabet and spaces.
 
 export function stringTransformer(str: string): string {
-    let arrOfStringReversed: string[] = str.split(" ").reverse();
-    console.log(arrOfStringReversed);
-    arrOfStringReversed.forEach(element => {
-        let splittedArr : string[] = element.split("").map((el)=> el[0].toUpperCase() ? el.toUpperCase() && el[1].toLowerCase() : el[0]);
-        console.log(splittedArr);
-    });
-    // for (let i = 0; i < arrOfStringReversed.length; i++) {
-    //     let arrOfWords : string[] = arrOfString[i].split("");
-    //     if (arrOfWords[0] === arrOfWords[0].toUpperCase()){
-    //         arrOfWords[0] = arrOfWords[0].toLowerCase()
-    //         arrOfWords.reverse();
-    //         arrOfWords.join("");
-    //     }
-    // }
-    return "";    
+    let arrOfStringReversed: string[] = str.trim().split(/\s+/).reverse();
+    
+   for (let i = 0; i < arrOfStringReversed.length; i++) {
+        arrOfStringReversed[i] = arrOfStringReversed[i]
+            .split('')
+            .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
+            .join(''); 
+    }
+
+    return arrOfStringReversed.join(' ');
 }
 
 
