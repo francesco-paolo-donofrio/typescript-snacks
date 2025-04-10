@@ -14,6 +14,7 @@ exports.litres = litres;
 exports.getSum = getSum;
 exports.toCamelCase = toCamelCase;
 exports.stringTransformer = stringTransformer;
+exports.isIsogram = isIsogram;
 function makeNegative(number) {
     if (number < 0) {
         return number;
@@ -1788,4 +1789,24 @@ function stringTransformer(str) {
     return null;
 }
 stringTransformer("Example Input");
+function isIsogram(str) {
+    if (str = "") {
+        return true;
+    }
+    let existentLetters = [];
+    let arrOfString = str.toLowerCase().split("");
+    for (let i = 0; i < arrOfString.length; i++) {
+        existentLetters.push(arrOfString[i].toLowerCase());
+        existentLetters.join("");
+        console.log("This is existentLetter", existentLetters);
+    }
+    arrOfString.join("");
+    console.log("This is arrOfString", existentLetters);
+    for (let i = 0; i < existentLetters.length; i++) {
+        console.log(existentLetters[i]);
+    }
+    return true;
+}
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram("aba"));
 //# sourceMappingURL=index.js.map

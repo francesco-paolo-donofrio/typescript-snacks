@@ -4759,12 +4759,12 @@ finddOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 // "Example Input" ==> "iNPUT eXAMPLE"
 // You may assume the input only contain English alphabet and spaces.
 
-export function stringTransformer(str: string): string | null{
-    let wordsWithSpaces : string[] = str.split(" ");
+export function stringTransformer(str: string): string | null {
+    let wordsWithSpaces: string[] = str.split(" ");
 
     let arrOfStringReversed: string[] | null = wordsWithSpaces ? wordsWithSpaces.reverse() : null;
 
-    if (arrOfStringReversed){
+    if (arrOfStringReversed) {
         for (let i = 0; i < arrOfStringReversed.length; i++) {
             arrOfStringReversed[i] = arrOfStringReversed[i]
                 .split('')
@@ -4774,7 +4774,7 @@ export function stringTransformer(str: string): string | null{
         console.log(arrOfStringReversed.join(' '));
         return arrOfStringReversed.join(' ');
     }
-return null;
+    return null;
 }
 
 
@@ -4790,23 +4790,27 @@ stringTransformer("Example Input");
 // "aba" --> false
 // "moOse" --> false (ignore letter case)
 
-export function isIsogram(str: string): boolean{
-    if (str = ""){
+export function isIsogram(str: string): boolean {
+    if (str = "") {
         return true;
     }
-    let existentLetters : string[] = [];
-    let arrOfString : string[] = str.toLowerCase().split("");
 
-    for (let i = 0; i < arrOfString.length; i++){
+    let existentLetters: string[] = [];
+    let arrOfString: string[] = str.toLowerCase().split("");
+
+    for (let i = 0; i < arrOfString.length; i++) {
         existentLetters.push(arrOfString[i].toLowerCase());
+        existentLetters.join("");
+        console.log("This is existentLetter", existentLetters);
     }
-    for (let i = 0; i < existentLetters.length; i++){
-        if (arrOfString.includes(existentLetters[i])){
-            return false
-        }
+    arrOfString.join("");
+    console.log("This is arrOfString", existentLetters);
+
+    for (let i = 0; i < existentLetters.length; i++) {
+        console.log(existentLetters[i])
     }
     return true;
-  }
+}
 
-  isIsogram("Dermatoglyphics");
-  isIsogram("aba");
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram("aba"));
