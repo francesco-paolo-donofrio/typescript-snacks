@@ -4822,14 +4822,21 @@ console.log(isIsogram("aba"));
 
 export const pigIt = (a : string) : string =>  {
   let arrayOfA : string[] = a.split(" ");
+  const regex : RegExp = /[^a-zA-Z0-9\s]/g;
   console.log(arrayOfA);
   let wordsInverted : string[] = [];
+
   for (let i = 0; i < arrayOfA.length; i++){
-    wordsInverted.push(arrayOfA[i].slice(1, arrayOfA[i].length))
-    wordsInverted.push(arrayOfA[i][0] + " ");
+    if (!arrayOfA[i].match(regex)){
+        wordsInverted.push(arrayOfA[i].slice(1, arrayOfA[i].length))
+        wordsInverted.push(arrayOfA[i][0] + "ay" + " ");
+    } else {
+        wordsInverted.push(arrayOfA[i]);
+    }
   }
   console.log(wordsInverted.join(""));
-  return "";
+  return wordsInverted.join("");
 }
 
 pigIt('Pig latin is cool');
+pigIt('Hello world !');

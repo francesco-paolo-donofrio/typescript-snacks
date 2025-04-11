@@ -1808,15 +1808,22 @@ console.log(isIsogram("Dermatoglyphics"));
 console.log(isIsogram("aba"));
 const pigIt = (a) => {
     let arrayOfA = a.split(" ");
+    const regex = /[^a-zA-Z0-9\s]/g;
     console.log(arrayOfA);
     let wordsInverted = [];
     for (let i = 0; i < arrayOfA.length; i++) {
-        wordsInverted.push(arrayOfA[i].slice(1, arrayOfA[i].length));
-        wordsInverted.push(arrayOfA[i][0] + " ");
+        if (!arrayOfA[i].match(regex)) {
+            wordsInverted.push(arrayOfA[i].slice(1, arrayOfA[i].length));
+            wordsInverted.push(arrayOfA[i][0] + "ay" + " ");
+        }
+        else {
+            wordsInverted.push(arrayOfA[i]);
+        }
     }
     console.log(wordsInverted.join(""));
     return "";
 };
 exports.pigIt = pigIt;
 (0, exports.pigIt)('Pig latin is cool');
+(0, exports.pigIt)('Hello world !');
 //# sourceMappingURL=index.js.map
