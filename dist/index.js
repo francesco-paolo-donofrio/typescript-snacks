@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.likes = void 0;
+exports.pigIt = exports.likes = void 0;
 exports.catMouse = catMouse;
 exports.catDogMouse = catDogMouse;
 exports.narcissistic = narcissistic;
@@ -1806,4 +1806,16 @@ function isIsogram(str) {
 }
 console.log(isIsogram("Dermatoglyphics"));
 console.log(isIsogram("aba"));
+const pigIt = (a) => {
+    let arrayOfA = a.split(" ");
+    console.log(arrayOfA);
+    let wordsInverted = [];
+    for (let i = 0; i < arrayOfA.length; i++) {
+        wordsInverted.push(arrayOfA[i][0]);
+    }
+    console.log(wordsInverted);
+    return "";
+};
+exports.pigIt = pigIt;
+(0, exports.pigIt)('Pig latin is cool');
 //# sourceMappingURL=index.js.map

@@ -4820,3 +4820,17 @@ console.log(isIsogram("aba"));
 // pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
 // pigIt('Hello world !');     // elloHay orldway !
 
+export const pigIt = (a : string) : string =>  {
+  let arrayOfA : string[] = a.split(" ");
+  console.log(arrayOfA);
+  let wordWithoutInitial : string[] = arrayOfA.map((el)=> el.charAt(0) )
+  let wordsInverted : string[] = [];
+  for (let i = 0; i < arrayOfA.length; i++){
+    wordsInverted.push(arrayOfA[i])
+    wordsInverted.push(arrayOfA[i][0]);
+  }
+  console.log(wordsInverted);
+  return "";
+}
+
+pigIt('Pig latin is cool');
