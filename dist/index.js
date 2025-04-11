@@ -1812,7 +1812,7 @@ const pigIt = (a) => {
     let wordsInverted = [];
     for (let i = 0; i < arrayOfA.length; i++) {
         wordsInverted.push(arrayOfA[i].slice(1, arrayOfA[i].length));
-        wordsInverted.push(arrayOfA[i][0]);
+        wordsInverted.push(arrayOfA[i][0] + " ");
     }
     console.log(wordsInverted.join(""));
     return "";
