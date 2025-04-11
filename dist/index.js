@@ -1791,21 +1791,17 @@ stringTransformer("Example Input");
 function isIsogram(str) {
     let existentLetters = [];
     let arrOfString = str.toLowerCase().split("");
-    if (str = "") {
+    if (str === "") {
         return true;
     }
     for (let i = 0; i < arrOfString.length; i++) {
-        existentLetters.push(arrOfString[i]);
-    }
-    for (let i = 0; i < existentLetters.length; i++) {
-        if (arrOfString.join("").includes(existentLetters[i])) {
+        if (existentLetters.includes(arrOfString[i])) {
             return false;
         }
         else {
-            return true;
+            existentLetters.push(arrOfString[i]);
         }
     }
-    console.log(existentLetters);
     return true;
 }
 console.log(isIsogram("Dermatoglyphics"));
