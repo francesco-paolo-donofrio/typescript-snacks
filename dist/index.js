@@ -1821,7 +1821,7 @@ const pigIt = (a) => {
         }
     }
     console.log(wordsInverted.join(""));
-    return "";
+    return wordsInverted.join("").trim();
 };
 exports.pigIt = pigIt;
 (0, exports.pigIt)('Pig latin is cool');
