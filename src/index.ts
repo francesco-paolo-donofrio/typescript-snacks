@@ -4859,6 +4859,16 @@ pigIt('Hello world !');
 //   "RSCODEWA",
 //   "SCODEWAR" ]Let's create some scrolling text!
 
-function scrollingText(text){
-    return ["GOOD LUCK!", "OOD LUCK!G", ...]
+function scrollingText(text : string){
+    console.log(text);
+    let arrOfFirstLetter : string[] = [];
+    for (let i = 0; i < text.length; i++){
+        arrOfFirstLetter.push(text[i]);
+        arrOfFirstLetter[0] = "";
+        
+    }
+    
+    console.log(arrOfFirstLetter);
   }
+
+  scrollingText("CODEWARS");

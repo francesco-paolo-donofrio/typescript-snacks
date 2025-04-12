@@ -1826,4 +1826,14 @@ const pigIt = (a) => {
 exports.pigIt = pigIt;
 (0, exports.pigIt)('Pig latin is cool');
 (0, exports.pigIt)('Hello world !');
+function scrollingText(text) {
+    console.log(text);
+    let arrOfFirstLetter = [];
+    for (let i = 0; i < text.length; i++) {
+        arrOfFirstLetter.push(text[i]);
+        arrOfFirstLetter[0] = "";
+    }
+    console.log(arrOfFirstLetter);
+}
+scrollingText("CODEWARS");
 //# sourceMappingURL=index.js.map
