@@ -4862,10 +4862,12 @@ pigIt('Hello world !');
 function scrollingText(text : string){
     console.log(text);
     let arrOfFirstLetter : string[] = [];
-    for (let i = 0; i < text.length; i++){
-        arrOfFirstLetter.push(text.slice(i, text.length) + text[0]);
+    let arrOfChar : string[] = text.split("");
+    for (let i = 1; i < text.length; i++){
+        arrOfFirstLetter.push(arrOfChar.pop() + text[0])
+        // text.replace(text[0], "");
+        // arrOfFirstLetter.push(text.slice(1, text.length) + text[i][0]);
     }
-    
     console.log(arrOfFirstLetter);
   }
 

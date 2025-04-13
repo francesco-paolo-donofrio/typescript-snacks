@@ -1829,8 +1829,9 @@ exports.pigIt = pigIt;
 function scrollingText(text) {
     console.log(text);
     let arrOfFirstLetter = [];
-    for (let i = 0; i < text.length; i++) {
-        arrOfFirstLetter.push(text.slice(i, parseInt(text)) + text[0]);
+    let arrOfChar = text.split("");
+    for (let i = 1; i < text.length; i++) {
+        arrOfFirstLetter.push(arrOfChar.pop() + text[0]);
     }
     console.log(arrOfFirstLetter);
 }
