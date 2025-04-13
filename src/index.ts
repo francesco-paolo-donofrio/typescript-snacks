@@ -4863,9 +4863,7 @@ function scrollingText(text : string){
     console.log(text);
     let arrOfFirstLetter : string[] = [];
     for (let i = 0; i < text.length; i++){
-        arrOfFirstLetter.push(text[i]);
-        arrOfFirstLetter[0] = "";
-        
+        arrOfFirstLetter.push(text.slice(i, text.length) + text[0]);
     }
     
     console.log(arrOfFirstLetter);

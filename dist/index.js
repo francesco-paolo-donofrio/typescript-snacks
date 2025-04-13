@@ -1830,8 +1830,7 @@ function scrollingText(text) {
     console.log(text);
     let arrOfFirstLetter = [];
     for (let i = 0; i < text.length; i++) {
-        arrOfFirstLetter.push(text[i]);
-        arrOfFirstLetter[0] = "";
+        arrOfFirstLetter.push(text.slice(i, parseInt(text)) + text[0]);
     }
     console.log(arrOfFirstLetter);
 }
