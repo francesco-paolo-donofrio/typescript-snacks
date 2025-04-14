@@ -4860,15 +4860,17 @@ pigIt('Hello world !');
 //   "SCODEWAR" ]Let's create some scrolling text!
 
 function scrollingText(text : string){
-    console.log(text);
-    let arrOfFirstLetter : string[] = [];
-    let arrOfChar : string[] = text.split("");
-    for (let i = 1; i < text.length; i++){
-        arrOfFirstLetter.push(arrOfChar.pop() + text[0])
-        // text.replace(text[0], "");
-        // arrOfFirstLetter.push(text.slice(1, text.length) + text[i][0]);
+    let arrOfFirstLetter : string[] = text.split("");
+    let pushedWords : string[] = [];
+    // let poppedLetters : string[];
+    for (let i = 0; i < arrOfFirstLetter.length; i++){
+        if (i === 0){
+            pushedWords.push(text);
+        } else {
+            pushedWords.push(text.slice(1, text.length));
+        }
     }
-    console.log(arrOfFirstLetter);
+    console.log(pushedWords);
   }
 
   scrollingText("CODEWARS");
