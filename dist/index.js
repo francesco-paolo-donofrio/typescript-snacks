@@ -1827,17 +1827,14 @@ exports.pigIt = pigIt;
 (0, exports.pigIt)('Pig latin is cool');
 (0, exports.pigIt)('Hello world !');
 function scrollingText(text) {
-    let arrOfFirstLetter = text.split("");
-    let pushedWords = [];
-    for (let i = 0; i < arrOfFirstLetter.length; i++) {
-        if (i === 0) {
-            pushedWords.push(text);
-        }
-        else {
-            pushedWords.push(text.slice(1, text.length));
-        }
+    const result = [];
+    const upperText = text.toUpperCase();
+    for (let i = 0; i < upperText.length; i++) {
+        const rotated = upperText.slice(i) + upperText.slice(0, i);
+        result.push(rotated);
     }
-    console.log(pushedWords);
+    console.log(result);
+    return result;
 }
 scrollingText("CODEWARS");
 //# sourceMappingURL=index.js.map

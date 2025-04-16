@@ -4859,18 +4859,17 @@ pigIt('Hello world !');
 //   "RSCODEWA",
 //   "SCODEWAR" ]Let's create some scrolling text!
 
-function scrollingText(text : string){
-    let arrOfFirstLetter : string[] = text.split("");
-    let pushedWords : string[] = [];
-    // let poppedLetters : string[];
-    for (let i = 0; i < arrOfFirstLetter.length; i++){
-        if (i === 0){
-            pushedWords.push(text);
-        } else {
-            pushedWords.push(text.slice(1, text.length));
-        }
+function scrollingText(text: string): string[] {
+    const result: string[] = [];
+    const upperText = text.toUpperCase();
+  
+    for (let i = 0; i < upperText.length; i++) {
+      const rotated = upperText.slice(i) + upperText.slice(0, i);
+      result.push(rotated);
     }
-    console.log(pushedWords);
+  
+    console.log(result);
+    return result;
   }
 
   scrollingText("CODEWARS");
