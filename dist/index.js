@@ -1837,4 +1837,11 @@ function scrollingText(text) {
     return result;
 }
 scrollingText("CODEWARS");
+function isPangram(string) {
+    const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+    console.log(alphabet);
+    console.log(string);
+    return true;
+}
+console.log(isPangram("ciao"));
 //# sourceMappingURL=index.js.map
