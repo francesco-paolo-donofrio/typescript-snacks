@@ -1839,21 +1839,12 @@ function scrollingText(text) {
 scrollingText("CODEWARS");
 function isPangram(string) {
     const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
-    const maybeAlphabet = [];
-    for (let i = 0; i < string.length; i++) {
-        maybeAlphabet.push(string[i]);
-    }
-    const goodAlphabet = [];
-    for (let i = 0; i < maybeAlphabet.length; i++) {
-        if (maybeAlphabet[i] === maybeAlphabet[i]) {
-            goodAlphabet.push(maybeAlphabet[i]);
-        }
-    }
-    console.log(maybeAlphabet);
-    if (alphabet.length === goodAlphabet.length) {
+    const uniqueChars = [...new Set(string.split(""))];
+    console.log(uniqueChars);
+    if (uniqueChars.length >= alphabet.length) {
         return true;
     }
     return false;
 }
-console.log(isPangram("ciaoo"));
+console.log(isPangram("abcdefghijklmopqrstuvwxyz"));
 //# sourceMappingURL=index.js.map
