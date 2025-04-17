@@ -1847,4 +1847,10 @@ function isPangram(string) {
     return false;
 }
 console.log(isPangram("abcdefghijklmopqrstuvwxyz"));
+function removeSmallest(numbers) {
+    const smallestNumber = numbers.filter((n) => n < n ? n : 0);
+    console.log(smallestNumber);
+    return smallestNumber;
+}
+console.log(removeSmallest);
 //# sourceMappingURL=index.js.map
