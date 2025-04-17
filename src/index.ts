@@ -4885,13 +4885,24 @@ function isPangram(string : string): boolean{
     const alphabet = Array.from({ length: 26 }, (_, i) =>
         String.fromCharCode(65 + i)
       );
+      const maybeAlphabet : string[] = [];
       for (let i = 0; i < string.length; i++){
-        if ()
+        maybeAlphabet.push(string[i]);
+        // pushare solo una volta e mai lo stesso carattere (tipo solo una volta la a oppure solo una volta la f eccetera)
       }
-      console.log(alphabet);
-      console.log(string);
+      const goodAlphabet : string[] = [];
+      for (let i = 0; i < maybeAlphabet.length; i++){
+        if (maybeAlphabet[i] === maybeAlphabet[i]){
+            goodAlphabet.push(maybeAlphabet[i]);
+        }
+      }
+      console.log(maybeAlphabet);
 
-    return true;
+      if (alphabet.length === goodAlphabet.length){
+        return true;
+      }
+// comparare i due array per lunghezza, se maybe alphabet è uguale a alphabet allora true altrimenti false
+    return false;
   }
 
-  console.log(isPangram("ciao"));
+  console.log(isPangram("ciaoo"));

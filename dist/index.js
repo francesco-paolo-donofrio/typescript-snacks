@@ -1839,9 +1839,21 @@ function scrollingText(text) {
 scrollingText("CODEWARS");
 function isPangram(string) {
     const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
-    console.log(alphabet);
-    console.log(string);
-    return true;
+    const maybeAlphabet = [];
+    for (let i = 0; i < string.length; i++) {
+        maybeAlphabet.push(string[i]);
+    }
+    const goodAlphabet = [];
+    for (let i = 0; i < maybeAlphabet.length; i++) {
+        if (maybeAlphabet[i] === maybeAlphabet[i]) {
+            goodAlphabet.push(maybeAlphabet[i]);
+        }
+    }
+    console.log(maybeAlphabet);
+    if (alphabet.length === goodAlphabet.length) {
+        return true;
+    }
+    return false;
 }
-console.log(isPangram("ciao"));
+console.log(isPangram("ciaoo"));
 //# sourceMappingURL=index.js.map
