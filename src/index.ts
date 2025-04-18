@@ -4914,10 +4914,14 @@ function isPangram(string : string): boolean{
 // * Input: [5,3,2,1,4], output = [5,3,2,4]
 // * Input: [2,2,1,2,1], output = [2,2,2,1] 
 
-// function removeSmallest(numbers : number[]): number[] {
-//     const smallestNumber = numbers.filter((n)=>n < n ? n : 0);
-//     console.log(smallestNumber);
-//     return smallestNumber;
-//   }
+function removeSmallest(numbers : number[]): number[] {
+    const newArray : number[] = numbers.splice(myArrayMin(numbers));
+    function myArrayMin(arr : number[]) {
+        return Math.min.apply(null, arr);
+      }
+    console.log("This is ", myArrayMin(numbers));
+    console.log("This is New array", newArray)
+    return newArray;
+  }
 
-//   console.log(removeSmallest);
+  console.log(removeSmallest([5, 3, 2, 1, 4]));

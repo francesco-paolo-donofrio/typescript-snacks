@@ -1848,9 +1848,13 @@ function isPangram(string) {
 }
 console.log(isPangram("abcdefghijklmopqrstuvwxyz"));
 function removeSmallest(numbers) {
-    const smallestNumber = numbers.filter((n) => n < n ? n : 0);
-    console.log(smallestNumber);
-    return smallestNumber;
+    const newArray = numbers.splice(myArrayMin(numbers));
+    function myArrayMin(arr) {
+        return Math.min.apply(null, arr);
+    }
+    console.log("This is ", myArrayMin(numbers));
+    console.log("This is New array", newArray);
+    return newArray;
 }
-console.log(removeSmallest);
+console.log(removeSmallest([5, 3, 2, 1, 4]));
 //# sourceMappingURL=index.js.map
