@@ -1848,10 +1848,11 @@ function isPangram(string) {
 }
 console.log(isPangram("abcdefghijklmopqrstuvwxyz"));
 function removeSmallest(numbers) {
-    const newArray = numbers.splice(myArrayMin(numbers));
-    function myArrayMin(arr) {
-        return Math.min.apply(null, arr);
+    function myArrayMin(numbers) {
+        return numbers.indexOf(Math.min(...numbers));
     }
+    const newArray = [...numbers];
+    newArray.splice(myArrayMin(newArray), 1);
     console.log("This is ", myArrayMin(numbers));
     console.log("This is New array", newArray);
     return newArray;

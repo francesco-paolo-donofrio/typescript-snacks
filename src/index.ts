@@ -4915,11 +4915,11 @@ function isPangram(string : string): boolean{
 // * Input: [2,2,1,2,1], output = [2,2,2,1] 
 
 function removeSmallest(numbers : number[]): number[] {
-    const newArray : number[] = numbers.splice(myArrayMin(numbers));
-    function myArrayMin(arr : number[]) {
-        return Math.min.apply(null, arr);
+    function myArrayMin(numbers: number[]) {
+        return numbers.indexOf(Math.min(...numbers));
       }
-    console.log("This is ", myArrayMin(numbers));
+      const newArray: number[] = [...numbers];
+      newArray.splice(myArrayMin(newArray), 1);
     console.log("This is New array", newArray)
     return newArray;
   }
