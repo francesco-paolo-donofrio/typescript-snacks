@@ -4942,6 +4942,6 @@ function removeSmallest(numbers : number[]): number[] {
 
 // Members should be sorted in ascending order (small -> large). (eg: the valid answer for powers(6) is [2, 4], not [4, 2])
 
-const powers = n => {
+// const powers : number = n => {
 
-};
+// };
